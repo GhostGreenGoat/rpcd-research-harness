@@ -1,0 +1,28 @@
+{
+  "status": "independent exact full-matrix bare Jensen barrier",
+  "evidence_level": "E3 exact rational reconstruction",
+  "family": "A=mu I+(1-mu)J_n",
+  "n": 12,
+  "mu": "1/100",
+  "direction": [
+    1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "A_eigenvalue": "1/100",
+  "S_eigenvalue": "42471/20000",
+  "eigenvalue_of_2A_minus_mu_times_A_plus_S": "-2671/2000000",
+  "Jensen_gamma_over_mu": "20000/42671",
+  "gap_to_one_half": "-2671/85342",
+  "scope": "Refutes the bare Jensen implication at constant 1/2; does not refute the actual K(A)>=(mu/2)A^{-1} candidate.",
+  "arithmetic": "Fraction full 12-by-12 matrix multiplication"
+}

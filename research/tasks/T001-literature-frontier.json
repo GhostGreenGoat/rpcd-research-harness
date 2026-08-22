@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T001-literature-frontier",
+  "title": "RPCD literature and priority frontier audit",
+  "role": "librarian",
+  "objective": "Determine whether Conjecture 4.1 is still open, map all partial results and identify any prior form of the matrix-Jensen candidate.",
+  "claim_ids": ["C001", "C010"],
+  "dependencies": [],
+  "inputs": ["research/problem.md", "research/claims/C001-rpcd-conjecture.json", "research/claims/C010-matrix-jensen.json"],
+  "allowed_max_evidence": "E2",
+  "required_artifacts": ["literature_frontier.md", "search_log.json", "bibliography.json"],
+  "acceptance_checks": [
+    "Uses primary papers for mathematical claims.",
+    "Records searches and an as-of date.",
+    "Separates general SPD results from structured Hessian results.",
+    "Checks forward citations of arXiv:2505.23152."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

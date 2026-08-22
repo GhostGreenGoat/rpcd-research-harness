@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T090-audit-adapted-lyapunov",
+  "title": "Audit adapted Lyapunov attainment and conditioning",
+  "role": "skeptic",
+  "objective": "Hostile-audit the transpose-closed Perron block argument, the resolvent condition-number bound, and all fixed-time and time-uniform probability conversions in C028.",
+  "claim_ids": ["C001", "C028"],
+  "dependencies": [],
+  "inputs": ["docs/ITER3_ROUTE_M3_OPERATOR_LYAPUNOV.md"],
+  "allowed_max_evidence": "E4",
+  "required_artifacts": ["hostile_audit.md", "block_counterexample_search.json", "probability_check.md", "priority_addendum.md"],
+  "acceptance_checks": [
+    "Checks off-diagonal operator blocks in the common reducing decomposition.",
+    "Separates exact-rate metric existence from uniform condition-number control.",
+    "Checks the alpha-to-r limit and the r=0 boundary.",
+    "Verifies that Ville's inequality yields the stated all-times event after norm conversion."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "ready"
+}

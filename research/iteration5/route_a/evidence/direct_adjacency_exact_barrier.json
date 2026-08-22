@@ -1,0 +1,18 @@
+{
+  "status": "exact counterexample to a restricted dual feature",
+  "dual_test": "R_pi=D_pi^T (direct adjacency)",
+  "explicitly_not_tested": "R_pi=D_pi^T D_pi (weighted adjacency frame)",
+  "n": 20,
+  "mu": "1/2",
+  "rho": "1/2",
+  "conditional_covariance_entry": "1/4",
+  "trace_Q": "491/16",
+  "q_parallel": "3797/320",
+  "q_transverse": "317/320",
+  "p_parallel": "21/40",
+  "p_transverse": "41/40",
+  "certificate_over_mu_transverse": "1681/1585",
+  "certificate_over_mu_parallel": "9261/18985",
+  "parallel_gap_to_one_half": "-463/37970",
+  "scope": "Refutes only the direct immediate-adjacency regression and its Q inequality.  It does not refute J_s, H_s, K, the weighted D^T D feature, or the RPCD complexity conjecture."
+}

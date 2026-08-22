@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C038",
+  "title": "Sharp half-linear local-inverse dual limit on equicorrelations",
+  "statement": "For positive equicorrelation with rho=c/n, fixed c>0, and local-inverse bandwidth q/n tending to 1/2, the dual certificate has transverse limit one and parallel limit at least one half. The latter is sharp as c tends to infinity. Any q=o(n) in the same feature family has parallel limit (1+c)/(1+c+c^2/3), below one half for c>(3+sqrt(21))/2.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "research/iteration5/route_a/linear_memory_dual.md"
+  },
+  "assumptions": [
+    "Positive equicorrelation scaling rho=c/n with fixed c",
+    "Local triangular inverse truncated to bandwidth q",
+    "Limit n to infinity with q/n tending to one half or zero"
+  ],
+  "supporting_artifacts": [
+    "research/iteration5/route_a/linear_memory_dual.md",
+    "research/iteration5/route_a/LINEAR_MEMORY_HALF_LIMIT_HOSTILE_AUDIT.md",
+    "scripts/iter5_linear_memory_half_limit_proof.py",
+    "research/evidence/ITER5_LINEAR_MEMORY_HALF_LIMIT_PROOF.json"
+  ],
+  "open_objections": [
+    "The theorem concerns a structured scaling limit, not finite arbitrary SPD matrices.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

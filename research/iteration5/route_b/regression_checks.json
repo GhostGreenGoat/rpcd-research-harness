@@ -1,0 +1,260 @@
+{
+  "evidence_level": "E2 deterministic float64 implementation regression",
+  "seed": 202608226,
+  "cases": [
+    {
+      "case": 0,
+      "counts": [
+        2,
+        2,
+        2
+      ],
+      "mu": 0.14844456381348714,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.33883350017944097,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.1102230246251565e-16,
+          "coefficient": 0.1067995140885708,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 1,
+      "counts": [
+        3,
+        2,
+        2
+      ],
+      "mu": 0.2661586021670148,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 4.440892098500626e-16,
+          "coefficient": 0.5311472224050544,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 2.7755575615628914e-17,
+          "coefficient": 0.22619918067058256,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 2,
+      "counts": [
+        2,
+        3,
+        2
+      ],
+      "mu": 0.8871919396392101,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.9826114054644969,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.1102230246251565e-16,
+          "coefficient": 0.5371680838532079,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 3,
+      "counts": [
+        2,
+        2,
+        2
+      ],
+      "mu": 0.23062140692764782,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.4688207971992422,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.1102230246251565e-16,
+          "coefficient": 0.16142781653033683,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 4,
+      "counts": [
+        3,
+        2,
+        2
+      ],
+      "mu": 0.7254440008507995,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.9452525245332244,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.1102230246251565e-16,
+          "coefficient": 0.47853847912532055,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 5,
+      "counts": [
+        2,
+        3,
+        2
+      ],
+      "mu": 0.14958941195329184,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 4.440892098500626e-16,
+          "coefficient": 0.32151492182264696,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.13646922896323027,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 6,
+      "counts": [
+        2,
+        2,
+        2
+      ],
+      "mu": 0.44466930026833257,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.7571004428648868,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.1102230246251565e-16,
+          "coefficient": 0.2814879339460698,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 7,
+      "counts": [
+        3,
+        2,
+        2
+      ],
+      "mu": 0.6022393267245194,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.8772314111623616,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.3877787807814457e-17,
+          "coefficient": 0.4254549473523423,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 8,
+      "counts": [
+        2,
+        3,
+        2
+      ],
+      "mu": 0.5894029476924886,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.8864936934071164,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.4174486065617094,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 9,
+      "counts": [
+        2,
+        2,
+        2
+      ],
+      "mu": 0.32053246313316974,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.6112839118197432,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.1102230246251565e-16,
+          "coefficient": 0.2147121956299546,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 10,
+      "counts": [
+        3,
+        2,
+        2
+      ],
+      "mu": 0.26564681415867664,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 2.220446049250313e-16,
+          "coefficient": 0.5419670648013151,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 2.7755575615628914e-17,
+          "coefficient": 0.2259734736754253,
+          "sector": "group_constant"
+        }
+      }
+    },
+    {
+      "case": 11,
+      "counts": [
+        2,
+        3,
+        2
+      ],
+      "mu": 0.5616956086601085,
+      "modes": {
+        "determinant": {
+          "max_abs_residual": 4.440892098500626e-16,
+          "coefficient": 0.8529682132177883,
+          "sector": "group_constant"
+        },
+        "zero": {
+          "max_abs_residual": 1.1102230246251565e-16,
+          "coefficient": 0.40563732830570837,
+          "sector": "group_constant"
+        }
+      }
+    }
+  ],
+  "worst_generic_subset_residual": 4.440892098500626e-16,
+  "recursive_vs_layered_residual": 0.0
+}

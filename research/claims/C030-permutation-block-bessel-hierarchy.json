@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C030",
+  "title": "Consecutive-block permutation Bessel hierarchy",
+  "statement": "For every unit-diagonal symmetric matrix with invertible permutation triangular factors, the consecutive-block projection matrices satisfy 0 <= K_2 <= K_3 <= ... <= K_n = E[M_pi^{-T}M_pi^{-1}]. The fixed-depth assertion K_q >= 2 P_ker is not part of this claim.",
+  "status": "proof_candidate",
+  "evidence_level": "E3",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "docs/ITER4_ROOT_PERMUTATION_BLOCK_SOS.md"
+  },
+  "assumptions": [
+    "Uniform random permutation",
+    "Every M_pi is invertible; unit triangular correlation factors satisfy this",
+    "K_q uses the scalar L2 orthogonal projection tensored with the output identity"
+  ],
+  "supporting_artifacts": [
+    "docs/ITER4_ROOT_PERMUTATION_BLOCK_SOS.md",
+    "scripts/iter4_adjacency_bessel.py"
+  ],
+  "open_objections": [
+    "Needs hostile audit and independent reconstruction",
+    "No fixed-depth lower bound sufficient for T080 has been proved",
+    "The q=3 n=10 route counterexample is Monte Carlo rather than exact"
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

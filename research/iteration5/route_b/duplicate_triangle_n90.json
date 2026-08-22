@@ -1,0 +1,164 @@
+{
+  "evidence_level": "E1 float64 stochastic structured search; null result is not proof",
+  "family": "three duplicate planar Gram prototypes with unequal multiplicities",
+  "seed": 202608221,
+  "n": 90,
+  "evaluations": 240,
+  "history": [
+    {
+      "evaluation": 0,
+      "ratio": 0.588792843290898,
+      "counts": [
+        30,
+        30,
+        30
+      ]
+    },
+    {
+      "evaluation": 4,
+      "ratio": 0.5550883799502483,
+      "counts": [
+        12,
+        66,
+        12
+      ]
+    },
+    {
+      "evaluation": 5,
+      "ratio": 0.5488173265722005,
+      "counts": [
+        8,
+        66,
+        16
+      ]
+    },
+    {
+      "evaluation": 6,
+      "ratio": 0.5456378784183379,
+      "counts": [
+        15,
+        55,
+        20
+      ]
+    },
+    {
+      "evaluation": 15,
+      "ratio": 0.5455530083904412,
+      "counts": [
+        10,
+        55,
+        25
+      ]
+    },
+    {
+      "evaluation": 61,
+      "ratio": 0.5454131916243634,
+      "counts": [
+        21,
+        47,
+        22
+      ]
+    },
+    {
+      "evaluation": 107,
+      "ratio": 0.5453990018479031,
+      "counts": [
+        19,
+        49,
+        22
+      ]
+    },
+    {
+      "evaluation": 206,
+      "ratio": 0.5453347243092818,
+      "counts": [
+        20,
+        55,
+        15
+      ]
+    }
+  ],
+  "best": {
+    "name": "duplicate_triangle",
+    "counts": [
+      20,
+      55,
+      15
+    ],
+    "n": 90,
+    "depth": 45,
+    "mu_parameter": 0.8624245389533288,
+    "actual_mu": 0.8624245389533235,
+    "ratio": 0.5453347243092818,
+    "margin_over_half": 0.04533472430928176,
+    "directions": [
+      [
+        0.620411132886144,
+        0.7842767535704035
+      ],
+      [
+        -0.6062106117927313,
+        -0.7953041519757598
+      ],
+      [
+        -0.5565800822283871,
+        -0.8307939648713403
+      ]
+    ],
+    "mass_fractions": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "within": [
+      0.13757546104667118,
+      0.13757546104667118,
+      0.13757546104667118
+    ],
+    "cross": [
+      [
+        0.0,
+        -0.13755322484081536,
+        -0.13714634571328285
+      ],
+      [
+        -0.13755322484081536,
+        0.0,
+        0.13731938384209874
+      ],
+      [
+        -0.13714634571328285,
+        0.13731938384209874,
+        0.0
+      ]
+    ],
+    "result": {
+      "coefficient": 0.47031004818767014,
+      "sector": "group_2_transverse",
+      "constant_block_eigenvalues": [
+        0.4703150170876666,
+        0.4727782218334157,
+        0.5743333391287992
+      ],
+      "transverse_coefficients": {
+        "0": 0.47031495876135165,
+        "1": 0.47031605675369,
+        "2": 0.47031004818767014
+      },
+      "root_min_eigenvalue": 0.8624245389533235,
+      "root_max_eigenvalue": 13.236120545589534,
+      "states_evaluated": 9576,
+      "leaf_underflows": 0
+    },
+    "metadata": {
+      "evaluation": 206,
+      "angles": [
+        0.9015295130764888,
+        -2.222083512505887,
+        -2.1610599781728457
+      ],
+      "cross_sign_product": 0.0025905194828455013
+    }
+  },
+  "elapsed_seconds": 64.11677074432373
+}

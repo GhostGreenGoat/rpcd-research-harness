@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C024",
+  "title": "Universal permutation-orbit concavity of the RPCD rate",
+  "statement_ref": "docs/ITER2_ROUTE_B_SYMMETRY_EXTREMAL.md#3-轨道平均所需凹性的最小定参数反例",
+  "status": "refuted",
+  "evidence_level": "E3",
+  "origin": {
+    "kind": "harness_finite_counterexample",
+    "date": "2026-08-20",
+    "source": "docs/ITER2_ROUTE_B_SYMMETRY_EXTREMAL.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The exact characteristic-polynomial computation still needs an independent symbolic reconstruction.",
+    "This refutes only the concavity/orbit-averaging proof route, not C001 and not possible convexity statements."
+  ]
+}

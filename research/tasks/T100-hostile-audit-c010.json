@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T100-hostile-audit-c010",
+  "title": "Hostile proof audit of C010",
+  "role": "skeptic",
+  "objective": "Attack every lemma and implication in the C010 proof candidate, search boundary counterexamples and classify all findings.",
+  "claim_ids": ["C010"],
+  "dependencies": ["T010-matrix-jensen", "T020-exact-small-n"],
+  "inputs": ["research/problem.md", "research/claims/C010-matrix-jensen.json", "docs/METHOD.md"],
+  "allowed_max_evidence": "E4",
+  "required_artifacts": ["hostile_audit.md", "issue_ledger.json", "counterexample_checks.json"],
+  "acceptance_checks": [
+    "Auditor run differs from the proof-author run.",
+    "Covers every RPCD-specific attack in docs/METHOD.md.",
+    "Every issue is blocker, repairable gap, exposition risk or closed.",
+    "E4 is awarded only with zero blockers."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "blocked"
+}

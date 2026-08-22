@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C011",
+  "kind": "rational-counterexample-candidate-to-route-only",
+  "evidence_level": "E2",
+  "warning": "This is not a counterexample to RPCD Conjecture 4.1 and not a counterexample to the C010 energy inequality.",
+  "matrix_denominator": 1000,
+  "matrix_numerators": [
+    [1000, -754, 816, -783],
+    [-754, 1000, -858, 771],
+    [816, -858, 1000, -696],
+    [-783, 771, -696, 1000]
+  ],
+  "float64_audit": {
+    "eigenvalues": [
+      0.10018414923924705,
+      0.23978893925420236,
+      0.32012440281321497,
+      3.339902508693335
+    ],
+    "rpcd_second_moment_rate": 0.7557607407401463,
+    "conjectured_bound": 0.8163433709286394,
+    "matrix_jensen_bound": 0.8527799042424034,
+    "conjectured_minus_jensen": -0.03643653331376395
+  },
+  "remaining_certification": [
+    "Outward-rounded enclosure of lambda_min(A).",
+    "Outward-rounded generalized eigenvalue enclosure for theta.",
+    "A certified positive gap between r_MJ and the conjectured scalar target."
+  ]
+}

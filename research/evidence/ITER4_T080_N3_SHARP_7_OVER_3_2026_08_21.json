@@ -1,0 +1,26 @@
+{
+  "status": "E2 exact symbolic artifact supporting an E3 sharp n=3 proof draft",
+  "target_constant": "7/3",
+  "scale": "sharp invariant = 324 * full-Schur rank-one-downdate numerator",
+  "sharp_core": "2*q**2*tau - 9*q**2 - 2*q*tau**4 + 5*q*tau**3 + 37*q*tau + 51*q + tau**5 - 15*tau**4 - 13*tau**3 - 51*tau**2 - 150*tau + 18",
+  "q_degree": 2,
+  "q_leading_coefficient": "3*(2*tau - 9)",
+  "unit_endpoint": "-6*(tau - 1)**3*(tau**3 + tau**2 + 3*tau + 9)",
+  "equal_variable_endpoint": "-6*(r - 1)**3*(4*r**3 + 5*r**2 + 2*r + 3)*(32*r**5 - 40*r**4 + 20*r**3 - 30*r**2 + 49*r + 3)",
+  "p5_bernstein_coefficients": [
+    "3",
+    "64/5",
+    "98/5",
+    "127/5",
+    "121/5",
+    "34"
+  ],
+  "checks": {
+    "parity_reduction_exact": true,
+    "symmetric_remainders_zero": true,
+    "unit_endpoint_factorization": true,
+    "equal_endpoint_factorization": true,
+    "p5_bernstein_reconstruction": true,
+    "p5_bernstein_coefficients_positive": true
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "timezone": "Asia/Shanghai (+08:00)",
+  "root_observed_start_bound": "2026-08-22T16:34:10.000+08:00",
+  "first_local_clock_sample": "2026-08-22T16:35:36.000+08:00",
+  "required_local_no_finish_before": "2026-08-22T18:35:36.000+08:00",
+  "actual_final_validation_end": "2026-08-22T18:37:07.758+08:00",
+  "elapsed_from_first_local_seconds": 7291.758,
+  "elapsed_from_root_bound_seconds": 7377.758,
+  "threshold_satisfied": true,
+  "final_validation": {
+    "status": "PASS",
+    "scripts_run_after_threshold": 9,
+    "failed_scripts": 0
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "route": "iteration5/route_c",
+  "status": "general half-depth and general C3/L3 remain open",
+  "claim_status": {
+    "C036_weighted_two_prefix": "internal E4; independently hostile-audited; no formal or external validation",
+    "C039_adjacency_preconditioner": "internal E4; independently reconstructed; its fixed-memory closure is refuted",
+    "general_adaptive_L3": "E3 structured proof plus E1 general search; open for general matrices"
+  },
+  "primary_report": "research/iteration5/route_c/FINAL_REPORT.md",
+  "primary_reduction": "research/iteration5/route_c/higher_bellman_closure.md",
+  "proof_draft": "research/iteration5/route_c/weighted_prefix_sos.md",
+  "failed_routes": "research/iteration5/route_c/failed_attempts.md",
+  "exact_evidence": [
+    "research/iteration5/route_c/evidence/WEIGHTED_PREFIX_EXACT_CHECKS.json",
+    "research/iteration5/route_c/evidence/EXACT_ROUTE_BARRIERS.json",
+    "research/iteration5/route_c/evidence/ROUTE_A_CROSS_AUDIT.json",
+    "research/iteration5/route_c/evidence/FIXED_ADJACENCY_DECAY.json",
+    "research/iteration5/route_c/evidence/LINEAR_MEMORY_AUDIT.json",
+    "research/iteration5/route_c/evidence/LINEAR_MEMORY_TAYLOR_RECONSTRUCTION.json"
+  ],
+  "numerical_evidence": [
+    "research/iteration5/route_c/evidence/J3_SOS_HOSTILE_SEARCH.json",
+    "research/iteration5/route_c/evidence/ADAPTIVE_STATE_HOSTILE_SEARCH.json"
+  ],
+  "verifiers": [
+    "scripts/verify_iter5_route_c_weighted_prefix.py",
+    "scripts/iter5_route_c_exact_barriers.py",
+    "scripts/verify_iter5_route_c_route_a_cross_audit.py",
+    "scripts/verify_iter5_route_c_fixed_adjacency_asymptotic.py",
+    "scripts/verify_iter5_route_c_linear_memory_audit.py",
+    "scripts/iter5_route_c_j3_sos_search.py",
+    "scripts/iter5_route_c_adaptive_state_search.py"
+  ],
+  "evidence_warning": "Float null searches are E1 only and are not proofs. Exact barriers refute auxiliary routes, not RPCD."
+}

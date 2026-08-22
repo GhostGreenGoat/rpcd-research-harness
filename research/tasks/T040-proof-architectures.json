@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T040-proof-architectures",
+  "title": "Proof architecture fan-out and cheap falsification",
+  "role": "researcher",
+  "objective": "Generate diverse proof architectures for C001, state one falsifiable bottleneck lemma per architecture, and use small-matrix tests to rank rather than prematurely merge them.",
+  "claim_ids": ["C001"],
+  "dependencies": ["T001-literature-frontier", "T020-exact-small-n"],
+  "inputs": ["research/problem.md", "docs/METHOD.md", "rpcd_harness/rpcd.py"],
+  "allowed_max_evidence": "E2",
+  "required_artifacts": ["idea_catalog.json", "bottleneck_lemmas.md", "falsification_matrix.json", "selected_branches.md"],
+  "acceptance_checks": [
+    "Contains genuinely different mechanisms, not wording variants.",
+    "Each idea has a minimal falsifiable lemma and failure criterion.",
+    "Known matrix AM-GM and symmetrization barriers are addressed.",
+    "Only selected branches are recommended for deep proof runs."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "blocked"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T020-exact-small-n",
+  "title": "Exact-permutation small-dimensional RPCD verifier",
+  "role": "experimentalist",
+  "objective": "Independently verify the RPCD epoch operator, second-moment rate, matrix-Jensen identities and conjecture margins for deterministic small-dimensional matrices.",
+  "claim_ids": ["C001", "C010"],
+  "dependencies": [],
+  "inputs": ["research/problem.md", "rpcd_harness/rpcd.py", "scripts/verify_rpcd_identities.py"],
+  "allowed_max_evidence": "E2",
+  "required_artifacts": ["finite_certificate.json", "verification_report.md"],
+  "acceptance_checks": [
+    "Enumerates every permutation for each certified case.",
+    "Records NumPy version, matrices, eigenvalues, tolerances and margins.",
+    "Tests both product and triangular-solve formulations of T_p.",
+    "Labels floating-point eigendecompositions as numerical."
+  ],
+  "budget_hint": {"mode": "medium", "checkpoint_minutes": 20},
+  "status": "ready"
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T130-formalize-gram-bound",
+  "title": "Lean formalization of the Gram-defect partial theorem",
+  "role": "formalizer",
+  "objective": "Formalize the square-frame defect determinant identity, the determinant spectral-norm bound, and the audited n=2 C001 corollary in Lean after independent reconstruction closes.",
+  "claim_ids": ["C023"],
+  "dependencies": ["T070-independent-gram-bound"],
+  "inputs": ["research/problem.md", "research/claims/C023-gram-determinant-partial-rpcd.json", "docs/ITER2_ROUTE_C_PROJECTION_ALGEBRA.md", "docs/METHOD.md"],
+  "allowed_max_evidence": "E6",
+  "required_artifacts": ["formalization/", "formalization_report.md", "trusted_base.json"],
+  "acceptance_checks": [
+    "Pins Lean and mathlib versions.",
+    "Lists every axiom, sorry, admit and external oracle.",
+    "Formal statement includes unit norms, linear independence and multiplication order.",
+    "E6 is withheld until all proof obligations close."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "blocked"
+}

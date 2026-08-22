@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "minimum_active_minutes_per_worker": 120,
+  "checkpoint_interval_minutes": 30,
+  "minimum_distinct_avenues": 3,
+  "minimum_failed_or_stress_tests": 2,
+  "continuation_policy": "If a pass returns before the measured Codex-subprocess wall-clock floor, launch another research pass over the same portable artifacts. Idle time between passes is excluded. The harness cannot distinguish useful work from waiting inside a running subprocess, so checkpoints and artifact audits remain mandatory.",
+  "completion_policy": "A promising lemma does not end an iteration early. Use the remaining time to attack its assumptions, equality cases, counterexamples, and transfer to the RPCD complexity target."
+}

@@ -1,0 +1,147 @@
+{
+  "evidence_level": "E1 float64 stochastic structured search; null result is not proof",
+  "family": "rank-two Gram matrix with a large duplicate group and a duplicate satellite group",
+  "seed": 202608225,
+  "n": 1000,
+  "evaluations": 1500,
+  "max_satellite": 20,
+  "high_mu_only": true,
+  "two_scale": true,
+  "sector_counts": {
+    "group_constant": 789,
+    "group_0_transverse": 698,
+    "group_1_transverse": 13
+  },
+  "best_ratio": {
+    "name": "two_group_satellite",
+    "counts": [
+      998,
+      2
+    ],
+    "n": 1000,
+    "depth": 500,
+    "mu_parameter": 0.9816417330799315,
+    "actual_mu": 0.9816417330799315,
+    "ratio": 0.505184670647591,
+    "margin_over_half": 0.005184670647590983,
+    "directions": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.9999692967216537,
+        0.007836173428479809
+      ]
+    ],
+    "mass_fractions": [
+      1.0,
+      0.1965351403907804
+    ],
+    "within": [
+      0.018358266920068478,
+      -0.01114217778713432
+    ],
+    "cross": [
+      [
+        0.0,
+        0.008138389144032887
+      ],
+      [
+        0.008138389144032887,
+        0.0
+      ]
+    ],
+    "result": {
+      "coefficient": 0.4959103556199156,
+      "sector": "group_constant",
+      "constant_block_eigenvalues": [
+        0.4959103556199156,
+        0.5316575132351169
+      ],
+      "transverse_coefficients": {
+        "0": 0.49608380031274607,
+        "1": 0.5033262660032432
+      },
+      "root_min_eigenvalue": 0.9816417330799315,
+      "root_max_eigenvalue": 19.310407765507264,
+      "states_evaluated": 1500,
+      "leaf_underflows": 0
+    },
+    "metadata": {
+      "evaluation": 176,
+      "angle": 0.00783625362820275,
+      "satellite": 2,
+      "satellite_mass_fraction": 0.1965351403907804
+    },
+    "signed_rank_one_baseline_ratio": 0.5053542990265805,
+    "excess_over_signed_rank_one": -0.00016962837898948369
+  },
+  "best_excess": {
+    "name": "two_group_satellite",
+    "counts": [
+      988,
+      12
+    ],
+    "n": 1000,
+    "depth": 500,
+    "mu_parameter": 0.4387229290822997,
+    "actual_mu": 0.4387229290822996,
+    "ratio": 0.672754210338708,
+    "margin_over_half": 0.17275421033870797,
+    "directions": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        -0.9173035194965571,
+        0.39818871545942813
+      ]
+    ],
+    "mass_fractions": [
+      1.0,
+      0.0006055914600151259
+    ],
+    "within": [
+      0.5612770709177004,
+      -0.05065438324613632
+    ],
+    "cross": [
+      [
+        0.0,
+        -0.012670105520390532
+      ],
+      [
+        -0.012670105520390532,
+        0.0
+      ]
+    ],
+    "result": {
+      "coefficient": 0.29515269771224745,
+      "sector": "group_constant",
+      "constant_block_eigenvalues": [
+        0.29515269771224745,
+        0.69560916156213
+      ],
+      "transverse_coefficients": {
+        "0": 0.3050325917769217,
+        "1": 0.5139221288046208
+      },
+      "root_min_eigenvalue": 0.4387229290822996,
+      "root_max_eigenvalue": 554.9839011351417,
+      "states_evaluated": 6435,
+      "leaf_underflows": 0
+    },
+    "metadata": {
+      "evaluation": 1441,
+      "angle": 2.7320512307116966,
+      "satellite": 12,
+      "satellite_mass_fraction": 0.0006055914600151259
+    },
+    "signed_rank_one_baseline_ratio": 0.6952717863370893,
+    "excess_over_signed_rank_one": -0.022517575998381334
+  },
+  "violation_found_float64": false,
+  "elapsed_seconds": 85.99164533615112
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E3 exact symbolic/fraction checks supporting a proof draft",
+  "scope_warning": "The markdown proof carries the universal quantifiers.",
+  "finite_formula_checks": [
+    {
+      "size": 4,
+      "j3_closed_equals_bellman": true,
+      "zero_diagonal_square_check": true,
+      "adaptive_square_state_identity": true,
+      "adaptive_lift_closed_formula": true
+    },
+    {
+      "size": 5,
+      "j3_closed_equals_bellman": true,
+      "zero_diagonal_square_check": true,
+      "adaptive_square_state_identity": true,
+      "adaptive_lift_closed_formula": true
+    }
+  ],
+  "compound_symbolic_check": {
+    "c_perp": "(2*a**4*m - 2*a**4 - 4*a**3*m + 8*a**3 + 5*a**2*m - 13*a**2 + 10*a + 4*m - 4)/(2*m*(m - 1))",
+    "c_parallel": "(2*a**4 - 8*a**3 + 13*a**2 - 10*a + 4)/(2*m)",
+    "positive_a_bernstein_coefficients": [
+      "r + 3",
+      "(4*r + 9)/4",
+      "(7*r + 9)/6",
+      "(6*r + 1)/4",
+      "2*(2*r + 1)"
+    ],
+    "negative_a_bernstein_coefficients_after_positive_scaling": [
+      "2*(r + 2)**3*(2*r**2 + 10*r + 7)",
+      "(r + 2)**2*(16*r**3 + 112*r**2 + 221*r + 104)/4",
+      "(r + 2)*(8*r**4 + 72*r**3 + 225*r**2 + 277*r + 98)/2",
+      "(16*r**5 + 176*r**4 + 743*r**3 + 1478*r**2 + 1330*r + 384)/4",
+      "(r + 3)*(4*r**4 + 32*r**3 + 91*r**2 + 104*r + 34)"
+    ],
+    "adaptive_L3_compound_certificate": true,
+    "adaptive_positive_perp_bernstein": [
+      "10*(r + 1)",
+      "(3*r**2 + 31*r + 32)/3",
+      "2*(r**2 + 12*r + 15)/3",
+      "r**2 + 9*r + 12"
+    ],
+    "adaptive_positive_parallel_bernstein": [
+      "2*(2*r + 1)",
+      "(6*r + 1)/4",
+      "(7*r + 9)/6",
+      "(4*r + 9)/4",
+      "r + 3"
+    ],
+    "adaptive_negative_perp_bernstein_after_positive_scaling": [
+      "2*(r + 1)*(r + 2)**4*(2*r**2 + 10*r + 7)",
+      "(r + 2)**3*(16*r**4 + 128*r**3 + 331*r**2 + 319*r + 104)/4",
+      "(r + 2)**2*(24*r**5 + 240*r**4 + 885*r**3 + 1474*r**2 + 1083*r + 294)/6",
+      "(r + 2)*(16*r**6 + 192*r**5 + 913*r**4 + 2175*r**3 + 2692*r**2 + 1618*r + 384)/4",
+      "(r + 2)*(r + 3)*(4*r**5 + 36*r**4 + 121*r**3 + 185*r**2 + 126*r + 34)"
+    ]
+  }
+}

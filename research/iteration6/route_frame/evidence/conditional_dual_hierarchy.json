@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact controls for E3 conditional hierarchy",
+  "cases": [
+    {
+      "n": 3,
+      "q": 2,
+      "orders": 6,
+      "cycles": 2,
+      "cuts_per_cycle": 3,
+      "cycle_minus_global_psd": true,
+      "full_minus_cycle_psd": true,
+      "global_to_cycle_pythagorean_identity": true,
+      "cycle_to_full_pythagorean_identity": true
+    },
+    {
+      "n": 4,
+      "q": 2,
+      "orders": 24,
+      "cycles": 6,
+      "cuts_per_cycle": 4,
+      "cycle_minus_global_psd": true,
+      "full_minus_cycle_psd": true,
+      "global_to_cycle_pythagorean_identity": true,
+      "cycle_to_full_pythagorean_identity": true
+    }
+  ],
+  "result": "trivial <= cyclic-cut <= full certificates exactly"
+}

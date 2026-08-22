@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T085-schur-moment-compression",
+  "status": "mixed E1/E3; every entry declares its own evidence level",
+  "families": {
+    "signed_rank_one": {
+      "matrix": "B_m(mu)=mu I+(1-mu)11^T",
+      "limit": "mu -> 0 with fixed m>=3",
+      "evidence_level": "E3 algebraic proof draft",
+      "second_loss_normalized_rates": {
+        "actual_R": "1/(m-1)",
+        "pre_lift_U_exact_spectral": "1/(m-1)",
+        "post_lift_W_exact_spectral": "1/(m-2)",
+        "parallel_P_exact_spectral": "2/(2m-3)",
+        "pre_lift_U_trace_square": "2(m-2)/(m-1)^2",
+        "post_lift_W_trace_square": "2/(m-1)",
+        "parallel_P_trace_square": "4(m-2)/[(m-1)(2m-3)]",
+        "adaptive_selector_trace_square": "2(m-2)/(m-1)^2",
+        "direct_pair_trace_square": "2/m"
+      },
+      "interpretation": "Pre-lift exact leverage compression is sharp. The smooth trace-square parallel version has overhead below two; the adaptive trace-square selector also has overhead below two."
+    },
+    "regular_simplex": {
+      "matrix": "B_m(mu)=mu I+(1-mu)C_m, diag(C_m)=1, offdiag(C_m)=-1/(m-1)",
+      "limit": "mu -> 0 with fixed m>=3",
+      "evidence_level": "E3 algebraic proof draft",
+      "r": "(m-2)/(2(m-1)^4)",
+      "second_loss_normalized_rates": {
+        "actual_R": "r",
+        "pre_lift_U_exact_and_trace_square": "m(m-2)^2 r",
+        "post_lift_W_exact_spectral": "[(m-1)/(m-2)] r = 1/[2(m-1)^3]",
+        "parallel_P_exact_spectral": "{2m(m-1)(m-2)^2/[m(m-2)^3+(m-1)]} r",
+        "post_lift_W_trace_square": "2r",
+        "parallel_P_trace_square": "{4m(m-2)^2/[m(m-2)^2+2]}r",
+        "adaptive_selector_trace_square": "2r",
+        "direct_pair_trace_square": "[2(m-1)/m] r"
+      },
+      "interpretation": "Childwise scalarization loses exactly m(m-2)^2. The parent Schur complement suppresses the simple-null direction. The smooth trace-square parallel version has overhead below four, while the adaptive selector has overhead exactly two."
+    },
+    "rank_one_shallow_determinant_tail": {
+      "matrix": "B_m(mu)=mu I+(1-mu)11^T",
+      "range": "1 <= r <= m-3",
+      "evidence_level": "E3 algebraic proof draft plus E3 finite rational recurrence checks for 4<=m<=12",
+      "formula": "lim_{mu->0} c_r(B_m(mu))/mu=(2r-1-1/m)/(m-1)",
+      "consequence": "Every fixed-depth or r=o(m) determinant-tail hierarchy has c_r/mu -> 0; Omega(m) depth is necessary."
+    },
+    "signed_rank_one_half_depth_all_mu": {
+      "matrix": "B_n(mu)=mu I+(1-mu)11^T",
+      "evidence_level": "E3 exact algebraic proof draft",
+      "depth": "r=ceil(n/2)",
+      "transverse_bound": "prefix energy >= number of selected distinguished coordinates, hence h_perp>=r/n>=1/2",
+      "parallel_bound": "q_n>=sum_(j=0)^(r-1)mu^(2j), yielding generalized coefficient/mu >= 1/[mu(1+mu)]+mu^(2r)(1-mu)/[2mu^2(1+mu)] >=1/2",
+      "consequence": "H_half >= (mu/2)B^-1 for every n>=2 and 0<mu<=1 on the signed-rank-one family."
+    },
+    "disjoint_signed_rank_one_blocks": {
+      "matrix": "A_mu=diag(B_{k_1}(mu),...,B_{k_b}(mu)), sum k_j=n",
+      "evidence_level": "E3 algebraic proof draft",
+      "local_prefix_limit": "(2s-1-1/k)/(k-1) after s>=1 coordinates from a size-k block",
+      "global_hypergeometric_limit": "g(n,r,k)=[2rk/n-(1+1/k)(1-P{S=0})]/(k-1)",
+      "half_depth_bound": "g(n,ceil(n/2),k)>=1-1/[k(k-1)]>=1/2",
+      "consequence": "liminf_{mu->0} c_{ceil(n/2)}(A_mu)/mu>=1/2 for every such block union; this is structured, not universal."
+    },
+    "first_moment_kernel_rotation": {
+      "matrix": "[[1,1/3,1/4],[1/3,1,0],[1/4,0,1]]",
+      "spectrum": ["7/12", "1", "17/12"],
+      "vector": "v=(0,1/4,-1/3)",
+      "evidence_level": "E3 exact rational certificate",
+      "facts": {
+        "barD_times_v": "0",
+        "vT_R_v": "263/124416"
+      },
+      "consequence": "No finite universal scalar C can satisfy R_B <= C bar(D)_B. The basis must admit new directions at second level."
+    },
+    "regular_simplex_R_not_below_first": {
+      "matrix": "3-by-3 regular-simplex lift at mu=1/5; offdiag=-2/5",
+      "evidence_level": "E3 exact rational certificate",
+      "transverse_eigenvalue_barD_minus_R": "-32/5625",
+      "consequence": "Even the coefficient-one monotone guess R_B<=bar(D)_B is false."
+    },
+    "n3_H1_barrier_and_H2_gain": {
+      "matrix": "B=(1/5)I+(4/5)11^T",
+      "evidence_level": "E3 exact rational arithmetic",
+      "H1_coefficient": "547/1875",
+      "strong_target": "1-(14/15)^6=3861089/11390625",
+      "H2_equals_exact_K_coefficient": "1237/3125",
+      "H2_minus_target": "647776/11390625",
+      "interpretation": "The exact second moment closes dimension three and strictly clears the former H1 obstruction; this does not establish an all-dimensional result."
+    },
+    "two_step_scalar_chain_failure": {
+      "matrix": "B=(1/8)I+(7/8)11^T in dimension 3",
+      "evidence_level": "E3 exact rational certificate",
+      "claimed_induction_target": "J3 >= mu B^{-1}",
+      "transverse_coefficient_after_replacing_each_child_J2_by_mu*C_i^{-1}": "1321/11520",
+      "mu": "1/8=1440/11520",
+      "gap": "-119/11520",
+      "interpretation": "The sharp two-step scalar lower bound is valid locally but loses the anisotropy needed for a third Bellman step."
+    },
+    "kadison_rank_one_barrier": {
+      "matrix": "B_m(mu)=mu I+(1-mu)11^T",
+      "evidence_level": "E3 algebraic proof draft",
+      "average_inverse_parallel_eigenvalue": "z_parallel=(1-mu^m)/[m(1-mu)]",
+      "parallel_A_eigenvalue": "lambda_parallel=m-(m-1)mu",
+      "kadison_coefficient_over_mu_parallel": "[lambda_parallel/mu]*z_parallel^2",
+      "fixed_mu_asymptotic": "1/[m mu(1-mu)]",
+      "consequence": "K >= (E M_pi^{-1})^T(E M_pi^{-1}) cannot yield c*mu with a universal positive c. The discarded variance is essential."
+    },
+    "global_one_step_constant_upper_bound": {
+      "matrix": "A_n(mu)=mu I+(1-mu)11^T",
+      "evidence_level": "E3 exact algebraic proof draft",
+      "parallel_triangular_solve": "M_pi^{-1}1=(1,mu,...,mu^(n-1)) in permutation order",
+      "parallel_K_eigenvalue": "(1-mu^(2n))/[n(1-mu^2)]",
+      "parallel_A_eigenvalue": "n-(n-1)mu",
+      "exact_c1_counterexample": "n=9, mu=9/10 gives gamma=44731861300157941/50000000000000000 < mu",
+      "iterated_limit": "lim_(mu->1) lim_(n->infinity) gamma/mu <= 1/[mu(1+mu)] -> 1/2",
+      "family_lower_bound": "Writing z=mu^(2n), the parallel ratio is S_n/n+(1-z)/[mu(1+mu)] >= 1/[mu(1+mu)]+z/[mu^2(1+mu)] > 1/2; every transverse ratio is at least 1 from two distinguished solve entries.",
+      "consequence": "This family has exact infimum 1/2. No universal global one-step A-energy constant c>1/2 is possible; the surviving half-depth c=1/2 candidate is asymptotically optimal if true."
+    },
+    "bare_jensen_rank_one_barrier": {
+      "matrix": "A_n(mu)=mu I+(1-mu)11^T",
+      "evidence_level": "E3 exact algebraic certificate",
+      "certificate": "K >= (A+S)^-1, S=(A-I)^2/3+Diag(diag((A-I)^2))/6",
+      "parallel_S_eigenvalue": "(1-mu)^2(n-1)(2n-1)/6",
+      "exact_failure_of_half_constant": "n=21, mu=9/20 gives Jensen gamma/mu=3200/6401=1/2-1/12802",
+      "smaller_transverse_failure": "n=12, mu=1/100 gives Jensen gamma/mu=20000/42671=1/2-2671/85342",
+      "fixed_mu_asymptotic": "3/[n mu(1-mu)] -> 0",
+      "consequence": "Bare Jensen cannot establish any universal positive c; variance/Bellman information is necessary."
+    }
+  },
+  "finite_searches": {
+    "half_depth_determinant_tail": {
+      "evidence_level": "E1 float64 null search",
+      "file": "research/evidence/ITER4_T085_HALF_DEPTH_SEARCH.json",
+      "seed": 4085,
+      "dimensions": "3..10",
+      "random_samples_per_dimension": 250,
+      "smallest_observed_c_over_mu": 0.825668143180067,
+      "warning": "No violation is not a proof."
+    },
+    "rank_one_half_depth_large_n": {
+      "evidence_level": "E1 float64 grid minimization of an algebraically exact two-scalar recurrence",
+      "file": "research/evidence/ITER4_T085_RANK_ONE_HALF_DEPTH.json",
+      "sizes": [6, 8, 10, 20, 50, 100, 200, 500, 1000],
+      "observed_c_over_mu_at_n1000": 0.505351020822132,
+      "interpretation": "The half-depth constant approaches 1/2 from above on this family, so 1/2 is the plausible sharp universal constant if the half-depth conjecture is true.",
+      "warning": "Grid minimization and asymptotic pattern are not a proof."
+    },
+    "parallel_compression": {
+      "evidence_level": "E1/E2 float64 diagnostics",
+      "file": "research/evidence/ITER4_T085_SCHUR_MOMENT_SEARCH.json",
+      "seed": 20260831,
+      "dimensions": "3..8",
+      "instances": 240,
+      "minimum_P_minus_R_eigenvalue": 2.41379893850535e-09,
+      "maximum_observed_normalized_rate_overhead": 3.46831827370421,
+      "minimum_adaptive_minus_R_eigenvalue": 4.79804987651685e-13,
+      "maximum_observed_adaptive_rate_overhead": 1.96043949620718,
+      "adaptive_branch_counts": {
+        "pre_lift": 202,
+        "post_lift": 38
+      },
+      "warning": "The PSD inequality is proved algebraically; these figures test implementation only."
+    }
+  }
+}

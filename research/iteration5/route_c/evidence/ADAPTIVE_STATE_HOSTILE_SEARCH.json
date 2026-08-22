@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E1 float64 hostile search",
+  "scope_warning": "A null search is not a proof; compressed failures are route failures only.",
+  "candidate": "adaptive L3 lower state >= (2mu/m)A^-1",
+  "seed": 2026082103,
+  "random_samples_per_dimension": 1200,
+  "structured_families": "rank-one, simplex, and all two-block rank-one/simplex mixtures",
+  "evaluations": 17920,
+  "by_dimension": {
+    "3": {
+      "uncompressed": {
+        "margin": 0.0003325021665007144,
+        "ratio": 0.6669991688331673,
+        "label": "rank_one_0.999",
+        "weak_3_over_2m_margin": 0.16699916883316734
+      },
+      "compressed": {
+        "margin": 9.238478648754267e-09,
+        "ratio": 0.6666666759051453,
+        "label": "rank_one_1e-08",
+        "weak_3_over_2m_margin": 0.16666667590514528
+      }
+    },
+    "4": {
+      "uncompressed": {
+        "margin": 0.00041679133358318854,
+        "ratio": 0.5004167913335832,
+        "label": "rank_one_0.999",
+        "weak_3_over_2m_margin": 0.1254167913335832
+      },
+      "compressed": {
+        "margin": -0.041666656109464906,
+        "ratio": 0.4583333438905351,
+        "label": "rank_one_1e-08",
+        "weak_3_over_2m_margin": 0.0833333438905351
+      }
+    },
+    "5": {
+      "uncompressed": {
+        "margin": 0.000250081262501034,
+        "ratio": 0.40025008126250106,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.10025008126250107
+      },
+      "compressed": {
+        "margin": -0.04999998987444798,
+        "ratio": 0.35000001012555204,
+        "label": "rank_one_1.2625841e-08",
+        "weak_3_over_2m_margin": 0.05000001012555205
+      }
+    },
+    "6": {
+      "uncompressed": {
+        "margin": 0.0001667100053337478,
+        "ratio": 0.33350004333866706,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.08350004333866706
+      },
+      "compressed": {
+        "margin": -0.04999999822024975,
+        "ratio": 0.28333333511308356,
+        "label": "rank_one_1.2625841e-08",
+        "weak_3_over_2m_margin": 0.03333333511308356
+      }
+    },
+    "7": {
+      "uncompressed": {
+        "margin": 0.00011907341534428406,
+        "ratio": 0.28583335912963,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.07154764484391571
+      },
+      "compressed": {
+        "margin": -0.047619044499290525,
+        "ratio": 0.23809524121499517,
+        "label": "rank_one_1.2625841e-08",
+        "weak_3_over_2m_margin": 0.0238095269292809
+      }
+    },
+    "8": {
+      "uncompressed": {
+        "margin": 8.930229737608153e-05,
+        "ratio": 0.2500893022973761,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.06258930229737608
+      },
+      "compressed": {
+        "margin": -0.044642851725580746,
+        "ratio": 0.20535714827441925,
+        "label": "rank_one_1.2625841e-08",
+        "weak_3_over_2m_margin": 0.017857148274419254
+      }
+    },
+    "9": {
+      "uncompressed": {
+        "margin": 6.94557300341958e-05,
+        "ratio": 0.2222916779522564,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.05562501128558975
+      },
+      "compressed": {
+        "margin": -0.0416666675279381,
+        "ratio": 0.1805555546942841,
+        "label": "rank_one_1e-08",
+        "weak_3_over_2m_margin": 0.013888888027617452
+      }
+    },
+    "10": {
+      "uncompressed": {
+        "margin": 5.556358079591983e-05,
+        "ratio": 0.20005556358079593,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.050055563580795936
+      },
+      "compressed": {
+        "margin": -0.03888888734074292,
+        "ratio": 0.1611111126592571,
+        "label": "rank_one_1.2625841e-08",
+        "weak_3_over_2m_margin": 0.0111111126592571
+      }
+    },
+    "11": {
+      "uncompressed": {
+        "margin": 4.5460454909079795e-05,
+        "ratio": 0.1818636422730909,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.04550000590945455
+      },
+      "compressed": {
+        "margin": -0.03636363557080938,
+        "ratio": 0.14545454624737245,
+        "label": "rank_one_1.2625841e-08",
+        "weak_3_over_2m_margin": 0.009090909883736092
+      }
+    },
+    "12": {
+      "uncompressed": {
+        "margin": 3.7883264713101106e-05,
+        "ratio": 0.16670454993137976,
+        "label": "simplex_0.999",
+        "weak_3_over_2m_margin": 0.04170454993137976
+      },
+      "compressed": {
+        "margin": -0.03409090578542681,
+        "ratio": 0.13257576088123985,
+        "label": "rank_one_1.5941187e-08",
+        "weak_3_over_2m_margin": 0.007575760881239846
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact reconstruction of E3 cyclic-cut identity",
+  "cases": [
+    {
+      "n": 5,
+      "q": 3,
+      "m": 1,
+      "cuts_checked": 5,
+      "defect_identity_every_cut": true,
+      "single_arc_counts": true,
+      "pairwise_arc_overlap_counts": true,
+      "dual_tail_arc_identity": true,
+      "nested_Hardy_identity": true
+    },
+    {
+      "n": 6,
+      "q": 3,
+      "m": 2,
+      "cuts_checked": 6,
+      "defect_identity_every_cut": true,
+      "single_arc_counts": true,
+      "pairwise_arc_overlap_counts": true,
+      "dual_tail_arc_identity": true,
+      "nested_Hardy_identity": true
+    },
+    {
+      "n": 7,
+      "q": 4,
+      "m": 2,
+      "cuts_checked": 7,
+      "defect_identity_every_cut": true,
+      "single_arc_counts": true,
+      "pairwise_arc_overlap_counts": true,
+      "dual_tail_arc_identity": true,
+      "nested_Hardy_identity": true
+    },
+    {
+      "n": 8,
+      "q": 4,
+      "m": 3,
+      "cuts_checked": 8,
+      "defect_identity_every_cut": true,
+      "single_arc_counts": true,
+      "pairwise_arc_overlap_counts": true,
+      "dual_tail_arc_identity": true,
+      "nested_Hardy_identity": true
+    }
+  ],
+  "result": "C1--C6 passed exactly"
+}

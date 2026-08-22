@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C025",
+  "title": "Exact order-poset expansion of the triangular inverse Gram",
+  "statement_ref": "docs/ITER2_ROUTE_D_ORDER_POSET_EXPANSION.md#4-the-inverse-gram-matrix-as-a-two-path-poset-sum",
+  "status": "proof_candidate",
+  "evidence_level": "E3",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-20",
+    "source": "docs/ITER2_ROUTE_D_ORDER_POSET_EXPANSION.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "Alternating path signs prevent a termwise truncation from preserving Loewner positivity.",
+    "No finite path-feature SOS subspace has yet been shown to reach the C001 constant.",
+    "The expansion has not passed hostile audit or independent reconstruction."
+  ]
+}

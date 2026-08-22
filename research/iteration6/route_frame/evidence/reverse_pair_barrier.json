@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact controls for the E3 reverse-pair barrier",
+  "cases": [
+    {
+      "a": 4,
+      "dimension": 8,
+      "denominator": "2423/288",
+      "numerator": "21245/2304",
+      "rayleigh_decimal": 1.0960070160957491,
+      "tau4_k2_lower_decimal": 0.0023215022699133304
+    },
+    {
+      "a": 8,
+      "dimension": 16,
+      "denominator": "1395963/78400",
+      "numerator": "4537370923/203212800",
+      "rayleigh_decimal": 1.253993770234881,
+      "tau4_k2_lower_decimal": 0.016470203269917577
+    },
+    {
+      "a": 12,
+      "dimension": 24,
+      "denominator": "28557445291/1024531200",
+      "numerator": "7020000901051/182138880000",
+      "rayleigh_decimal": 1.3827394105472217,
+      "tau4_k2_lower_decimal": 0.03612383264328583
+    },
+    {
+      "a": 16,
+      "dimension": 32,
+      "denominator": "9987890090483/259718659200",
+      "numerator": "212096560168274909/3702171432960000",
+      "rayleigh_decimal": 1.4897263422198046,
+      "tau4_k2_lower_decimal": 0.05745635981692326
+    }
+  ],
+  "result": "all exact paired identities passed",
+  "scope": "Refutes reverse-pair covariance/frame comparison only."
+}

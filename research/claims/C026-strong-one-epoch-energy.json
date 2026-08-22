@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C026",
+  "title": "Strong one-epoch A-energy inequality",
+  "statement_ref": "docs/ITER3_M1_STRONG_ONE_EPOCH_ENERGY.md#0-状态与结论先行",
+  "status": "refuted",
+  "evidence_level": "E5",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-21",
+    "source": "docs/ITER3_M1_STRONG_ONE_EPOCH_ENERGY.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": false,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "supporting_artifacts": [
+    "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md",
+    "docs/ITER4_AUDIT_T080_SIMPLE_SUBSET_DP.md",
+    "scripts/iter4_t080_positive_mu_lift.py",
+    "scripts/verify_iter4_t080_simple_subset_dp.py",
+    "research/evidence/ITER4_T080_POSITIVE_MU_EXACT_LIFT_2026_08_21.json",
+    "research/evidence/ITER4_T080_SIMPLE_SUBSET_DP_INDEPENDENT_AUDIT.json"
+  ],
+  "open_objections": [
+    "The exact n=8 counterexample refutes only the fixed-A one-epoch energy inequality, not C001's covariance-map spectral-radius bound.",
+    "A weaker dimension-uniform one-epoch constant could still prove the requested big-O complexity.",
+    "No Lean certificate or outside human validation exists."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "evidence_level": "E2 finite implementation controls; float64 comparisons",
+  "subset_dp_max_abs_residual": 2.220446049250313e-16,
+  "subset_dp_pass_tolerance": true,
+  "group_sign_conjugation_gap": 0.0,
+  "group_sign_conjugation_pass_tolerance": true,
+  "signed_rank_one_control": {
+    "n": 1000,
+    "mu": 0.98,
+    "ratio": 0.505509978960384,
+    "margin_over_half": 0.0055099789603839655,
+    "sector": "group_0_transverse"
+  },
+  "identity_control": {
+    "n": 25,
+    "coefficient": 1.0,
+    "expected": 1.0,
+    "absolute_gap": 0.0
+  },
+  "elapsed_seconds": 0.006000995635986328
+}

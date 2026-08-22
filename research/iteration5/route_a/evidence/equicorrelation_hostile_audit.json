@@ -1,0 +1,461 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E4 hostile-audit reconstruction of an E3 family proof",
+  "result": "pass simultaneously for every 1<=steps<=ceil(n/2), after explicitly separating rho=0",
+  "max_permutation_dimension": 7,
+  "records": [
+    {
+      "n": 2,
+      "steps": 1,
+      "rho": "0",
+      "transverse": "1/2",
+      "parallel": "1/2",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 2
+    },
+    {
+      "n": 2,
+      "steps": 1,
+      "rho": "2/5",
+      "transverse": "1/2",
+      "parallel": "1/2",
+      "transverse_margin": "0",
+      "parallel_margin": "2/5",
+      "orders": 2
+    },
+    {
+      "n": 2,
+      "steps": 1,
+      "rho": "-1/3",
+      "transverse": "1/2",
+      "parallel": "1/2",
+      "transverse_margin": "1/3",
+      "parallel_margin": "0",
+      "orders": 2
+    },
+    {
+      "n": 3,
+      "steps": 1,
+      "rho": "0",
+      "transverse": "1/3",
+      "parallel": "1/3",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 6
+    },
+    {
+      "n": 3,
+      "steps": 1,
+      "rho": "2/5",
+      "transverse": "1/3",
+      "parallel": "1/3",
+      "transverse_margin": "0",
+      "parallel_margin": "2/5",
+      "orders": 6
+    },
+    {
+      "n": 3,
+      "steps": 1,
+      "rho": "-1/6",
+      "transverse": "1/3",
+      "parallel": "1/3",
+      "transverse_margin": "1/6",
+      "parallel_margin": "0",
+      "orders": 6
+    },
+    {
+      "n": 3,
+      "steps": 2,
+      "rho": "0",
+      "transverse": "2/3",
+      "parallel": "2/3",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 6
+    },
+    {
+      "n": 3,
+      "steps": 2,
+      "rho": "2/5",
+      "transverse": "64/75",
+      "parallel": "34/75",
+      "transverse_margin": "14/125",
+      "parallel_margin": "52/125",
+      "orders": 6
+    },
+    {
+      "n": 3,
+      "steps": 2,
+      "rho": "-1/6",
+      "transverse": "67/108",
+      "parallel": "85/108",
+      "transverse_margin": "181/648",
+      "parallel_margin": "13/162",
+      "orders": 6
+    },
+    {
+      "n": 4,
+      "steps": 1,
+      "rho": "0",
+      "transverse": "1/4",
+      "parallel": "1/4",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 24
+    },
+    {
+      "n": 4,
+      "steps": 1,
+      "rho": "2/5",
+      "transverse": "1/4",
+      "parallel": "1/4",
+      "transverse_margin": "0",
+      "parallel_margin": "2/5",
+      "orders": 24
+    },
+    {
+      "n": 4,
+      "steps": 1,
+      "rho": "-1/9",
+      "transverse": "1/4",
+      "parallel": "1/4",
+      "transverse_margin": "1/9",
+      "parallel_margin": "0",
+      "orders": 24
+    },
+    {
+      "n": 4,
+      "steps": 2,
+      "rho": "0",
+      "transverse": "1/2",
+      "parallel": "1/2",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 24
+    },
+    {
+      "n": 4,
+      "steps": 2,
+      "rho": "2/5",
+      "transverse": "91/150",
+      "parallel": "17/50",
+      "transverse_margin": "8/125",
+      "parallel_margin": "56/125",
+      "orders": 24
+    },
+    {
+      "n": 4,
+      "steps": 2,
+      "rho": "-1/9",
+      "transverse": "157/324",
+      "parallel": "181/324",
+      "transverse_margin": "299/1458",
+      "parallel_margin": "19/486",
+      "orders": 24
+    },
+    {
+      "n": 5,
+      "steps": 1,
+      "rho": "0",
+      "transverse": "1/5",
+      "parallel": "1/5",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 1,
+      "rho": "2/5",
+      "transverse": "1/5",
+      "parallel": "1/5",
+      "transverse_margin": "0",
+      "parallel_margin": "2/5",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 1,
+      "rho": "-1/12",
+      "transverse": "1/5",
+      "parallel": "1/5",
+      "transverse_margin": "1/12",
+      "parallel_margin": "0",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 2,
+      "rho": "0",
+      "transverse": "2/5",
+      "parallel": "2/5",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 2,
+      "rho": "2/5",
+      "transverse": "59/125",
+      "parallel": "34/125",
+      "transverse_margin": "27/625",
+      "parallel_margin": "292/625",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 2,
+      "rho": "-1/12",
+      "transverse": "283/720",
+      "parallel": "313/720",
+      "transverse_margin": "275/1728",
+      "parallel_margin": "5/216",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 3,
+      "rho": "0",
+      "transverse": "3/5",
+      "parallel": "3/5",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 3,
+      "rho": "2/5",
+      "transverse": "2406/3125",
+      "parallel": "931/3125",
+      "transverse_margin": "1593/15625",
+      "parallel_margin": "6478/15625",
+      "orders": 120
+    },
+    {
+      "n": 5,
+      "steps": 3,
+      "rho": "-1/12",
+      "transverse": "59923/103680",
+      "parallel": "73633/103680",
+      "transverse_margin": "56267/248832",
+      "parallel_margin": "2285/31104",
+      "orders": 120
+    },
+    {
+      "n": 6,
+      "steps": 1,
+      "rho": "0",
+      "transverse": "1/6",
+      "parallel": "1/6",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 1,
+      "rho": "2/5",
+      "transverse": "1/6",
+      "parallel": "1/6",
+      "transverse_margin": "0",
+      "parallel_margin": "2/5",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 1,
+      "rho": "-1/15",
+      "transverse": "1/6",
+      "parallel": "1/6",
+      "transverse_margin": "1/15",
+      "parallel_margin": "0",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 2,
+      "rho": "0",
+      "transverse": "1/3",
+      "parallel": "1/3",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 2,
+      "rho": "2/5",
+      "transverse": "29/75",
+      "parallel": "17/75",
+      "transverse_margin": "4/125",
+      "parallel_margin": "12/25",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 2,
+      "rho": "-1/15",
+      "transverse": "89/270",
+      "parallel": "481/1350",
+      "transverse_margin": "262/2025",
+      "parallel_margin": "31/2025",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 3,
+      "rho": "0",
+      "transverse": "1/2",
+      "parallel": "1/2",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 3,
+      "rho": "2/5",
+      "transverse": "2347/3750",
+      "parallel": "931/3750",
+      "transverse_margin": "236/3125",
+      "parallel_margin": "278/625",
+      "orders": 720
+    },
+    {
+      "n": 6,
+      "steps": 3,
+      "rho": "-1/15",
+      "transverse": "29669/60750",
+      "parallel": "173761/303750",
+      "transverse_margin": "85477/455625",
+      "parallel_margin": "21886/455625",
+      "orders": 720
+    },
+    {
+      "n": 7,
+      "steps": 1,
+      "rho": "0",
+      "transverse": "1/7",
+      "parallel": "1/7",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 1,
+      "rho": "2/5",
+      "transverse": "1/7",
+      "parallel": "1/7",
+      "transverse_margin": "0",
+      "parallel_margin": "2/5",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 1,
+      "rho": "-1/18",
+      "transverse": "1/7",
+      "parallel": "1/7",
+      "transverse_margin": "1/18",
+      "parallel_margin": "0",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 2,
+      "rho": "0",
+      "transverse": "2/7",
+      "parallel": "2/7",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 2,
+      "rho": "2/5",
+      "transverse": "172/525",
+      "parallel": "34/175",
+      "transverse_margin": "22/875",
+      "parallel_margin": "428/875",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 2,
+      "rho": "-1/18",
+      "transverse": "643/2268",
+      "parallel": "685/2268",
+      "transverse_margin": "4441/40824",
+      "parallel_margin": "37/3402",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 3,
+      "rho": "0",
+      "transverse": "3/7",
+      "parallel": "3/7",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 3,
+      "rho": "2/5",
+      "transverse": "989/1875",
+      "parallel": "133/625",
+      "transverse_margin": "1298/21875",
+      "parallel_margin": "10202/21875",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 3,
+      "rho": "-1/18",
+      "transverse": "44269/104976",
+      "parallel": "50323/104976",
+      "transverse_margin": "2108641/13226976",
+      "parallel_margin": "37333/1102248",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 4,
+      "rho": "0",
+      "transverse": "4/7",
+      "parallel": "4/7",
+      "transverse_margin": "0",
+      "parallel_margin": "0",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 4,
+      "rho": "2/5",
+      "transverse": "80144/109375",
+      "parallel": "24004/109375",
+      "transverse_margin": "52932/546875",
+      "parallel_margin": "220568/546875",
+      "orders": 5040
+    },
+    {
+      "n": 7,
+      "steps": 4,
+      "rho": "-1/18",
+      "transverse": "132653011/238085568",
+      "parallel": "161178445/238085568",
+      "transverse_margin": "887820457/4285540224",
+      "parallel_margin": "25129549/357128352",
+      "orders": 5040
+    }
+  ],
+  "positive_polynomial_factorization": "-delta*(2*delta**3*s**2 + delta**3*s - 6*delta**2*s**2 - delta**2*s - 2*delta*s + 3*delta - 2*s)",
+  "negative_path_checks": 434,
+  "scope": "All equicorrelation matrices only.  This proves no assertion for a general correlation matrix and does not decide C001."
+}

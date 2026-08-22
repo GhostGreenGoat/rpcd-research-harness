@@ -1,0 +1,62 @@
+{
+  "evidence_level": "E2 exact rational finite failed-route certificate",
+  "family": "three duplicate groups at regular-simplex vertices",
+  "mu": "1/5",
+  "within_off_diagonal_A": "4/5",
+  "cross_group_A": "-2/5",
+  "required_group_sizes": [
+    4,
+    1,
+    1
+  ],
+  "path": [
+    "plus_special_group_0",
+    "ordinary_group_1",
+    "ordinary_group_0",
+    "ordinary_group_0",
+    "ordinary_group_2",
+    "minus_special_group_0"
+  ],
+  "trace": [
+    {
+      "pivot_group": 1,
+      "solved": "2/5",
+      "group_sums": [
+        "1",
+        "2/5",
+        "0"
+      ]
+    },
+    {
+      "pivot_group": 0,
+      "solved": "-16/25",
+      "group_sums": [
+        "9/25",
+        "2/5",
+        "0"
+      ]
+    },
+    {
+      "pivot_group": 0,
+      "solved": "-16/125",
+      "group_sums": [
+        "29/125",
+        "2/5",
+        "0"
+      ]
+    },
+    {
+      "pivot_group": 2,
+      "solved": "158/625",
+      "group_sums": [
+        "29/125",
+        "2/5",
+        "158/625"
+      ]
+    }
+  ],
+  "second_special_solve": "-2889/3125",
+  "second_special_squared": "8346321/9765625",
+  "gap_below_unit_magnitude": "236/3125",
+  "conclusion": "The pathwise claim that every selected distinguished coordinate contributes squared solve at least one is false for this family. This does not refute the averaged half-depth inequality."
+}

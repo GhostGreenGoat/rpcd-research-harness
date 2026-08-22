@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "route": "iteration6/root",
+  "timezone": "Asia/Shanghai (+08:00)",
+  "observed_active_start": "2026-08-22T16:34:10+08:00",
+  "required_minimum_active_seconds": 7200,
+  "required_not_before": "2026-08-22T18:34:10+08:00",
+  "final_validation_end": "2026-08-22T18:45:50.5976230+08:00",
+  "elapsed_wall_clock_seconds": 7900.597623,
+  "threshold_satisfied": true,
+  "final_validation": {
+    "unit_tests": 27,
+    "unit_test_failures": 0,
+    "parsed_claim_and_iteration_json_files": 68,
+    "subagent_timing_records_checked": 3,
+    "git_diff_check_whitespace_errors": 0
+  }
+}

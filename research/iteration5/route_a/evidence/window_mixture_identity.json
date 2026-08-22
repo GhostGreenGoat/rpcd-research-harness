@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact rational reconstruction of W2",
+  "n": 4,
+  "epsilon": "1/20",
+  "orders": 24,
+  "checks": [
+    {
+      "q": 0,
+      "window": 1,
+      "identity": "pass"
+    },
+    {
+      "q": 1,
+      "window": 2,
+      "identity": "pass"
+    },
+    {
+      "q": 2,
+      "window": 3,
+      "identity": "pass"
+    },
+    {
+      "q": 3,
+      "window": 4,
+      "identity": "pass"
+    }
+  ],
+  "result": "passed",
+  "scope": "Finite reconstruction of an independently proved distributional identity."
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T050-resolvent-moment-bound",
+  "title": "Uniform low-degree resolvent-moment bound",
+  "role": "researcher",
+  "objective": "Express the canonical level-two correction C_{2,beta} through bounded precedence moments and prove or refute a uniform Loewner bound strong enough for C001.",
+  "claim_ids": ["C001", "C020"],
+  "dependencies": [],
+  "inputs": ["research/problem.md", "research/claims/C020-resolvent-moment-hierarchy.json", "docs/ITER2_MAIN_ANALYTIC_LEMMAS.md", "docs/ITER2_MAIN_ANALYTIC_LEMMAS_AUDIT.md", "rpcd_harness/rpcd.py"],
+  "allowed_max_evidence": "E3",
+  "required_artifacts": ["moment_expansion.md", "uniform_bound_attempt.md", "failure_cases.json", "verifier.py"],
+  "acceptance_checks": [
+    "Keeps all noncommutative multiplication orders explicit.",
+    "Distinguishes the stronger one-epoch A-energy target from C001 itself.",
+    "Provides either a quantified proof draft or a reproducible finite obstruction.",
+    "Does not promote the float64 C011 specialization to a general theorem."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "ready"
+}

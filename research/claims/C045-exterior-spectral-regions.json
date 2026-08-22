@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C045",
+  "title": "All-dimensional exterior-prefix spectral regions",
+  "statement": "Let r=ceil(n/2). The exterior certificate proves J_r(A)>=(mu/2)A^{-1} whenever e_{r-1}(lambda_2,...,lambda_n)>=binom(n,r)/2. This includes every spectrum with at most two eigenvalues below one and every two-point spectrum whose constant-diagonal low projector has rank at most three. Consequently these families have O(n/mu log(1/epsilon)) strong finite-time RPCD complexity.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-22",
+    "artifact": "research/iteration6/route_stitch/spectral_geometry_region.md"
+  },
+  "assumptions": [
+    "Real unit-diagonal SPD A with ordered spectrum mu=lambda_1<=...<=lambda_n",
+    "Uniform ordered half prefix",
+    "For the rank-three family the low spectral projector has constant diagonal 3/n"
+  ],
+  "supporting_artifacts": [
+    "research/iteration6/route_stitch/spectral_geometry_region.md",
+    "research/iteration6/route_stitch/verify_spectral_rank2_region.py",
+    "research/iteration6/route_stitch/SPECTRAL_RANK2_EXACT.json",
+    "research/iteration6/route_l3/spectral_geometry_hostile_audit.md",
+    "scripts/iter6_spectral_geometry_hostile_audit.py",
+    "research/iteration6/route_l3/evidence/SPECTRAL_GEOMETRY_HOSTILE_AUDIT.json"
+  ],
+  "open_objections": [
+    "The bare exterior certificate fails already for a rank-four isotropic low space at n=9 as mu tends to zero.",
+    "No priority audit, formalization, or external-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

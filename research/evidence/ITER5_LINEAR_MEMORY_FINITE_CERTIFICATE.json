@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "status": "E2 exact finite regression for the E3 analytic family proof",
+  "claim": "K(B)>=(25mu/98)B^{-1} for positive equicorrelation using q=ceil(n/2) local-inverse dual state",
+  "max_n": 12,
+  "cases": [
+    {
+      "n": 2,
+      "q": 1,
+      "rational_rhos": 36
+    },
+    {
+      "n": 3,
+      "q": 2,
+      "rational_rhos": 36
+    },
+    {
+      "n": 4,
+      "q": 2,
+      "rational_rhos": 36
+    },
+    {
+      "n": 5,
+      "q": 3,
+      "rational_rhos": 36
+    },
+    {
+      "n": 6,
+      "q": 3,
+      "rational_rhos": 36
+    },
+    {
+      "n": 7,
+      "q": 4,
+      "rational_rhos": 36
+    },
+    {
+      "n": 8,
+      "q": 4,
+      "rational_rhos": 36
+    },
+    {
+      "n": 9,
+      "q": 5,
+      "rational_rhos": 36
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "rational_rhos": 36
+    },
+    {
+      "n": 11,
+      "q": 6,
+      "rational_rhos": 36
+    },
+    {
+      "n": 12,
+      "q": 6,
+      "rational_rhos": 36
+    }
+  ],
+  "worst_exact_grid_case": {
+    "n": 12,
+    "q": 6,
+    "rho": "3/17",
+    "minimum_normalized": "3129749408664576570477495614514025/3492210995914481138739422522497348",
+    "transverse": "247253377960808743914104187438428761/216736474036998621041796287563374364",
+    "parallel": "3129749408664576570477495614514025/3492210995914481138739422522497348"
+  },
+  "analytic_controls": [
+    "ell*p_parallel>=mu/2",
+    "p_perp>=1",
+    "rho*q*mu^q<=1/e<2/5",
+    "Q<(49/25)P"
+  ],
+  "checks": "passed"
+}

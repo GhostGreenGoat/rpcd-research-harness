@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+dist/
+build/
+tmp/
+
+# Local Codex state and credentials must never travel with research bundles.
+.codex/
+auth.json
+.env
+.env.*
+
+# Reproducible outputs are opt-in: checkpoint manifests are committed, raw runs are not.
+runs/
+bundles/
+research/claims/active/
+research/checkpoints/*.tmp
+
+# Third-party source material is fetched locally; keep only metadata and tools.
+research/case_studies/anthropic_zeta_2026/*.pdf
+research/case_studies/anthropic_zeta_2026/*_extracted.txt
+
+# Unrelated concurrent case-study workspace; never publish with RPCD artifacts.
+research/case_studies/parisi_zamponi_jamming_2026/

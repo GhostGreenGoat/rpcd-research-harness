@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "status": "finite exact certificate for one boundary family; not a universal proof",
+  "family": "two repeated poles plus a regular latitude hexagon",
+  "latitude": "a=4/sqrt(21)",
+  "correlation_rank": 3,
+  "nonzero_correlation_eigenvalues": ["5/7", "5/7", "46/7"],
+  "boundary_schur_coefficients": {
+    "pole_difference": "54099374095982388041/26363285800809721344",
+    "ring_harmonic_2": "11509555074695071519/5021578247773280256",
+    "ring_harmonic_3": "11515509191657071019/5021578247773280256",
+    "trivial_schur": "488055383208183036561913190226544088459/230204206472163556575595297474813648896"
+  },
+  "minimum_irrep": "pole_difference",
+  "minimum_minus_two": "1372802494362945353/26363285800809721344",
+  "method": "all 8! triangular solves over Q(sqrt(21)) using fractions.Fraction",
+  "verifier": "scripts/certify_m1_two_pole_hexagon.py"
+}

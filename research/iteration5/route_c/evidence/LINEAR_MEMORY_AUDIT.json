@@ -1,0 +1,98 @@
+{
+  "evidence_level": "E2 exact finite regression; analytic proof is in the audit note",
+  "rho": "2/7",
+  "dimensions": [
+    {
+      "n": 2,
+      "q": 1,
+      "parity": "even",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "9/10",
+      "tail_row_column_bound": 0
+    },
+    {
+      "n": 3,
+      "q": 2,
+      "parity": "odd",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "421/490",
+      "tail_row_column_bound": 0
+    },
+    {
+      "n": 4,
+      "q": 2,
+      "parity": "even",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "421/490",
+      "tail_row_column_bound": 1
+    },
+    {
+      "n": 5,
+      "q": 3,
+      "parity": "odd",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "20129/24010",
+      "tail_row_column_bound": 1
+    },
+    {
+      "n": 6,
+      "q": 3,
+      "parity": "even",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "20129/24010",
+      "tail_row_column_bound": 2
+    },
+    {
+      "n": 7,
+      "q": 4,
+      "parity": "odd",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "973821/1176490",
+      "tail_row_column_bound": 2
+    },
+    {
+      "n": 8,
+      "q": 4,
+      "parity": "even",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "973821/1176490",
+      "tail_row_column_bound": 3
+    },
+    {
+      "n": 9,
+      "q": 5,
+      "parity": "odd",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "47404729/57648010",
+      "tail_row_column_bound": 3
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "parity": "even",
+      "exact_defect_identity": true,
+      "exact_row_sums": true,
+      "L17_identity": true,
+      "L17_lower_bound": "47404729/57648010",
+      "tail_row_column_bound": 4
+    }
+  ],
+  "checks": "PASS",
+  "scope": "positive equicorrelation only"
+}

@@ -1,0 +1,85 @@
+{
+  "evidence_level": "E1 float64 structured grid; a null result is not proof",
+  "family": "equal exchangeable groups whose prototypes form a regular simplex",
+  "groups": 3,
+  "group_size": 20,
+  "grid": 14,
+  "evaluations": 252,
+  "best": {
+    "name": "hierarchical_simplex",
+    "counts": [
+      20,
+      20,
+      20
+    ],
+    "n": 60,
+    "depth": 30,
+    "mu_parameter": 0.8115384615384614,
+    "actual_mu": 0.8115384615384631,
+    "ratio": 0.5813342846235818,
+    "margin_over_half": 0.08133428462358183,
+    "directions": [
+      [
+        -1.0,
+        5.0018187940959315e-17
+      ],
+      [
+        0.5000000000000001,
+        -0.8660254037844387
+      ],
+      [
+        0.5000000000000001,
+        0.8660254037844386
+      ]
+    ],
+    "mass_fractions": [
+      0.995,
+      0.995,
+      0.995
+    ],
+    "within": [
+      0.1874696356275305,
+      0.18746963562753058,
+      0.1874696356275305
+    ],
+    "cross": [
+      [
+        0.0,
+        -0.09375961538461547,
+        -0.09375961538461547
+      ],
+      [
+        -0.09375961538461547,
+        0.0,
+        -0.09375961538461543
+      ],
+      [
+        -0.09375961538461547,
+        -0.09375961538461543,
+        0.0
+      ]
+    ],
+    "result": {
+      "coefficient": 0.4717751309829846,
+      "sector": "group_constant",
+      "constant_block_eigenvalues": [
+        0.4717751309829846,
+        0.6297560827806115,
+        0.6297560827806119
+      ],
+      "transverse_coefficients": {
+        "0": 0.47201717452094794,
+        "1": 0.4720171745209479,
+        "2": 0.47201717452094794
+      },
+      "root_min_eigenvalue": 0.8115384615384631,
+      "root_max_eigenvalue": 6.43711538461539,
+      "states_evaluated": 4796,
+      "leaf_underflows": 0
+    },
+    "metadata": {
+      "theta": 0.995
+    }
+  },
+  "elapsed_seconds": 33.44490456581116
+}

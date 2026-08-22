@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2",
+  "status": "exact finite counterexample to a scalar-floor induction step",
+  "scope_warning": "The prefix bound itself remains true in this example and is not refuted.",
+  "matrix": [
+    [
+      "1",
+      "4/5",
+      "4/5"
+    ],
+    [
+      "4/5",
+      "1",
+      "4/5"
+    ],
+    [
+      "4/5",
+      "4/5",
+      "1"
+    ]
+  ],
+  "mu": "1/5",
+  "child_depth_t": 1,
+  "cleared_induction_residual_transverse_eigenvalue": "-28/225",
+  "actual_J2_minus_2mu_over_m_Binverse_transverse_eigenvalue": "12/25",
+  "checks": {
+    "induction_closure_is_strictly_negative": true,
+    "actual_prefix_target_has_positive_margin": true
+  }
+}

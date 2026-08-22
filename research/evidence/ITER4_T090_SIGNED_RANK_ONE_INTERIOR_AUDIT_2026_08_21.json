@@ -1,0 +1,31 @@
+{
+  "status": "independent exact rational audit of the signed-rank-one interior obstruction",
+  "evidence_level": "E4 hostile audit artifact",
+  "family": "A=mu*I+(1-mu)*J_n",
+  "orientation": "For order pi, M_pi is lower in permutation order and solves y_pi[k]=1-(1-mu)*sum_(l<k)y_pi[l].",
+  "generic_labelled_orientation_orders_checked": 120,
+  "general_formulae": {
+    "parallel_solve_in_order": "(1,mu,...,mu^(n-1))",
+    "parallel_K_eigenvalue": "(1-mu^(2n))/(n*(1-mu^2))",
+    "parallel_A_eigenvalue": "n-(n-1)*mu",
+    "gamma_upper_bound": "[n-(n-1)*mu]*(1-mu^(2n))/(n*(1-mu^2))",
+    "iterated_ratio_limit": "lim_(mu up to 1) lim_(n to infinity) gamma(A)/mu <= 1/2"
+  },
+  "exact_finite_instance": {
+    "n": 9,
+    "mu": "9/10",
+    "lambda_min_A": "9/10",
+    "parallel_A_eigenvalue": "9/5",
+    "parallel_K_eigenvalue": "44731861300157941/90000000000000000",
+    "transverse_K_eigenvalue": "196677735310468127/180000000000000000",
+    "parallel_gamma": "44731861300157941/50000000000000000",
+    "transverse_gamma": "196677735310468127/200000000000000000",
+    "gamma_actual": "44731861300157941/50000000000000000",
+    "gamma_over_mu": "44731861300157941/45000000000000000",
+    "gamma_over_mu_minus_one": "-268138699842059/45000000000000000",
+    "parallel_is_actual_minimum": true
+  },
+  "quantifier_consequence": "For every c>1/2, first choose fixed mu<1 sufficiently close to 1, then choose n sufficiently large; the displayed parallel ratio is below c.",
+  "scope_warning": "This rules out global one-epoch K(A)>=c*mu*A^-1 only for c>1/2. It does not refute c=1/2, the covariance spectral conjecture, or the O((n/mu) log(1/epsilon)) complexity order.",
+  "arithmetic": "Python fractions.Fraction; no floating-point decisions"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C035",
+  "title": "Leaf-free first-half prefix curve for equicorrelations",
+  "statement": "For A=(1-rho)I+rho 11^T with -1/(n-1)<rho<1, mu=lambda_min(A), and every 1<=t<=ceil(n/2), the exact random-prefix decrease matrix satisfies J_t(A)>=(t mu/n)A^{-1}. The same holds under diagonal sign conjugacy.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "docs/ITER5_EQUICORRELATION_HALF_PREFIX.md"
+  },
+  "assumptions": [
+    "Unit-diagonal positive-definite equicorrelation matrix",
+    "Uniform ordered prefix without replacement",
+    "Prefix depth at most ceil(n/2)"
+  ],
+  "supporting_artifacts": [
+    "docs/ITER5_EQUICORRELATION_HALF_PREFIX.md",
+    "research/iteration5/route_a/EQUICORRELATION_HOSTILE_AUDIT.md",
+    "research/iteration5/route_a/evidence/equicorrelation_hostile_audit.json",
+    "scripts/iter5_equicorrelation_half_prefix.py"
+  ],
+  "open_objections": [
+    "The proof uses the two-isotypic equicorrelation symmetry and does not extend to a general correlation matrix.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

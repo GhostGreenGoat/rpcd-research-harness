@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E1",
+  "claim": "Adjacency Bessel projection numerically dominates 2 P_ker on tested singular correlations.",
+  "warning": "A finite float64 null search is not a proof; negative projected margin would refute only this certificate route.",
+  "seed": 20260827,
+  "n_min": 7,
+  "n_max": 7,
+  "samples_per_rank": 0,
+  "max_block_vertices": 3,
+  "order_sampling": "exhaustive",
+  "orders_per_matrix": 5040,
+  "monte_carlo_projection_estimator": "exact orthogonal projection",
+  "evaluations": 2,
+  "minimum_projected_margin": 0.055231221319417594,
+  "minimum_exact_margin": 0.08588332128005902,
+  "maximum_negative_bessel_roundoff": -4.796615958496203e-15,
+  "records": [
+    {
+      "family": "rank_one",
+      "n": 7,
+      "rank": 1,
+      "nullity": 6,
+      "min_eigenvalue_projected_minus_2pker": 0.14285714285713982,
+      "min_eigenvalue_exact_minus_2pker": 0.14285714285714188,
+      "min_eigenvalue_bessel_residual": -4.796615958496203e-15,
+      "correlation_eigenvalues": [
+        -1.2172441956752524e-15,
+        -7.811572486500292e-16,
+        -4.9303806576313227e-32,
+        0.0,
+        0.0,
+        0.0,
+        7.000000000000001
+      ],
+      "correlation": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "family": "two_pole_ring_latitude_0.76500",
+      "n": 7,
+      "rank": 3,
+      "nullity": 4,
+      "min_eigenvalue_projected_minus_2pker": 0.055231221319417594,
+      "min_eigenvalue_exact_minus_2pker": 0.08588332128005902,
+      "min_eigenvalue_bessel_residual": 0.006241066636925466,
+      "correlation_eigenvalues": [
+        -9.571789004408578e-16,
+        -6.164332663184056e-17,
+        1.5199674295786007e-16,
+        3.117139718022222e-16,
+        1.0369375,
+        1.0369375,
+        4.926125000000001
+      ],
+      "correlation": [
+        [
+          1.0,
+          1.0,
+          0.765,
+          0.765,
+          0.765,
+          0.765,
+          0.765
+        ],
+        [
+          1.0,
+          1.0,
+          0.765,
+          0.765,
+          0.765,
+          0.765,
+          0.765
+        ],
+        [
+          0.765,
+          0.765,
+          1.0,
+          0.7133975238418688,
+          0.2496649761581313,
+          0.24966497615813124,
+          0.7133975238418687
+        ],
+        [
+          0.765,
+          0.765,
+          0.7133975238418688,
+          0.9999999999999999,
+          0.7133975238418688,
+          0.2496649761581313,
+          0.24966497615813119
+        ],
+        [
+          0.765,
+          0.765,
+          0.2496649761581313,
+          0.7133975238418688,
+          1.0,
+          0.7133975238418688,
+          0.24966497615813124
+        ],
+        [
+          0.765,
+          0.765,
+          0.24966497615813124,
+          0.2496649761581313,
+          0.7133975238418688,
+          1.0,
+          0.7133975238418688
+        ],
+        [
+          0.765,
+          0.765,
+          0.7133975238418687,
+          0.24966497615813119,
+          0.24966497615813124,
+          0.7133975238418688,
+          1.0
+        ]
+      ]
+    }
+  ]
+}

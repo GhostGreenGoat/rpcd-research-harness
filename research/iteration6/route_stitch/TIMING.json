@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "route": "iteration6/route_stitch",
+  "timezone": "Asia/Shanghai (+08:00)",
+  "root_observed_start_bound": "2026-08-22T16:34:10+08:00",
+  "local_observed_start": "2026-08-22T16:35:07.9149419+08:00",
+  "required_active_seconds": 7200,
+  "required_local_threshold": "2026-08-22T18:35:07.9149419+08:00",
+  "final_validation_end": "2026-08-22T18:35:47.1038278+08:00",
+  "elapsed_to_final_validation_seconds": 7239.1888859,
+  "threshold_margin_at_validation_seconds": 39.1888859,
+  "report_close_timestamp": "2026-08-22T18:36:45.4074385+08:00",
+  "elapsed_to_report_close_seconds": 7297.4924966,
+  "checkpoints": [
+    "CHECKPOINT_00.md",
+    "CHECKPOINT_01.md",
+    "CHECKPOINT_02.md",
+    "CHECKPOINT_03.md",
+    "CHECKPOINT_04.md"
+  ],
+  "verdict": "ACTIVE_TIME_FLOOR_SATISFIED"
+}

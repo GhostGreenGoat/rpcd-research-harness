@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T098-higher-bellman-closure",
+  "title": "Matrix-valued closure beyond the second Schur moment",
+  "role": "researcher",
+  "objective": "Construct or rule out a dimension-uniform matrix state that controls the third and higher Bellman Schur-loss lifts and proves the half-depth mu/2 certificate.",
+  "claim_ids": ["C020", "C021", "C027", "C030", "C034", "C036", "C039"],
+  "dependencies": [],
+  "inputs": [
+    "docs/ITER5_FAILURE_MAP_AND_ROUTES.md",
+    "research/iteration4/t085/compression_lemma.md",
+    "research/iteration4/t085/bellman_closure.md",
+    "docs/ITER3_ROUTE_M2_REMAINING_SET_MATRIX_LYAPUNOV.md"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": ["adaptive_state.md", "subset_exterior.md", "dual_sdp.md", "failure_certificates.json"],
+  "acceptance_checks": [
+    "Reproduces the exact R2-not-less-than-C-R1 and m^3 scalarization barriers.",
+    "Does not apply Jensen in the wrong direction to the parallel sum.",
+    "Tests both simple-null and high-nullity boundary geometries.",
+    "A claimed finite basis is shown closed under an actual Bellman lift."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

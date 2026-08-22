@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C036",
+  "title": "All-dimensional weighted two-prefix inequality",
+  "statement": "For every n>=2 and every unit-diagonal SPD A with mu=lambda_min(A), J_2(A)-(1/2)J_1(A)>=(3mu/(2n))A^{-1}.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "research/iteration5/route_c/weighted_prefix_sos.md"
+  },
+  "assumptions": [
+    "Unit-diagonal real SPD matrix",
+    "Uniform ordered prefix without replacement"
+  ],
+  "supporting_artifacts": [
+    "research/iteration5/route_c/weighted_prefix_sos.md",
+    "research/iteration5/route_a/ROUTE_C_W2_HOSTILE_AUDIT.md",
+    "scripts/verify_iter5_route_c_weighted_prefix.py",
+    "research/iteration5/route_c/evidence/WEIGHTED_PREFIX_EXACT_CHECKS.json"
+  ],
+  "open_objections": [
+    "The analogous weighted inequality from depth three through half depth remains open.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E3 proof-draft finite reconstruction",
+  "claim": "P_B=E[D_pi^T D_pi] >= mu B^{-1}",
+  "average_check": {
+    "dimension": 4,
+    "orders": 24,
+    "average_formula_exact": true,
+    "direct_average_formula_exact": true,
+    "q_positive_definite": true
+  },
+  "bernstein_check": {
+    "symbolic_identity": true,
+    "bernstein_coefficients": [
+      "mu*n*(mu - 1)**2",
+      "-n*(mu - 1)*(mu**2*n - mu**2 - 4*mu*n + 3*mu + n**2 + n)/3",
+      "-n*(mu - 1)*(-mu**2*n + mu**2 + 2*mu*n**2 - 5*mu*n + 3*mu + 2*n)/3",
+      "-n*(mu - 1)*(mu**2*n**2 - 2*mu**2*n + mu**2 - mu*n + mu + n)"
+    ]
+  },
+  "open_target": "Q_B <= (2/mu) P_B B P_B"
+}

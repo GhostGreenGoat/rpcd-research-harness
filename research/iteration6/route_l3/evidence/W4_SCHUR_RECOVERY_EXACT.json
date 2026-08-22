@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 fixed exact controls only",
+  "candidate": "For m>=7,d=m-1,Q_i=L3(C_i)-(2mu/d)C_i^-1, prove Q_i >=(2mu/(d s_i))c_i c_i^T.",
+  "positive_equicorrelation_symbolic": {
+    "parallel_L3_eigenvalue": "(2*mu**4 + mu**2 + 1)/(2*d)",
+    "rank_one_ratio": "4*d*(mu - 1)/((d*mu - d - 1)*(2*d*mu**4 + d*mu**2 + d - 2*mu**4 - 2*mu**3 - 3*mu**2 - 3*mu))",
+    "one_minus_ratio": "(d - mu*(d - 1))*(2*d*mu**4 + d - 2*mu**3 + mu**2*(d - 2) - 3*mu - 3)/((-d*mu + d + 1)*(d + mu**4*(2*d - 2) - 2*mu**3 + mu**2*(d - 3) - 3*mu))",
+    "P6_bernstein_coefficients": [
+      "6",
+      "21/4",
+      "5",
+      "19/4",
+      "14"
+    ],
+    "T6_bernstein_coefficients": [
+      "3",
+      "9/4",
+      "13/6",
+      "9/4",
+      "14"
+    ],
+    "dimension_increment": "2*mu**4 + mu**2 + 1",
+    "uniform_transverse_U": "2*a**3*d**2 - 6*a**3*d + 4*a**3 - 4*a**2*d**2 + 16*a**2*d - 16*a**2 + 3*a*d**2 - 17*a*d + 26*a + 10*d - 20",
+    "uniform_transverse_d6_bernstein": [
+      "0",
+      "10",
+      "76/3",
+      "30",
+      "48"
+    ],
+    "uniform_transverse_dimension_derivative_bernstein": [
+      "10",
+      "49/3",
+      "12",
+      "15"
+    ],
+    "conclusion": "Exact E3 algebra proves the positive-equicorrelation W4 recovery for child d>=6."
+  },
+  "negative_equicorrelation_symbolic": {
+    "rank_one_ratio": "-4*d**5*z/((d + z)*(10*d**4*z - 14*d**4 + 13*d**3*z**2 - 23*d**3*z + 8*d**2*z**3 - 21*d**2*z**2 + 2*d*z**4 - 10*d*z**3 - 2*z**4))",
+    "positive_denominator_polynomial": "-10*d**4*z + 14*d**4 - 13*d**3*z**2 + 23*d**3*z - 8*d**2*z**3 + 21*d**2*z**2 - 2*d*z**4 + 10*d*z**3 + 2*z**4",
+    "one_minus_ratio": "(d*z - d - z)*(14*d**4 + 23*d**3*z + 21*d**2*z**2 + 10*d*z**3 + 2*z**4)/((d + z)*(10*d**4*z - 14*d**4 + 13*d**3*z**2 - 23*d**3*z + 8*d**2*z**3 - 21*d**2*z**2 + 2*d*z**4 - 10*d*z**3 - 2*z**4))",
+    "uniform_transverse_numerator": "4*d**7 - 8*d**6 + 3*d**5*z**2 - 7*d**5*z - 14*d**5 + 4*d**4*z**3 - 10*d**4*z**2 - 7*d**4*z + 28*d**4 + 2*d**3*z**4 - 10*d**3*z**3 - 7*d**3*z**2 + 46*d**3*z - 4*d**2*z**4 - 6*d**2*z**3 + 42*d**2*z**2 - 2*d*z**4 + 20*d*z**3 + 4*z**4",
+    "uniform_transverse_gap": "z*(4*d**7 - 8*d**6 + 3*d**5*z**2 - 7*d**5*z - 14*d**5 + 4*d**4*z**3 - 10*d**4*z**2 - 7*d**4*z + 28*d**4 + 2*d**3*z**4 - 10*d**3*z**3 - 7*d**3*z**2 + 46*d**3*z - 4*d**2*z**4 - 6*d**2*z**3 + 42*d**2*z**2 - 2*d*z**4 + 20*d*z**3 + 4*z**4)/(2*d**5*(d - 2)*(d - 1)*(d*z + d + z))",
+    "conclusion": "Exact E3 algebra proves the negative-equicorrelation W4 recovery."
+  },
+  "relevant_dimension_controls": [
+    {
+      "family": "positive_rank_one_m7",
+      "size": 7,
+      "mu": "1/4",
+      "exact_ratios": [
+        "4608/7667",
+        "4608/7667",
+        "4608/7667",
+        "4608/7667",
+        "4608/7667",
+        "4608/7667",
+        "4608/7667"
+      ],
+      "maximum_exact_ratio": "4608/7667",
+      "result": "PASS on this fixed exact family"
+    },
+    {
+      "family": "simplex_lift_m7",
+      "size": 7,
+      "mu": "1/7",
+      "exact_ratios": [
+        "7203/17854",
+        "7203/17854",
+        "7203/17854",
+        "7203/17854",
+        "7203/17854",
+        "7203/17854",
+        "7203/17854"
+      ],
+      "maximum_exact_ratio": "7203/17854",
+      "result": "PASS on this fixed exact family"
+    },
+    {
+      "family": "positive2_plus_simplex5_m7",
+      "size": 7,
+      "mu": "1/100",
+      "exact_ratios": [
+        "99/199",
+        "99/199",
+        "405504000000000/752416393511509",
+        "405504000000000/752416393511509",
+        "405504000000000/752416393511509",
+        "405504000000000/752416393511509",
+        "405504000000000/752416393511509"
+      ],
+      "maximum_exact_ratio": "405504000000000/752416393511509",
+      "result": "PASS on this fixed exact family"
+    },
+    {
+      "family": "two_positive2_plus_identity3_m7",
+      "size": 7,
+      "mu": "1/100",
+      "exact_ratios": [
+        "99/199",
+        "99/199",
+        "99/199",
+        "99/199",
+        "0",
+        "0",
+        "0"
+      ],
+      "maximum_exact_ratio": "99/199",
+      "result": "PASS on this fixed exact family"
+    },
+    {
+      "family": "asymmetric_rank3_gram_m7",
+      "size": 7,
+      "mu": "1/5",
+      "exact_ratios": [
+        "2372756294612923147072794855364829910786395904455724539746192725365772432605015154850551174636991453962852888864717250000/5531689314779446930388072641137334212233477107126501548388123188960602213070864174832632208333875161542923994106729432449",
+        "145855605560456711701004258629123290522759844414123327143398137686725360229574933849492735815038934440504887221687500/333381077751211322927556421512346071767941661004474379263496512201107359503024968621749734438322531583250955416947927",
+        "281125979312368416880999827900214854496946859391990357011703116805655525737650113352596924170351800809843052140148848037500/626552809090355623153836548421070409667356760677699519466053972914458969040234120855198223472957647201634977317122071794081",
+        "247829686043438764381846008905166101232708199266382569299442766910779063053661649280886008156046331920/527872807420758020948529949333034799513395883428868344488453681444324911902244971667571191384112138549",
+        "350665276703658500149088002643868836992961281762077836242540973657013789628026302414612851000/771165597486831206728929210707525383318409080311214313527359447651782596108309560059607864367",
+        "206117069871161152389876947101213584838280571139679796532532123159293833210971670776482937500/452617009818670632789811574640830390993482394518217109594921218850708356805988223041081865911",
+        "1100837735935873694803280540944857093939283003698220823843817224991098674794490765625/2343295660140526527030946996588802198007177234306181797882798049483160973560326361897"
+      ],
+      "maximum_exact_ratio": "1100837735935873694803280540944857093939283003698220823843817224991098674794490765625/2343295660140526527030946996588802198007177234306181797882798049483160973560326361897",
+      "result": "PASS on this fixed exact family"
+    }
+  ],
+  "spectral_proxy_barrier": {
+    "child_dimension": 6,
+    "parent_dimension": 7,
+    "mu": "1/100",
+    "child_eigenvalue": "1",
+    "spectral_proxy_value": "33/400",
+    "required_schur_envelope": "3267/19900",
+    "exact_gap": "-6501/79600",
+    "realizing_parent": "direct sum of two [[1,99/100],[99/100,1]] blocks and I_3",
+    "full_anisotropic_max_ratio": "99/199",
+    "scope": "The full Q_i survives; only dropping its anisotropic child-remainder term is refuted."
+  },
+  "too_broad_dimension_barrier": {
+    "family": "positive_rank_one_m4",
+    "size": 4,
+    "mu": "1/4",
+    "failed_claim": "The next-level full Schur recovery holds for every parent dimension m>=4.",
+    "exact_rank_one_domination_ratio": "2304/1859",
+    "gap_over_one": "445/1859",
+    "scope": "W4 is only required from m>=7 in the half-depth hierarchy, so this does not refute the relevant next lemma."
+  },
+  "scope_warning": "Finite positive controls do not prove the candidate or W4."
+}

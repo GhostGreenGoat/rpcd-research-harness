@@ -1,0 +1,67 @@
+{
+  "evidence_level": "E1 float64 targeted threshold scan; no finite grid is a proof",
+  "family": "two-coordinate orthogonal/oblique satellite",
+  "parameterization": "1-mu=c log(n)/n",
+  "c_values": [
+    1.4,
+    1.5999999999999999,
+    1.7999999999999998,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.0,
+    3.2,
+    3.4,
+    3.6,
+    3.8000000000000003,
+    4.0,
+    4.2
+  ],
+  "t_values": [
+    0.0,
+    0.1,
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8
+  ],
+  "records": [
+    {
+      "n": 100000,
+      "best_H": {
+        "n": 100000,
+        "c": 2.4,
+        "t": 0.0,
+        "mu": 0.9997236897888407,
+        "H_ratio": 0.5000764878638665,
+        "H_margin": 7.648786386649231e-05,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5000690864053331,
+        "J_margin": 6.90864053330964e-05,
+        "J_sector": "group_1_transverse",
+        "states_H": 150000,
+        "states_J": 150000
+      },
+      "best_J": {
+        "n": 100000,
+        "c": 1.4,
+        "t": 0.0,
+        "mu": 0.9998388190434904,
+        "H_ratio": 0.5014725887021525,
+        "H_margin": 0.0014725887021524997,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5000402980835554,
+        "J_margin": 4.0298083555434516e-05,
+        "J_sector": "group_1_transverse",
+        "states_H": 150000,
+        "states_J": 150000
+      }
+    }
+  ],
+  "elapsed_seconds": 364.13714933395386
+}

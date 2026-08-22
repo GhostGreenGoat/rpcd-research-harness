@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact controls for E3 identities",
+  "cases": [
+    {
+      "n": 4,
+      "q": 2,
+      "nonzero_defect_entries": 1,
+      "F_squared_zero": true,
+      "inverse_and_biorthogonal_identities": true,
+      "two_energy_identities": true
+    },
+    {
+      "n": 5,
+      "q": 3,
+      "nonzero_defect_entries": 1,
+      "F_squared_zero": true,
+      "inverse_and_biorthogonal_identities": true,
+      "two_energy_identities": true
+    },
+    {
+      "n": 6,
+      "q": 3,
+      "nonzero_defect_entries": 2,
+      "F_squared_zero": true,
+      "inverse_and_biorthogonal_identities": true,
+      "two_energy_identities": true
+    },
+    {
+      "n": 7,
+      "q": 4,
+      "nonzero_defect_entries": 2,
+      "F_squared_zero": true,
+      "inverse_and_biorthogonal_identities": true,
+      "two_energy_identities": true
+    },
+    {
+      "n": 8,
+      "q": 4,
+      "nonzero_defect_entries": 4,
+      "F_squared_zero": true,
+      "inverse_and_biorthogonal_identities": true,
+      "two_energy_identities": true
+    }
+  ],
+  "result": "N2--N10 exact identities passed"
+}

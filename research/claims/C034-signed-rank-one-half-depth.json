@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C034",
+  "title": "Sharp half-depth certificate for the signed-rank-one family",
+  "statement": "For every n and 0<mu<=1, A=mu I+(1-mu)ss^T satisfies H_{ceil(n/2)}(A)>=(mu/2)A^{-1}. Together with the iterated n-to-infinity then mu-to-one limit, the constant 1/2 is sharp on this family.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "research/iteration4/t085/structured_asymptotics.md#4-a-larger-exactly-analyzable-half-depth-class"
+  },
+  "assumptions": [
+    "Uniform random permutation and determinant-tail Bellman depth ceil(n/2)",
+    "Unit-diagonal signed-rank-one lift A=mu I+(1-mu)ss^T",
+    "For sharpness, n tends to infinity before mu tends upward to one"
+  ],
+  "supporting_artifacts": [
+    "research/iteration4/t085/structured_asymptotics.md",
+    "research/iteration4/t085/FINAL_REPORT.md",
+    "docs/ITER4_AUDIT_T095_SIGNED_RANK_ONE_HALF_DEPTH.md",
+    "research/evidence/ITER4_T085_RANK_ONE_HALF_DEPTH.json"
+  ],
+  "open_objections": [
+    "The proof uses the two-block permutation symmetry of a signed-rank-one lift and does not extend to a general correlation matrix.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

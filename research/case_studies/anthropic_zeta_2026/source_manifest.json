@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "case_id": "anthropic-zeta-process-2026",
+  "title": "Transcripts of Claude sub-agents E2 and E2-pairs, typeset and annotated",
+  "source_type": "primary_annotated_transcript",
+  "source_url": "https://www-cdn.anthropic.com/8a0d1add3c637b858a9a181e98c40e9548c3f44f.pdf",
+  "retrieved_at": "2026-08-22T18:45:28+08:00",
+  "local_pdf": "anthropic_zeta_process.pdf",
+  "redistributed": false,
+  "pdf_pages": 116,
+  "pdf_bytes": 1952068,
+  "pdf_sha256": "EBB34C5ED65B1DC96A72BDF76068814A34DA9CEB1675624F68A2088180123ADA",
+  "extracted_text": "anthropic_zeta_process_extracted.txt",
+  "extracted_text_bytes": 357299,
+  "extracted_text_sha256": "D37FA02783DE5E81BCDC33A57E829241F3F4B08DACBF25AF5A4BCA1495303B5A",
+  "evidence_scope": "Two selected Claude sub-agent runs plus selected orchestrator context; editorial annotations are distinct from the exported record; private reasoning is absent.",
+  "rpcd_claim_status_changed": false
+}

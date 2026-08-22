@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C040",
+  "title": "Finite half-linear-memory RPCD certificate on positive equicorrelations",
+  "statement": "For every positive equicorrelation B=(1-rho)I+rho 11^T, 0<rho<1, let q=ceil(n/2) and use the q-step local triangular-inverse dual feature. Its regression certificate proves K(B)>=(25mu/98)B^{-1}>(mu/4)B^{-1}, where mu=1-rho. Hence this feature yields O(n/mu log(1/epsilon)) coordinate complexity on the family; diagonal sign conjugates are included.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "research/iteration5/route_a/linear_memory_dual.md#5-a-finite-dimensional-universal-constant-certificate-on-the-family"
+  },
+  "assumptions": [
+    "Positive equicorrelation or a diagonal sign conjugate",
+    "Uniform random full permutation",
+    "Local-inverse bandwidth q=ceil(n/2)"
+  ],
+  "supporting_artifacts": [
+    "research/iteration5/route_a/linear_memory_dual.md",
+    "research/iteration5/route_c/linear_memory_dual_hostile_audit.md",
+    "scripts/iter5_linear_memory_finite_certificate.py",
+    "research/evidence/ITER5_LINEAR_MEMORY_FINITE_CERTIFICATE.json",
+    "research/iteration5/route_c/evidence/LINEAR_MEMORY_AUDIT.json"
+  ],
+  "open_objections": [
+    "The conditional-tail norm and preconditioner bounds are proved only for the equicorrelation structure, not a general SPD matrix.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

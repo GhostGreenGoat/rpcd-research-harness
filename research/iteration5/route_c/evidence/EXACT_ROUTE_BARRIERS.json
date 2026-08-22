@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact finite route certificates",
+  "scope_warning": "These are counterexamples to auxiliary proof compressions, not to H_ceil(n/2)>=(mu/2)A^-1.",
+  "incremental_gain_barrier": {
+    "matrix": [
+      [
+        "1",
+        "2/3",
+        "2/3"
+      ],
+      [
+        "2/3",
+        "1",
+        "3/4"
+      ],
+      [
+        "2/3",
+        "3/4",
+        "1"
+      ]
+    ],
+    "mu": "1/4",
+    "characteristic_polynomial": "(4*lambda - 1)*(36*lambda**2 - 99*lambda + 31)/144",
+    "gap_leading_principal_minors": [
+      "1045/3348",
+      "186373/2892672",
+      "-1624139/2499268608"
+    ],
+    "conclusion": "The first two leading minors are positive and the determinant is negative, so Delta_2-(mu/3)A^-1 has exactly one negative eigenvalue."
+  },
+  "scalar_child_half_barrier": {
+    "matrix": [
+      [
+        "1",
+        "99/100",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "99/100",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "-99/200",
+        "-99/200"
+      ],
+      [
+        "0",
+        "0",
+        "-99/200",
+        "1",
+        "-99/200"
+      ],
+      [
+        "0",
+        "0",
+        "-99/200",
+        "-99/200",
+        "1"
+      ]
+    ],
+    "geometry": "direct sum of a signed-rank-one 2-block and a simplex 3-block",
+    "mu": "1/100",
+    "witness": [
+      "0",
+      "0",
+      "1",
+      "1",
+      "1"
+    ],
+    "gap_quadratic_form": "-2761797/10100000",
+    "certificate_generalized_ratio_over_mu": "4129401/10100000",
+    "scope": "This refutes scalarizing the dimension-four child certificates; the exact lifted J2 child matrices have large positive surplus."
+  },
+  "volume_only_barrier": {
+    "family": "A=mu I+(1-mu)11^T",
+    "size": 6,
+    "subset_depth": 3,
+    "mu": "1/10",
+    "volume_certificate_parallel_coefficient": "11/400",
+    "gap_to_mu_over_two": "-9/400",
+    "scope": "The exact prefix can still satisfy the target; determinant-weighted subset projectors alone discard the essential order variance."
+  },
+  "local_subset_polynomial_barrier": {
+    "matrix": [
+      [
+        "1",
+        "1/2",
+        "-2/3"
+      ],
+      [
+        "1/2",
+        "1",
+        "0"
+      ],
+      [
+        "-2/3",
+        "0",
+        "1"
+      ]
+    ],
+    "eigenvalue_factorization": "(lambda - 1)*(6*lambda - 11)*(6*lambda - 1)/36",
+    "failed_claim": "J3-(1/2)J2 >= (3I-A)/3 on every 3-subset",
+    "witness": [
+      "1",
+      "0",
+      "-1"
+    ],
+    "gap_quadratic_form": "-11/48",
+    "gap_first_entry": "125/432",
+    "gap_leading_two_minor": "-2917/62208",
+    "scope": "This kills a local-subset shortcut whose average spectral proxy would imply W3.  It does not refute W3 itself; the proxy has additional trace-floor slack relative to the true target."
+  },
+  "iterated_row_square_barrier": {
+    "family": "A=mu I+(1-mu)11^T",
+    "size": 4,
+    "mu": "1/100",
+    "failed_claim": "The twice row-square-compressed lower state already proves C3 >= (2mu/m)A^-1.",
+    "transverse_witness": [
+      "1",
+      "-1",
+      "0",
+      "0"
+    ],
+    "compressed_generalized_ratio_over_mu": "187276289/400000000",
+    "target_ratio": "1/2",
+    "gap": "-12723711/400000000",
+    "gap_to_weaker_3_over_2m_target": "37276289/400000000",
+    "all_dimension_mu_to_zero_transverse_ratio": "(3*m - 1)/(2*m*(m - 1))",
+    "all_dimension_gap_to_2_over_m": "-(m - 3)/(2*m*(m - 1))",
+    "m_times_boundary_ratio": "(3*m - 1)/(2*(m - 1))",
+    "scope": "The exact uncompressed lifted square has positive anisotropic surplus.  Reapplying the same row-Cauchy compression discards enough of it to miss W3 for every m>3 near the rank-one boundary. It clears the weaker 3/(2m) target by only 1/[m(m-1)] in the limit."
+  }
+}

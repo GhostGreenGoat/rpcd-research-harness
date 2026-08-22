@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C049",
+  "title": "Dimension-uniform structured W4 Schur recovery",
+  "statement": "For every child dimension d>=6, the sufficient W4 shifted-inverse inequality L_3(C)>=(2/d)[C+(1-mu)I]^{-1} holds (i) when the support graph of C-I is an arbitrary signed matching, (ii) when it is an arbitrarily weighted three-vertex path plus isolated vertices, and (iii) when it is an equal-magnitude signed star plus isolates. Hence the full termwise outer Schur defect is recovered on these families.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-22",
+    "artifact": "research/iteration6/route_l3/w4_three_path_all_d_slice.md"
+  },
+  "assumptions": [
+    "Real unit-diagonal SPD child C",
+    "d>=6 and 0<mu<=lambda_min(C)",
+    "Support is either a matching, a single weighted three-vertex path plus isolates, or an equal-magnitude signed star plus isolates"
+  ],
+  "supporting_artifacts": [
+    "research/iteration6/route_l3/w4_matching_block_slice.md",
+    "research/iteration6/route_stitch/W4_MATCHING_BLOCK_HOSTILE_AUDIT.md",
+    "research/iteration6/route_stitch/independent_w4_matching_audit.py",
+    "research/iteration6/route_stitch/W4_MATCHING_BLOCK_INDEPENDENT_AUDIT.json",
+    "research/iteration6/route_l3/w4_three_path_all_d_slice.md",
+    "scripts/iter6_w4_three_path_all_d_exact.py",
+    "research/iteration6/route_l3/evidence/W4_THREE_PATH_ALL_D_EXACT.json",
+    "research/iteration6/route_stitch/W4_THREE_PATH_ALL_D_HOSTILE_AUDIT.md",
+    "research/iteration6/route_stitch/independent_w4_three_path_all_d_audit.py",
+    "research/iteration6/route_stitch/W4_THREE_PATH_ALL_D_INDEPENDENT_AUDIT.json",
+    "research/iteration6/route_l3/w4_equal_star_all_d_slice.md",
+    "scripts/iter6_w4_equal_star_symbolic.py",
+    "research/iteration6/route_l3/evidence/W4_EQUAL_STAR_SYMBOLIC.json",
+    "research/iteration6/route_stitch/W4_EQUAL_STAR_ALL_D_HOSTILE_AUDIT.md",
+    "research/iteration6/route_stitch/independent_w4_equal_star_audit.py",
+    "research/iteration6/route_stitch/W4_EQUAL_STAR_ALL_D_INDEPENDENT_AUDIT.json"
+  ],
+  "open_objections": [
+    "This does not cover overlapping paths, cycles, unequal-weight stars, or unrestricted W4.",
+    "No Lean formalization, external-human validation, or priority audit exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

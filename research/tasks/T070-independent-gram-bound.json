@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T070-independent-gram-bound",
+  "title": "Independent reconstruction and priority audit of the Gram bound",
+  "role": "reproducer",
+  "objective": "Independently reconstruct the defect-determinant proof and the n=2/high-sigma C001 corollaries, then separate the classical Meany result from any harness-specific deduction by a primary-source priority audit.",
+  "claim_ids": ["C001", "C023"],
+  "dependencies": [],
+  "inputs": ["research/problem.md", "research/claims/C023-gram-determinant-partial-rpcd.json", "docs/ITER2_ROUTE_C_PROJECTION_ALGEBRA.md", "docs/ITER2_ROUTE_C_HOSTILE_AUDIT.md"],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": ["independent_proof.md", "priority_audit.md", "source_map.json", "clean_reproduction.json"],
+  "acceptance_checks": [
+    "The proof is organized independently of the original derivation.",
+    "Every external inequality is tied to a primary source and exact theorem statement.",
+    "The similarity and norm arguments remain in their correct coordinate spaces.",
+    "The high-sigma corollary is checked for novelty before any promotion."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "ready"
+}

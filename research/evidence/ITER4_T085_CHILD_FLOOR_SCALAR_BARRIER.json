@@ -1,0 +1,35 @@
+{
+  "level": "E2 finite float counterexample candidate",
+  "seed": 30085,
+  "samples": 3000,
+  "inequality": "I/n + (2/[n(n-1)]) sum_i mu_i L_i^T C_i^{-1}L_i >= (3 mu/n)G",
+  "tolerance_note": "negative generalized gap about 1e-2; rational certification pending",
+  "worst": {
+    "gap": -0.010359240573144982,
+    "coefficient": 0.11991006327619523,
+    "type": "random",
+    "mu": 0.1302693038493402,
+    "floors": [
+      0.13026930384934038,
+      0.13026930384934038,
+      0.13026930384934038
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.8697306961506597,
+        0.8697306961506597
+      ],
+      [
+        0.8697306961506597,
+        1.0,
+        0.8697306961506597
+      ],
+      [
+        0.8697306961506597,
+        0.8697306961506597,
+        1.0
+      ]
+    ]
+  }
+}

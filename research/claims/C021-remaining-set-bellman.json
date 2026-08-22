@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C021",
+  "title": "Exact remaining-set Bellman and Schur-loss representation",
+  "statement_ref": "docs/ITER2_ROUTE_A_CONDITIONAL_LYAPUNOV.md#2-全矩阵的精确-remaining-set-bellman-递推",
+  "status": "proof_candidate",
+  "evidence_level": "E3",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-20",
+    "source": "docs/ITER2_ROUTE_A_CONDITIONAL_LYAPUNOV.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The independent hostile audit is not yet incorporated into the ledger state.",
+    "The exact representation does not yet bound accumulated Schur losses by the C001 target.",
+    "A scalar induction using only subset size and sigma is too weak; a matrix-valued conditional certificate is still missing."
+  ]
+}

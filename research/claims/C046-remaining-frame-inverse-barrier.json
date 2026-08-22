@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C046",
+  "title": "Remaining-frame inverse Bellman potential is false",
+  "statement": "The proposed leave-one-out inequality avg_i P_i(I+sum_j Q_j-Q_i)^{-1}P_i <=(I+sum_jQ_j)^{-1} is false. It has an exact six-rank-one-projection counterexample and an exact n=9 counterexample within the genuine RPCD covariance-lift family at A=(I+J)/2.",
+  "status": "refuted",
+  "evidence_level": "E5",
+  "origin": {
+    "kind": "harness_counterexample",
+    "date": "2026-08-22",
+    "artifact": "research/iteration6/root/remaining_frame_inverse_potential.md"
+  },
+  "supporting_artifacts": [
+    "scripts/iter6_remaining_frame_inverse_counterexample.py",
+    "research/iteration6/root/evidence/REMAINING_FRAME_INVERSE_EXACT_COUNTEREXAMPLE.json",
+    "research/iteration6/route_frame/special_lift_bellman_counterexample.md",
+    "research/iteration6/route_frame/scripts/verify_special_lift_bellman_counterexample.py",
+    "research/iteration6/route_frame/evidence/special_lift_bellman_counterexample.json"
+  ],
+  "open_objections": [
+    "This refutes only the proposed inverse potential, not the RPCD rate conjecture."
+  ],
+  "gates": {
+    "exact_counterexample": true,
+    "independent_reconstruction": true,
+    "full_ambient_check": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T030-counterexample-search",
+  "title": "General-SPD counterexample and worst-case search",
+  "role": "explorer",
+  "objective": "Search for matrices violating C001 or exposing weakness in C010, while preserving reproducible candidates and best non-violating margins.",
+  "claim_ids": ["C001", "C010"],
+  "dependencies": ["T020-exact-small-n"],
+  "inputs": ["research/problem.md", "scripts/search_rpcd_counterexample.py", "rpcd_harness/rpcd.py"],
+  "allowed_max_evidence": "E2",
+  "required_artifacts": ["search_results.json", "search_report.md", "candidate_matrices.json"],
+  "acceptance_checks": [
+    "Covers structured, random correlation, block and nearly singular families.",
+    "Preserves every candidate matrix and generation seed.",
+    "Recomputes negative margins with an independent formulation.",
+    "Does not call a no-hit search a proof."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "blocked"
+}

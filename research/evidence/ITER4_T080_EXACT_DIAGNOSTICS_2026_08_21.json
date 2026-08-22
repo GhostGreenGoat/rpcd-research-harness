@@ -1,0 +1,162 @@
+{
+  "status": "E2 exact finite diagnostics plus instances of separately derived algebraic identities; not a proof of T080",
+  "arithmetic": "sympy exact rational arithmetic",
+  "rank_one": {
+    "2": {
+      "orders": 2,
+      "identity_residual_zero": true,
+      "kernel_eigenvalue": "5/2",
+      "range_eigenvalue": "1/2"
+    },
+    "3": {
+      "orders": 6,
+      "identity_residual_zero": true,
+      "kernel_eigenvalue": "7/3",
+      "range_eigenvalue": "1/3"
+    },
+    "4": {
+      "orders": 24,
+      "identity_residual_zero": true,
+      "kernel_eigenvalue": "9/4",
+      "range_eigenvalue": "1/4"
+    },
+    "5": {
+      "orders": 120,
+      "identity_residual_zero": true,
+      "kernel_eigenvalue": "11/5",
+      "range_eigenvalue": "1/5"
+    },
+    "6": {
+      "orders": 720,
+      "identity_residual_zero": true,
+      "kernel_eigenvalue": "13/6",
+      "range_eigenvalue": "1/6"
+    }
+  },
+  "local_group_obstructions": {
+    "J3_reverse_pair": {
+      "order": [
+        1,
+        2,
+        3
+      ],
+      "inverse": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "-1",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1",
+          "1"
+        ]
+      ],
+      "kernel_vector": [
+        1,
+        0,
+        -1
+      ],
+      "rayleigh_ratio": "3/2",
+      "target": "2"
+    },
+    "J4_cycle_dihedral_orbit": {
+      "orders_count": 8,
+      "kernel_vector": [
+        1,
+        0,
+        -1,
+        0
+      ],
+      "rayleigh_ratio": "7/4",
+      "target": "2"
+    }
+  },
+  "volume_circuit_examples": [
+    {
+      "rank": 1,
+      "n": 4,
+      "normalizer": "4",
+      "weights_sum_to_normalizer": true,
+      "E_G_equals_Pker": true,
+      "singular_r_subsets": 0,
+      "general_position": true,
+      "corrected_E_GGt_identity": true,
+      "uncorrected_E_GGt_identity": true,
+      "singular_correction_trace": "0"
+    },
+    {
+      "rank": 2,
+      "n": 4,
+      "normalizer": "17",
+      "weights_sum_to_normalizer": true,
+      "E_G_equals_Pker": true,
+      "singular_r_subsets": 0,
+      "general_position": true,
+      "corrected_E_GGt_identity": true,
+      "uncorrected_E_GGt_identity": true,
+      "singular_correction_trace": "0"
+    },
+    {
+      "rank": 3,
+      "n": 5,
+      "normalizer": "24",
+      "weights_sum_to_normalizer": true,
+      "E_G_equals_Pker": true,
+      "singular_r_subsets": 0,
+      "general_position": true,
+      "corrected_E_GGt_identity": true,
+      "uncorrected_E_GGt_identity": true,
+      "singular_correction_trace": "0"
+    },
+    {
+      "rank": 2,
+      "n": 3,
+      "normalizer": "2",
+      "weights_sum_to_normalizer": true,
+      "E_G_equals_Pker": true,
+      "singular_r_subsets": 1,
+      "general_position": false,
+      "corrected_E_GGt_identity": true,
+      "uncorrected_E_GGt_identity": false,
+      "singular_correction_trace": "1"
+    }
+  ],
+  "regular_simplex": {
+    "3": {
+      "kernel_coefficient": "133/48",
+      "formula": "133/48",
+      "gap_to_2": "37/48"
+    },
+    "4": {
+      "kernel_coefficient": "8425/2916",
+      "formula": "8425/2916",
+      "gap_to_2": "2593/2916"
+    },
+    "5": {
+      "kernel_coefficient": "968561/327680",
+      "formula": "968561/327680",
+      "gap_to_2": "313201/327680"
+    },
+    "6": {
+      "kernel_coefficient": "175694701/58593750",
+      "formula": "175694701/58593750",
+      "gap_to_2": "58507201/58593750"
+    },
+    "7": {
+      "kernel_coefficient": "46142992981/15237476352",
+      "formula": "46142992981/15237476352",
+      "gap_to_2": "15668040277/15237476352"
+    },
+    "8": {
+      "kernel_coefficient": "16549469742737/5425784582792",
+      "formula": "16549469742737/5425784582792",
+      "gap_to_2": "5697900577153/5425784582792"
+    }
+  }
+}

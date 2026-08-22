@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E1",
+  "claim": "Adjacency Bessel projection numerically dominates 2 P_ker on tested singular correlations.",
+  "warning": "A finite float64 null search is not a proof; negative projected margin would refute only this certificate route.",
+  "seed": 20260827,
+  "n_min": 3,
+  "n_max": 3,
+  "samples_per_rank": 1,
+  "max_block_vertices": 3,
+  "evaluations": 4,
+  "minimum_projected_margin": 0.33333333333333265,
+  "minimum_exact_margin": 0.3333333333333328,
+  "maximum_negative_bessel_roundoff": -4.452517223321e-16,
+  "records": [
+    {
+      "family": "rank_one",
+      "n": 3,
+      "rank": 1,
+      "nullity": 2,
+      "min_eigenvalue_projected_minus_2pker": 0.33333333333333265,
+      "min_eigenvalue_exact_minus_2pker": 0.3333333333333328,
+      "min_eigenvalue_bessel_residual": 1.1102230246251565e-16,
+      "correlation_eigenvalues": [
+        -4.531559571436954e-16,
+        9.06674729363263e-18,
+        2.9999999999999996
+      ],
+      "correlation": [
+        [
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "family": "random_rank_1_sample_0",
+      "n": 3,
+      "rank": 1,
+      "nullity": 2,
+      "min_eigenvalue_projected_minus_2pker": 0.33333333333333265,
+      "min_eigenvalue_exact_minus_2pker": 0.3333333333333328,
+      "min_eigenvalue_bessel_residual": 1.1102230246251565e-16,
+      "correlation_eigenvalues": [
+        -4.531559571436954e-16,
+        9.06674729363263e-18,
+        2.9999999999999996
+      ],
+      "correlation": [
+        [
+          1.0,
+          -1.0,
+          1.0
+        ],
+        [
+          -1.0,
+          1.0,
+          -1.0
+        ],
+        [
+          1.0,
+          -1.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "family": "random_rank_2_sample_0",
+      "n": 3,
+      "rank": 2,
+      "nullity": 1,
+      "min_eigenvalue_projected_minus_2pker": 0.40766453050950313,
+      "min_eigenvalue_exact_minus_2pker": 0.4076645305095033,
+      "min_eigenvalue_bessel_residual": -4.452517223321e-16,
+      "correlation_eigenvalues": [
+        3.707971429900425e-17,
+        0.6765870170651072,
+        2.323412982934893
+      ],
+      "correlation": [
+        [
+          1.0,
+          -0.4954840520659468,
+          -0.9975097816975829
+        ],
+        [
+          -0.4954840520659468,
+          1.0,
+          0.43298814075178615
+        ],
+        [
+          -0.9975097816975829,
+          0.43298814075178615,
+          0.9999999999999999
+        ]
+      ]
+    },
+    {
+      "family": "circle_sample_0",
+      "n": 3,
+      "rank": 2,
+      "nullity": 1,
+      "min_eigenvalue_projected_minus_2pker": 0.4644357835701996,
+      "min_eigenvalue_exact_minus_2pker": 0.46443578357019977,
+      "min_eigenvalue_bessel_residual": -4.2412311382986296e-16,
+      "correlation_eigenvalues": [
+        -2.1163626406917047e-16,
+        1.0200026265204474,
+        1.9799973734795522
+      ],
+      "correlation": [
+        [
+          1.0,
+          -0.020013662380163978,
+          -0.7115208361060744
+        ],
+        [
+          -0.020013662380163978,
+          0.9999999999999999,
+          -0.6882841213135129
+        ],
+        [
+          -0.7115208361060744,
+          -0.6882841213135129,
+          0.9999999999999999
+        ]
+      ]
+    }
+  ]
+}

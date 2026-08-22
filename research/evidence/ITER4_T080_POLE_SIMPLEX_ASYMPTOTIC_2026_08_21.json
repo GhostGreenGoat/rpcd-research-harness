@@ -1,0 +1,88 @@
+{
+  "status": "exact finite checks supporting an E3 asymptotic proof draft",
+  "family": {
+    "coordinates": "two identical poles plus k regular-simplex ring points",
+    "pole_ring": "a",
+    "ring_off_diagonal": "(k*a^2-1)/(k-1)",
+    "spectrum": "0 mult 2; k(1-a^2)/(k-1) mult k-1; 2+k*a^2 mult 1"
+  },
+  "base_n8_coefficient": "1057837/531441",
+  "finite_formula_vs_recurrence_checks": [
+    {
+      "k": 3,
+      "n": 5,
+      "a": "1/2",
+      "rho": "-1/8",
+      "lambda": "600205/262144",
+      "lambda_decimal": 2.289600372314453
+    },
+    {
+      "k": 4,
+      "n": 6,
+      "a": "2/3",
+      "rho": "7/27",
+      "lambda": "395166388847/188286357654",
+      "lambda_decimal": 2.0987521016959083
+    },
+    {
+      "k": 6,
+      "n": 8,
+      "a": "2/3",
+      "rho": "1/3",
+      "lambda": "1057837/531441",
+      "lambda_decimal": 1.9905069424451634
+    },
+    {
+      "k": 10,
+      "n": 12,
+      "a": "1/2",
+      "rho": "1/6",
+      "lambda": "70234534122576575/35749104747282432",
+      "lambda_decimal": 1.9646515519501409
+    },
+    {
+      "k": 20,
+      "n": 22,
+      "a": "1/3",
+      "rho": "11/171",
+      "lambda": "360540064976435224832858126264345451350436962364840729717338394536029746782679345906815/182698450153581500428849630639184080682899414401696183184015380501073515208479968284434",
+      "lambda_decimal": 1.9734161109377502
+    }
+  ],
+  "fixed_a_limits": [
+    {
+      "a": "2/3",
+      "fixed_a_k_to_infinity_limit": "23/14",
+      "decimal": 1.6428571428571428,
+      "gap_above_three_halves": "1/7"
+    },
+    {
+      "a": "1/2",
+      "fixed_a_k_to_infinity_limit": "11/7",
+      "decimal": 1.5714285714285714,
+      "gap_above_three_halves": "1/14"
+    },
+    {
+      "a": "1/3",
+      "fixed_a_k_to_infinity_limit": "26/17",
+      "decimal": 1.5294117647058822,
+      "gap_above_three_halves": "1/34"
+    },
+    {
+      "a": "1/5",
+      "fixed_a_k_to_infinity_limit": "74/49",
+      "decimal": 1.510204081632653,
+      "gap_above_three_halves": "1/98"
+    },
+    {
+      "a": "1/10",
+      "fixed_a_k_to_infinity_limit": "299/199",
+      "decimal": 1.5025125628140703,
+      "gap_above_three_halves": "1/398"
+    }
+  ],
+  "iterated_limit": "lim_(a down to 0) lim_(k to infinity) lambda_(k,a) = 3/2",
+  "quantifier_consequence": "For every c>3/2, choose positive rational a with 1+1/(2-a^2)<c, then sufficiently large k; hence no universal c>3/2.",
+  "scope_warning": "This is only an upper bound on the best possible universal kernel constant; it does not prove a 3/2 lower bound or refute the original RPCD complexity conjecture.",
+  "arithmetic": "Python fractions.Fraction; no floating-point decisions"
+}

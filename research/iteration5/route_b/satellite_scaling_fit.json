@@ -1,0 +1,341 @@
+{
+  "evidence_level": "E1 float64 diagnostic fit on five finite dimensions and a four-point cosine grid; this is not an asymptotic proof",
+  "boundary_layer": "1-mu=2.5*log(n)/n",
+  "dimensions": [
+    100,
+    200,
+    400,
+    800,
+    1600
+  ],
+  "cosine_grid": [
+    0.0,
+    0.6,
+    0.95,
+    0.995
+  ],
+  "regimes": {
+    "fixed_2": {
+      "best_by_n": [
+        {
+          "n": 100,
+          "k": 2,
+          "k_over_n": 0.02,
+          "mu": 0.8848707453502977,
+          "cosine": 0.0,
+          "ratio": 0.5415488138722636,
+          "margin_over_half": 0.04154881387226361,
+          "n_margin_over_log_n": 0.9022210297174682,
+          "signed_rank_one_baseline_ratio": 0.541962238523438,
+          "excess_over_signed_rank_one": -0.00041342465117433225,
+          "sector": "group_1_transverse",
+          "states_evaluated": 150
+        },
+        {
+          "n": 200,
+          "k": 2,
+          "k_over_n": 0.01,
+          "mu": 0.9337710329181496,
+          "cosine": 0.0,
+          "ratio": 0.5221691177974591,
+          "margin_over_half": 0.022169117797459115,
+          "n_margin_over_log_n": 0.8368361600015952,
+          "signed_rank_one_baseline_ratio": 0.522765017224946,
+          "excess_over_signed_rank_one": -0.0005958994274868346,
+          "sector": "group_1_transverse",
+          "states_evaluated": 300
+        },
+        {
+          "n": 400,
+          "k": 2,
+          "k_over_n": 0.005,
+          "mu": 0.9625533465805751,
+          "cosine": 0.0,
+          "ratio": 0.5118755710923528,
+          "margin_over_half": 0.011875571092352821,
+          "n_margin_over_log_n": 0.7928326037135637,
+          "signed_rank_one_baseline_ratio": 0.5122900925965223,
+          "excess_over_signed_rank_one": -0.00041452150416942946,
+          "sector": "group_1_transverse",
+          "states_evaluated": 600
+        },
+        {
+          "n": 800,
+          "k": 2,
+          "k_over_n": 0.0025,
+          "mu": 0.9791105883510377,
+          "cosine": 0.0,
+          "ratio": 0.5063584882267734,
+          "margin_over_half": 0.006358488226773429,
+          "n_margin_over_log_n": 0.7609702386100115,
+          "signed_rank_one_baseline_ratio": 0.506600017779107,
+          "excess_over_signed_rank_one": -0.00024152955233358586,
+          "sector": "group_1_transverse",
+          "states_evaluated": 1200
+        },
+        {
+          "n": 1600,
+          "k": 2,
+          "k_over_n": 0.00125,
+          "mu": 0.9884722517058939,
+          "cosine": 0.0,
+          "ratio": 0.5033966890509074,
+          "margin_over_half": 0.0033966890509073977,
+          "n_margin_over_log_n": 0.7366332444654584,
+          "signed_rank_one_baseline_ratio": 0.5035273827131719,
+          "excess_over_signed_rank_one": -0.00013069366226448054,
+          "sector": "group_1_transverse",
+          "states_evaluated": 2400
+        }
+      ],
+      "fit": {
+        "last_three_loglog_slope_vs_n": -0.9028979178238251,
+        "last_three_loglog_intercept": 0.9767918108105582,
+        "last_three_mean_n_margin_over_log_n": 0.7634786955963445,
+        "last_three_range_n_margin_over_log_n": 0.05619935924810526
+      }
+    },
+    "sqrt_n": {
+      "best_by_n": [
+        {
+          "n": 100,
+          "k": 10,
+          "k_over_n": 0.1,
+          "mu": 0.8848707453502977,
+          "cosine": 0.995,
+          "ratio": 0.5419957458945398,
+          "margin_over_half": 0.041995745894539804,
+          "n_margin_over_log_n": 0.911926035270489,
+          "signed_rank_one_baseline_ratio": 0.541962238523438,
+          "excess_over_signed_rank_one": 3.350737110185964e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 506
+        },
+        {
+          "n": 200,
+          "k": 14,
+          "k_over_n": 0.07,
+          "mu": 0.9337710329181496,
+          "cosine": 0.995,
+          "ratio": 0.5227755719626762,
+          "margin_over_half": 0.02277557196267621,
+          "n_margin_over_log_n": 0.8597284906515507,
+          "signed_rank_one_baseline_ratio": 0.522765017224946,
+          "excess_over_signed_rank_one": 1.055473773026172e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 1410
+        },
+        {
+          "n": 400,
+          "k": 20,
+          "k_over_n": 0.05,
+          "mu": 0.9625533465805751,
+          "cosine": 0.995,
+          "ratio": 0.5122928951874837,
+          "margin_over_half": 0.012292895187483666,
+          "n_margin_over_log_n": 0.8206938447740507,
+          "signed_rank_one_baseline_ratio": 0.5122900925965223,
+          "excess_over_signed_rank_one": 2.802590961414886e-06,
+          "sector": "group_1_transverse",
+          "states_evaluated": 4011
+        },
+        {
+          "n": 800,
+          "k": 28,
+          "k_over_n": 0.035,
+          "mu": 0.9791105883510377,
+          "cosine": 0.995,
+          "ratio": 0.5066003240692173,
+          "margin_over_half": 0.006600324069217289,
+          "n_margin_over_log_n": 0.789912633746338,
+          "signed_rank_one_baseline_ratio": 0.506600017779107,
+          "excess_over_signed_rank_one": 3.062901102746096e-07,
+          "sector": "group_1_transverse",
+          "states_evaluated": 11223
+        },
+        {
+          "n": 1600,
+          "k": 40,
+          "k_over_n": 0.025,
+          "mu": 0.9884722517058939,
+          "cosine": 0.95,
+          "ratio": 0.5035264454572934,
+          "margin_over_half": 0.0035264454572934145,
+          "n_margin_over_log_n": 0.7647732599905109,
+          "signed_rank_one_baseline_ratio": 0.5035273827131719,
+          "excess_over_signed_rank_one": -9.372558784637164e-07,
+          "sector": "group_1_transverse",
+          "states_evaluated": 32021
+        }
+      ],
+      "fit": {
+        "last_three_loglog_slope_vs_n": -0.9007690519820457,
+        "last_three_loglog_intercept": 0.9990129660497039,
+        "last_three_mean_n_margin_over_log_n": 0.7917932461702999,
+        "last_three_range_n_margin_over_log_n": 0.055920584783539784
+      }
+    },
+    "n_to_3_over_4": {
+      "best_by_n": [
+        {
+          "n": 100,
+          "k": 32,
+          "k_over_n": 0.32,
+          "mu": 0.8848707453502977,
+          "cosine": 0.995,
+          "ratio": 0.5420681166892036,
+          "margin_over_half": 0.04206811668920363,
+          "n_margin_over_log_n": 0.9134975471091614,
+          "signed_rank_one_baseline_ratio": 0.541962238523438,
+          "excess_over_signed_rank_one": 0.00010587816576568265,
+          "sector": "group_1_transverse",
+          "states_evaluated": 1155
+        },
+        {
+          "n": 200,
+          "k": 53,
+          "k_over_n": 0.265,
+          "mu": 0.9337710329181496,
+          "cosine": 0.995,
+          "ratio": 0.5228159086409973,
+          "margin_over_half": 0.02281590864099725,
+          "n_margin_over_log_n": 0.8612511128551852,
+          "signed_rank_one_baseline_ratio": 0.522765017224946,
+          "excess_over_signed_rank_one": 5.0891416051301874e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 4023
+        },
+        {
+          "n": 400,
+          "k": 89,
+          "k_over_n": 0.2225,
+          "mu": 0.9625533465805751,
+          "cosine": 0.995,
+          "ratio": 0.5123139361153727,
+          "margin_over_half": 0.012313936115372681,
+          "n_margin_over_log_n": 0.8220985716299692,
+          "signed_rank_one_baseline_ratio": 0.5122900925965223,
+          "excess_over_signed_rank_one": 2.3843518850430456e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 14085
+        },
+        {
+          "n": 800,
+          "k": 150,
+          "k_over_n": 0.1875,
+          "mu": 0.9791105883510377,
+          "cosine": 0.995,
+          "ratio": 0.5066108180862303,
+          "margin_over_half": 0.006610818086230319,
+          "n_margin_over_log_n": 0.7911685352036621,
+          "signed_rank_one_baseline_ratio": 0.506600017779107,
+          "excess_over_signed_rank_one": 1.0800307123304265e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 49226
+        },
+        {
+          "n": 1600,
+          "k": 253,
+          "k_over_n": 0.158125,
+          "mu": 0.9884722517058939,
+          "cosine": 0.995,
+          "ratio": 0.5035321037406005,
+          "margin_over_half": 0.003532103740600534,
+          "n_margin_over_log_n": 0.7660003607136445,
+          "signed_rank_one_baseline_ratio": 0.5035273827131719,
+          "excess_over_signed_rank_one": 4.721027428655766e-06,
+          "sector": "group_1_transverse",
+          "states_evaluated": 171323
+        }
+      ],
+      "fit": {
+        "last_three_loglog_slope_vs_n": -0.9008461836043566,
+        "last_three_loglog_intercept": 1.0011625859616458,
+        "last_three_mean_n_margin_over_log_n": 0.793089155849092,
+        "last_three_range_n_margin_over_log_n": 0.05609821091632472
+      }
+    },
+    "linear_quarter": {
+      "best_by_n": [
+        {
+          "n": 100,
+          "k": 25,
+          "k_over_n": 0.25,
+          "mu": 0.8848707453502977,
+          "cosine": 0.995,
+          "ratio": 0.542050799333747,
+          "margin_over_half": 0.042050799333747,
+          "n_margin_over_log_n": 0.9131215055133629,
+          "signed_rank_one_baseline_ratio": 0.541962238523438,
+          "excess_over_signed_rank_one": 8.856081030905738e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 1001
+        },
+        {
+          "n": 200,
+          "k": 50,
+          "k_over_n": 0.25,
+          "mu": 0.9337710329181496,
+          "cosine": 0.995,
+          "ratio": 0.5228136171887289,
+          "margin_over_half": 0.022813617188728874,
+          "n_margin_over_log_n": 0.8611646154972562,
+          "signed_rank_one_baseline_ratio": 0.522765017224946,
+          "excess_over_signed_rank_one": 4.859996378292486e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 3876
+        },
+        {
+          "n": 400,
+          "k": 100,
+          "k_over_n": 0.25,
+          "mu": 0.9625533465805751,
+          "cosine": 0.995,
+          "ratio": 0.512316393452466,
+          "margin_over_half": 0.012316393452466046,
+          "n_margin_over_log_n": 0.8222626274846968,
+          "signed_rank_one_baseline_ratio": 0.5122900925965223,
+          "excess_over_signed_rank_one": 2.6300855943794943e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 15251
+        },
+        {
+          "n": 800,
+          "k": 200,
+          "k_over_n": 0.25,
+          "mu": 0.9791105883510377,
+          "cosine": 0.995,
+          "ratio": 0.5066139546076178,
+          "margin_over_half": 0.006613954607617822,
+          "n_margin_over_log_n": 0.7915439073587294,
+          "signed_rank_one_baseline_ratio": 0.506600017779107,
+          "excess_over_signed_rank_one": 1.3936828510807686e-05,
+          "sector": "group_1_transverse",
+          "states_evaluated": 60501
+        },
+        {
+          "n": 1600,
+          "k": 400,
+          "k_over_n": 0.25,
+          "mu": 0.9884722517058939,
+          "cosine": 0.995,
+          "ratio": 0.5035346081410379,
+          "margin_over_half": 0.0035346081410378982,
+          "n_margin_over_log_n": 0.7665434850891665,
+          "signed_rank_one_baseline_ratio": 0.5035273827131719,
+          "excess_over_signed_rank_one": 7.2254278660199844e-06,
+          "sector": "group_1_transverse",
+          "states_evaluated": 241001
+        }
+      ],
+      "fit": {
+        "last_three_loglog_slope_vs_n": -0.9004788369621637,
+        "last_three_loglog_intercept": 0.9991679049165739,
+        "last_three_mean_n_margin_over_log_n": 0.7934500066441976,
+        "last_three_range_n_margin_over_log_n": 0.05571914239553033
+      }
+    }
+  },
+  "violation_found_float64": false,
+  "elapsed_seconds": 31.745611429214478
+}

@@ -1,0 +1,68 @@
+{
+  "m": 6,
+  "gram": [
+    [
+      "1",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "1",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "1/2",
+      "1",
+      "1/2",
+      "1/2",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1",
+      "1/2",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1",
+      "1/2"
+    ],
+    [
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1/2",
+      "1"
+    ]
+  ],
+  "gram_eigenvalues": [
+    "7/2",
+    "1/2"
+  ],
+  "resolvent_parallel_eigenvalue": "2/9",
+  "resolvent_transverse_eigenvalue": "2/3",
+  "resolvent_diagonal": "16/27",
+  "parallel_gap": "-1/81",
+  "expected_parallel_gap": "-1/81",
+  "checks": {
+    "gram_spd": true,
+    "gap_is_negative": true,
+    "exact_value": true
+  },
+  "scope": "Refutes the universal orthogonal-projection Bellman inequality; does not by itself refute its restriction to RPCD covariance-lift projections."
+}

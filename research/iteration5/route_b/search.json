@@ -1,0 +1,198 @@
+{
+  "schema_version": "1.0",
+  "task": "T097-half-depth-counterexample / Iteration 5 Route B",
+  "evidence_level": "E1 float64 null searches plus separately identified E2/E3 exact artifacts",
+  "candidate_claim": "H_ceil(n/2)(A) >= (lambda_min(A)/2) A^{-1}",
+  "outcome": "No counterexample found. The closest grid point is independently protected on its tight direction by an exact finite prefix formula.",
+  "maximum_dimension": 100000,
+  "structured_evaluations_counted": 9825,
+  "closest_H": {
+    "n": 100000,
+    "c": 2.4,
+    "t": 0.0,
+    "mu": 0.9997236897888407,
+    "H_ratio": 0.5000764878638665,
+    "H_margin": 7.648786386649231e-05,
+    "H_sector": "group_1_transverse",
+    "J_ratio": 0.5000690864053331,
+    "J_margin": 6.90864053330964e-05,
+    "J_sector": "group_1_transverse",
+    "states_H": 150000,
+    "states_J": 150000
+  },
+  "violation_found": false,
+  "avenues": [
+    {
+      "name": "three frustrated exchangeable groups",
+      "best_ratio": 0.6109017588372684,
+      "source": "search_initial.json"
+    },
+    {
+      "name": "four-group multiscale/global and local optimization",
+      "best_ratio": 0.5662851920086223,
+      "source": "search_initial.json; local_refine*.json"
+    },
+    {
+      "name": "duplicate pole plus simplex leaves",
+      "best_ratio": 0.6333700888112825,
+      "source": "search_initial.json"
+    },
+    {
+      "name": "five/six heterogeneous one-factor groups",
+      "best_ratio": 0.6679525408974213,
+      "source": "one_factor_search.json"
+    },
+    {
+      "name": "replicated regular simplex / duplicate triangle",
+      "best_ratio": 0.5453347243092818,
+      "best_excess_over_signed_rank_one": -0.0013800819874734138,
+      "source": "hierarchical_simplex_g3k20.json; duplicate_triangle*.json"
+    },
+    {
+      "name": "large-n two-coordinate satellite and multiscale satellite",
+      "best_ratio_stochastic_n1000": 0.5051650140581231,
+      "best_ratio_threshold_grid": 0.5000764878638665,
+      "source": "two_group_satellite*.json; two_scale_satellite_n1000.json; satellite_threshold_scan*.json"
+    },
+    {
+      "name": "fixed, sqrt(n), n^(3/4), and linear satellite-count scaling",
+      "finite_grid_closest": {
+        "regime": "fixed_2",
+        "n": 1000,
+        "k": 2,
+        "k_over_n": 0.002,
+        "mu": 0.9827306118025446,
+        "cosine": 0.0,
+        "ratio": 0.505197821677032,
+        "margin_over_half": 0.005197821677031977,
+        "signed_rank_one_baseline_ratio": 0.505397136497076,
+        "excess_over_signed_rank_one": -0.00019931482004398315,
+        "sector": "group_1_transverse",
+        "states_evaluated": 1500,
+        "leaf_underflows": 0
+      },
+      "boundary_layer_fits": {
+        "fixed_2": {
+          "last_three_loglog_slope_vs_n": -0.9028979178238251,
+          "last_three_loglog_intercept": 0.9767918108105582,
+          "last_three_mean_n_margin_over_log_n": 0.7634786955963445,
+          "last_three_range_n_margin_over_log_n": 0.05619935924810526
+        },
+        "sqrt_n": {
+          "last_three_loglog_slope_vs_n": -0.9007690519820457,
+          "last_three_loglog_intercept": 0.9990129660497039,
+          "last_three_mean_n_margin_over_log_n": 0.7917932461702999,
+          "last_three_range_n_margin_over_log_n": 0.055920584783539784
+        },
+        "n_to_3_over_4": {
+          "last_three_loglog_slope_vs_n": -0.9008461836043566,
+          "last_three_loglog_intercept": 1.0011625859616458,
+          "last_three_mean_n_margin_over_log_n": 0.793089155849092,
+          "last_three_range_n_margin_over_log_n": 0.05609821091632472
+        },
+        "linear_quarter": {
+          "last_three_loglog_slope_vs_n": -0.9004788369621637,
+          "last_three_loglog_intercept": 0.9991679049165739,
+          "last_three_mean_n_margin_over_log_n": 0.7934500066441976,
+          "last_three_range_n_margin_over_log_n": 0.05571914239553033
+        }
+      },
+      "source": "satellite_scale_regimes.json; satellite_scaling_fit.json"
+    }
+  ],
+  "hostile_controls": {
+    "evidence_level": "E2 finite implementation controls; float64 comparisons",
+    "subset_dp_max_abs_residual": 2.220446049250313e-16,
+    "subset_dp_pass_tolerance": true,
+    "group_sign_conjugation_gap": 0.0,
+    "group_sign_conjugation_pass_tolerance": true,
+    "signed_rank_one_control": {
+      "n": 1000,
+      "mu": 0.98,
+      "ratio": 0.505509978960384,
+      "margin_over_half": 0.0055099789603839655,
+      "sector": "group_0_transverse"
+    },
+    "identity_control": {
+      "n": 25,
+      "coefficient": 1.0,
+      "expected": 1.0,
+      "absolute_gap": 0.0
+    },
+    "elapsed_seconds": 0.006000995635986328
+  },
+  "independent_candidate_validation": {
+    "evidence_level": "E1/E2 finite float diagnostics; Monte Carlo is not a proof",
+    "candidate_source": "research\\iteration5\\route_b\\local_refine_n76.json",
+    "n": 76,
+    "depth": 38,
+    "symmetry_reduced_coefficient": 0.45589542531655247,
+    "full_matrix_coefficient": 0.45589542531655186,
+    "full_vs_reduced_absolute_gap": 6.106226635438361e-16,
+    "generalized_denominator": 0.9999999999999979,
+    "dp_worst_direction_quadratic": 0.45589542531655236,
+    "monte_carlo": {
+      "seed": 202608219,
+      "samples": 3000,
+      "mean": 0.45439729448120214,
+      "standard_error": 0.001081000942876301,
+      "mean_minus_dp": -0.0014981308353502198,
+      "z_score": -1.3858737545260873,
+      "sample_min": 0.22470394256811047,
+      "sample_max": 0.6445463512194962
+    },
+    "environment": {
+      "python": "3.12.13",
+      "numpy": "2.3.5"
+    }
+  },
+  "prefix_vs_tail_n1000": {
+    "evidence_level": "E1/E2 finite float diagnostic; not a proof",
+    "candidate_source": "research\\iteration5\\route_b\\two_group_satellite_n1000.json",
+    "n": 1000,
+    "depth": 500,
+    "mu": 0.9817838119961234,
+    "H": {
+      "coefficient": 0.49596283318907475,
+      "ratio": 0.5051650140581387,
+      "sector": "group_1_transverse"
+    },
+    "J": {
+      "coefficient": 0.49542362410427376,
+      "ratio": 0.5046158003939771,
+      "sector_from_reduction": "group_1_transverse"
+    },
+    "determinant_tail": {
+      "minimum_normalized_eigenvalue": 2.5511728146687673e-11,
+      "maximum_normalized_eigenvalue": 0.0005392090848010912,
+      "prefix_on_H_worst_direction": 0.4954236241042739,
+      "tail_on_H_worst_direction": 0.0005392090848010889,
+      "fraction_of_H_worst_quadratic": 0.0010871965573184946
+    }
+  },
+  "exact_or_proof_draft_artifacts": [
+    "pathwise_shortcut_counterexample.json (exact failed-route Fraction certificate)",
+    "orthogonal_satellite_exact.json (exact finite rational prefix formulas)",
+    "satellite_asymptotic_check.json and satellite_asymptotics.md (fixed-satellite limit)",
+    "fixed_k_satellite_exact.json (exact ordered-prefix checks and Bernstein certificates through k=8)",
+    "fixed_k_random_z_audit.json (12 exact Fraction controls on general zero-sum vectors)",
+    "satellite_scale_regimes.json and satellite_scaling_fit.json (E1 scaling diagnostics)"
+  ],
+  "seeds": [
+    202608215,
+    202608216,
+    202608217,
+    202608218,
+    202608220,
+    202608221,
+    202608222,
+    202608223,
+    202608224,
+    202608225
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.3.5"
+  },
+  "warning": "A null structured search is not a proof of the universal matrix inequality."
+}

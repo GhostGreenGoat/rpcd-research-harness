@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E3 exact analytic counterexample with independent reconstruction",
+  "n": 9,
+  "A": "(I+J)/2",
+  "mu": "1/2",
+  "lift_projection_rank": 9,
+  "standard_gap": [
+    [
+      "-2212480/7293",
+      "404824/7293"
+    ],
+    [
+      "404824/7293",
+      "-252182/36465"
+    ]
+  ],
+  "standard_gap_determinant": "-121894976/123981",
+  "test_coefficients_in_B4": [
+    -132,
+    125,
+    1,
+    1
+  ],
+  "test_norm_squared": "33696",
+  "quadratic_gap": "-2422114/12155",
+  "normalized_quadratic_gap": "-1211057/204787440",
+  "full_ambient_residual_checks": "passed exactly",
+  "result": "special RPCD covariance-lift Bellman inequality is false",
+  "scope": "Refutes this inverse potential, not the RPCD complexity target."
+}

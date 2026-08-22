@@ -1,0 +1,79 @@
+{
+  "evidence_level": "E1 float64 grid minimization of an algebraically exact two-scalar recurrence",
+  "grid_size": 1200,
+  "results": [
+    {
+      "size": 6,
+      "depth": 3,
+      "grid_minimizer_mu": 1e-12,
+      "grid_minimum_c_over_mu": 0.9666666666670666,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.591751709536137,
+      "near_identity_c_over_mu": 1.1793151574285434
+    },
+    {
+      "size": 8,
+      "depth": 4,
+      "grid_minimizer_mu": 0.21559632819849875,
+      "grid_minimum_c_over_mu": 0.896682917006883,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.6464466094067263,
+      "near_identity_c_over_mu": 1.0525018632869287
+    },
+    {
+      "size": 10,
+      "depth": 5,
+      "grid_minimizer_mu": 0.3377981618265221,
+      "grid_minimum_c_over_mu": 0.8234636956214537,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.683772233983162,
+      "near_identity_c_over_mu": 0.9693051674271166
+    },
+    {
+      "size": 20,
+      "depth": 10,
+      "grid_minimizer_mu": 0.5888073336030025,
+      "grid_minimum_c_over_mu": 0.6714276436210913,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.7763932022500211,
+      "near_identity_c_over_mu": 0.7699287684385647
+    },
+    {
+      "size": 50,
+      "depth": 25,
+      "grid_minimizer_mu": 0.7877981572810675,
+      "grid_minimum_c_over_mu": 0.5759362591128806,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.8585786437626906,
+      "near_identity_c_over_mu": 0.6076330884716589
+    },
+    {
+      "size": 100,
+      "depth": 50,
+      "grid_minimizer_mu": 0.875321092176814,
+      "grid_minimum_c_over_mu": 0.5412822845321921,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.9,
+      "near_identity_c_over_mu": 0.5470928851881776
+    },
+    {
+      "size": 200,
+      "depth": 100,
+      "grid_minimizer_mu": 0.9289908164053378,
+      "grid_minimum_c_over_mu": 0.5224212293413508,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.9292893218813453,
+      "near_identity_c_over_mu": 0.5224232906603957
+    },
+    {
+      "size": 500,
+      "depth": 250,
+      "grid_minimizer_mu": 0.9669724673978315,
+      "grid_minimum_c_over_mu": 0.5099481113963589,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.9552786404500042,
+      "near_identity_c_over_mu": 0.5119626321506652
+    },
+    {
+      "size": 1000,
+      "depth": 500,
+      "grid_minimizer_mu": 0.9818348525688073,
+      "grid_minimum_c_over_mu": 0.5053510208221321,
+      "near_identity_mu_one_minus_n_to_minus_half": 0.9683772233983162,
+      "near_identity_c_over_mu": 0.5082677483221271
+    }
+  ],
+  "warning": "The observed approach to 1/2 is not a proof of a universal lower bound."
+}

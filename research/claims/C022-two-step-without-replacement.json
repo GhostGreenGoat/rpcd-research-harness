@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C022",
+  "title": "Universal two-step without-replacement PSD advantage",
+  "statement_ref": "docs/ITER2_MAIN_ANALYTIC_LEMMAS.md#5-a-universal-two-step-without-replacement-advantage",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-20",
+    "source": "docs/ITER2_MAIN_ANALYTIC_LEMMAS.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The two-step comparison does not iterate directly because the prefix state is correlated with the remaining set.",
+    "At degree three a generic projection pinching correction has no fixed Loewner sign.",
+    "Literature priority for the exact specialized identity has not been audited."
+  ]
+}

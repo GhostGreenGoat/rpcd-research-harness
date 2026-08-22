@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T087-block-bessel-depth",
+  "title": "Audit and sharpen the permutation block Bessel depth",
+  "role": "researcher",
+  "objective": "Independently reconstruct C030, certify or refute the q=3 n=10 two-pole-ring candidate, and seek a growing-depth consecutive-block or volume-basis certificate K_q >= c P_ker with c independent of n.",
+  "claim_ids": ["C029", "C030"],
+  "dependencies": [],
+  "inputs": [
+    "docs/ITER4_ROOT_PERMUTATION_BLOCK_SOS.md",
+    "scripts/iter4_adjacency_bessel.py",
+    "research/evidence/ITER4_BLOCK3_BESSEL_N10_CROSSFIT_400K_A.json",
+    "research/evidence/ITER4_BLOCK3_BESSEL_N10_CROSSFIT_600K_B.json"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": [
+    "hierarchy_reconstruction.md",
+    "n10_exact_or_interval_certificate.json",
+    "growing_depth_analysis.md",
+    "failed_depth_bounds.md"
+  ],
+  "acceptance_checks": [
+    "Treats Bessel projection as a Loewner lower bound and does not confuse a certificate failure with a T080 counterexample.",
+    "Uses the full K-2P_ker Loewner condition, including kernel-range coupling.",
+    "Checks exact feature-Gram probabilities for overlapping, incompatible, and cyclic block constraints.",
+    "Any declaration that q=3 is refuted is exact, interval-certified, or independently high-precision reconstructed.",
+    "Tests signed rank one, block sums of rank-one clusters, and the two-pole-ring family."
+  ],
+  "budget_hint": {
+    "mode": "deep",
+    "checkpoint_minutes": 30
+  },
+  "status": "ready"
+}

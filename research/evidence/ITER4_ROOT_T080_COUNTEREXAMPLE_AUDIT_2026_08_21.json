@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E4",
+  "status": "independent exact reconstruction of a T080 refutation",
+  "scope_warning": "The strong one-epoch A-energy certificate is refuted; the original RPCD covariance spectral-rate conjecture is not.",
+  "method": "full 2^8 rational remaining-set Bellman recursion",
+  "boundary": {
+    "characteristic_polynomial": "lambda**2*(25*lambda - 146)*(125*lambda - 54)**5/762939453125",
+    "kernel_vector": [
+      1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "K0_eigenvalue_on_kernel_vector": "2296209806050635263939777/1164153218269348144531250",
+    "gap_to_two": "-32096630488061025122723/1164153218269348144531250"
+  },
+  "finite_positive_definite_ray": {
+    "mu": "1/100",
+    "K0_eigenvalue_on_pole_difference": "5704604077580047860363272148820047812891166169725263/2910383045673370361328125000000000000000000000000000",
+    "one_epoch_energy_rate": "285333700489756988272449227851179952187108833830274737/291038304567337036132812500000000000000000000000000000",
+    "target_q": "27589794711827132707700121535130590945356787201/28147497671065600000000000000000000000000000000",
+    "rate_minus_q": "139407497673157900331734058355416764719752656401774517490321089151/655360000000000000000000000000000000000000000000000000000000000000000",
+    "rate_minus_q_decimal": "0.000212718960072567597"
+  },
+  "checks": {
+    "unit_diagonal_psd_boundary_from_exact_spectrum": true,
+    "full_K0_subset_recursion_exact": true,
+    "pole_difference_is_common_eigenvector": true,
+    "boundary_T080_gap_strictly_negative": true,
+    "finite_mu_strong_energy_gap_strictly_positive": true
+  }
+}

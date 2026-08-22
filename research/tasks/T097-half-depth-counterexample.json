@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T097-half-depth-counterexample",
+  "title": "Large-dimensional structured attack on the half-depth conjecture",
+  "role": "experimentalist",
+  "objective": "Find a counterexample or asymptotically tight non-rank-one family for H_ceil(n/2)(A)>=(mu/2)A^{-1}, using symmetry-reduced large-dimensional and multiscale families rather than repeating small random Gram searches.",
+  "claim_ids": ["C021", "C032", "C034", "C042"],
+  "dependencies": [],
+  "inputs": [
+    "docs/ITER5_FAILURE_MAP_AND_ROUTES.md",
+    "research/iteration4/t085/structured_asymptotics.md",
+    "scripts/iter4_t085_half_depth_optimize.py",
+    "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": ["family_reduction.md", "search.json", "candidate_certificate.json", "reproducer.py"],
+  "acceptance_checks": [
+    "Includes at least one family with three or more exchangeable groups and one multiscale spectral family.",
+    "Computes the full generalized minimum or a symmetry-proved reducing block, not only a kernel compression.",
+    "Any negative margin is reconstructed by exact rational or certified interval arithmetic before being called a counterexample.",
+    "Null search results are labelled E1 and include seeds and evaluation counts."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

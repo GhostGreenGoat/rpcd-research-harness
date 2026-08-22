@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T110-independent-c010",
+  "title": "Independent reconstruction of C010",
+  "role": "reproducer",
+  "objective": "Reprove or refute C010 from its formal statement and permitted external theorems without following the original derivation.",
+  "claim_ids": ["C010"],
+  "dependencies": ["T100-hostile-audit-c010"],
+  "inputs": ["research/problem.md", "research/claims/C010-matrix-jensen.json", "docs/METHOD.md"],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": ["independent_proof.md", "comparison.md", "clean_reproduction.json"],
+  "acceptance_checks": [
+    "Uses a different run and preferably a different account/worker.",
+    "Derivation is independently organized.",
+    "Finite checks run from a clean checkout.",
+    "Shared hidden assumptions are explicitly compared."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "blocked"
+}

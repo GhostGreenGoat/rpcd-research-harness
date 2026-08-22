@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T095-uniform-boundary-constant",
+  "run_id": "iteration5-route-a-prefix-martingale",
+  "worker": "researcher",
+  "status": "partial",
+  "summary": "The general half-depth inequality remains open. Exact fixed-memory failures led to a q-step local-inverse dual state. Sublinear q is analytically impossible for the sharp equicorrelation scaling, whereas q proportional to n proves a finite positive constant on that family. A generic conditional-tail Schur lemma and an explicit all-matrix near-identity spectral band were also proved as internal candidates.",
+  "claims": [
+    {
+      "claim_id": "C032",
+      "statement": "For every unit-diagonal SPD B, K(B) is at least (mu/2)B^{-1}, and the corresponding half-depth inequality holds.",
+      "status": "open_conjecture",
+      "evidence_level": "E1",
+      "assumptions": ["B is n by n, unit diagonal, and SPD", "mu=lambda_min(B)"],
+      "supporting_artifacts": ["research/iteration5/route_a/FINAL_REPORT.md"],
+      "open_objections": ["No generic cross-row conditional-tail frame inequality is known", "The half-depth statement is stronger than the restricted results proved here"]
+    },
+    {
+      "claim_id": "I5-A-DUAL",
+      "statement": "For arbitrary random R_pi, K is bounded below by the optimized deterministic regression certificate P Q^{-1} P^T.",
+      "status": "proof_candidate",
+      "evidence_level": "E3",
+      "assumptions": ["Q is positive definite", "All random matrices are square integrable"],
+      "supporting_artifacts": ["research/iteration5/route_a/weighted_adjacency_dual.md"],
+      "open_objections": ["No formal proof artifact exists"]
+    },
+    {
+      "claim_id": "I5-A-FIXED-ADJACENCY",
+      "statement": "Neither direct R=D^T nor weighted R=D^T D one-adjacency regression proves the half constant uniformly.",
+      "status": "refuted",
+      "evidence_level": "E2",
+      "assumptions": ["Positive equicorrelation controls"],
+      "supporting_artifacts": ["research/iteration5/route_a/direct_adjacency_regression.md", "research/iteration5/route_a/weighted_adjacency_dual.md", "research/iteration5/route_a/evidence/direct_adjacency_exact_barrier.json", "research/iteration5/route_a/evidence/weighted_adjacency_exact_barrier.json"],
+      "open_objections": []
+    },
+    {
+      "claim_id": "I5-A-LINEAR-MEMORY-SCALING",
+      "statement": "For the q-step local-inverse dual state on rho=c/n positive equicorrelation, q=o(n) fails the half certificate for sufficiently large fixed c, while q/n tending to one half satisfies the limiting half inequality.",
+      "status": "proof_candidate",
+      "evidence_level": "E4",
+      "assumptions": ["Positive equicorrelation", "The stated fixed-c scaling limit"],
+      "supporting_artifacts": ["research/iteration5/route_a/linear_memory_dual.md", "research/iteration5/route_a/LINEAR_MEMORY_HALF_LIMIT_HOSTILE_AUDIT.md", "research/iteration5/route_a/evidence/linear_memory_equicorrelation.json"],
+      "open_objections": ["The limiting result is not a finite-n uniform inequality", "It does not cover arbitrary B"]
+    },
+    {
+      "claim_id": "I5-A-EQUICORR-CONSTANT",
+      "statement": "Half-linear local-inverse regression proves K(B)>=(25mu/98)B^{-1} for every positive equicorrelation and diagonal-sign conjugate.",
+      "status": "proof_candidate",
+      "evidence_level": "E4",
+      "assumptions": ["B is positive equicorrelation or a diagonal-sign conjugate", "q=ceil(n/2)"],
+      "supporting_artifacts": ["research/iteration5/route_a/linear_memory_dual.md", "research/iteration5/route_a/LINEAR_MEMORY_FINITE_HOSTILE_AUDIT.md"],
+      "open_objections": ["No Lean or other formal certificate exists"]
+    },
+    {
+      "claim_id": "I5-A-SCHUR-TAIL",
+      "statement": "Every local-inverse forgotten-history row satisfies r B_O^{-1} r^T <= sigma-mu||d||^2 <=1-mu.",
+      "status": "proof_candidate",
+      "evidence_level": "E4",
+      "assumptions": ["B is unit-diagonal SPD", "d exactly inverts its recent chronological window"],
+      "supporting_artifacts": ["research/iteration5/route_a/local_inverse_schur_residual.md", "research/iteration5/route_a/evidence/local_inverse_schur_residual.json"],
+      "open_objections": ["The rowwise inequality does not control aligned cross-row covariance"]
+    },
+    {
+      "claim_id": "I5-A-UNIFORM-IDENTITY-BAND",
+      "statement": "If theta=n(1-mu), then K(B)>=[1+theta/sqrt(2)]^{-2}mu B^{-1}; corresponding direct-prefix bounds hold with an additional t/n factor.",
+      "status": "proof_candidate",
+      "evidence_level": "E4",
+      "assumptions": ["B is any unit-diagonal SPD matrix"],
+      "supporting_artifacts": ["research/iteration5/route_a/uniform_near_identity_band.md", "research/iteration5/route_c/near_identity_band_audit.md", "research/iteration5/route_a/evidence/uniform_band_prefix_control.json"],
+      "open_objections": ["The later all-prefix corollary was not separately discussed in the independent audit"]
+    }
+  ],
+  "artifacts": [
+    {"path": "research/iteration5/route_a/FINAL_REPORT.md", "kind": "handoff", "description": "Complete route synthesis, evidence levels, failures, and next step."},
+    {"path": "research/iteration5/route_a/linear_memory_dual.md", "kind": "proof", "description": "q-step state, exact equicorrelation reduction, bandwidth obstruction, and finite certificate."},
+    {"path": "research/iteration5/route_a/local_inverse_schur_residual.md", "kind": "proof", "description": "Generic Schur-complement conditional-tail lemma and exact failed strengthening."},
+    {"path": "research/iteration5/route_a/uniform_near_identity_band.md", "kind": "proof", "description": "General dimension-scaled near-identity theorem candidate."},
+    {"path": "research/iteration5/route_c/near_identity_band_audit.md", "kind": "audit", "description": "Independent reconstruction of the general high-mu spectral-band proof."},
+    {"path": "research/iteration5/route_a/finite_time_new_slices.md", "kind": "proof", "description": "Expectation-of-distance and high-probability complexity transfer for the new structured slices."},
+    {"path": "research/iteration5/route_a/window_mixture_identity.md", "kind": "proof", "description": "Exact random-window and weighted-frame decomposition."},
+    {"path": "research/iteration5/route_a/weighted_adjacency_dual.md", "kind": "proof", "description": "Dual lemma, surviving preconditioner lemma, and exact weighted-feature refutation."},
+    {"path": "research/iteration5/route_a/EQUICORRELATION_HOSTILE_AUDIT.md", "kind": "audit", "description": "Independent all-prefix audit of the equicorrelation theorem."},
+    {"path": "research/iteration5/route_a/IDENTITY_LOCAL_HOSTILE_AUDIT.md", "kind": "audit", "description": "Independent audit of the simultaneous local hierarchy."},
+    {"path": "research/iteration5/route_a/ROUTE_C_W2_HOSTILE_AUDIT.md", "kind": "audit", "description": "Independent reconstruction of the weighted two-step SOS proof."},
+    {"path": "research/iteration5/route_a/LINEAR_MEMORY_HALF_LIMIT_HOSTILE_AUDIT.md", "kind": "audit", "description": "Independent positive-coefficient audit of the limiting exponential inequality."},
+    {"path": "research/iteration5/route_a/LINEAR_MEMORY_FINITE_HOSTILE_AUDIT.md", "kind": "audit", "description": "Independent audit of the finite positive-equicorrelation constant."},
+    {"path": "research/iteration5/route_a/scripts/linear_memory_equicorrelation.py", "kind": "code", "description": "Exact block evaluator and limiting controls."},
+    {"path": "research/iteration5/route_a/scripts/verify_local_inverse_schur_residual.py", "kind": "code", "description": "Exact all-order rational Schur controls."},
+    {"path": "research/iteration5/route_a/scripts/stress_linear_memory_generic.py", "kind": "code", "description": "Seeded exhaustive-order float64 hostile scan."},
+    {"path": "research/iteration5/route_a/evidence/linear_memory_generic_stress.json", "kind": "data", "description": "E1 generic stress output with seed and matrices."},
+    {"path": "research/iteration5/route_a/evidence/linear_memory_large_mc.json", "kind": "data", "description": "Two-batch larger-dimensional Monte Carlo hostile control, seed 529106."},
+    {"path": "research/iteration5/route_a/evidence/uniform_band_prefix_control.json", "kind": "data", "description": "Exact all-prefix rational control for the near-identity corollary."}
+  ],
+  "checks": [
+    {"command": "python research/iteration5/route_a/scripts/weighted_adjacency_equicorrelation_barrier.py", "exit_code": 0, "summary": "Dense exact Fraction reconstruction gives the n=50 weighted-feature counterexample."},
+    {"command": "python research/iteration5/route_a/scripts/linear_memory_equicorrelation.py", "exit_code": 0, "summary": "Exact q-step block identities and selected half-memory cases pass."},
+    {"command": "python research/iteration5/route_a/scripts/verify_equicorrelation_independent.py --max-n 7", "exit_code": 0, "summary": "All prefix depths, positive/negative/zero correlations pass exact enumeration."},
+    {"command": "python research/iteration5/route_a/scripts/verify_local_inverse_schur_residual.py", "exit_code": 0, "summary": "All n=5 orders/rows pass both Schur inequalities; fractional damping is exactly refuted."},
+    {"command": "python research/iteration5/route_a/scripts/verify_window_mixture_identity.py", "exit_code": 0, "summary": "Exact rational random-window identity passes."},
+    {"command": "python research/iteration5/route_a/scripts/stress_linear_memory_generic.py", "exit_code": 0, "summary": "Seed 529105; all orders through n=7; no sampled violation, minimum 1.0087996."},
+    {"command": "python research/iteration5/route_a/scripts/stress_linear_memory_large_mc.py", "exit_code": 0, "summary": "Seed 529106; independent 600-order batches in n=10,16,24; no sampled violation, minimum 0.7776984."},
+    {"command": "python research/iteration5/route_a/scripts/verify_uniform_band_prefix_control.py", "exit_code": 0, "summary": "All 720 orders and every prefix pass exact principal-minor checks for a non-exchangeable rational block control."}
+  ],
+  "failed_attempts": [
+    "Scalar remaining-gradient induction with actual child spectral floors: exact n=4 failure.",
+    "Position-only random dual weights: exact n=20 optimum below one half.",
+    "Direct one-adjacency feature R=D^T: exact n=20 equicorrelation failure.",
+    "Weighted one-adjacency feature R=D^T D: exact n=50 equicorrelation failure and vanishing fixed-rho asymptotic.",
+    "Adding an |O|/n factor to the single-row Schur residual: exact n=5 failure.",
+    "Assigning a uniform lower target to each late window increment: exponentially false on positive equicorrelation."
+  ],
+  "iteration": {
+    "avenues": [
+      {"name": "remaining-gradient potential", "objective": "Retain conditional residual geometry across a random prefix.", "outcome": "Scalar closure refuted; exact matrix Schur residual lemma obtained; cross-row frame bound remains.", "status": "advanced"},
+      {"name": "averaged projection/frame without replacement", "objective": "Exploit random-prefix and window averaging without Jensen collapse.", "outcome": "Exact window-mixture identity and weighted positive-frame representation obtained; late-row marginal lower bounds refuted.", "status": "advanced"},
+      {"name": "dual/Rayleigh random-order certificate", "objective": "Optimize a random feature retaining order memory.", "outcome": "General regression lemma, exact fixed-memory failures, and a viable linearly growing local-inverse state.", "status": "advanced"},
+      {"name": "hostile structured audits", "objective": "Independently reconstruct new proof candidates from other routes.", "outcome": "Equicorrelation all-prefix, identity-local hierarchy, weighted two-step SOS, and two linear-memory family proofs pass with stated endpoint corrections.", "status": "completed"}
+    ],
+    "checkpoints": [
+      {"elapsed_active_minutes": 0, "summary": "Loaded Iteration 4 failures and fixed the target/evidence status.", "next_action": "Try matrix-valued remaining potential and random dual features."},
+      {"elapsed_active_minutes": 30, "summary": "Exact scalar-potential and positional-dual failures; general dual lemma survives.", "next_action": "Add adjacency/path state and audit structured candidates."},
+      {"elapsed_active_minutes": 64, "summary": "Both direct and weighted fixed-adjacency states exactly refuted with separated provenance.", "next_action": "Move to bandwidth growing with n."},
+      {"elapsed_active_minutes": 90, "summary": "Linear-memory scaling law, exact Schur residual, structured family constants, and hostile audits completed.", "next_action": "Target cross-row conditional-tail covariance and record final handoff."},
+      {"elapsed_active_minutes": 120.07, "summary": "General high-mu slice independently audited; larger hostile controls, exact prefix regression, final synthesis, and portable validation completed.", "next_action": "Hand off the generic cross-row frame-cancellation obstruction without promoting the open conjecture."}
+    ],
+    "stress_tests": [
+      "Exact n=4 lifted rational failure of the actual-child-floor potential.",
+      "Exact n=20 positional and direct-adjacency barriers.",
+      "Exact n=50 weighted-adjacency barrier.",
+      "Exact n=5 failure of fractional Schur damping.",
+      "Seeded float64 exhaustive-order q=ceil(n/2) scan on 200 matrices through n=7.",
+      "Two independent 600-order float64 batches in n=10,16,24, with recorded batch disagreement."
+    ],
+    "deepest_obstruction": "The forgotten-history rows are individually controlled in their conditional B^{-1} metric, but can align. Scalar without-replacement summation creates a growing Euclidean term; a dimension-free cross-row matrix covariance inequality is missing."
+  },
+  "literature": [],
+  "next_tasks": [
+    "Hostile-audit the all-prefix corollary of the already audited uniform near-identity band proof.",
+    "Seek a matrix Bessel/Freedman inequality for the sum of local-inverse residual-row covariances at q=ceil(n/2).",
+    "Combine the weighted positive-frame C_t representation with the generic 1-mu Schur tail bound in two spectral regimes.",
+    "Test the linear-memory certificate on exact rational generic matrices in n=6 or n=7 near the smallest float64 margins.",
+    "Formalize the elementary dual lemma and Schur residual lemma in Lean before using them as trusted infrastructure."
+  ],
+  "limitations": [
+    "The general half-depth and global half inequalities remain open.",
+    "The generic linear-memory survival scan is float64 E1 only.",
+    "The 25/98 certificate and limiting half proof cover equicorrelation, not arbitrary correlation matrices.",
+    "The uniform all-matrix result covers only a dimension-scaled spectral band.",
+    "No Lean/E6 certificate was produced.",
+    "No external literature priority claim was made in this route."
+  ]
+}

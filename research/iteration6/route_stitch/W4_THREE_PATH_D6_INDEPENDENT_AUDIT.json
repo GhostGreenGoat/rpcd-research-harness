@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "verdict": "PASS",
+  "scope": "d=6, three-vertex path direct_sum I_3",
+  "evidence_level": "E4 internal proof candidate after independent hostile reconstruction; no formal or external review",
+  "seven_principal_minor_digest": {
+    "0": {"coefficient_count": 21, "zero_count": 3, "minimum_positive_coefficient": "80/3"},
+    "1": {"coefficient_count": 4, "zero_count": 1, "minimum_positive_coefficient": "40/3"},
+    "2": {"coefficient_count": 21, "zero_count": 3, "minimum_positive_coefficient": "80/3"},
+    "01": {"coefficient_count": 36, "zero_count": 8, "minimum_positive_coefficient": "4800/7"},
+    "02": {"coefficient_count": 55, "zero_count": 10, "minimum_positive_coefficient": "5120/9"},
+    "12": {"coefficient_count": 36, "zero_count": 8, "minimum_positive_coefficient": "4800/7"},
+    "012": {"coefficient_count": 65, "zero_count": 15, "minimum_positive_coefficient": "153600/11"}
+  },
+  "fixed_rational_principal_minors": [
+    "152437/1181250",
+    "229/1890",
+    "74206/590625",
+    "13768003/885937500",
+    "3212619917/199335937500",
+    "30014462/1993359375",
+    "2292659063/1196015625000"
+  ],
+  "caveat": "Sparse d=6 slice only; no dimension-uniform or general W4 claim."
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C011",
+  "title": "Raw matrix-Jensen scalar comparison is insufficient for C001",
+  "statement_ref": "research/problem.md#known-finite-obstruction-to-the-raw-scalar-comparison",
+  "status": "numerical_observation",
+  "evidence_level": "E2",
+  "origin": {
+    "kind": "harness_finite_search",
+    "date": "2026-08-19",
+    "source": "scripts/verify_rpcd_identities.py"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": false,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The current witness uses float64 rather than rational interval arithmetic.",
+    "This refutes only the raw scalar comparison route, not C010 and not the RPCD conjecture."
+  ]
+}

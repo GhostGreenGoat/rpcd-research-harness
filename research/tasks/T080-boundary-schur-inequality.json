@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T080-boundary-schur-inequality",
+  "title": "Prove or refute the singular-boundary Schur inequality",
+  "role": "researcher",
+  "objective": "Prove or refute lambda_min(S_C)>=2 for every singular unit-diagonal PSD correlation matrix C, equivalently E||M_pi(C)^(-1)z||^2 >= 2||P_ker(C)z||^2 for every z, using the reverse-closed triangular-solve family and respecting the Schur coupling to range(C).",
+  "claim_ids": ["C026", "C029"],
+  "dependencies": [],
+  "inputs": ["docs/ITER3_M1_STRONG_ONE_EPOCH_ENERGY.md", "scripts/search_m1_boundary_coefficient.py", "research/evidence/M1_TWO_POLE_HEXAGON_EXACT_2026_08_21.json"],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": ["boundary_statement.md", "proof_or_counterexample.md", "reverse_pair_analysis.md", "independent_checks.json"],
+  "acceptance_checks": [
+    "Uses the full Schur complement S_C rather than only the kernel compression of K_0.",
+    "Handles arbitrary nullity and arbitrary elliptope rank.",
+    "Checks the two-pole/ring family and the signed rank-one boundary as sharpness tests.",
+    "A counterexample must be exact or interval-certified and lifted to sufficiently small positive mu."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "done",
+  "resolution": {
+    "outcome": "refuted",
+    "date": "2026-08-21",
+    "artifact": "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md",
+    "exact_boundary_coefficient": "1057837/531441",
+    "scope": "T080 and the sharp strong one-epoch A-energy certificate are refuted; C001 remains open."
+  }
+}

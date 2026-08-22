@@ -1,0 +1,44 @@
+{
+  "status": "exact rational finite-mu refutation of the strong one-epoch M1 target",
+  "scope_warning": "Does not refute the original RPCD covariance/spectral conjecture or the desired finite-time complexity.",
+  "n": 8,
+  "mu": "1/100",
+  "A_mu_definition": "mu*I + (1-mu)*C",
+  "off_diagonal_parameters": {
+    "pole_pole": "99/100",
+    "pole_ring": "33/50",
+    "distinct_ring": "33/100"
+  },
+  "exact_eigenvalues": {
+    "mu_on_kernel_mult_2": "1/100",
+    "ring_standard_mult_5": "67/100",
+    "trivial_positive_mult_1": "463/100"
+  },
+  "kernel_direction": [
+    1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "kappa_u": "277091954946975183681661134197/140000000000000000000000000000",
+  "kappa_u_decimal": 1.9792282496212512,
+  "q_low_gap": "27589794711827132707700121535130590945356787201/28147497671065600000000000000000000000000000000",
+  "q_dimension": "5764801/16777216",
+  "q_target": "27589794711827132707700121535130590945356787201/28147497671065600000000000000000000000000000000",
+  "witnessed_energy_ratio": "13722908045053024816318338865803/14000000000000000000000000000000",
+  "witnessed_energy_ratio_decimal": 0.9802077175037874,
+  "ratio_minus_q_target": "4198136398771974389711477950466919707327993/197032483697459200000000000000000000000000000000",
+  "ratio_minus_q_target_decimal": 2.1306823727696383e-05,
+  "target_decrement_coefficient_minus_kappa": "4198136398771974389711477950466919707327993/1970324836974592000000000000000000000000000000",
+  "target_decrement_coefficient_minus_kappa_decimal": 0.002130682372769638,
+  "category_words": 56,
+  "permutations_per_category": 720,
+  "permutations_represented": 40320,
+  "direct_labelled_permutations_enumerated": 40320,
+  "category_and_direct_enumerations_agree": true,
+  "arithmetic": "Python fractions.Fraction; no floating-point decisions"
+}

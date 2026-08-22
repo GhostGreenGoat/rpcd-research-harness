@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T095-uniform-boundary-constant",
+  "title": "Find a positive global matrix constant after T080",
+  "role": "researcher",
+  "objective": "Prove or refute the dimension-uniform sharp candidate K(A)>=(mu/2)A^{-1} for every unit-diagonal SPD A. The signed-rank-one interior family rules out every larger global constant. In parallel, study the distinct sharp boundary candidate K0(C)>=(3/2)P_ker(C). A proof of any positive global constant yields O((n/mu) log(1/epsilon)) without claiming the sharper covariance-rate conjecture.",
+  "claim_ids": ["C001", "C026", "C029", "C031", "C032", "C033", "C034"],
+  "dependencies": [],
+  "inputs": [
+    "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md",
+    "docs/ITER4_AUDIT_T080_SIMPLE_SUBSET_DP.md",
+    "docs/ITER3_M1_STRONG_ONE_EPOCH_ENERGY.md",
+    "scripts/verify_iter4_t080_simple_subset_dp.py"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": [
+    "sharp_constant_statement.md",
+    "two_pole_simplex_asymptotics.md",
+    "counterexample_search.json",
+    "finite_time_transfer.md"
+  ],
+  "acceptance_checks": [
+    "Uses the full Loewner or equivalent Schur-complement inequality, not only kernel compression unless symmetry proves the kernel direction is reducing.",
+    "Reproduces the exact n=8 constants 1057837/531441 and the independent subset-DP audit.",
+    "Treats the two-pole plus k-simplex family with explicit quantifier order k to infinity followed by latitude to zero.",
+    "Distinguishes the boundary upper constant 3/2 from the global positive-mu constant, which cannot exceed 1 because A=I.",
+    "Reproduces the signed-rank-one formula showing that no global constant above 1/2 is possible, including the n=9 exact counterexample to gamma(A)>=mu.",
+    "Directly attacks gamma(A)>=mu/2 over two-scale degenerations rather than assuming a pointwise boundary limit is uniform.",
+    "Does not rely on bare Jensen alone: the equicorrelation n=21, mu=9/20 barrier and its vanishing fixed-mu asymptotic are reproduced.",
+    "Does not replace the full average by word/reverse-word pairs: the rank-one n=9 kernel quotient 3/8 barrier is reproduced.",
+    "Distinguishes a positive universal complexity constant from the refuted sharp coefficient 2 and from C001.",
+    "A positive result includes a uniform finite-positive-mu transfer or explicitly isolates that remaining uniformity gap."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

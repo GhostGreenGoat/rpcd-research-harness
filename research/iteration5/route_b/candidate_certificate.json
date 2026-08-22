@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "status": "near_extremal_non_counterexample",
+  "evidence_level": "mixed E1 finite float and E3 proof draft on the tight direction",
+  "claim_under_attack": "H_ceil(n/2)(A) >= (mu/2) A^{-1}",
+  "closest_matrix_family": {
+    "n": 100000,
+    "counts": [
+      99998,
+      2
+    ],
+    "mu": 0.9997236897888407,
+    "boundary_gram": "block diagonal J_(n-2) plus J_2 (orthogonal prototype groups)",
+    "A_within_off_diagonal": 0.0002763102111592586,
+    "A_cross_group": 0,
+    "spectrum": "mu with multiplicity n-2; n-2-(n-3)mu; 2-mu",
+    "depth": 50000
+  },
+  "float_result": {
+    "n": 100000,
+    "c": 2.4,
+    "t": 0.0,
+    "mu": 0.9997236897888407,
+    "H_ratio": 0.5000764878638665,
+    "H_margin": 7.648786386649231e-05,
+    "H_sector": "group_1_transverse",
+    "J_ratio": 0.5000690864053331,
+    "J_margin": 6.90864053330964e-05,
+    "J_sector": "group_1_transverse",
+    "states_H": 150000,
+    "states_J": 150000
+  },
+  "exact_sign_protection": {
+    "direction": "difference of the two satellite coordinates",
+    "even_n_prefix_ratio": "1/2 + (h-1)((2-mu)^2-1)/(4(2h-1))",
+    "odd_n_prefix_ratio": "(h+1)(3+(2-mu)^2)/(4(2h+1))",
+    "conclusion": "J_ratio >= 1/2 exactly on this direction, hence H_ratio >= 1/2.",
+    "rational_surrogate": "n=1000, mu=49/50: J_ratio=5045399/9990000 > 1/2"
+  },
+  "fixed_two_satellite_limit": {
+    "eta": "(1-mu)(1-t^2)",
+    "ratio": "(8-eta^3)/(8(1+mu))",
+    "minimum_margin": "(1-mu)(1-(1-mu)^2/4)/(2(1+mu)) > 0"
+  },
+  "all_fixed_k_transverse_limit": {
+    "selection": "S~Binomial(k,1/2), p_j=Pr(S>=j), sum_j p_j=k/2",
+    "second_moment": "1/k + [eta^2(kQ_j-W_j^2)+2eta W_j]/[k(k-1)]",
+    "sign": "kQ_j>=W_j^2 and w=(2-eta)/(1+mu)>=1, hence R_k>=1/2",
+    "scope": "k fixed before N tends to infinity; satellite zero-sum sector only",
+    "exact_check": "enumeration equals moment formula and Bernstein certificates are nonnegative for k=2,...,8"
+  },
+  "counterexample": null,
+  "required_next_gate": "A negative candidate elsewhere would require independent high precision and rational/interval reconstruction; no negative candidate was produced here."
+}

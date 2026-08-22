@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "task": "Iteration 5 Route A prefix-martingale and growing-memory route",
+  "observed_start": "2026-08-21T19:38:29+08:00",
+  "completed_at": "2026-08-21T21:39:38+08:00",
+  "elapsed_seconds": 7269,
+  "elapsed_minutes": 121.15,
+  "required_minimum_minutes": 120,
+  "threshold_satisfied": true,
+  "timezone": "Asia/Shanghai",
+  "provenance": "Times are those reported in the route's final handoff after active validation."
+}

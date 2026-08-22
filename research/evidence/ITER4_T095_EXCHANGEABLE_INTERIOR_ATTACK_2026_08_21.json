@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E1",
+  "status": "finite float64 hostile search; no violation is not a proof",
+  "candidate": "K0(C) >= (3/2) P_ker(C)",
+  "family": "two identical poles plus an exchangeable k-point ring over its full PSD interval",
+  "seed": 2026082112,
+  "random_samples_small_k": 12000,
+  "records": [
+    {
+      "coefficient": 1.9691731062414422,
+      "a": 0.7627968740763795,
+      "rho": 0.49823088532083515,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 6,
+      "n": 8,
+      "gap_above_three_halves": 0.46917310624144215
+    },
+    {
+      "coefficient": 1.87070857445892,
+      "a": 0.7016247513316913,
+      "rho": 0.43586365742361965,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 10,
+      "n": 12,
+      "gap_above_three_halves": 0.37070857445892
+    },
+    {
+      "coefficient": 1.7612951241562338,
+      "a": 0.6159749706612462,
+      "rho": 0.34676333103276114,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 20,
+      "n": 22,
+      "gap_above_three_halves": 0.2612951241562338
+    },
+    {
+      "coefficient": 1.6605365372846876,
+      "a": 0.5081541377703855,
+      "rho": 0.24308227319710612,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 50,
+      "n": 52,
+      "gap_above_three_halves": 0.16053653728468764
+    },
+    {
+      "coefficient": 1.610605512537677,
+      "a": 0.43407888813548245,
+      "rho": 0.18022674861104718,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 100,
+      "n": 102,
+      "gap_above_three_halves": 0.11060551253767703
+    },
+    {
+      "coefficient": 1.5763854731782438,
+      "a": 0.36976580036627005,
+      "rho": 0.13238869057337516,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 200,
+      "n": 202,
+      "gap_above_three_halves": 0.07638547317824385
+    },
+    {
+      "coefficient": 1.5471226274254877,
+      "a": 0.2957840734385848,
+      "rho": 0.08565953717427068,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 500,
+      "n": 502,
+      "gap_above_three_halves": 0.04712262742548767
+    },
+    {
+      "coefficient": 1.5328564131721558,
+      "a": 0.24952530644034832,
+      "rho": 0.061324202756906636,
+      "rho_minus_psd_boundary": 0.0,
+      "source": "psd_boundary_grid",
+      "k": 1000,
+      "n": 1002,
+      "gap_above_three_halves": 0.03285641317215582
+    }
+  ],
+  "minimum_observed": 1.5328564131721558,
+  "all_minimizers_on_sampled_psd_boundary": true,
+  "scope_warning": "This search neither proves ring-interior monotonicity nor the 3/2 lower bound, and it covers only an exchangeable family.",
+  "elapsed_seconds": 4.288056135177612
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C042",
+  "title": "All-fixed-count satellite transverse half bound",
+  "statement": "In the majority-plus-k-satellite family of Iteration 5, fix k>=2 before sending the majority size to infinity. On the zero-sum satellite-transverse sector, the half-prefix limiting coefficient h_k is at least 1/2 for every effective coupling eta in [0,1]; the relaxation multiplier is at least one, so the full reduced ratio is also at least 1/2.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "research/iteration5/route_b/satellite_asymptotics.md"
+  },
+  "assumptions": [
+    "Satellite count k is fixed before the majority-size limit",
+    "The tested direction has zero sum on the satellite coordinates",
+    "The effective fixed-k reduction described in the source applies"
+  ],
+  "supporting_artifacts": [
+    "research/iteration5/route_b/satellite_asymptotics.md",
+    "research/iteration5/route_b/fixed_k_satellite_exact.py",
+    "research/iteration5/route_b/fixed_k_satellite_exact.json",
+    "docs/ITER5_AUDIT_TWO_SATELLITE_ASYMPTOTICS.md"
+  ],
+  "open_objections": [
+    "The other invariant sector, growing k, and finite nonorthogonal matrices are not covered.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

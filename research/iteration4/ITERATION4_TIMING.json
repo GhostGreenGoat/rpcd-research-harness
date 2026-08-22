@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "timezone": "Asia/Shanghai",
+  "measurement_kind": "conservative root-observed active wall-clock interval",
+  "measurement_note": "The manual multi-agent run predates harness subprocess timing records. Root observed the complete agent tree active no later than 17:31:54 and required every worker to continue doing substantive research past its two-hour threshold. No earlier inferred start time is used.",
+  "workers": [
+    {
+      "worker": "root",
+      "observed_active_start": "2026-08-21T17:31:54+08:00",
+      "observed_active_end": "2026-08-21T19:34:53+08:00",
+      "conservative_active_seconds": 7379
+    },
+    {
+      "worker": "current_results_transfer",
+      "observed_active_start": "2026-08-21T17:31:54+08:00",
+      "observed_active_end": "2026-08-21T19:32:15+08:00",
+      "conservative_active_seconds": 7221
+    },
+    {
+      "worker": "current_results_transfer/iter4_reverse_pair",
+      "observed_active_start": "2026-08-21T17:31:54+08:00",
+      "observed_active_end": "2026-08-21T19:32:02+08:00",
+      "conservative_active_seconds": 7208
+    },
+    {
+      "worker": "finite_time_bridge",
+      "observed_active_start": "2026-08-21T17:31:54+08:00",
+      "observed_active_end": "2026-08-21T19:32:53+08:00",
+      "conservative_active_seconds": 7259
+    }
+  ],
+  "automatic_future_runs": "rpcd_harness.codex_adapter measures only live Codex subprocess time with time.monotonic, launches continuation passes below 7200 seconds, and does not count sleep or idle waiting."
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T140-general-w4-overlap",
+  "title": "General W4 recovery beyond path and equal-star slices",
+  "role": "researcher",
+  "objective": "Prove the general W4 shifted-inverse Schur-recovery inequality, or isolate its exact aggregate replacement, starting with a four-vertex path, a sign-frustrated cycle, and an unequal-weight degree-three star.",
+  "claim_ids": ["C043", "C049"],
+  "dependencies": [],
+  "inputs": [
+    "research/problem.md",
+    "research/iteration6/PORTABLE_HANDOFF.md",
+    "docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md",
+    "research/iteration6/route_l3/general_t_schur_recursion.md",
+    "research/iteration6/route_l3/failed_attempts.md",
+    "research/iteration6/route_l3/w4_three_path_all_d_slice.md",
+    "research/iteration6/route_l3/w4_equal_star_all_d_slice.md"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": [
+    "w4_overlap_analysis.md",
+    "exact_reduction.py",
+    "failure_or_certificate.json",
+    "next_schur_state.md"
+  ],
+  "acceptance_checks": [
+    "Reconstructs the audited matching, weighted-three-path, and equal-star slices before generalizing them.",
+    "Treats at least the four-path, a frustrated cycle, and an unequal-weight star analytically rather than by a parameter grid alone.",
+    "Retains the anisotropic child surplus and does not replace it by the known-false spectral-only bound.",
+    "Any positive result is transferred explicitly to K(A) and the strong expected-distance finite-time target."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

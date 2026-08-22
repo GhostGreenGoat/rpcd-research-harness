@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T096-half-prefix-matrix",
+  "title": "Direct half-prefix matrix inequality",
+  "role": "researcher",
+  "objective": "Prove or refute J_ceil(n/2)(A)>=(mu/2)A^{-1}; if false, quantify the determinant-tail correction needed to recover H_ceil(n/2). Use a genuinely averaged matrix-valued argument.",
+  "claim_ids": ["C021", "C022", "C033", "C034", "C035", "C037", "C038", "C040", "C041"],
+  "dependencies": [],
+  "inputs": [
+    "docs/ITER5_FAILURE_MAP_AND_ROUTES.md",
+    "research/iteration4/t085/bellman_closure.md",
+    "research/iteration4/t085/structured_asymptotics.md",
+    "docs/ITER4_AUDIT_T095_SIGNED_RANK_ONE_HALF_DEPTH.md"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": ["prefix_statement.md", "potential_derivation.md", "hostile_tests.json", "finite_time_transfer.md"],
+  "acceptance_checks": [
+    "Distinguishes J_r from H_r and does not use the determinant leaf silently.",
+    "Retains anisotropic child information and reproduces the -28/225 scalar-induction barrier.",
+    "Uses full random-prefix averaging rather than a pathwise complement or reversal lemma.",
+    "Any positive conclusion controls expectation of distance, not only distance of the expected iterate."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

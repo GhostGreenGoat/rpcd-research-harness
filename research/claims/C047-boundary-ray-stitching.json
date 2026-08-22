@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C047",
+  "title": "Dimension-free boundary-ray interpolation and spectral stitching",
+  "statement": "For every singular correlation C and A_mu=mu I+(1-mu)C, the inverse moment satisfies K(A_mu)>=(1+mu)^{-2}K(C). A full shorted boundary certificate K(C)>=kappa P_tau combines with the exact J_2 spectral bound to give K(A_mu)>=[b r_tau/(b+r_tau)]mu A_mu^{-1}, with b=kappa/(1+mu)^2 and the documented empty-high-block convention.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-22",
+    "artifact": "research/iteration6/route_stitch/spectral_stitching.md"
+  },
+  "assumptions": [
+    "Real correlation matrices and 0<mu<=1",
+    "The stitching conclusion assumes a full Loewner shorted boundary certificate, not only its compression",
+    "When the high spectral block is empty, r_tau is interpreted as infinity"
+  ],
+  "supporting_artifacts": [
+    "research/iteration6/route_stitch/spectral_stitching.md",
+    "research/iteration6/route_l3/spectral_stitching_hostile_audit.md"
+  ],
+  "open_objections": [
+    "The boundary low-spectral-layer shorting certificate is still open.",
+    "Endpoint-only stitching provably loses the mesoscale signed-rank-one regime.",
+    "No priority audit, formalization, or external-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

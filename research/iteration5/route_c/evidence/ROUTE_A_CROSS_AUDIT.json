@@ -1,0 +1,32 @@
+{
+  "status": "exact auxiliary verification; proof is in the Markdown audit",
+  "bernstein": {
+    "exact_match": true,
+    "b0": "mu*n*(mu - 1)**2",
+    "b1": "-n*(mu - 1)*(mu**2*n - mu**2 - 4*mu*n + 3*mu + n**2 + n)/3",
+    "b2": "-n*(mu - 1)*(-mu**2*n + mu**2 + 2*mu*n**2 - 5*mu*n + 3*mu + 2*n)/3",
+    "b3": "-n*(mu - 1)*(mu**2*n**2 - 2*mu**2*n + mu**2 - mu*n + mu + n)"
+  },
+  "path_identities": [
+    {
+      "n": 2,
+      "permutations": 2,
+      "exact_identity": true
+    },
+    {
+      "n": 3,
+      "permutations": 6,
+      "exact_identity": true
+    },
+    {
+      "n": 4,
+      "permutations": 24,
+      "exact_identity": true
+    },
+    {
+      "n": 5,
+      "permutations": 120,
+      "exact_identity": true
+    }
+  ]
+}

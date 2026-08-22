@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact controls for an E3 pathwise barrier",
+  "family": "bipartite skew-Hilbert, tau=1/4, group-ordered permutation",
+  "cases": [
+    {
+      "a": 2,
+      "dimension": 4,
+      "q": 2,
+      "exact_rayleigh": "33/32",
+      "decimal_rayleigh": 1.03125
+    },
+    {
+      "a": 3,
+      "dimension": 6,
+      "q": 3,
+      "exact_rayleigh": "205/192",
+      "decimal_rayleigh": 1.0677083333333333
+    },
+    {
+      "a": 4,
+      "dimension": 8,
+      "q": 4,
+      "exact_rayleigh": "1271/1152",
+      "decimal_rayleigh": 1.1032986111111112
+    },
+    {
+      "a": 6,
+      "dimension": 12,
+      "q": 6,
+      "exact_rayleigh": "22433/19200",
+      "decimal_rayleigh": 1.1683854166666667
+    },
+    {
+      "a": 8,
+      "dimension": 16,
+      "q": 8,
+      "exact_rayleigh": "768763/627200",
+      "decimal_rayleigh": 1.2257063137755102
+    },
+    {
+      "a": 12,
+      "dimension": 24,
+      "q": 12,
+      "exact_rayleigh": "16263070891/12294374400",
+      "decimal_rayleigh": 1.3228058916930332
+    }
+  ],
+  "result": "all exact identities and SPD checks passed",
+  "scope": "Refutes only a pathwise Q_pi<=Gamma R_pi comparison."
+}

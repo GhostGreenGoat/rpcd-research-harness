@@ -1,0 +1,620 @@
+{
+  "evidence_level": "E3 exact finite rational computation",
+  "scope_warning": "Finite identities only; quantified claims require the accompanying algebraic proof.",
+  "simplex_mu_one_fifth": {
+    "B": [
+      [
+        "1",
+        "-2/5",
+        "-2/5"
+      ],
+      [
+        "-2/5",
+        "1",
+        "-2/5"
+      ],
+      [
+        "-2/5",
+        "-2/5",
+        "1"
+      ]
+    ],
+    "first_schur_moment": [
+      [
+        "88/105",
+        "52/63",
+        "52/63"
+      ],
+      [
+        "52/63",
+        "88/105",
+        "52/63"
+      ],
+      [
+        "52/63",
+        "52/63",
+        "88/105"
+      ]
+    ],
+    "second_schur_moment": [
+      [
+        "1228/13125",
+        "592/7875",
+        "592/7875"
+      ],
+      [
+        "592/7875",
+        "1228/13125",
+        "592/7875"
+      ],
+      [
+        "592/7875",
+        "592/7875",
+        "1228/13125"
+      ]
+    ],
+    "ordered_pair_identity_exact": true,
+    "transverse_eigenvalue_first_minus_second": {
+      "numerator": -32,
+      "denominator": 5625,
+      "text": "-32/5625"
+    },
+    "R2_leq_R1": false
+  },
+  "rank_one_n4_offdiag_two_thirds": {
+    "ordered_pair_identity_exact": true,
+    "residual": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "no_scalar_second_over_first_compression": {
+    "B": [
+      [
+        "1",
+        "1/3",
+        "1/4"
+      ],
+      [
+        "1/3",
+        "1",
+        "0"
+      ],
+      [
+        "1/4",
+        "0",
+        "1"
+      ]
+    ],
+    "spectrum": [
+      "7/12",
+      "1",
+      "17/12"
+    ],
+    "kernel_vector": [
+      "0",
+      "1/4",
+      "-1/3"
+    ],
+    "first_moment_times_vector": [
+      [
+        "0"
+      ],
+      [
+        "0"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "second_moment_quadratic_form": {
+      "numerator": 263,
+      "denominator": 124416,
+      "text": "263/124416"
+    },
+    "conclusion": "No finite C can make R_B <= C bar(D)_B on all unit-diagonal SPD B."
+  },
+  "two_step_scalar_chain_barrier": {
+    "B": [
+      [
+        "1",
+        "7/8",
+        "7/8"
+      ],
+      [
+        "7/8",
+        "1",
+        "7/8"
+      ],
+      [
+        "7/8",
+        "7/8",
+        "1"
+      ]
+    ],
+    "mu": "1/8",
+    "parent_lower_bound": [
+      [
+        "347/480",
+        "-7/36",
+        "-7/36"
+      ],
+      [
+        "-7/36",
+        "347/480",
+        "-7/36"
+      ],
+      [
+        "-7/36",
+        "-7/36",
+        "347/480"
+      ]
+    ],
+    "transverse_generalized_coefficient": {
+      "numerator": 1321,
+      "denominator": 11520,
+      "text": "1321/11520"
+    },
+    "target_mu": "1/8",
+    "gap": {
+      "numerator": -119,
+      "denominator": 11520,
+      "text": "-119/11520"
+    },
+    "conclusion": "The valid sharp J2 child scalar bound does not induct to J3 >= mu G."
+  },
+  "n3_second_moment_clears_H1_barrier": {
+    "B": [
+      [
+        "1",
+        "4/5",
+        "4/5"
+      ],
+      [
+        "4/5",
+        "1",
+        "4/5"
+      ],
+      [
+        "4/5",
+        "4/5",
+        "1"
+      ]
+    ],
+    "H2_equals_K": [
+      [
+        "897/625",
+        "-68/125",
+        "-68/125"
+      ],
+      [
+        "-68/125",
+        "897/625",
+        "-68/125"
+      ],
+      [
+        "-68/125",
+        "-68/125",
+        "897/625"
+      ]
+    ],
+    "transverse_coefficient": {
+      "numerator": 1237,
+      "denominator": 3125,
+      "text": "1237/3125"
+    },
+    "parallel_coefficient": {
+      "numerator": 2821,
+      "denominator": 3125,
+      "text": "2821/3125"
+    },
+    "strong_target": {
+      "numerator": 3861089,
+      "denominator": 11390625,
+      "text": "3861089/11390625"
+    },
+    "minimum_minus_target": {
+      "numerator": 647776,
+      "denominator": 11390625,
+      "text": "647776/11390625"
+    }
+  },
+  "pathwise_complementary_half_barrier": {
+    "B": [
+      [
+        "1",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1",
+        "1/3"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1"
+      ]
+    ],
+    "mu": "2/3",
+    "first_sequence": [
+      0,
+      1
+    ],
+    "reversed_complement_sequence": [
+      2
+    ],
+    "gap_matrix": [
+      [
+        "4/9",
+        "2/9",
+        "4/9"
+      ],
+      [
+        "2/9",
+        "28/81",
+        "34/81"
+      ],
+      [
+        "4/9",
+        "34/81",
+        "40/81"
+      ]
+    ],
+    "test_vector": [
+      "-4",
+      "-5",
+      "7"
+    ],
+    "quadratic_form": {
+      "numerator": -440,
+      "denominator": 81,
+      "text": "-440/81"
+    },
+    "conclusion": "The two separately started complementary-prefix decreases do not pathwise sum to mu*A. Averaging may still work."
+  },
+  "shallow_rank_one_recurrence": {
+    "range": "4 <= n <= 12, 1 <= depth <= n-3",
+    "all_equal": true,
+    "checks": [
+      {
+        "n": 4,
+        "depth": 1,
+        "coefficient": "1/4",
+        "closed_form": "1/4",
+        "equal": true
+      },
+      {
+        "n": 5,
+        "depth": 1,
+        "coefficient": "1/5",
+        "closed_form": "1/5",
+        "equal": true
+      },
+      {
+        "n": 5,
+        "depth": 2,
+        "coefficient": "7/10",
+        "closed_form": "7/10",
+        "equal": true
+      },
+      {
+        "n": 6,
+        "depth": 1,
+        "coefficient": "1/6",
+        "closed_form": "1/6",
+        "equal": true
+      },
+      {
+        "n": 6,
+        "depth": 2,
+        "coefficient": "17/30",
+        "closed_form": "17/30",
+        "equal": true
+      },
+      {
+        "n": 6,
+        "depth": 3,
+        "coefficient": "29/30",
+        "closed_form": "29/30",
+        "equal": true
+      },
+      {
+        "n": 7,
+        "depth": 1,
+        "coefficient": "1/7",
+        "closed_form": "1/7",
+        "equal": true
+      },
+      {
+        "n": 7,
+        "depth": 2,
+        "coefficient": "10/21",
+        "closed_form": "10/21",
+        "equal": true
+      },
+      {
+        "n": 7,
+        "depth": 3,
+        "coefficient": "17/21",
+        "closed_form": "17/21",
+        "equal": true
+      },
+      {
+        "n": 7,
+        "depth": 4,
+        "coefficient": "8/7",
+        "closed_form": "8/7",
+        "equal": true
+      },
+      {
+        "n": 8,
+        "depth": 1,
+        "coefficient": "1/8",
+        "closed_form": "1/8",
+        "equal": true
+      },
+      {
+        "n": 8,
+        "depth": 2,
+        "coefficient": "23/56",
+        "closed_form": "23/56",
+        "equal": true
+      },
+      {
+        "n": 8,
+        "depth": 3,
+        "coefficient": "39/56",
+        "closed_form": "39/56",
+        "equal": true
+      },
+      {
+        "n": 8,
+        "depth": 4,
+        "coefficient": "55/56",
+        "closed_form": "55/56",
+        "equal": true
+      },
+      {
+        "n": 8,
+        "depth": 5,
+        "coefficient": "71/56",
+        "closed_form": "71/56",
+        "equal": true
+      },
+      {
+        "n": 9,
+        "depth": 1,
+        "coefficient": "1/9",
+        "closed_form": "1/9",
+        "equal": true
+      },
+      {
+        "n": 9,
+        "depth": 2,
+        "coefficient": "13/36",
+        "closed_form": "13/36",
+        "equal": true
+      },
+      {
+        "n": 9,
+        "depth": 3,
+        "coefficient": "11/18",
+        "closed_form": "11/18",
+        "equal": true
+      },
+      {
+        "n": 9,
+        "depth": 4,
+        "coefficient": "31/36",
+        "closed_form": "31/36",
+        "equal": true
+      },
+      {
+        "n": 9,
+        "depth": 5,
+        "coefficient": "10/9",
+        "closed_form": "10/9",
+        "equal": true
+      },
+      {
+        "n": 9,
+        "depth": 6,
+        "coefficient": "49/36",
+        "closed_form": "49/36",
+        "equal": true
+      },
+      {
+        "n": 10,
+        "depth": 1,
+        "coefficient": "1/10",
+        "closed_form": "1/10",
+        "equal": true
+      },
+      {
+        "n": 10,
+        "depth": 2,
+        "coefficient": "29/90",
+        "closed_form": "29/90",
+        "equal": true
+      },
+      {
+        "n": 10,
+        "depth": 3,
+        "coefficient": "49/90",
+        "closed_form": "49/90",
+        "equal": true
+      },
+      {
+        "n": 10,
+        "depth": 4,
+        "coefficient": "23/30",
+        "closed_form": "23/30",
+        "equal": true
+      },
+      {
+        "n": 10,
+        "depth": 5,
+        "coefficient": "89/90",
+        "closed_form": "89/90",
+        "equal": true
+      },
+      {
+        "n": 10,
+        "depth": 6,
+        "coefficient": "109/90",
+        "closed_form": "109/90",
+        "equal": true
+      },
+      {
+        "n": 10,
+        "depth": 7,
+        "coefficient": "43/30",
+        "closed_form": "43/30",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 1,
+        "coefficient": "1/11",
+        "closed_form": "1/11",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 2,
+        "coefficient": "16/55",
+        "closed_form": "16/55",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 3,
+        "coefficient": "27/55",
+        "closed_form": "27/55",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 4,
+        "coefficient": "38/55",
+        "closed_form": "38/55",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 5,
+        "coefficient": "49/55",
+        "closed_form": "49/55",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 6,
+        "coefficient": "12/11",
+        "closed_form": "12/11",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 7,
+        "coefficient": "71/55",
+        "closed_form": "71/55",
+        "equal": true
+      },
+      {
+        "n": 11,
+        "depth": 8,
+        "coefficient": "82/55",
+        "closed_form": "82/55",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 1,
+        "coefficient": "1/12",
+        "closed_form": "1/12",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 2,
+        "coefficient": "35/132",
+        "closed_form": "35/132",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 3,
+        "coefficient": "59/132",
+        "closed_form": "59/132",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 4,
+        "coefficient": "83/132",
+        "closed_form": "83/132",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 5,
+        "coefficient": "107/132",
+        "closed_form": "107/132",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 6,
+        "coefficient": "131/132",
+        "closed_form": "131/132",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 7,
+        "coefficient": "155/132",
+        "closed_form": "155/132",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 8,
+        "coefficient": "179/132",
+        "closed_form": "179/132",
+        "equal": true
+      },
+      {
+        "n": 12,
+        "depth": 9,
+        "coefficient": "203/132",
+        "closed_form": "203/132",
+        "equal": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C001",
+  "title": "General unit-diagonal SPD RPCD rate bound",
+  "statement_ref": "research/problem.md#exact-target",
+  "status": "open_conjecture",
+  "evidence_level": "E1",
+  "origin": {
+    "kind": "external_conjecture",
+    "date": "2025-05-29",
+    "source": "https://arxiv.org/abs/2505.23152",
+    "label": "Conjecture 4.1"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": false,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "No general proof or certified counterexample is recorded.",
+    "Small-dimensional algorithmic searches are numerical evidence only."
+  ]
+}

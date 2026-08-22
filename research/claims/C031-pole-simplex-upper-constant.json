@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C031",
+  "title": "Two-pole/simplex upper bound on any universal boundary constant",
+  "statement": "For the singular correlation family with two identical poles, k regular-simplex ring points, pole-ring correlation a, and distinct-ring correlation (k a^2-1)/(k-1), the pole-difference coefficient converges at fixed 0<a<1 to 1+1/(2-a^2) as k tends to infinity. Consequently no dimension-uniform inequality K0(C)>=c P_ker(C) can hold for c>3/2.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md#19-stronger-post-mortem-no-universal-constant-above-32"
+  },
+  "assumptions": [
+    "Uniform random permutation",
+    "The limit k to infinity is taken at fixed positive a before a tends to zero",
+    "K0 is the average of M_pi^{-T} M_pi^{-1} with the lower-in-order convention"
+  ],
+  "supporting_artifacts": [
+    "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md",
+    "docs/ITER4_AUDIT_T080_POLE_SIMPLEX_ASYMPTOTIC.md",
+    "scripts/iter4_t080_pole_simplex_family.py",
+    "research/evidence/ITER4_T080_POLE_SIMPLEX_ASYMPTOTIC_2026_08_21.json"
+  ],
+  "open_objections": [
+    "This is only an upper bound on the best possible universal constant; it does not prove K0(C)>=(3/2)P_ker(C).",
+    "It does not prove that any positive dimension-uniform constant exists.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C037",
+  "title": "Fixed-dimensional identity neighborhood for the weighted prefix hierarchy",
+  "statement": "For each fixed n, there is a neighborhood of the identity in the unit-diagonal SPD cone such that C_t=J_t-(1/2)J_{t-1} satisfies C_t>=((t+1)mu/(2n))A^{-1} simultaneously for every 1<=t<=ceil(n/2). The neighborhood need not be uniform in n.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "docs/ITER5_PREFIX_IDENTITY_LOCAL_THEOREM.md"
+  },
+  "assumptions": [
+    "Fixed dimension",
+    "Unit-diagonal SPD matrix sufficiently close to identity",
+    "Uniform ordered prefix without replacement"
+  ],
+  "supporting_artifacts": [
+    "docs/ITER5_PREFIX_IDENTITY_LOCAL_THEOREM.md",
+    "research/iteration5/route_a/IDENTITY_LOCAL_HOSTILE_AUDIT.md",
+    "scripts/iter5_prefix_identity_jet.py",
+    "research/evidence/ITER5_PREFIX_IDENTITY_JET_EXACT.json"
+  ],
+  "open_objections": [
+    "The proof supplies no radius uniform in dimension.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

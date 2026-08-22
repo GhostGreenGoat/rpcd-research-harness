@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C020",
+  "title": "Finite resolvent-moment hierarchy for expected RPCD A-energy",
+  "statement_ref": "docs/ITER2_MAIN_ANALYTIC_LEMMAS.md#3-a-monotone-polynomial-inverse-hierarchy",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-20",
+    "source": "docs/ITER2_MAIN_ANALYTIC_LEMMAS.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "No uniform bound on the finite permutation moments is known that reaches the C001 target for every A.",
+    "The hierarchy has not been independently reconstructed or formally verified.",
+    "The C011 level-two specialization is currently float64 evidence and is not part of the general E4 claim."
+  ]
+}

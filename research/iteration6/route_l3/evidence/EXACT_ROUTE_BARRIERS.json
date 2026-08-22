@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact route counterexamples",
+  "scope_warning": "Neither item is a counterexample to L3 or to RPCD.",
+  "full_d2_compensation_barrier": {
+    "parent": [
+      [
+        "1",
+        "3/4",
+        "3/4"
+      ],
+      [
+        "3/4",
+        "1",
+        "3/4"
+      ],
+      [
+        "3/4",
+        "3/4",
+        "1"
+      ]
+    ],
+    "mu": "1/4",
+    "parent_characteristic_polynomial": "(2*lambda - 5)*(4*lambda - 1)**2/32",
+    "child_high_eigenvalue": "7/4",
+    "schur_s": "5/14",
+    "failed_claim": "P_2(C)-beta C^-1 >= (beta/s)cc^T with beta=3mu/4",
+    "scalar_gap": "-3/160",
+    "matrix_witness": [
+      "1",
+      "1"
+    ],
+    "matrix_witness_quadratic": "-3/80",
+    "matrix_gap_determinant": "-99/5120",
+    "scope": "The piecewise smaller kappa used in the proof survives; the L3 target itself is not refuted."
+  },
+  "no_scalar_zf_dominates_f2": {
+    "matrix_F": [
+      [
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "0"
+      ]
+    ],
+    "size": 4,
+    "witness": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "Z_F_witness_quadratic": "0",
+    "F_squared_witness_quadratic": "36",
+    "failed_claim": "Z_F=Diag(diag F^2)-F^2/(m-1) >= c F^2 for some universal c>0",
+    "exact_conclusion": "On this witness the gap Z_F-cF^2 equals -36c for every c>0.",
+    "scope": "Z_F is still PSD and essential in transverse directions; only a scalar domination by F^2 is refuted."
+  }
+}

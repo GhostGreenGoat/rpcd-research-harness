@@ -1,0 +1,12 @@
+{
+  "status": "exact analytic counterexample to a proof shortcut",
+  "target_refuted": "Each permutation word paired with its reverse has boundary kernel coefficient at least 1/2",
+  "matrix": "C=11^T in dimension 9",
+  "order": "identity paired with reverse",
+  "kernel_vector": [-1, -1, -1, -1, 0, 1, 1, 1, 1],
+  "reverse_pair_kernel_quotient": "3/8",
+  "gap_to_one_half": "-1/8",
+  "scope": "The full permutation average on this family is much stronger. This only proves that word-reversal pairing cannot establish the surviving global half-constant.",
+  "arithmetic": "fractions.Fraction; no floating-point sign decision",
+  "verifier": "scripts/iter4_t095_reverse_pair_half_barrier.py"
+}

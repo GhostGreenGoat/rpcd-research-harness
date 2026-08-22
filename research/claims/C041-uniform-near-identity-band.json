@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C041",
+  "title": "Uniform dimension-scaled near-identity RPCD bound",
+  "statement": "For every n-dimensional unit-diagonal SPD B with mu=lambda_min(B) and theta=n(1-mu), the exact RPCD sweep decrease matrix satisfies K(B)>=[1+theta/sqrt(2)]^{-2}mu B^{-1}. Hence theta<=1 implies K>(mu/4)B^{-1} and O(n/mu log(1/epsilon)) updates; theta<=2-sqrt(2) implies the sharp half coefficient.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "research/iteration5/route_a/uniform_near_identity_band.md"
+  },
+  "assumptions": [
+    "Real unit-diagonal SPD matrix",
+    "Uniform fresh random permutation per sweep",
+    "The complexity corollary uses theta bounded by a numerical constant"
+  ],
+  "supporting_artifacts": [
+    "research/iteration5/route_a/uniform_near_identity_band.md",
+    "research/iteration5/route_c/near_identity_band_audit.md"
+  ],
+  "open_objections": [
+    "The bound loses a dimension-free constant when n(1-mu) is unbounded.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

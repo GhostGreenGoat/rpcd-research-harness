@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C028",
+  "title": "Adapted positive-definite operator Lyapunov metric and resolvent bound",
+  "statement_ref": "docs/ITER3_ROUTE_M3_OPERATOR_LYAPUNOV.md#2-谱半径与正定-lyapunov-metric-的等价性",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-21",
+    "source": "docs/ITER3_ROUTE_M3_OPERATOR_LYAPUNOV.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": false,
+    "priority_audit": true,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The exact-rate metric existence does not provide a uniform condition-number bound at r_A=q.",
+    "The result does not prove the C001 spectral-radius inequality; it gives an equivalent certificate form.",
+    "The reducing-block Perron argument and time-uniform probability conversion passed hostile audit but still require independent reconstruction."
+  ]
+}

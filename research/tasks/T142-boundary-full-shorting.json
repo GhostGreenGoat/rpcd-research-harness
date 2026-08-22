@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T142-boundary-full-shorting",
+  "title": "Full low-spectral-layer shorting on boundary rays",
+  "role": "researcher",
+  "objective": "Establish or sharply refute the full Loewner low-layer shorting inequality needed by the boundary-ray interpolation, retaining low/high cross blocks rather than proving only compression bounds.",
+  "claim_ids": ["C029", "C045", "C047"],
+  "dependencies": [],
+  "inputs": [
+    "research/problem.md",
+    "research/iteration6/PORTABLE_HANDOFF.md",
+    "research/iteration6/route_stitch/spectral_stitching.md",
+    "research/iteration6/route_l3/spectral_stitching_hostile_audit.md",
+    "research/iteration6/route_stitch/spectral_geometry_region.md",
+    "research/iteration6/route_stitch/failed_lemmas.md",
+    "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": [
+    "shorted_operator_analysis.md",
+    "low_high_cross_budget.md",
+    "exact_boundary_family.py",
+    "certificate_or_obstruction.json"
+  ],
+  "acceptance_checks": [
+    "Distinguishes full Loewner shorting from the known-insufficient compressed Rayleigh inequality.",
+    "Reproduces the rank-two elliptope and rank-four exterior barriers before proposing a general claim.",
+    "Covers multiscale low spectral layers rather than only a fixed boundary kernel.",
+    "Provides an explicit boundary-ray-to-positive-mu and strong expected-distance transfer for every positive conclusion."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

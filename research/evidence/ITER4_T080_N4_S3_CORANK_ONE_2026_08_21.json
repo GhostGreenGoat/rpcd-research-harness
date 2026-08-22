@@ -1,0 +1,40 @@
+{
+  "status": "E2 exact symbolic artifact supporting an E3 n=4 symmetric-family proof draft",
+  "family": "first three exchangeable; a=(3b^2-1)/2; fourth correlations b; 0<=b<=1",
+  "kernel_vector": "(1,1,1,-3b)",
+  "schur_coefficient": "(3*b**2 + 1)*(6561*b**20 - 53217*b**18 + 197316*b**16 - 432864*b**14 + 618246*b**12 - 597762*b**10 + 405924*b**8 - 221848*b**6 + 136561*b**4 - 86053*b**2 + 34048)/(192*(81*b**12 - 333*b**10 + 546*b**8 - 394*b**6 + 125*b**4 - 25*b**2 + 64))",
+  "gap_numerator_in_s": "19683*s**11 - 153090*s**10 + 538731*s**9 - 1101276*s**8 + 1421874*s**7 - 1206144*s**6 + 747882*s**5 - 469284*s**4 + 339131*s**3 - 169598*s**2 + 25691*s + 9472",
+  "gap_denominator_without_192_in_s": "81*s**6 - 333*s**5 + 546*s**4 - 394*s**3 + 125*s**2 - 25*s + 64",
+  "numerator_bernstein_coefficients": [
+    "9472",
+    "129883/11",
+    "608272/55",
+    "1531724/165",
+    "106678/15",
+    "1241752/231",
+    "949184/231",
+    "537568/165",
+    "448384/165",
+    "12288/5",
+    "27392/11",
+    "3072"
+  ],
+  "denominator_bernstein_coefficients": [
+    "64",
+    "359/6",
+    "64",
+    "284/5",
+    "824/15",
+    "56",
+    "64"
+  ],
+  "endpoint_b0": "133/48",
+  "endpoint_b1": "9/4",
+  "checks": {
+    "24_order_exact_average": true,
+    "kernel_vector_exact": true,
+    "full_schur_coefficient": true,
+    "gap_numerator_bernstein_positive": true,
+    "gap_denominator_bernstein_positive": true
+  }
+}

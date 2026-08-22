@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T010-matrix-jensen",
+  "title": "Complete the matrix-Jensen candidate proof",
+  "role": "researcher",
+  "objective": "Give a line-by-line proof or a concrete counterexample for C010, including the exact expected triangular-factor identity, energy identity, Jensen step and asymptotic consequence.",
+  "claim_ids": ["C010"],
+  "dependencies": [],
+  "inputs": ["research/problem.md", "research/claims/C010-matrix-jensen.json", "rpcd_harness/rpcd.py", "scripts/verify_rpcd_identities.py"],
+  "allowed_max_evidence": "E3",
+  "required_artifacts": ["matrix_jensen_proof.md", "lemma_dependency.json", "open_objections.md"],
+  "acceptance_checks": [
+    "All multiplication orders and permutation conventions are explicit.",
+    "Operator-convex Jensen direction and definiteness hypotheses are justified.",
+    "The fixed-initial-point and spectral-radius consequences are distinguished.",
+    "The proof lists what it does and does not imply about C001."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "ready"
+}

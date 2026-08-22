@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "worker": "root",
+  "start_observed": "2026-08-21T19:37:57+08:00",
+  "completed_at": "2026-08-21T21:39:05+08:00",
+  "elapsed_seconds": 7268,
+  "elapsed_minutes": 121.1333333333,
+  "minimum_active_minutes": 120,
+  "threshold_satisfied": true,
+  "provenance": "Both endpoints were sampled with Get-Date by the root worker; all three subagents remained active through their required threshold."
+}

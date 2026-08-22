@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact reconstruction of E3 finite identity",
+  "cases": [
+    {
+      "m": 2,
+      "permutation_pairs": 4,
+      "unweighted_identities_passed": true,
+      "operator_weighted_identity_passed": true
+    },
+    {
+      "m": 3,
+      "permutation_pairs": 36,
+      "unweighted_identities_passed": true,
+      "operator_weighted_identity_passed": true
+    },
+    {
+      "m": 4,
+      "permutation_pairs": 576,
+      "unweighted_identities_passed": true,
+      "operator_weighted_identity_passed": true
+    }
+  ],
+  "result": "G1--G3w passed exactly"
+}

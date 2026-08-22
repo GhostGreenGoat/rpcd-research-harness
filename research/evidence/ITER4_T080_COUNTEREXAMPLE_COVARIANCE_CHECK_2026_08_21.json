@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E1",
+  "status": "finite exhaustive covariance-rate check; positive margins are not a proof",
+  "scope": "Separates the refuted strong A-energy certificate from the still-open RPCD covariance spectral-radius conjecture.",
+  "permutations_per_mu": 40320,
+  "records": [
+    {
+      "mu": 0.01,
+      "spectral_radius": 0.9769875556776603,
+      "target_q": 0.9801864106800602,
+      "q_minus_radius": 0.003198855002399914,
+      "minimum_superoperator_eigenvalue": -0.050683972307326804,
+      "maximum_superoperator_eigenvalue": 0.9769875556776603,
+      "self_adjoint_symmetry_error": 1.2254086634300165e-14,
+      "elapsed_seconds": 1.4944753646850586
+    },
+    {
+      "mu": 0.001,
+      "spectral_radius": 0.9976859778569596,
+      "target_q": 0.9980018739066935,
+      "q_minus_radius": 0.0003158960497339214,
+      "minimum_superoperator_eigenvalue": -0.049089393931948964,
+      "maximum_superoperator_eigenvalue": 0.9976859778569596,
+      "self_adjoint_symmetry_error": 1.0533240946131173e-14,
+      "elapsed_seconds": 1.8121352195739746
+    }
+  ]
+}

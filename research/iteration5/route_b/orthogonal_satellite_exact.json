@@ -1,0 +1,206 @@
+{
+  "evidence_level": "E2 exact rational finite checks supporting an E3 all-n proof draft",
+  "statement": "For the orthogonal two-satellite family, on the satellite-difference direction, J_ceil(n/2)/mu >= 1/2 and hence H_ceil(n/2)/mu >= 1/2.",
+  "even_formula": "1/2 + (h-1)((2-mu)^2-1)/(4(2h-1)), n=2h",
+  "odd_formula": "(h+1)(3+(2-mu)^2)/(4(2h+1)), n=2h+1",
+  "instances": [
+    {
+      "n": 5,
+      "mu": "1/5",
+      "J_ratio": "117/125",
+      "margin_over_half": "109/250",
+      "probabilities": [
+        "1/10",
+        "3/5",
+        "3/10"
+      ]
+    },
+    {
+      "n": 5,
+      "mu": "4/5",
+      "J_ratio": "333/500",
+      "margin_over_half": "83/500",
+      "probabilities": [
+        "1/10",
+        "3/5",
+        "3/10"
+      ]
+    },
+    {
+      "n": 5,
+      "mu": "49/50",
+      "J_ratio": "30303/50000",
+      "margin_over_half": "5303/50000",
+      "probabilities": [
+        "1/10",
+        "3/5",
+        "3/10"
+      ]
+    },
+    {
+      "n": 6,
+      "mu": "1/5",
+      "J_ratio": "181/250",
+      "margin_over_half": "28/125",
+      "probabilities": [
+        "1/5",
+        "3/5",
+        "1/5"
+      ]
+    },
+    {
+      "n": 6,
+      "mu": "4/5",
+      "J_ratio": "68/125",
+      "margin_over_half": "11/250",
+      "probabilities": [
+        "1/5",
+        "3/5",
+        "1/5"
+      ]
+    },
+    {
+      "n": 6,
+      "mu": "49/50",
+      "J_ratio": "12601/25000",
+      "margin_over_half": "101/25000",
+      "probabilities": [
+        "1/5",
+        "3/5",
+        "1/5"
+      ]
+    },
+    {
+      "n": 9,
+      "mu": "1/5",
+      "J_ratio": "13/15",
+      "margin_over_half": "11/30",
+      "probabilities": [
+        "1/6",
+        "5/9",
+        "5/18"
+      ]
+    },
+    {
+      "n": 9,
+      "mu": "4/5",
+      "J_ratio": "37/60",
+      "margin_over_half": "7/60",
+      "probabilities": [
+        "1/6",
+        "5/9",
+        "5/18"
+      ]
+    },
+    {
+      "n": 9,
+      "mu": "49/50",
+      "J_ratio": "3367/6000",
+      "margin_over_half": "367/6000",
+      "probabilities": [
+        "1/6",
+        "5/9",
+        "5/18"
+      ]
+    },
+    {
+      "n": 10,
+      "mu": "1/5",
+      "J_ratio": "337/450",
+      "margin_over_half": "56/225",
+      "probabilities": [
+        "2/9",
+        "5/9",
+        "2/9"
+      ]
+    },
+    {
+      "n": 10,
+      "mu": "4/5",
+      "J_ratio": "247/450",
+      "margin_over_half": "11/225",
+      "probabilities": [
+        "2/9",
+        "5/9",
+        "2/9"
+      ]
+    },
+    {
+      "n": 10,
+      "mu": "49/50",
+      "J_ratio": "11351/22500",
+      "margin_over_half": "101/22500",
+      "probabilities": [
+        "2/9",
+        "5/9",
+        "2/9"
+      ]
+    },
+    {
+      "n": 100,
+      "mu": "1/5",
+      "J_ratio": "3847/4950",
+      "margin_over_half": "686/2475",
+      "probabilities": [
+        "49/198",
+        "50/99",
+        "49/198"
+      ]
+    },
+    {
+      "n": 100,
+      "mu": "4/5",
+      "J_ratio": "499/900",
+      "margin_over_half": "49/900",
+      "probabilities": [
+        "49/198",
+        "50/99",
+        "49/198"
+      ]
+    },
+    {
+      "n": 100,
+      "mu": "49/50",
+      "J_ratio": "499949/990000",
+      "margin_over_half": "4949/990000",
+      "probabilities": [
+        "49/198",
+        "50/99",
+        "49/198"
+      ]
+    },
+    {
+      "n": 1000,
+      "mu": "1/5",
+      "J_ratio": "38947/49950",
+      "margin_over_half": "6986/24975",
+      "probabilities": [
+        "499/1998",
+        "500/999",
+        "499/1998"
+      ]
+    },
+    {
+      "n": 1000,
+      "mu": "4/5",
+      "J_ratio": "55439/99900",
+      "margin_over_half": "5489/99900",
+      "probabilities": [
+        "499/1998",
+        "500/999",
+        "499/1998"
+      ]
+    },
+    {
+      "n": 1000,
+      "mu": "49/50",
+      "J_ratio": "5045399/9990000",
+      "margin_over_half": "50399/9990000",
+      "probabilities": [
+        "499/1998",
+        "500/999",
+        "499/1998"
+      ]
+    }
+  ]
+}

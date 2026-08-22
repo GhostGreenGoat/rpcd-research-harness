@@ -1,0 +1,18 @@
+{
+  "status": "exact analytic counterexample",
+  "target_refuted": "mu*(A+S) <= 2*A and any positive dimension-uniform constant derived from bare Jensen alone",
+  "family": "A=mu*I+(1-mu)*11^T",
+  "instance": {
+    "n": 21,
+    "mu": "9/20",
+    "lambda_parallel": "12",
+    "S_parallel": "4961/120",
+    "jensen_gamma_over_mu": "3200/6401",
+    "gap_to_one_half": "-1/12802",
+    "loewner_margin": "-3/800"
+  },
+  "asymptotic_barrier": "For every fixed 0<mu<1, the parallel Jensen ratio is asymptotic to 3/[n*mu*(1-mu)] and tends to zero.",
+  "scope": "This refutes only the bare second-moment Jensen route. It does not refute K(A)>=(mu/2)A^{-1}, which retains inverse-matrix variance.",
+  "arithmetic": "fractions.Fraction; no floating-point sign decision",
+  "verifier": "scripts/iter4_t095_bare_jensen_half_barrier.py"
+}

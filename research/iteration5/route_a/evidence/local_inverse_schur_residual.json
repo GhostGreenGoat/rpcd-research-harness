@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact rational reconstruction/control",
+  "matrix": "epsilon lift of the displayed five-vector rational Gram matrix",
+  "epsilon": "1/100",
+  "q": 2,
+  "pathwise_rows_checked": 600,
+  "schur_residual_inequality": "pass for every order and row in this control",
+  "spectral_floor_strengthening": {
+    "mu": "1/100",
+    "inequality": "captured <= sigma-mu*||d||^2 <= 1-mu",
+    "minimum_exact_gap": "983289752694005229/5270624320983886718750",
+    "checks": "passed"
+  },
+  "strong_fractional_bound": {
+    "result": "refuted",
+    "order": [
+      0,
+      4,
+      2,
+      3,
+      1
+    ],
+    "row_zero_based": 4,
+    "old_size": 2,
+    "ratio": "96509036395663477402608/104696053844535508536025",
+    "sigma": "6062033277271/16503906250000",
+    "captured": "6031814774728967337663/17814710204925537109375",
+    "old_fraction": "2/5"
+  },
+  "scope": "The general Schur lemma is algebraic; the failed strengthening is one exact control."
+}

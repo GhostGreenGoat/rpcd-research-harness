@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C032",
+  "title": "Sharp upper limit on a global one-epoch energy constant",
+  "statement": "For A=mu I+(1-mu)11^T, the parallel Rayleigh quotient gives gamma(A)/mu <= [n-(n-1)mu](1-mu^(2n))/[n mu(1-mu^2)]. Consequently no dimension-uniform inequality K(A)>=c mu A^{-1} can hold for c>1/2.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "docs/ITER4_AUDIT_GLOBAL_HALF_SHARPNESS.md"
+  },
+  "assumptions": [
+    "Uniform random permutation",
+    "Unit-diagonal SPD correlation normalization",
+    "The limit n to infinity is taken at fixed mu<1 before mu tends upward to one"
+  ],
+  "supporting_artifacts": [
+    "docs/ITER4_T090_CONSTANT_ASSESSMENT.md",
+    "docs/ITER4_AUDIT_GLOBAL_HALF_SHARPNESS.md",
+    "docs/ITER4_AUDIT_T090_SIGNED_RANK_ONE_INTERIOR.md",
+    "scripts/iter4_t090_constant_attack.py",
+    "scripts/iter4_t095_bare_jensen_half_barrier.py",
+    "research/evidence/ITER4_T090_THREE_HALVES_ATTACK.json",
+    "research/evidence/ITER4_T095_BARE_JENSEN_HALF_BARRIER_2026_08_21.json"
+  ],
+  "open_objections": [
+    "This is an upper bound on the best possible global constant; it does not prove the surviving c=1/2 inequality.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

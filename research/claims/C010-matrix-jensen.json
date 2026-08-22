@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C010",
+  "title": "Matrix-Jensen expected A-energy contraction",
+  "statement_ref": "research/problem.md#candidate-c010-matrix-jensen-bound",
+  "status": "proof_candidate",
+  "evidence_level": "E2",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-19",
+    "source": "research/problem.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": false,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "A complete written proof has not passed hostile review.",
+    "Literature priority and exact relationship to Conjecture 4.1 remain open.",
+    "The raw scalar bound is numerically too loose for the C011 witness, so an additional sharpening is required for C001.",
+    "Floating-point identity checks are not a symbolic proof."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "evidence_level": "E2 exact finite diagnostic; not a general theorem",
+  "correlation": [
+    [
+      "1",
+      "0",
+      "3/5"
+    ],
+    [
+      "0",
+      "1",
+      "4/5"
+    ],
+    [
+      "3/5",
+      "4/5",
+      "1"
+    ]
+  ],
+  "spectrum": [
+    "0",
+    "1",
+    "2"
+  ],
+  "extremality_constraint_determinant": "-24/25",
+  "kernel_vector": [
+    "-3",
+    "-4",
+    "5"
+  ],
+  "rpcd_covariance": [
+    [
+      "1523/1250",
+      "8/25",
+      "-83/125"
+    ],
+    [
+      "8/25",
+      "849/625",
+      "-106/125"
+    ],
+    [
+      "-83/125",
+      "-106/125",
+      "3/2"
+    ]
+  ],
+  "kernel_compression_coefficient": "3293/1250",
+  "full_shorted_coefficient": "3157/1202",
+  "compression_minus_shorted": "2984/375625",
+  "orders_enumerated": 6,
+  "interpretation": "This nonsymmetric rank-two correlation matrix is an extreme elliptope point.  Its kernel compression strictly exceeds the coefficient in the full Loewner bound K >= alpha P_ker."
+}

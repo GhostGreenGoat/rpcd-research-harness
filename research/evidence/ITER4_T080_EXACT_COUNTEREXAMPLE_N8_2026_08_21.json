@@ -1,0 +1,330 @@
+{
+  "status": "E2 exact rational counterexample to T080",
+  "statement_refuted": "K0(C) >= 2 P_ker(C) for every singular correlation matrix C",
+  "n": 8,
+  "matrix_parameters": {
+    "poles": 2,
+    "ring_points": 6,
+    "pole_pole": "1",
+    "pole_ring": "2/3",
+    "distinct_ring": "1/3"
+  },
+  "psd_spectrum": {
+    "zero": {
+      "value": "0",
+      "multiplicity": 2
+    },
+    "ring_standard": {
+      "value": "2/3",
+      "multiplicity": 5
+    },
+    "trivial_positive": {
+      "value": "14/3",
+      "multiplicity": 1
+    }
+  },
+  "kernel_vector": [
+    1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "kernel_vector_squared_norm": 2,
+  "category_words": 56,
+  "permutations_represented": 40320,
+  "direct_labelled_permutations_enumerated": 40320,
+  "category_and_direct_enumerations_agree": true,
+  "closed_28_term_double_sum_energy": "2115674/531441",
+  "closed_double_sum_agrees": true,
+  "rayleigh_coefficient": "1057837/531441",
+  "rayleigh_coefficient_decimal": 1.9905069424451634,
+  "gap_to_2": "-5045/531441",
+  "gap_to_2_decimal": -0.009493057554836756,
+  "category_records": [
+    {
+      "plus_position_zero_based": 0,
+      "minus_position_zero_based": 1,
+      "energy": "3079081/531441"
+    },
+    {
+      "plus_position_zero_based": 0,
+      "minus_position_zero_based": 2,
+      "energy": "21453217/4782969"
+    },
+    {
+      "plus_position_zero_based": 0,
+      "minus_position_zero_based": 3,
+      "energy": "17879329/4782969"
+    },
+    {
+      "plus_position_zero_based": 0,
+      "minus_position_zero_based": 4,
+      "energy": "15710113/4782969"
+    },
+    {
+      "plus_position_zero_based": 0,
+      "minus_position_zero_based": 5,
+      "energy": "14244769/4782969"
+    },
+    {
+      "plus_position_zero_based": 0,
+      "minus_position_zero_based": 6,
+      "energy": "13009249/4782969"
+    },
+    {
+      "plus_position_zero_based": 0,
+      "minus_position_zero_based": 7,
+      "energy": "11517649/4782969"
+    },
+    {
+      "plus_position_zero_based": 1,
+      "minus_position_zero_based": 0,
+      "energy": "3079081/531441"
+    },
+    {
+      "plus_position_zero_based": 1,
+      "minus_position_zero_based": 2,
+      "energy": "341665/59049"
+    },
+    {
+      "plus_position_zero_based": 1,
+      "minus_position_zero_based": 3,
+      "energy": "2376409/531441"
+    },
+    {
+      "plus_position_zero_based": 1,
+      "minus_position_zero_based": 4,
+      "energy": "1972825/531441"
+    },
+    {
+      "plus_position_zero_based": 1,
+      "minus_position_zero_based": 5,
+      "energy": "1718233/531441"
+    },
+    {
+      "plus_position_zero_based": 1,
+      "minus_position_zero_based": 6,
+      "energy": "1526425/531441"
+    },
+    {
+      "plus_position_zero_based": 1,
+      "minus_position_zero_based": 7,
+      "energy": "1326217/531441"
+    },
+    {
+      "plus_position_zero_based": 2,
+      "minus_position_zero_based": 0,
+      "energy": "21453217/4782969"
+    },
+    {
+      "plus_position_zero_based": 2,
+      "minus_position_zero_based": 1,
+      "energy": "341665/59049"
+    },
+    {
+      "plus_position_zero_based": 2,
+      "minus_position_zero_based": 3,
+      "energy": "37849/6561"
+    },
+    {
+      "plus_position_zero_based": 2,
+      "minus_position_zero_based": 4,
+      "energy": "262225/59049"
+    },
+    {
+      "plus_position_zero_based": 2,
+      "minus_position_zero_based": 5,
+      "energy": "215761/59049"
+    },
+    {
+      "plus_position_zero_based": 2,
+      "minus_position_zero_based": 6,
+      "energy": "184081/59049"
+    },
+    {
+      "plus_position_zero_based": 2,
+      "minus_position_zero_based": 7,
+      "energy": "155521/59049"
+    },
+    {
+      "plus_position_zero_based": 3,
+      "minus_position_zero_based": 0,
+      "energy": "17879329/4782969"
+    },
+    {
+      "plus_position_zero_based": 3,
+      "minus_position_zero_based": 1,
+      "energy": "2376409/531441"
+    },
+    {
+      "plus_position_zero_based": 3,
+      "minus_position_zero_based": 2,
+      "energy": "37849/6561"
+    },
+    {
+      "plus_position_zero_based": 3,
+      "minus_position_zero_based": 4,
+      "energy": "4177/729"
+    },
+    {
+      "plus_position_zero_based": 3,
+      "minus_position_zero_based": 5,
+      "energy": "28681/6561"
+    },
+    {
+      "plus_position_zero_based": 3,
+      "minus_position_zero_based": 6,
+      "energy": "23113/6561"
+    },
+    {
+      "plus_position_zero_based": 3,
+      "minus_position_zero_based": 7,
+      "energy": "18745/6561"
+    },
+    {
+      "plus_position_zero_based": 4,
+      "minus_position_zero_based": 0,
+      "energy": "15710113/4782969"
+    },
+    {
+      "plus_position_zero_based": 4,
+      "minus_position_zero_based": 1,
+      "energy": "1972825/531441"
+    },
+    {
+      "plus_position_zero_based": 4,
+      "minus_position_zero_based": 2,
+      "energy": "262225/59049"
+    },
+    {
+      "plus_position_zero_based": 4,
+      "minus_position_zero_based": 3,
+      "energy": "4177/729"
+    },
+    {
+      "plus_position_zero_based": 4,
+      "minus_position_zero_based": 5,
+      "energy": "457/81"
+    },
+    {
+      "plus_position_zero_based": 4,
+      "minus_position_zero_based": 6,
+      "energy": "3073/729"
+    },
+    {
+      "plus_position_zero_based": 4,
+      "minus_position_zero_based": 7,
+      "energy": "2353/729"
+    },
+    {
+      "plus_position_zero_based": 5,
+      "minus_position_zero_based": 0,
+      "energy": "14244769/4782969"
+    },
+    {
+      "plus_position_zero_based": 5,
+      "minus_position_zero_based": 1,
+      "energy": "1718233/531441"
+    },
+    {
+      "plus_position_zero_based": 5,
+      "minus_position_zero_based": 2,
+      "energy": "215761/59049"
+    },
+    {
+      "plus_position_zero_based": 5,
+      "minus_position_zero_based": 3,
+      "energy": "28681/6561"
+    },
+    {
+      "plus_position_zero_based": 5,
+      "minus_position_zero_based": 4,
+      "energy": "457/81"
+    },
+    {
+      "plus_position_zero_based": 5,
+      "minus_position_zero_based": 6,
+      "energy": "49/9"
+    },
+    {
+      "plus_position_zero_based": 5,
+      "minus_position_zero_based": 7,
+      "energy": "313/81"
+    },
+    {
+      "plus_position_zero_based": 6,
+      "minus_position_zero_based": 0,
+      "energy": "13009249/4782969"
+    },
+    {
+      "plus_position_zero_based": 6,
+      "minus_position_zero_based": 1,
+      "energy": "1526425/531441"
+    },
+    {
+      "plus_position_zero_based": 6,
+      "minus_position_zero_based": 2,
+      "energy": "184081/59049"
+    },
+    {
+      "plus_position_zero_based": 6,
+      "minus_position_zero_based": 3,
+      "energy": "23113/6561"
+    },
+    {
+      "plus_position_zero_based": 6,
+      "minus_position_zero_based": 4,
+      "energy": "3073/729"
+    },
+    {
+      "plus_position_zero_based": 6,
+      "minus_position_zero_based": 5,
+      "energy": "49/9"
+    },
+    {
+      "plus_position_zero_based": 6,
+      "minus_position_zero_based": 7,
+      "energy": "5"
+    },
+    {
+      "plus_position_zero_based": 7,
+      "minus_position_zero_based": 0,
+      "energy": "11517649/4782969"
+    },
+    {
+      "plus_position_zero_based": 7,
+      "minus_position_zero_based": 1,
+      "energy": "1326217/531441"
+    },
+    {
+      "plus_position_zero_based": 7,
+      "minus_position_zero_based": 2,
+      "energy": "155521/59049"
+    },
+    {
+      "plus_position_zero_based": 7,
+      "minus_position_zero_based": 3,
+      "energy": "18745/6561"
+    },
+    {
+      "plus_position_zero_based": 7,
+      "minus_position_zero_based": 4,
+      "energy": "2353/729"
+    },
+    {
+      "plus_position_zero_based": 7,
+      "minus_position_zero_based": 5,
+      "energy": "313/81"
+    },
+    {
+      "plus_position_zero_based": 7,
+      "minus_position_zero_based": 6,
+      "energy": "5"
+    }
+  ],
+  "arithmetic": "Python fractions.Fraction; no floating-point decisions"
+}

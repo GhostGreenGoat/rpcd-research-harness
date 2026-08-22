@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C033",
+  "title": "Two-step matrix bound and the global half-constant through n=4",
+  "statement": "For every n-dimensional unit-diagonal SPD A with spectral floor mu, the exact without-replacement two-update decrease matrix satisfies K(A)>=J2(A)>=(2mu/n)A^{-1}. Consequently K(A)>=(mu/2)A^{-1} for every n<=4.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "docs/ITER4_AUDIT_GLOBAL_HALF_SHARPNESS.md#4-the-half-constant-is-already-a-theorem-through-dimension-four"
+  },
+  "assumptions": [
+    "Uniform sampling without replacement for the first two coordinate updates",
+    "Unit-diagonal SPD correlation normalization",
+    "mu is the minimum eigenvalue of A"
+  ],
+  "supporting_artifacts": [
+    "docs/ITER3_ROUTE_M2_REMAINING_SET_MATRIX_LYAPUNOV.md",
+    "docs/ITER3_AUDIT_M2_BELLMAN.md",
+    "docs/ITER4_AUDIT_GLOBAL_HALF_SHARPNESS.md",
+    "docs/ITER4_AUDIT_T090_LOW_DIMENSION_J2.md",
+    "research/iteration4/t085/finite_time_corollary.md",
+    "scripts/verify_iter4_t085_exact.py"
+  ],
+  "open_objections": [
+    "For n>4 the coefficient 2/n is below 1/2, so this argument alone misses the target by a factor proportional to n.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

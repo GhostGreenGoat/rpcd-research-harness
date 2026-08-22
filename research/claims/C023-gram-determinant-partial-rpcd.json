@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C023",
+  "title": "Gram-determinant RPCD bound and partial C001 region",
+  "statement_ref": "docs/ITER2_ROUTE_C_PROJECTION_ALGEBRA.md#4-consequences-for-c001",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-20",
+    "source": "docs/ITER2_ROUTE_C_PROJECTION_ALGEBRA.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The Meany inequality is external and not novel; priority of the high-sigma RPCD corollary has not been audited.",
+    "The proof has not been independently reconstructed or formalized.",
+    "The determinant bound discards the permutation average and cannot by itself cover the difficult low-sigma region."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T060-path-feature-sos",
+  "title": "Order-poset path-feature SOS lower bound",
+  "role": "researcher",
+  "objective": "Project the exact path-square representation of E[(MM^T)^-1] onto a finite path-feature space so that Bessel or SOS positivity gives a computable Loewner lower bound.",
+  "claim_ids": ["C001", "C020", "C025"],
+  "dependencies": ["T050-resolvent-moment-bound"],
+  "inputs": ["research/problem.md", "research/claims/C025-order-poset-expansion.json", "docs/ITER2_ROUTE_D_ORDER_POSET_EXPANSION.md", "docs/ITER2_MAIN_ANALYTIC_LEMMAS.md"],
+  "allowed_max_evidence": "E3",
+  "required_artifacts": ["feature_basis.md", "poset_coefficients.json", "sos_bound.md", "small_n_crosscheck.py"],
+  "acceptance_checks": [
+    "All path-union probabilities are derived as linear-extension counts divided by factorials.",
+    "Truncation is performed before expanding the square or otherwise preserves PSD order.",
+    "Cases q=2,3,4 are compared to the Jensen and resolvent corrections.",
+    "No absolute-value bound is accepted if it destroys the target constant."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "blocked"
+}

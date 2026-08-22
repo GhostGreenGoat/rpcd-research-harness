@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C043",
+  "title": "All-dimensional weighted third-prefix inequality",
+  "statement": "For every n>=3 and every real unit-diagonal SPD A with mu=lambda_min(A), the exact weighted prefix matrix C_3(A)=J_3(A)-(1/2)J_2(A) satisfies C_3(A)>=(2mu/n)A^{-1}. The explicit sufficient state L_3 satisfies the same bound.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-22",
+    "artifact": "research/iteration6/route_l3/schur_compensation_proof.md"
+  },
+  "assumptions": [
+    "Real unit-diagonal SPD matrix",
+    "Uniform ordered prefix without replacement",
+    "mu is the normalized spectral floor"
+  ],
+  "supporting_artifacts": [
+    "research/iteration6/route_l3/schur_compensation_proof.md",
+    "research/iteration6/route_stitch/L3_HOSTILE_AUDIT.md",
+    "research/iteration6/route_stitch/independent_l3_audit.py",
+    "research/iteration6/route_stitch/L3_INDEPENDENT_EXACT_AUDIT.json",
+    "scripts/iter6_l3_schur_compensation.py"
+  ],
+  "open_objections": [
+    "The W4 and growing-depth Schur-recovery steps remain open.",
+    "No priority audit, Lean formalization, or external-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

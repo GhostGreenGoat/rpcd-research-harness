@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T075-saturated-cluster-extremizer",
+  "title": "Saturated signed-correlation cluster extremizer",
+  "role": "researcher",
+  "objective": "Prove or refute that a C001 extremizer must saturate a signed-correlation statistic on some nontrivial subset, enabling the module decomposition from route B.",
+  "claim_ids": ["C001", "C024"],
+  "dependencies": [],
+  "inputs": ["research/problem.md", "research/claims/C024-orbit-concavity-barrier.json", "docs/ITER2_ROUTE_B_SYMMETRY_EXTREMAL.md"],
+  "allowed_max_evidence": "E3",
+  "required_artifacts": ["extremizer_statement.md", "kkt_analysis.md", "module_reduction.md", "counterexample_checks.json"],
+  "acceptance_checks": [
+    "Does not use the refuted orbit-concavity or Hessian-averaging step.",
+    "Handles high-rank elliptope extreme points outside the cut polytope.",
+    "Separates existence of an extremizer from its proposed saturation property.",
+    "If saturation holds, derives the cross-block rank-one profile explicitly."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "ready"
+}

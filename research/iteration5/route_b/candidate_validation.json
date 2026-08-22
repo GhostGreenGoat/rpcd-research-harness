@@ -1,0 +1,25 @@
+{
+  "evidence_level": "E1/E2 finite float diagnostics; Monte Carlo is not a proof",
+  "candidate_source": "research\\iteration5\\route_b\\local_refine_n76.json",
+  "n": 76,
+  "depth": 38,
+  "symmetry_reduced_coefficient": 0.45589542531655247,
+  "full_matrix_coefficient": 0.45589542531655186,
+  "full_vs_reduced_absolute_gap": 6.106226635438361e-16,
+  "generalized_denominator": 0.9999999999999979,
+  "dp_worst_direction_quadratic": 0.45589542531655236,
+  "monte_carlo": {
+    "seed": 202608219,
+    "samples": 3000,
+    "mean": 0.45439729448120214,
+    "standard_error": 0.001081000942876301,
+    "mean_minus_dp": -0.0014981308353502198,
+    "z_score": -1.3858737545260873,
+    "sample_min": 0.22470394256811047,
+    "sample_max": 0.6445463512194962
+  },
+  "environment": {
+    "python": "3.12.13",
+    "numpy": "2.3.5"
+  }
+}

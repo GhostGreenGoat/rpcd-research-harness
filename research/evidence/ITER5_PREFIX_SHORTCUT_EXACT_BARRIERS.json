@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "status": "exact rational proof-route counterexamples; the normalized half-prefix target survives",
+  "matrix": "A=(1/5)I+(4/5)J in dimension 3",
+  "parallel_J2_eigenvalue": "26/75",
+  "J2_minus_2I_over_3_parallel_gap": "-8/25",
+  "position_2_minus_position_1_parallel_gap": "-8/25",
+  "actual_normalized_target_parallel_margin": "96/125",
+  "checks": "passed",
+  "verifier": "scripts/iter5_prefix_shortcut_barriers.py"
+}

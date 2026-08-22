@@ -1,0 +1,23 @@
+{
+  "status": "E2 exact audit artifact; supports the separate E4 hostile-audit argument",
+  "arithmetic": "sympy exact symbolic arithmetic",
+  "checks": {
+    "six_order_K11": true,
+    "six_order_K12": true,
+    "108E_minus_F_divisible_by_detC": true,
+    "unit_variable_endpoint_factorization": true,
+    "equal_variable_endpoint_factorization": true,
+    "bernstein_reconstruction": true,
+    "bernstein_coefficients_strictly_positive": true
+  },
+  "bernstein_coefficients": [
+    "9",
+    "104/7",
+    "106/7",
+    "92/7",
+    "323/35",
+    "50/7",
+    "38/7",
+    "6"
+  ]
+}

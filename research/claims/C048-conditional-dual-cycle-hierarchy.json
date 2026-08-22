@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C048",
+  "title": "Conditional dual-regression martingale hierarchy",
+  "statement": "For every information sigma-field G on the random order, the conditional regression certificate C_G=E[P_G Q_G^{-1}P_G] lower-bounds the exact inverse moment K. Refining G monotonically strengthens C_G, and the full-order field gives equality. Conditioning on a directed cycle and averaging its cut yields an exact arc-incidence covariance representation for half-window residuals.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-22",
+    "artifact": "research/iteration6/route_frame/conditional_dual_martingale_hierarchy.md"
+  },
+  "assumptions": [
+    "The local-inverse dual feature is positive definite",
+    "Conditional expectations are taken over a finite uniform permutation space",
+    "Matrix inverses are interpreted on the documented supported range where needed"
+  ],
+  "supporting_artifacts": [
+    "research/iteration6/route_frame/conditional_dual_martingale_hierarchy.md",
+    "research/iteration6/route_frame/cyclic_cut_freezing.md",
+    "research/iteration6/route_frame/conditional_random_rank_gram.md",
+    "research/iteration6/root/conditional_dual_hierarchy_audit.md",
+    "research/iteration6/route_frame/scripts/verify_conditional_dual_hierarchy.py"
+  ],
+  "open_objections": [
+    "No dimension-free lower bound for the cycle-conditioned certificate has yet been proved.",
+    "The nested arc Hardy/Copson kernel and its cross term with the baseline remain open.",
+    "No priority audit, formalization, or external-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E3 proof-candidate algebra plus E2 exact regressions",
+  "scope": "Universal scalar algebra for child d>=3 plus the piecewise d=2 closure; fixed rational parent regressions for m=3,4,5.",
+  "scalar_checks": {
+    "low_endpoint_factor": "-(lambda - 1)*(2*d - lambda - 1)/(d*(d - 1)**2)",
+    "high_stronger_factor": "(lambda - 1)*(3*d**2 - 4*d*lambda - 6*d + 2*lambda**2 + 2*lambda + 3)/(2*d*lambda*(d - 1)**2)",
+    "high_quadratic_vertex_value": "(2*d**2 - 8*d + 5)/2",
+    "d3_gap_parameterization": "v*(27*t**3*v**2 - 18*t**2*v**2 - 27*t**2*v + 3*t*v**2 + 6*t*v + 6*t + v + 4)/(12*(3*t*v + 1))",
+    "d3_bernstein_coefficients": [
+      [
+        "4",
+        "9/2",
+        "5"
+      ],
+      [
+        "6",
+        "15/2",
+        "10"
+      ],
+      [
+        "8",
+        "6",
+        "0"
+      ],
+      [
+        "10",
+        "0",
+        "2"
+      ]
+    ],
+    "d2_low_mu_bernstein_coefficients": [
+      [
+        "2",
+        "5/3",
+        "1",
+        "0"
+      ],
+      [
+        "7/4",
+        "23/12",
+        "25/12",
+        "7/4"
+      ],
+      [
+        "3/2",
+        "11/6",
+        "41/18",
+        "23/6"
+      ],
+      [
+        "5/4",
+        "17/12",
+        "19/12",
+        "1/4"
+      ],
+      [
+        "1",
+        "2/3",
+        "0",
+        "1"
+      ]
+    ],
+    "d2_high_mu_bernstein_coefficients": [
+      [
+        "162",
+        "567/4",
+        "243/2",
+        "102",
+        "84"
+      ],
+      [
+        "567/4",
+        "1053/8",
+        "975/8",
+        "897/8",
+        "205/2"
+      ],
+      [
+        "243/2",
+        "459/4",
+        "437/4",
+        "211/2",
+        "103"
+      ],
+      [
+        "405/4",
+        "729/8",
+        "669/8",
+        "621/8",
+        "147/2"
+      ],
+      [
+        "81",
+        "243/4",
+        "45",
+        "36",
+        "34"
+      ]
+    ],
+    "general_parent_surplus": "-3*mu*(mu - 1)/(2*m*(m - 1))",
+    "m3_low_parent_closure": "0",
+    "m3_high_parent_closure": "0"
+  },
+  "anisotropic_residual_checks": [
+    {
+      "family": "rank2_rational_gram_m3_low_mu",
+      "size": 3,
+      "S_minus_R2_equals_ZF_max_exact_residual": "0",
+      "ZF_equals_pair_SOS_max_exact_residual": "0",
+      "ZF_all_principal_minors": "PASS",
+      "smallest_ZF_principal_minor": "0"
+    },
+    {
+      "family": "rank2_rational_gram_m3_high_mu",
+      "size": 3,
+      "S_minus_R2_equals_ZF_max_exact_residual": "0",
+      "ZF_equals_pair_SOS_max_exact_residual": "0",
+      "ZF_all_principal_minors": "PASS",
+      "smallest_ZF_principal_minor": "0"
+    },
+    {
+      "family": "rank2_rational_gram_m4",
+      "size": 4,
+      "S_minus_R2_equals_ZF_max_exact_residual": "0",
+      "ZF_equals_pair_SOS_max_exact_residual": "0",
+      "ZF_all_principal_minors": "PASS",
+      "smallest_ZF_principal_minor": "23006142326348047882594995689312223232/297024368533531584776937961578369140625"
+    },
+    {
+      "family": "simplex_lift_m5",
+      "size": 5,
+      "S_minus_R2_equals_ZF_max_exact_residual": "0",
+      "ZF_equals_pair_SOS_max_exact_residual": "0",
+      "ZF_all_principal_minors": "PASS",
+      "smallest_ZF_principal_minor": "0"
+    },
+    {
+      "family": "rank3_rational_gram_m5",
+      "size": 5,
+      "S_minus_R2_equals_ZF_max_exact_residual": "0",
+      "ZF_equals_pair_SOS_max_exact_residual": "0",
+      "ZF_all_principal_minors": "PASS",
+      "smallest_ZF_principal_minor": "837475817755198002905322337264424891437/52018470456205820000238529042666542187500"
+    }
+  ],
+  "finite_exact_checks": [
+    {
+      "family": "rank2_rational_gram_m3_low_mu",
+      "size": 3,
+      "mu": "1/5",
+      "kappa": "1/10",
+      "child_rank_one_compensation_all_principal_minors": "PASS",
+      "smallest_child_principal_minor": "636500034424/2579926171875",
+      "block_inverse_identity_max_exact_residual": "0",
+      "child_formula_minus_B5_max_exact_residual": "0",
+      "l3_target_all_principal_minors": "PASS",
+      "smallest_target_principal_minor": "1404472762416293672521292671984/14622471912180723094940185546875"
+    },
+    {
+      "family": "rank2_rational_gram_m3_high_mu",
+      "size": 3,
+      "mu": "4/5",
+      "kappa": "1/2",
+      "child_rank_one_compensation_all_principal_minors": "PASS",
+      "smallest_child_principal_minor": "9601075271/512290625000",
+      "block_inverse_identity_max_exact_residual": "0",
+      "child_formula_minus_B5_max_exact_residual": "0",
+      "l3_target_all_principal_minors": "PASS",
+      "smallest_target_principal_minor": "8648832935073936140041877483/4534446537183418464660644531250"
+    },
+    {
+      "family": "rank2_rational_gram_m4",
+      "size": 4,
+      "mu": "1/5",
+      "kappa": "1/10",
+      "child_rank_one_compensation_all_principal_minors": "PASS",
+      "smallest_child_principal_minor": "54633332906368/3623688031640625",
+      "block_inverse_identity_max_exact_residual": "0",
+      "child_formula_minus_B5_max_exact_residual": "0",
+      "l3_target_all_principal_minors": "PASS",
+      "smallest_target_principal_minor": "166816704488191998221393675962961152/18793447181252020798623561859130859375"
+    },
+    {
+      "family": "simplex_lift_m5",
+      "size": 5,
+      "mu": "1/7",
+      "kappa": "3/56",
+      "child_rank_one_compensation_all_principal_minors": "PASS",
+      "smallest_child_principal_minor": "151909698186513/31554400703021056",
+      "block_inverse_identity_max_exact_residual": "0",
+      "child_formula_minus_B5_max_exact_residual": "0",
+      "l3_target_all_principal_minors": "PASS",
+      "smallest_target_principal_minor": "3506186676460484926687690539/1364854758081096076394700800000"
+    },
+    {
+      "family": "rank3_rational_gram_m5",
+      "size": 5,
+      "mu": "2/9",
+      "kappa": "1/12",
+      "child_rank_one_compensation_all_principal_minors": "PASS",
+      "smallest_child_principal_minor": "358299718646513160559/300829537655843788800000",
+      "block_inverse_identity_max_exact_residual": "0",
+      "child_formula_minus_B5_max_exact_residual": "0",
+      "l3_target_all_principal_minors": "PASS",
+      "smallest_target_principal_minor": "11008579241808445480648800674049438549785826480107/12868166702211220150043858640353934839868750000000000"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T141-cycle-cut-arc-covariance",
+  "title": "Cycle-conditioned arc covariance for half-memory RPCD",
+  "role": "researcher",
+  "objective": "Prove or refute a dimension-free cycle-averaged bound for the adapted signed off-diagonal arc covariance in the half-memory conditional dual hierarchy.",
+  "claim_ids": ["C040", "C046", "C048"],
+  "dependencies": [],
+  "inputs": [
+    "research/problem.md",
+    "research/iteration6/PORTABLE_HANDOFF.md",
+    "research/iteration6/route_frame/FINAL_REPORT.md",
+    "research/iteration6/route_frame/cyclic_cut_freezing.md",
+    "research/iteration6/route_frame/conditional_dual_martingale_hierarchy.md",
+    "research/iteration6/route_frame/arc_tail_covariance_target.md",
+    "research/iteration6/route_frame/pathwise_triangular_projection_barrier.md",
+    "research/iteration6/route_frame/reverse_pair_triangular_barrier.md"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": [
+    "cycle_mode_decomposition.md",
+    "conditional_gain_bound.md",
+    "barrier_regression.py",
+    "certificate_or_counterexample.json"
+  ],
+  "acceptance_checks": [
+    "Reproduces the skew-Hilbert pathwise and reversal-pair divergences exactly.",
+    "Uses the full random-cycle average; it does not claim a pathwise or reversal-only constant.",
+    "Separates diagonal and adapted signed off-diagonal arc covariance and preserves local Schur constraints.",
+    "Explains whether conditional Pythagorean information gains pay for the target and how the result transfers to expected distance."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
+  "status": "ready"
+}

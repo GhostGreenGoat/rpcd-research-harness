@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "verdict": "PASS",
+  "scope": "all p>=3,d>=max(6,p+1), equal-magnitude K_(1,p) direct_sum isolates",
+  "evidence_level": "E4 internal proof candidate after independent hostile reconstruction; no formal or external review",
+  "sector_degrees_t": {"center": 3, "uniform": 5, "determinant": 7, "transverse": 5},
+  "parameter_split": ["p=3,d=6+h", "p=4,d=6+h", "p=5+a,d=6+a+h"],
+  "largest_independent_power_coefficient_check": 200,
+  "fixed_control": "p=7,d=12,t=99/100: all four invariant-sector quantities strictly positive",
+  "caveat": "Equal-magnitude star slice only, not arbitrary stars or unrestricted W4."
+}

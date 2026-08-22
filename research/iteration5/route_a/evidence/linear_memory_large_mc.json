@@ -1,0 +1,583 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E1 float64 Monte Carlo hostile control",
+  "seed": 529106,
+  "samples_per_independent_batch": 600,
+  "records": [
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_2_lift_0.01",
+      "batch_certificates": [
+        2.0726076967616507,
+        2.0537546498850037
+      ],
+      "batch_disagreement": 0.018853046876647017,
+      "condition_q_first_batch": 12.49763571419339
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_2_lift_0.1",
+      "batch_certificates": [
+        1.9271593031636727,
+        1.911060556512239
+      ],
+      "batch_disagreement": 0.016098746651433737,
+      "condition_q_first_batch": 11.487335219605798
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_2_lift_0.5",
+      "batch_certificates": [
+        1.440918099834808,
+        1.432499892241712
+      ],
+      "batch_disagreement": 0.008418207593095861,
+      "condition_q_first_batch": 5.715223196465311
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_2_lift_0.9",
+      "batch_certificates": [
+        1.0436099198367348,
+        1.043481780630121
+      ],
+      "batch_disagreement": 0.0001281392066136977,
+      "condition_q_first_batch": 1.4307500770344768
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.01",
+      "batch_certificates": [
+        2.089162126429164,
+        2.0419005322525434
+      ],
+      "batch_disagreement": 0.04726159417662057,
+      "condition_q_first_batch": 8.68464791339066
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.1",
+      "batch_certificates": [
+        1.9542973956858125,
+        1.9161552223787461
+      ],
+      "batch_disagreement": 0.038142173307066374,
+      "condition_q_first_batch": 8.005717118222956
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.5",
+      "batch_certificates": [
+        1.4692221964654033,
+        1.4591387906373108
+      ],
+      "batch_disagreement": 0.010083405828092529,
+      "condition_q_first_batch": 3.9931896022503257
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.9",
+      "batch_certificates": [
+        1.0680570942298087,
+        1.0681387335576762
+      ],
+      "batch_disagreement": 8.163932786753314e-05,
+      "condition_q_first_batch": 1.3183847789768857
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.01",
+      "batch_certificates": [
+        2.053400647227704,
+        2.0777948463764844
+      ],
+      "batch_disagreement": 0.02439419914878016,
+      "condition_q_first_batch": 9.380336745553238
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.1",
+      "batch_certificates": [
+        1.923222000185033,
+        1.9444198623211764
+      ],
+      "batch_disagreement": 0.021197862136143275,
+      "condition_q_first_batch": 8.621589599056422
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.5",
+      "batch_certificates": [
+        1.4514695466302932,
+        1.4539023553117736
+      ],
+      "batch_disagreement": 0.002432808681480436,
+      "condition_q_first_batch": 4.177877009872044
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "rank_3_lift_0.9",
+      "batch_certificates": [
+        1.0650412705239403,
+        1.0651793423488876
+      ],
+      "batch_disagreement": 0.00013807182494729453,
+      "condition_q_first_batch": 1.32678559179009
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "positive_equicorr_c_1.0",
+      "batch_certificates": [
+        0.9668502434556125,
+        0.9667173430865508
+      ],
+      "batch_disagreement": 0.0001329003690617725,
+      "condition_q_first_batch": 1.8630402775965973
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "positive_equicorr_c_4.0",
+      "batch_certificates": [
+        1.1861729447517002,
+        1.1828839242760245
+      ],
+      "batch_disagreement": 0.003289020475675697,
+      "condition_q_first_batch": 8.370042041690692
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "positive_equicorr_c_10.0",
+      "batch_certificates": [
+        1.8496676594635466,
+        1.8479576813340235
+      ],
+      "batch_disagreement": 0.0017099781295231153,
+      "condition_q_first_batch": 19.755309743807327
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "negative_equicorr_0.5",
+      "batch_certificates": [
+        1.6841270173484113,
+        1.6840726066879212
+      ],
+      "batch_disagreement": 5.441066049005627e-05,
+      "condition_q_first_batch": 1.3441756225522
+    },
+    {
+      "n": 10,
+      "q": 5,
+      "label": "negative_equicorr_0.95",
+      "batch_certificates": [
+        2.6199903741608885,
+        2.6200468705754645
+      ],
+      "batch_disagreement": 5.649641457594612e-05,
+      "condition_q_first_batch": 1.7447528494561553
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_2_lift_0.01",
+      "batch_certificates": [
+        2.0254932096715486,
+        2.0011494829105727
+      ],
+      "batch_disagreement": 0.024343726760975848,
+      "condition_q_first_batch": 18.299621903858547
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_2_lift_0.1",
+      "batch_certificates": [
+        1.877136807969879,
+        1.8559905928690386
+      ],
+      "batch_disagreement": 0.02114621510084036,
+      "condition_q_first_batch": 16.648533107587422
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_2_lift_0.5",
+      "batch_certificates": [
+        1.3956596513166275,
+        1.3994890325218083
+      ],
+      "batch_disagreement": 0.0038293812051808374,
+      "condition_q_first_batch": 8.644740691624113
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_2_lift_0.9",
+      "batch_certificates": [
+        0.9920791842422743,
+        0.9924260754370583
+      ],
+      "batch_disagreement": 0.00034689119478403807,
+      "condition_q_first_batch": 1.6374613317419735
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_3_lift_0.01",
+      "batch_certificates": [
+        2.0263287670949692,
+        2.0004448968654907
+      ],
+      "batch_disagreement": 0.02588387022947858,
+      "condition_q_first_batch": 14.791113929883586
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_3_lift_0.1",
+      "batch_certificates": [
+        1.88693753799694,
+        1.863399700020329
+      ],
+      "batch_disagreement": 0.02353783797661091,
+      "condition_q_first_batch": 13.623610972121352
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_3_lift_0.5",
+      "batch_certificates": [
+        1.4175634549987315,
+        1.4049291904581445
+      ],
+      "batch_disagreement": 0.012634264540587026,
+      "condition_q_first_batch": 7.037576319060416
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_3_lift_0.9",
+      "batch_certificates": [
+        1.0175559043420612,
+        1.0172520868791703
+      ],
+      "batch_disagreement": 0.0003038174628908763,
+      "condition_q_first_batch": 1.530179519105858
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_5_lift_0.01",
+      "batch_certificates": [
+        2.0141040480260464,
+        1.9948882713646827
+      ],
+      "batch_disagreement": 0.019215776661363648,
+      "condition_q_first_batch": 10.795631646794783
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_5_lift_0.1",
+      "batch_certificates": [
+        1.8950801837181448,
+        1.8806596260843145
+      ],
+      "batch_disagreement": 0.014420557633830322,
+      "condition_q_first_batch": 10.045404480607067
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_5_lift_0.5",
+      "batch_certificates": [
+        1.4174125473413126,
+        1.4272288002626765
+      ],
+      "batch_disagreement": 0.0098162529213639,
+      "condition_q_first_batch": 5.128671887718101
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "rank_5_lift_0.9",
+      "batch_certificates": [
+        1.0461337729678497,
+        1.046148756384115
+      ],
+      "batch_disagreement": 1.4983416265268445e-05,
+      "condition_q_first_batch": 1.3985183916432988
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "positive_equicorr_c_1.0",
+      "batch_certificates": [
+        0.9223164002866896,
+        0.9224364208018413
+      ],
+      "batch_disagreement": 0.00012002051515169754,
+      "condition_q_first_batch": 1.8082127591833481
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "positive_equicorr_c_4.0",
+      "batch_certificates": [
+        0.8919101105152887,
+        0.8929285055479164
+      ],
+      "batch_disagreement": 0.0010183950326276836,
+      "condition_q_first_batch": 7.907534008168536
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "positive_equicorr_c_10.0",
+      "batch_certificates": [
+        1.4712444697274107,
+        1.4496115312289324
+      ],
+      "batch_disagreement": 0.02163293849847836,
+      "condition_q_first_batch": 21.36318748676712
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "negative_equicorr_0.5",
+      "batch_certificates": [
+        1.689893447549571,
+        1.6899649015374767
+      ],
+      "batch_disagreement": 7.145398790564528e-05,
+      "condition_q_first_batch": 1.3203168168105741
+    },
+    {
+      "n": 16,
+      "q": 8,
+      "label": "negative_equicorr_0.95",
+      "batch_certificates": [
+        2.6623221193798976,
+        2.6624555340506184
+      ],
+      "batch_disagreement": 0.0001334146707208106,
+      "condition_q_first_batch": 1.720936562056895
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_2_lift_0.01",
+      "batch_certificates": [
+        1.971182844631699,
+        1.9650040879306254
+      ],
+      "batch_disagreement": 0.0061787567010735955,
+      "condition_q_first_batch": 27.87900492567103
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_2_lift_0.1",
+      "batch_certificates": [
+        1.822391585619659,
+        1.8167954155821235
+      ],
+      "batch_disagreement": 0.005596170037535542,
+      "condition_q_first_batch": 25.272267015955173
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_2_lift_0.5",
+      "batch_certificates": [
+        1.3666070789348808,
+        1.3653390551381703
+      ],
+      "batch_disagreement": 0.0012680237967104269,
+      "condition_q_first_batch": 13.811315493626385
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_2_lift_0.9",
+      "batch_certificates": [
+        0.9100218904320645,
+        0.9097264321577947
+      ],
+      "batch_disagreement": 0.00029545827426979976,
+      "condition_q_first_batch": 2.1196080335662675
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_3_lift_0.01",
+      "batch_certificates": [
+        1.9909919845352149,
+        1.9994603547561123
+      ],
+      "batch_disagreement": 0.008468370220897414,
+      "condition_q_first_batch": 21.360269978179947
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_3_lift_0.1",
+      "batch_certificates": [
+        1.8449825339768866,
+        1.8528197941835343
+      ],
+      "batch_disagreement": 0.007837260206647656,
+      "condition_q_first_batch": 19.460541911800263
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_3_lift_0.5",
+      "batch_certificates": [
+        1.3871901034480572,
+        1.3917094336859686
+      ],
+      "batch_disagreement": 0.004519330237911401,
+      "condition_q_first_batch": 10.257142791738875
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_3_lift_0.9",
+      "batch_certificates": [
+        0.9633082967934,
+        0.9631335487241527
+      ],
+      "batch_disagreement": 0.00017474806924733244,
+      "condition_q_first_batch": 1.7733735449781711
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_8_lift_0.01",
+      "batch_certificates": [
+        2.0059050442490856,
+        2.013125609208467
+      ],
+      "batch_disagreement": 0.0072205649593812815,
+      "condition_q_first_batch": 9.783871954797016
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_8_lift_0.1",
+      "batch_certificates": [
+        1.8888312028219263,
+        1.897893623232231
+      ],
+      "batch_disagreement": 0.009062420410304695,
+      "condition_q_first_batch": 9.08335665745438
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_8_lift_0.5",
+      "batch_certificates": [
+        1.4109786002534788,
+        1.421499023210241
+      ],
+      "batch_disagreement": 0.010520422956762143,
+      "condition_q_first_batch": 4.6086761607056665
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "rank_8_lift_0.9",
+      "batch_certificates": [
+        1.050378975561173,
+        1.0505155990327506
+      ],
+      "batch_disagreement": 0.00013662347157761268,
+      "condition_q_first_batch": 1.365107557671905
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "positive_equicorr_c_1.0",
+      "batch_certificates": [
+        0.8992924538500315,
+        0.8993251221500135
+      ],
+      "batch_disagreement": 3.266829998194165e-05,
+      "condition_q_first_batch": 1.7786672763602016
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "positive_equicorr_c_4.0",
+      "batch_certificates": [
+        0.7776984464908843,
+        0.7779483652829173
+      ],
+      "batch_disagreement": 0.0002499187920330659,
+      "condition_q_first_batch": 7.651796747491936
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "positive_equicorr_c_10.0",
+      "batch_certificates": [
+        1.1410068588606102,
+        1.1431130107311316
+      ],
+      "batch_disagreement": 0.0021061518705214333,
+      "condition_q_first_batch": 21.04281848096596
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "negative_equicorr_0.5",
+      "batch_certificates": [
+        1.693115778163618,
+        1.693130966169233
+      ],
+      "batch_disagreement": 1.5188005615174305e-05,
+      "condition_q_first_batch": 1.3084810215572948
+    },
+    {
+      "n": 24,
+      "q": 12,
+      "label": "negative_equicorr_0.95",
+      "batch_certificates": [
+        2.6865526198781318,
+        2.6865337653500774
+      ],
+      "batch_disagreement": 1.8854528054390585e-05,
+      "condition_q_first_batch": 1.7109405300352925
+    }
+  ],
+  "worst_sampled_certificate": 0.7776984464908843,
+  "worst_record": {
+    "n": 24,
+    "q": 12,
+    "label": "positive_equicorr_c_4.0",
+    "batch_certificates": [
+      0.7776984464908843,
+      0.7779483652829173
+    ],
+    "batch_disagreement": 0.0002499187920330659,
+    "condition_q_first_batch": 7.651796747491936
+  },
+  "result": "no sampled violation",
+  "limitations": "Permutation expectations are Monte Carlo estimates. Batch disagreement is a stability diagnostic, not a certified error bar."
+}

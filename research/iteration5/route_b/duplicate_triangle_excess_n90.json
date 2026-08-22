@@ -1,0 +1,195 @@
+{
+  "evidence_level": "E1 float64 stochastic structured search; null result is not proof",
+  "family": "three duplicate planar Gram prototypes with unequal multiplicities",
+  "seed": 202608222,
+  "n": 90,
+  "evaluations": 240,
+  "objective": "excess",
+  "history": [
+    {
+      "evaluation": 0,
+      "ratio": 0.588792843290898,
+      "excess_over_signed_rank_one": 0.0311992999552978,
+      "counts": [
+        30,
+        30,
+        30
+      ]
+    },
+    {
+      "evaluation": 2,
+      "ratio": 0.5585305793719748,
+      "excess_over_signed_rank_one": 0.012841838722645438,
+      "counts": [
+        26,
+        35,
+        29
+      ]
+    },
+    {
+      "evaluation": 3,
+      "ratio": 0.5545833361344336,
+      "excess_over_signed_rank_one": 0.001543475301774233,
+      "counts": [
+        23,
+        40,
+        27
+      ]
+    },
+    {
+      "evaluation": 5,
+      "ratio": 0.5641055309442622,
+      "excess_over_signed_rank_one": 0.0008476751483430522,
+      "counts": [
+        16,
+        42,
+        32
+      ]
+    },
+    {
+      "evaluation": 8,
+      "ratio": 0.5915155259862053,
+      "excess_over_signed_rank_one": 0.0005524319165770564,
+      "counts": [
+        11,
+        18,
+        61
+      ]
+    },
+    {
+      "evaluation": 16,
+      "ratio": 0.5490417467227222,
+      "excess_over_signed_rank_one": -0.0006456068009133009,
+      "counts": [
+        76,
+        2,
+        12
+      ]
+    },
+    {
+      "evaluation": 75,
+      "ratio": 0.5685022183335677,
+      "excess_over_signed_rank_one": -0.0007037334745643165,
+      "counts": [
+        9,
+        79,
+        2
+      ]
+    },
+    {
+      "evaluation": 79,
+      "ratio": 0.5717123317739835,
+      "excess_over_signed_rank_one": -0.0009694389234994327,
+      "counts": [
+        11,
+        76,
+        3
+      ]
+    },
+    {
+      "evaluation": 161,
+      "ratio": 0.5819523530984659,
+      "excess_over_signed_rank_one": -0.0011493881496807967,
+      "counts": [
+        18,
+        69,
+        3
+      ]
+    },
+    {
+      "evaluation": 183,
+      "ratio": 0.5949344773962826,
+      "excess_over_signed_rank_one": -0.0013800819874734138,
+      "counts": [
+        18,
+        69,
+        3
+      ]
+    }
+  ],
+  "best": {
+    "name": "duplicate_triangle",
+    "counts": [
+      18,
+      69,
+      3
+    ],
+    "n": 90,
+    "depth": 45,
+    "mu_parameter": 0.6839595502400813,
+    "actual_mu": 0.6839595502400645,
+    "ratio": 0.5949344773962826,
+    "margin_over_half": 0.09493447739628258,
+    "directions": [
+      [
+        -0.27681006880720443,
+        -0.9609246514721905
+      ],
+      [
+        0.27011521192341365,
+        0.9628280076356157
+      ],
+      [
+        -0.454167569014572,
+        0.8909162807219284
+      ]
+    ],
+    "mass_fractions": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "within": [
+      0.31604044975991874,
+      0.3160404497599188,
+      0.3160404497599187
+    ],
+    "cross": [
+      [
+        0.0,
+        -0.3160327946481533,
+        -0.23083128623107954
+      ],
+      [
+        -0.3160327946481533,
+        0.0,
+        0.23232815426086334
+      ],
+      [
+        -0.23083128623107954,
+        0.23232815426086334,
+        0.0
+      ]
+    ],
+    "result": {
+      "coefficient": 0.4069111175822692,
+      "sector": "group_2_transverse",
+      "constant_block_eigenvalues": [
+        0.4078023971772213,
+        0.5374450823150361,
+        0.6076401571021751
+      ],
+      "transverse_coefficients": {
+        "0": 0.4078029808470234,
+        "1": 0.40780183188906166,
+        "2": 0.4069111175822692
+      },
+      "root_min_eigenvalue": 0.6839595502400645,
+      "root_max_eigenvalue": 28.698367219175523,
+      "states_evaluated": 2698,
+      "leaf_underflows": 0
+    },
+    "metadata": {
+      "evaluation": 183,
+      "angles": [
+        -1.8512691935400194,
+        1.297283637414465,
+        2.0422339643903817
+      ],
+      "cross_sign_product": 0.01694839844081685
+    },
+    "signed_rank_one_baseline_ratio": 0.596314559383756,
+    "excess_over_signed_rank_one": -0.0013800819874734138
+  },
+  "elapsed_seconds": 33.02892994880676
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "status": "E3 exact finite orientation and recurrence reconstruction; quantified proof is in the document",
+  "max_n": 6,
+  "records": [
+    {
+      "n": 2,
+      "steps": 1,
+      "rho": "1/3",
+      "transverse_prefix_eigenvalue": "1/2",
+      "parallel_prefix_eigenvalue": "1/2",
+      "transverse_target_margin": "0",
+      "parallel_target_margin": "1/3",
+      "permutations_enumerated": 2
+    },
+    {
+      "n": 2,
+      "steps": 1,
+      "rho": "-1/2",
+      "transverse_prefix_eigenvalue": "1/2",
+      "parallel_prefix_eigenvalue": "1/2",
+      "transverse_target_margin": "1/2",
+      "parallel_target_margin": "0",
+      "permutations_enumerated": 2
+    },
+    {
+      "n": 3,
+      "steps": 2,
+      "rho": "1/3",
+      "transverse_prefix_eigenvalue": "22/27",
+      "parallel_prefix_eigenvalue": "13/27",
+      "transverse_target_margin": "8/81",
+      "parallel_target_margin": "29/81",
+      "permutations_enumerated": 6
+    },
+    {
+      "n": 3,
+      "steps": 2,
+      "rho": "-1/4",
+      "transverse_prefix_eigenvalue": "29/48",
+      "parallel_prefix_eigenvalue": "41/48",
+      "transverse_target_margin": "27/64",
+      "parallel_target_margin": "3/32",
+      "permutations_enumerated": 6
+    },
+    {
+      "n": 4,
+      "steps": 2,
+      "rho": "1/3",
+      "transverse_prefix_eigenvalue": "7/12",
+      "parallel_prefix_eigenvalue": "13/36",
+      "transverse_target_margin": "1/18",
+      "parallel_target_margin": "7/18",
+      "permutations_enumerated": 24
+    },
+    {
+      "n": 4,
+      "steps": 2,
+      "rho": "-1/6",
+      "transverse_prefix_eigenvalue": "23/48",
+      "parallel_prefix_eigenvalue": "85/144",
+      "transverse_target_margin": "89/288",
+      "parallel_target_margin": "13/288",
+      "permutations_enumerated": 24
+    },
+    {
+      "n": 5,
+      "steps": 3,
+      "rho": "1/3",
+      "transverse_prefix_eigenvalue": "298/405",
+      "parallel_prefix_eigenvalue": "133/405",
+      "transverse_target_margin": "22/243",
+      "parallel_target_margin": "89/243",
+      "permutations_enumerated": 120
+    },
+    {
+      "n": 5,
+      "steps": 3,
+      "rho": "-1/8",
+      "transverse_prefix_eigenvalue": "11661/20480",
+      "parallel_prefix_eigenvalue": "15841/20480",
+      "transverse_target_margin": "55797/163840",
+      "parallel_target_margin": "3553/40960",
+      "permutations_enumerated": 120
+    },
+    {
+      "n": 6,
+      "steps": 3,
+      "rho": "1/3",
+      "transverse_prefix_eigenvalue": "1457/2430",
+      "parallel_prefix_eigenvalue": "133/486",
+      "transverse_target_margin": "242/3645",
+      "parallel_target_margin": "289/729",
+      "permutations_enumerated": 720
+    },
+    {
+      "n": 6,
+      "steps": 3,
+      "rho": "-1/10",
+      "transverse_prefix_eigenvalue": "9679/20000",
+      "parallel_prefix_eigenvalue": "12247/20000",
+      "transverse_target_margin": "56469/200000",
+      "parallel_target_margin": "2247/40000",
+      "permutations_enumerated": 720
+    }
+  ],
+  "checks": "passed"
+}

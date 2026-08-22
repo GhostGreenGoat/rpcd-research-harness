@@ -1,0 +1,35 @@
+{
+  "evidence_level": "E2 finite checks plus exact rational asymptotic derivation in audit note",
+  "rho": "1/10",
+  "mu": "9/10",
+  "dense_identity_order_checks": [
+    {
+      "n": 3,
+      "exact_match": true
+    },
+    {
+      "n": 4,
+      "exact_match": true
+    },
+    {
+      "n": 5,
+      "exact_match": true
+    },
+    {
+      "n": 6,
+      "exact_match": true
+    },
+    {
+      "n": 7,
+      "exact_match": true
+    },
+    {
+      "n": 8,
+      "exact_match": true
+    }
+  ],
+  "n_500_normalized_parallel": "835670784749/13025285081505",
+  "n_500_below_one_eighth": true,
+  "symbolic_limit": "lim n*c_n = 3/(rho*(1-rho)); hence c_n -> 0",
+  "scope": "fixed weighted-adjacency dual feature only; not RPCD itself"
+}

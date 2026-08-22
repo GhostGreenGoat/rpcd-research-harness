@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact controls for E3 all-dimensional jet",
+  "cases": [
+    {
+      "n": 4,
+      "q": 2,
+      "m": 1,
+      "permutations": 24,
+      "p1": "1/12",
+      "p2": "0",
+      "J4_passed_exactly": true
+    },
+    {
+      "n": 5,
+      "q": 3,
+      "m": 1,
+      "permutations": 120,
+      "p1": "1/20",
+      "p2": "0",
+      "J4_passed_exactly": true
+    },
+    {
+      "n": 6,
+      "q": 3,
+      "m": 2,
+      "permutations": 720,
+      "p1": "1/10",
+      "p2": "1/60",
+      "J4_passed_exactly": true
+    },
+    {
+      "n": 7,
+      "q": 4,
+      "m": 2,
+      "permutations": 5040,
+      "p1": "1/14",
+      "p2": "1/105",
+      "J4_passed_exactly": true
+    }
+  ],
+  "result": "J4 passed exactly",
+  "scope": "Leading epsilon^2 coefficient only; no uniform remainder radius."
+}

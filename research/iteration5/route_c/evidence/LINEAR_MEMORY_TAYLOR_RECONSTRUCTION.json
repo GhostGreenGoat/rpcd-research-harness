@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "status": "E3 symbolic reconstruction of the analytic Taylor certificate",
+  "claim": "2(1+c)p(c)^2-q(c)>0 for every c>0",
+  "low_coefficients": [
+    "0",
+    "0",
+    "24",
+    "36",
+    "9"
+  ],
+  "general_coefficient": "12/k! * (2^k-k^2+6k-2-k/2^(k-3)), k>=5",
+  "regression_max_degree": 80,
+  "selected_coefficients": [
+    {
+      "degree": 5,
+      "positive_bracket": "135/4",
+      "coefficient": "27/8"
+    },
+    {
+      "degree": 6,
+      "positive_bracket": "245/4",
+      "coefficient": "49/48"
+    },
+    {
+      "degree": 7,
+      "positive_bracket": "1897/16",
+      "coefficient": "271/960"
+    },
+    {
+      "degree": 8,
+      "positive_bracket": "951/4",
+      "coefficient": "317/4480"
+    },
+    {
+      "degree": 9,
+      "positive_bracket": "30903/64",
+      "coefficient": "10301/645120"
+    },
+    {
+      "degree": 10,
+      "positive_bracket": "62843/64",
+      "coefficient": "62843/19353600"
+    },
+    {
+      "degree": 11,
+      "positive_bracket": "509685/256",
+      "coefficient": "3089/5160960"
+    },
+    {
+      "degree": 12,
+      "positive_bracket": "514813/128",
+      "coefficient": "514813/5109350400"
+    },
+    {
+      "degree": 80,
+      "positive_bracket": "11417981541647679048410356046972853013150957563/9444732965739290427392",
+      "coefficient": "64508370291794796883674327948999169565824619/318245955887434029241052209667090034999357742036019091851344034013845682289848883641439106820076814063234399697780080640000000000000000000"
+    }
+  ],
+  "checks": "passed"
+}

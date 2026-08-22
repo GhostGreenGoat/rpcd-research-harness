@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact controls for E3 m<=2 theorem",
+  "cases": [
+    {
+      "n": 4,
+      "q": 2,
+      "m": 1,
+      "permutations": 24,
+      "C_tail": "1/2",
+      "exact_Loewner_check": true
+    },
+    {
+      "n": 5,
+      "q": 3,
+      "m": 1,
+      "permutations": 120,
+      "C_tail": "1/2",
+      "exact_Loewner_check": true
+    },
+    {
+      "n": 6,
+      "q": 3,
+      "m": 2,
+      "permutations": 720,
+      "C_tail": "7/4",
+      "exact_Loewner_check": true
+    }
+  ],
+  "result": "small-complement arc-tail bounds passed exactly",
+  "scope": "Analytic proof covers n=4,...,7; verifier samples n<=6."
+}

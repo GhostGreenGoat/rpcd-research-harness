@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E4 independent exact reconstruction",
+  "method": "standard-library Fraction 2^8 first-pivot subset DP",
+  "matrix_family": "simple two-pole/six-ring example",
+  "boundary_parameters": {
+    "pole_pole": "1",
+    "pole_ring": "2/3",
+    "distinct_ring": "1/3"
+  },
+  "boundary_spectrum": {
+    "zero": {
+      "value": "0",
+      "multiplicity": 2
+    },
+    "ring_standard": {
+      "value": "2/3",
+      "multiplicity": 5
+    },
+    "trivial_positive": {
+      "value": "14/3",
+      "multiplicity": 1
+    }
+  },
+  "boundary": {
+    "kernel_direction_u": [
+      "1",
+      "-1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "second_kernel_direction": [
+      "-2",
+      "-2",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "K0_rayleigh_on_u": "1057837/531441",
+    "gap_to_two": "-5045/531441",
+    "K0_times_u": [
+      "1057837/531441",
+      "-1057837/531441",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "swap_odd_line_reducing_exact": true,
+    "Schur_complement_eigenvalue_on_u": "1057837/531441"
+  },
+  "positive_mu_M1_failure": {
+    "mu": "1/100",
+    "lambda_min": "1/100",
+    "positive_eigenvalues": {
+      "ring_standard": "67/100",
+      "trivial": "463/100"
+    },
+    "K_rayleigh_on_u": "277091954946975183681661134197/140000000000000000000000000000",
+    "active_q": "27589794711827132707700121535130590945356787201/28147497671065600000000000000000000000000000000",
+    "other_q": "5764801/16777216",
+    "witnessed_final_energy_ratio": "13722908045053024816318338865803/14000000000000000000000000000000",
+    "witnessed_ratio_minus_q": "4198136398771974389711477950466919707327993/197032483697459200000000000000000000000000000000",
+    "strict_failure": true
+  },
+  "scope": {
+    "refutes": [
+      "T080 boundary inequality K0(C) >= 2 P_ker(C)",
+      "strong one-epoch A-energy M1 target at mu=1/100"
+    ],
+    "does_not_refute": "original covariance-map spectral-radius conjecture C001"
+  }
+}

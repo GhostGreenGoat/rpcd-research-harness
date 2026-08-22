@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T085-schur-moment-compression",
+  "title": "Compress the second Schur-loss Bellman moment",
+  "role": "researcher",
+  "objective": "Find a PSD, leverage-aware compression of the second Schur-loss moment that closes a finite remaining-set Lyapunov basis and yields c_r(A)>=c mu at tractable depth.",
+  "claim_ids": ["C021", "C022", "C027"],
+  "dependencies": [],
+  "inputs": ["docs/ITER3_ROUTE_M2_REMAINING_SET_MATRIX_LYAPUNOV.md", "docs/ITER2_ROUTE_A_CONDITIONAL_LYAPUNOV.md"],
+  "allowed_max_evidence": "E4",
+  "required_artifacts": ["compression_lemma.md", "bellman_closure.md", "sharpness_families.json", "finite_time_corollary.md"],
+  "acceptance_checks": [
+    "Retains the leverage vector and child spectral-floor information.",
+    "Passes both the simple-null-mode and high-nullity structured asymptotics.",
+    "Improves on the exact H_1 barrier at n=3 and mu=1/5.",
+    "Does not multiply the two-step without-replacement inequality across dependent pairs."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "ready"
+}

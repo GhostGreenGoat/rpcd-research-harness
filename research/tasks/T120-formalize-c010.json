@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T120-formalize-c010",
+  "title": "Formalization attempt for C010",
+  "role": "formalizer",
+  "objective": "Formalize the audited and independently reconstructed C010 statement with all assumptions and no hidden numerical oracle.",
+  "claim_ids": ["C010"],
+  "dependencies": ["T110-independent-c010", "T001-literature-frontier"],
+  "inputs": ["research/problem.md", "research/claims/C010-matrix-jensen.json", "docs/METHOD.md"],
+  "allowed_max_evidence": "E6",
+  "required_artifacts": ["formalization/", "formalization_report.md", "trusted_base.json"],
+  "acceptance_checks": [
+    "Pins proof-assistant and library versions.",
+    "Lists all axioms, sorry/admit statements and oracles.",
+    "Exact theorem statement matches the audited claim.",
+    "E6 is withheld if any proof obligation remains."
+  ],
+  "budget_hint": {"mode": "deep", "checkpoint_minutes": 20},
+  "status": "blocked"
+}

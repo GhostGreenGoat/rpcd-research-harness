@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact rational counterexample to D14",
+  "feature": "weighted adjacency R_pi=D_pi^T D_pi",
+  "not_feature": "direct adjacency R_pi=D_pi^T",
+  "matrix": {
+    "n": 50,
+    "rho": "1/10",
+    "family": "positive equicorrelation"
+  },
+  "values": {
+    "mu": "9/10",
+    "ell": "59/10",
+    "p_perp": "5069/5000",
+    "p_parallel": "4069/5000",
+    "trace_q": "7285437/125000",
+    "one_q_one": "57800483/125000",
+    "q_perp": "306471367/306250000",
+    "q_parallel": "57800483/6250000",
+    "normalized_perp": "1259043289/1225885468",
+    "normalized_parallel": "75142223/160062876",
+    "parallel_gap_to_half": "-4889215/160062876"
+  },
+  "dense_formula_reconstruction": "pass",
+  "conclusion": "The optimal dual-regression certificate for this R_pi has normalized parallel eigenvalue below 1/2. This refutes D14, not the RPCD half-prefix conjecture."
+}

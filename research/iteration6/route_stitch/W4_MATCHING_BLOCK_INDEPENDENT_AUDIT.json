@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "verdict": "PASS",
+  "evidence_level": "E4 internal proof candidate after independent exact hostile reconstruction; no formal or external review",
+  "scope": "d>=6, unit-diagonal SPD matching-support C, 0<mu<=lambda_min(C)",
+  "checked": [
+    "retained-state H^2=D, F=H, E=0, S=(d-2)D",
+    "L3 block eigenline numerators for both signs",
+    "exact Taylor expansion about d=6",
+    "uniform outer-Schur-envelope spectral simplification",
+    "unequal oppositely signed rational block control"
+  ],
+  "fixed_exact_gaps": [
+    "1039/9000",
+    "1589/9000",
+    "2003/15330",
+    "1843/11130"
+  ],
+  "caveat": "This is a matching-support slice, not the universal W4 lemma."
+}

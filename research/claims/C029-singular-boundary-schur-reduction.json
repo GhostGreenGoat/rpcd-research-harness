@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C029",
+  "title": "Singular-boundary Schur reduction for strong one-epoch energy",
+  "statement_ref": "docs/ITER3_M1_STRONG_ONE_EPOCH_ENERGY.md#51-小-mu-极限可化成一个有限-schur-complement-引理",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-21",
+    "source": "docs/ITER3_M1_STRONG_ONE_EPOCH_ENERGY.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The perturbation formula r_E(A_mu)=1-mu lambda_min(S_C)+o(mu) passed an independent hostile reconstruction but is not yet independently rederived at E5.",
+    "The former universal boundary target S_C>=2I is exactly refuted by the n=8 two-pole/simplex-ring matrix from Iteration 4.",
+    "The reduction itself remains valid and transfers that boundary failure to an exact finite positive-mu refutation of C026.",
+    "The best possible positive dimension-uniform replacement constant remains open; current analytic families approach 3/2 from above."
+  ]
+}

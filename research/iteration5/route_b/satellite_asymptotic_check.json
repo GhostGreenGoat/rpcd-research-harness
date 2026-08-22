@@ -1,0 +1,158 @@
+{
+  "evidence_level": "E2 exact rational formula evaluations plus E1 float64 finite convergence",
+  "formula": "R2=(8-eta^3)/(8(1+mu)), eta=(1-mu)(1-t^2)",
+  "exact": [
+    {
+      "mu": "1/5",
+      "t_squared": "0",
+      "limit": "39/50",
+      "margin_over_half": "7/25"
+    },
+    {
+      "mu": "4/5",
+      "t_squared": "0",
+      "limit": "111/200",
+      "margin_over_half": "11/200"
+    },
+    {
+      "mu": "19/20",
+      "t_squared": "0",
+      "limit": "1641/3200",
+      "margin_over_half": "41/3200"
+    },
+    {
+      "mu": "19/20",
+      "t_squared": "1/4",
+      "limit": "4095973/7987200",
+      "margin_over_half": "102373/7987200"
+    },
+    {
+      "mu": "19/20",
+      "t_squared": "1",
+      "limit": "20/39",
+      "margin_over_half": "1/78"
+    }
+  ],
+  "finite": [
+    {
+      "n": 100,
+      "mu": 0.2,
+      "ratio": 0.7771717171717173,
+      "exact_limit": 0.78,
+      "finite_minus_limit": -0.0028282828282827355,
+      "sector": "group_1_transverse",
+      "states_evaluated": 150,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 300,
+      "mu": 0.2,
+      "ratio": 0.7790635451505022,
+      "exact_limit": 0.78,
+      "finite_minus_limit": -0.0009364548494977809,
+      "sector": "group_1_transverse",
+      "states_evaluated": 450,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 1000,
+      "mu": 0.2,
+      "ratio": 0.7797197197197209,
+      "exact_limit": 0.78,
+      "finite_minus_limit": -0.00028028028027915486,
+      "sector": "group_1_transverse",
+      "states_evaluated": 1500,
+      "leaf_underflows": 3
+    },
+    {
+      "n": 2000,
+      "mu": 0.2,
+      "ratio": 0.779859929964984,
+      "exact_limit": 0.78,
+      "finite_minus_limit": -0.00014007003501603776,
+      "sector": "group_1_transverse",
+      "states_evaluated": 3000,
+      "leaf_underflows": 3
+    },
+    {
+      "n": 100,
+      "mu": 0.8,
+      "ratio": 0.5546164980725516,
+      "exact_limit": 0.555,
+      "finite_minus_limit": -0.00038350192744840417,
+      "sector": "group_1_transverse",
+      "states_evaluated": 150,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 300,
+      "mu": 0.8,
+      "ratio": 0.5548160535118075,
+      "exact_limit": 0.555,
+      "finite_minus_limit": -0.00018394648819253234,
+      "sector": "group_1_transverse",
+      "states_evaluated": 450,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 1000,
+      "mu": 0.8,
+      "ratio": 0.5549449449449452,
+      "exact_limit": 0.555,
+      "finite_minus_limit": -5.5055055054875623e-05,
+      "sector": "group_1_transverse",
+      "states_evaluated": 1500,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 2000,
+      "mu": 0.8,
+      "ratio": 0.5549724862431211,
+      "exact_limit": 0.555,
+      "finite_minus_limit": -2.751375687892743e-05,
+      "sector": "group_1_transverse",
+      "states_evaluated": 3000,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 100,
+      "mu": 0.95,
+      "ratio": 0.6419525726010709,
+      "exact_limit": 0.5128125,
+      "finite_minus_limit": 0.12914007260107085,
+      "sector": "group_constant",
+      "states_evaluated": 150,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 300,
+      "mu": 0.95,
+      "ratio": 0.5151029552939362,
+      "exact_limit": 0.5128125,
+      "finite_minus_limit": 0.0022904552939362333,
+      "sector": "group_1_transverse",
+      "states_evaluated": 450,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 1000,
+      "mu": 0.95,
+      "ratio": 0.5127996747897887,
+      "exact_limit": 0.5128125,
+      "finite_minus_limit": -1.2825210211286908e-05,
+      "sector": "group_1_transverse",
+      "states_evaluated": 1500,
+      "leaf_underflows": 0
+    },
+    {
+      "n": 2000,
+      "mu": 0.95,
+      "ratio": 0.5128060905452715,
+      "exact_limit": 0.5128125,
+      "finite_minus_limit": -6.409454728517616e-06,
+      "sector": "group_1_transverse",
+      "states_evaluated": 3000,
+      "leaf_underflows": 0
+    }
+  ]
+}

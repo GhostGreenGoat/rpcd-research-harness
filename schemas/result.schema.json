@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/rpcd/result.schema.json",
+  "title": "RPCD structured research result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "run_id",
+    "worker",
+    "status",
+    "summary",
+    "claims",
+    "artifacts",
+    "checks",
+    "failed_attempts",
+    "iteration",
+    "literature",
+    "next_tasks",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "task_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "worker": {"type": "string"},
+    "status": {"enum": ["succeeded", "partial", "failed"]},
+    "summary": {"type": "string"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "statement",
+          "status",
+          "evidence_level",
+          "assumptions",
+          "supporting_artifacts",
+          "open_objections"
+        ],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "statement": {"type": "string"},
+          "status": {
+            "enum": [
+              "open_conjecture",
+              "idea",
+              "numerical_observation",
+              "finite_verified",
+              "proof_candidate",
+              "theorem_candidate",
+              "refuted",
+              "external_theorem"
+            ]
+          },
+          "evidence_level": {"enum": ["E0", "E1", "E2", "E3", "E4", "E5", "E6"]},
+          "assumptions": {"type": "array", "items": {"type": "string"}},
+          "supporting_artifacts": {"type": "array", "items": {"type": "string"}},
+          "open_objections": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "kind", "description"],
+        "properties": {
+          "path": {"type": "string"},
+          "kind": {"enum": ["proof", "audit", "code", "data", "certificate", "handoff", "bibliography"]},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["command", "exit_code", "summary"],
+        "properties": {
+          "command": {"type": "string"},
+          "exit_code": {"type": "integer"},
+          "summary": {"type": "string"}
+        }
+      }
+    },
+    "failed_attempts": {"type": "array", "items": {"type": "string"}},
+    "iteration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["avenues", "checkpoints", "stress_tests", "deepest_obstruction"],
+      "properties": {
+        "avenues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "objective", "outcome", "status"],
+            "properties": {
+              "name": {"type": "string", "minLength": 1},
+              "objective": {"type": "string", "minLength": 1},
+              "outcome": {"type": "string", "minLength": 1},
+              "status": {"enum": ["open", "advanced", "blocked", "refuted", "completed"]}
+            }
+          }
+        },
+        "checkpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["elapsed_active_minutes", "summary", "next_action"],
+            "properties": {
+              "elapsed_active_minutes": {"type": "number", "minimum": 0},
+              "summary": {"type": "string", "minLength": 1},
+              "next_action": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "stress_tests": {"type": "array", "items": {"type": "string"}},
+        "deepest_obstruction": {"type": "string"}
+      }
+    },
+    "literature": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "url", "date_or_version", "claim_supported"],
+        "properties": {
+          "title": {"type": "string"},
+          "url": {"type": "string"},
+          "date_or_version": {"type": "string"},
+          "claim_supported": {"type": "string"}
+        }
+      }
+    },
+    "next_tasks": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C039",
+  "title": "Random Hamiltonian-path preconditioner inequality",
+  "statement": "For every unit-diagonal SPD B with mu=lambda_min(B), let D_pi be the adjacent conditional-difference matrix along a uniform permutation and P=E[D_pi^T D_pi]. Then P=[(n+1)I-2B+Diag(diag B^2)]/n and P>=mu B^{-1}.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-21",
+    "artifact": "research/iteration5/route_a/weighted_adjacency_dual.md#3-general-preconditioner-lemma-proof-candidate"
+  },
+  "assumptions": [
+    "Real unit-diagonal SPD matrix",
+    "Uniform random Hamiltonian ordering"
+  ],
+  "supporting_artifacts": [
+    "research/iteration5/route_a/weighted_adjacency_dual.md",
+    "research/iteration5/route_c/route_a_preconditioner_cross_audit.md",
+    "research/iteration5/route_a/scripts/verify_weighted_adjacency_preconditioner.py",
+    "research/iteration5/route_c/evidence/ROUTE_A_CROSS_AUDIT.json"
+  ],
+  "open_objections": [
+    "The associated fixed-adjacency regression certificate decays to zero in a positive-equicorrelation family and cannot itself prove the RPCD complexity target.",
+    "No Lean formalization, priority audit, or outside-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}

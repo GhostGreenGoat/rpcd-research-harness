@@ -1,0 +1,3 @@
+# Versions used for the public Iterations 1--6 baseline verification.
+numpy==2.3.5
+sympy==1.14.0

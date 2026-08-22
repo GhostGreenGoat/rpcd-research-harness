@@ -1,0 +1,30 @@
+{
+  "candidate_claim_H": "H_ceil(n/2) >= (mu/2) A^{-1}",
+  "stronger_prefix_claim_J": "J_ceil(n/2) >= (mu/2) A^{-1}",
+  "results": [
+    {
+      "evidence_level": "E1/E2 finite float diagnostic; not a proof",
+      "candidate_source": "research\\iteration5\\route_b\\two_group_satellite_n1000.json",
+      "n": 1000,
+      "depth": 500,
+      "mu": 0.9817838119961234,
+      "H": {
+        "coefficient": 0.49596283318907475,
+        "ratio": 0.5051650140581387,
+        "sector": "group_1_transverse"
+      },
+      "J": {
+        "coefficient": 0.49542362410427376,
+        "ratio": 0.5046158003939771,
+        "sector_from_reduction": "group_1_transverse"
+      },
+      "determinant_tail": {
+        "minimum_normalized_eigenvalue": 2.5511728146687673e-11,
+        "maximum_normalized_eigenvalue": 0.0005392090848010912,
+        "prefix_on_H_worst_direction": 0.4954236241042739,
+        "tail_on_H_worst_direction": 0.0005392090848010889,
+        "fraction_of_H_worst_quadratic": 0.0010871965573184946
+      }
+    }
+  ]
+}

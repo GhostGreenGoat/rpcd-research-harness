@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T015-certify-jensen-barrier",
+  "title": "Certify the raw Jensen-to-conjecture route barrier",
+  "role": "experimentalist",
+  "objective": "Turn the n=4 decimal witness for C011 into a rational or interval-certified finite counterexample to the universal scalar comparison, while confirming that it is not a counterexample to C001 or C010.",
+  "claim_ids": ["C001", "C010", "C011"],
+  "dependencies": [],
+  "inputs": ["research/problem.md", "research/claims/C011-raw-jensen-route-barrier.json", "research/evidence/C011_RATIONAL_CANDIDATE.json", "rpcd_harness/rpcd.py", "scripts/verify_rpcd_identities.py"],
+  "allowed_max_evidence": "E3",
+  "required_artifacts": ["rational_witness.json", "interval_certificate.md", "independent_recomputation.json"],
+  "acceptance_checks": [
+    "Uses exact rational data or outward-rounded interval arithmetic.",
+    "Certifies SPD, unit diagonal and the sigma value with explicit margins.",
+    "Certifies r_MJ exceeds the C001 target by a positive interval margin.",
+    "States explicitly that C001 and C010 remain unrefuted."
+  ],
+  "budget_hint": {"mode": "medium", "checkpoint_minutes": 20},
+  "status": "ready"
+}

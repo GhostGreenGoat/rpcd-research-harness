@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E3 analytic proof candidate plus E2 exact reconstruction",
+  "verdict": "PASS",
+  "n_plus_d6": "2*a*(7*a**2*u**3 + 7*a**2*u**2 - 13*a*u**2 - 20*a*u + 20*u + 40)",
+  "n_plus_dimension_derivative_d6": "a*(3*a**2*u**3 + 3*a**2*u**2 - 7*a*u**2 - 10*a*u + 26*u + 36)",
+  "dimension_taylor_remainder": "4*a*(u + 1)*k**2",
+  "n_minus_manifest_form": "-a*(3*a**2*d*u**3 - 3*a**2*d*u**2 - 4*a**2*u**3 + 4*a**2*u**2 + 7*a*d*u**2 - 10*a*d*u - 16*a*u**2 + 20*a*u + 4*d**2*u - 4*d**2 - 22*d*u + 12*d + 28*u - 8)",
+  "matrix_control": {
+    "dimension": 6,
+    "block_correlations": [
+      "3/5",
+      "-2/7"
+    ],
+    "H2_equals_D": true,
+    "S_equals_d_minus_2_D": true
+  }
+}

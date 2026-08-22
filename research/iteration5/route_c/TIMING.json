@@ -1,0 +1,10 @@
+{
+  "timezone": "Asia/Shanghai (+08:00)",
+  "root_observed_start_bound": "2026-08-21T19:37:57+08:00",
+  "local_first_clock_sample": "2026-08-21T19:38:56+08:00",
+  "completion_after_final_validation": "2026-08-21T21:39:03+08:00",
+  "elapsed_from_root_observed_start_seconds": 7266,
+  "elapsed_hms": "02:01:06",
+  "required_minimum_seconds": 7200,
+  "threshold_satisfied": true
+}

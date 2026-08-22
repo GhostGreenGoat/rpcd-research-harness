@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C027",
+  "title": "Monotone determinant-tail Bellman certificate hierarchy",
+  "statement_ref": "docs/ITER3_ROUTE_M2_REMAINING_SET_MATRIX_LYAPUNOV.md#2-a-monotone-determinant-tail-bellman-hierarchy",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_candidate",
+    "date": "2026-08-21",
+    "source": "docs/ITER3_ROUTE_M2_REMAINING_SET_MATRIX_LYAPUNOV.md"
+  },
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  },
+  "open_objections": [
+    "The hierarchy is exact after n-1 lifts, but no tractable uniform depth has yet been shown to yield c_r(A)>=c mu.",
+    "The second and higher Schur-loss moments do not close in the current finite matrix basis.",
+    "The proof draft and first-lift formula passed hostile audit but still require independent reconstruction."
+  ]
+}

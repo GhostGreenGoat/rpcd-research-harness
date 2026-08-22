@@ -1,0 +1,160 @@
+{
+  "evidence_level": "E1 float64 targeted threshold scan; no finite grid is a proof",
+  "family": "two-coordinate orthogonal/oblique satellite",
+  "parameterization": "1-mu=c log(n)/n",
+  "c_values": [
+    1.4,
+    1.5999999999999999,
+    1.7999999999999998,
+    2.0,
+    2.2,
+    2.4,
+    2.6,
+    2.8,
+    3.0,
+    3.2,
+    3.4,
+    3.6,
+    3.8000000000000003,
+    4.0,
+    4.2
+  ],
+  "t_values": [
+    0.0,
+    0.1,
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8
+  ],
+  "records": [
+    {
+      "n": 1000,
+      "best_H": {
+        "n": 1000,
+        "c": 2.6,
+        "t": 0.0,
+        "mu": 0.9820398362746464,
+        "H_ratio": 0.505145228246435,
+        "H_margin": 0.005145228246435041,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5045258269697055,
+        "J_margin": 0.004525826969705493,
+        "J_sector": "group_1_transverse",
+        "states_H": 1500,
+        "states_J": 1500
+      },
+      "best_J": {
+        "n": 1000,
+        "c": 1.4,
+        "t": 0.0,
+        "mu": 0.9903291426094251,
+        "H_ratio": 0.5258606529940203,
+        "H_margin": 0.025860652994020294,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5024269731961076,
+        "J_margin": 0.002426973196107629,
+        "J_sector": "group_1_transverse",
+        "states_H": 1500,
+        "states_J": 1500
+      }
+    },
+    {
+      "n": 3000,
+      "best_H": {
+        "n": 3000,
+        "c": 2.6,
+        "t": 0.0,
+        "mu": 0.9930611481080365,
+        "H_ratio": 0.5019105945805915,
+        "H_margin": 0.001910594580591507,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5017401509938989,
+        "J_margin": 0.0017401509938989035,
+        "J_sector": "group_1_transverse",
+        "states_H": 4500,
+        "states_J": 4500
+      },
+      "best_J": {
+        "n": 3000,
+        "c": 1.4,
+        "t": 0.0,
+        "mu": 0.9962636951350966,
+        "H_ratio": 0.5131294171755468,
+        "H_margin": 0.013129417175546831,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5009355091685616,
+        "J_margin": 0.0009355091685615546,
+        "J_sector": "group_1_transverse",
+        "states_H": 4500,
+        "states_J": 4500
+      }
+    },
+    {
+      "n": 10000,
+      "best_H": {
+        "n": 10000,
+        "c": 2.6,
+        "t": 0.0,
+        "mu": 0.9976053115032862,
+        "H_ratio": 0.5006400435693003,
+        "H_margin": 0.0006400435693002526,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5005993289959147,
+        "J_margin": 0.0005993289959147496,
+        "J_sector": "group_1_transverse",
+        "states_H": 15000,
+        "states_J": 15000
+      },
+      "best_J": {
+        "n": 10000,
+        "c": 1.4,
+        "t": 0.0,
+        "mu": 0.9987105523479234,
+        "H_ratio": 0.5062274138527805,
+        "H_margin": 0.006227413852780472,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.500322537487224,
+        "J_margin": 0.000322537487223995,
+        "J_sector": "group_1_transverse",
+        "states_H": 15000,
+        "states_J": 15000
+      }
+    },
+    {
+      "n": 30000,
+      "best_H": {
+        "n": 30000,
+        "c": 2.6,
+        "t": 0.0,
+        "mu": 0.9991065574360775,
+        "H_ratio": 0.5002343174177569,
+        "H_margin": 0.00023431741775692405,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.5002234529720058,
+        "J_margin": 0.00022345297200576653,
+        "J_sector": "group_1_transverse",
+        "states_H": 45000,
+        "states_J": 45000
+      },
+      "best_J": {
+        "n": 30000,
+        "c": 1.4,
+        "t": 0.0,
+        "mu": 0.9995189155425033,
+        "H_ratio": 0.5031380078804848,
+        "H_margin": 0.0031380078804847944,
+        "H_sector": "group_1_transverse",
+        "J_ratio": 0.500120296034521,
+        "J_margin": 0.00012029603452101689,
+        "J_sector": "group_1_transverse",
+        "states_H": 45000,
+        "states_J": 45000
+      }
+    }
+  ],
+  "elapsed_seconds": 176.08469152450562
+}

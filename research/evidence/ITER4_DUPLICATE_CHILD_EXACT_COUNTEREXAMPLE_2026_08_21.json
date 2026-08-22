@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2",
+  "status": "exact finite counterexample to the duplicate-child lemma",
+  "scope_warning": "This does not refute T080 or the RPCD complexity conjecture.",
+  "matrix": [
+    [
+      "1",
+      "1",
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    [
+      "1",
+      "1",
+      "4/5",
+      "4/5",
+      "4/5"
+    ],
+    [
+      "4/5",
+      "4/5",
+      "1",
+      "23/50",
+      "23/50"
+    ],
+    [
+      "4/5",
+      "4/5",
+      "23/50",
+      "1",
+      "23/50"
+    ],
+    [
+      "4/5",
+      "4/5",
+      "23/50",
+      "23/50",
+      "1"
+    ]
+  ],
+  "geometry": "two identical poles plus an equilateral latitude-4/5 ring",
+  "characteristic_polynomial": "lambda**2*(25*lambda - 98)*(50*lambda - 27)**2/62500",
+  "tested_coordinate_zero_based": 0,
+  "z": [
+    "2",
+    "1",
+    "4/5",
+    "4/5",
+    "4/5"
+  ],
+  "value": "7204453277/2441406250",
+  "gap_to_three": "-119765473/2441406250",
+  "decimal_value": "2.95094406225920000",
+  "checks": {
+    "correlation_psd_from_exact_spectrum": true,
+    "subset_bellman_recursion_exact": true,
+    "strict_gap_below_three": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "evidence_level": "E2 exact finite controls",
+  "child_floor_potential": {
+    "status": "exact counterexample to a proof step",
+    "epsilon": "1/100",
+    "boundary_rank": 2,
+    "child_boundary_ranks": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "boundary_gram": [
+      [
+        "1",
+        "3/5",
+        "12/13",
+        "24/25"
+      ],
+      [
+        "3/5",
+        "1",
+        "56/65",
+        "4/5"
+      ],
+      [
+        "12/13",
+        "56/65",
+        "1",
+        "323/325"
+      ],
+      [
+        "24/25",
+        "4/5",
+        "323/325",
+        "1"
+      ]
+    ],
+    "witness": [
+      1,
+      1,
+      -1,
+      -1
+    ],
+    "quadratic_form": "-19478941330702843733207934983626255939484418143/121046933316403198760626056469740170823074000000",
+    "failed_inequality": "I/4 + (1/4) sum_i (mu_i/2) L_i^T C_i^{-1} L_i >= (mu/2) B^{-1}, even with mu_i=lambda_min(C_i)=mu"
+  },
+  "positional_dual": {
+    "status": "exact obstruction to the positional-diagonal dual subclass",
+    "dimension": 20,
+    "quadratic_matrix_formula": "Q_ii=(i+1)/n and Q_ij=-(1+min(i,j))/(n(n-1)), with zero-based positions",
+    "positive_definite": true,
+    "minimum_ldl_pivot": "1/20",
+    "optimal_transverse_boundary_value": "26221995579032758253469900984813715376999179/57727556009634555508186582715359351326391580",
+    "gap_to_one_half": "-2641782425784519500623390372865960286196611/57727556009634555508186582715359351326391580",
+    "optimizer_first_five": [
+      "4053158689409279299312357728220254956853559/2886377800481727775409329135767967566319579",
+      "2580800266945226623510117445524963988930420/2886377800481727775409329135767967566319579",
+      "2047000788341455287850868727201117599807200/2886377800481727775409329135767967566319579",
+      "1754513539185301428923108508949180435248000/2886377800481727775409329135767967566319579",
+      "1561476054299756099277221292908526332160000/2886377800481727775409329135767967566319579"
+    ],
+    "scope": "This rules out only R_pi diagonal with weights determined by permutation position.  The unrestricted random matrix R_pi, especially adjacency/path states, remains open."
+  }
+}

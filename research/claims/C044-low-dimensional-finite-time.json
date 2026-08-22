@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C044",
+  "title": "Strong finite-time RPCD bound through dimension six",
+  "statement": "For every unit-diagonal SPD A of dimension 1<=n<=6, fresh-permutation RPCD satisfies E||x_k||_A^2<=(1-rho_n mu)^k||x_0||_A^2, where rho=(1,1/2,2/3,1/2,3/5,1/2). Hence E||x_k||_A reaches relative error epsilon in at most n*ceil(2 log(1/epsilon)/(rho_n mu)) coordinate updates. For all n>=3, the same ingredients give the unconditional benchmark J_3>=(3mu/n)A^{-1}.",
+  "status": "proof_candidate",
+  "evidence_level": "E4",
+  "origin": {
+    "kind": "harness_derivation",
+    "date": "2026-08-22",
+    "artifact": "research/iteration6/route_l3/n_le_6_finite_time.md"
+  },
+  "assumptions": [
+    "Fresh independent uniform permutation each epoch",
+    "Distance is A-energy distance",
+    "A is real unit-diagonal SPD and mu=lambda_min(A)"
+  ],
+  "supporting_artifacts": [
+    "research/claims/C036-weighted-two-prefix.json",
+    "research/claims/C043-weighted-third-prefix.json",
+    "research/iteration6/route_l3/n_le_6_finite_time.md"
+  ],
+  "open_objections": [
+    "The target-order conclusion is not yet proved for n>=7.",
+    "Euclidean distance introduces the usual condition-number prefactor.",
+    "No Lean formalization or external-human validation exists."
+  ],
+  "gates": {
+    "proof_draft": true,
+    "hostile_audit": true,
+    "independent_reconstruction": true,
+    "priority_audit": false,
+    "formalization": false
+  }
+}
