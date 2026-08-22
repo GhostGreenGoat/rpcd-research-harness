@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R112-stable-bellman-depth",
+  "layer": "L3",
+  "title": "Stable growing-depth Bellman state",
+  "statement": "Assuming a valid W4 bridge, identify a finite or monotone anisotropic state whose constants remain dimension-uniform through a prefix of linear depth.",
+  "parent_ids": [
+    "R111-general-w4"
+  ],
+  "method_family": "anisotropic-bellman-schur",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "General-t Schur recursion with recoverable directional coefficients and aggregate defects",
+    "state_or_invariant": "A closed cone of inverse floor, anisotropic surplus, and a controlled outer-defect budget",
+    "core_candidate_lemma": "The state is closed under every Bellman lift up to half depth without an O(n) deterioration of its coefficient.",
+    "information_retained": [
+      "directional surplus across depths",
+      "pseudoinverse range conventions",
+      "aggregate rather than per-row defect",
+      "explicit coefficient recursion"
+    ],
+    "information_discarded": [
+      "individual permutation trajectories after conditional averaging"
+    ],
+    "target_implication": "A stable state through ceil(n/2) prefixes yields C051; the separate C051-to-C050 transfer closes the Bellman path to L0.",
+    "known_failure_mode": "A new state may close W4 but accumulate a factor n or grow in dimension at each subsequent lift.",
+    "verifier_class": "symbolic recurrence closure plus adversarial coefficient-growth audit"
+  },
+  "status": "proposed",
+  "decision": "unreviewed",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 1
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "full_repository",
+    "route_card_hash": null
+  }
+}

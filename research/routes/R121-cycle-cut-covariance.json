@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R121-cycle-cut-covariance",
+  "layer": "L2",
+  "title": "Cycle-cut signed arc covariance",
+  "statement": "After revealing a directed cycle but hiding its cut, control the adapted signed off-diagonal arc covariance together with the baseline and exact Pythagorean gains by a dimension-free constant.",
+  "parent_ids": [
+    "R120-conditional-frame"
+  ],
+  "method_family": "conditional-frame-information",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "Uniform directed cycle plus hidden cut, with frozen residual rows and random cyclic-arc masks",
+    "state_or_invariant": "Arc-incidence Gram covariance, baseline frame energy, and conditional-regression Pythagorean increments",
+    "core_candidate_lemma": "The full cycle average pays for the signed off-diagonal nested arc covariance without the O(n) loss of scalar Hardy summation.",
+    "information_retained": [
+      "cycle orientation and hidden cut",
+      "overlap signs between source rows",
+      "modewise residual decay",
+      "baseline-cross-tail covariance"
+    ],
+    "information_discarded": [
+      "a pathwise bound for each cut",
+      "a two-order reversal pairing",
+      "absolute-value scalarization of arc coefficients"
+    ],
+    "target_implication": "A dimension-free tail-to-baseline comparison plus a local frame floor gives C_G>=c mu A^-1 and hence C051.",
+    "known_failure_mode": "Equal arbitrary arc coefficients have a normalized Hardy loss of order n, and signed adaptation can defeat a diagonal-only estimate.",
+    "verifier_class": "exact cycle enumeration, Fourier or incidence-Gram identities, and structured hostile families"
+  },
+  "status": "active",
+  "decision": "deepen",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 2,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 2
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "statement_plus_failure_map",
+    "route_card_hash": null
+  }
+}

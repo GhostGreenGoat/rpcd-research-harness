@@ -9,38 +9,59 @@ D=Diag(Q),  A=D^(-1/2)QD^(-1/2),  mu=lambda_min(A).
 ```
 
 Then `A` has unit diagonal.  The raw value `lambda_min(Q)` is not scale
-invariant, while `mu` is the correct RPCD parameter.  Let `M_pi` be the
-permuted lower-triangular Gauss--Seidel factor and define the exact one-epoch
-decrease matrix
+invariant, while `mu` is the correct RPCD parameter.  RPCD draws a fresh
+independent uniform permutation in every epoch.  The actual finite-time target
+is: there exist universal constants `c,C>0` such that, for every dimension,
+every such `A`, every starting point, and every epoch count `k`,
+
+```text
+E||x_k||_A <= C exp(-c mu k)||x_0||_A.                  (G-FT)
+```
+
+Thus relative expected `A`-distance `epsilon` costs
+`O((1/mu)log(1/epsilon))` epochs and
+`O((n/mu)log(1/epsilon))` coordinate updates.  This is expectation of distance,
+not the weaker distance of the expected iterate.  Claim `C050` is the master
+claim for `(G-FT)`.
+
+### Strong one-epoch sufficient certificate
+
+Let `M_pi` be the permuted lower-triangular Gauss--Seidel factor and define
 
 ```text
 K(A)=E_pi[(M_pi M_pi^T)^(-1)].
 ```
 
-The present goal is to prove, for a universal numerical constant `c>0`,
+A major current route seeks a universal numerical constant `c_K>0` such that
 
 ```text
-K(A) >= c mu A^(-1).                                    (FT)
+K(A) >= c_K mu A^(-1).                                  (S-K)
 ```
 
-This gives the strong finite-time statement
+This gives the stronger conditional statement
 
 ```text
-E||x_k||_A <= (1-c mu)^(k/2)||x_0||_A,
+E[||x_(k+1)||_A^2 | x_k] <= (1-c_K mu)||x_k||_A^2,
 ```
 
-and therefore `O(n/mu log(1/epsilon))` coordinate updates.  This is an
-expectation of distance (via the stronger expected squared-distance bound),
-not the weaker distance of the expected iterate.  Prefix matrices `J_t` and
-the exact transfer identity are defined in
-`research/iteration6/route_l3/n_le_6_finite_time.md`.
+so `(S-K)` implies `(G-FT)` by iteration and Jensen.  The converse is neither
+known nor assumed: `(S-K)` fixes the `A`-energy metric and is strictly stronger
+than the requested complexity statement.  A counterexample to an over-strong
+one-step certificate must not be reported as an RPCD counterexample.  Claim
+`C051` tracks `(S-K)`.  Prefix matrices `J_t` and the exact transfer identity
+are defined in `research/iteration6/route_l3/n_le_6_finite_time.md`.
 
-Current audited progress is summarized in
+Current audited progress on this sufficient route is summarized in
 `research/iteration6/PORTABLE_HANDOFF.md`: `c=1/2` is proved for `n<=6` and
 several all-dimensional spectral families; every dimension has the weaker
 `K(A)>=(3mu/n)A^-1`.  General `n>=7` remains open.
 
-## Original asymptotic conjecture
+The original covariance-rate conjecture below (`C001`) is another route.  Its
+self-adjoint finite-time bridge currently carries a dimension-dependent
+prefactor, so an additional uniform bridge is needed before it yields `(G-FT)`
+with universal constants.
+
+## Exact target of the original asymptotic conjecture
 
 Let
 

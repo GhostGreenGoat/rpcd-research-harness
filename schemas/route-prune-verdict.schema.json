@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/rpcd/route-prune-verdict.schema.json",
+  "title": "Independent exact/certified RPCD route-prune verdict",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "verdict_id",
+    "route_id",
+    "reviewer_task_id",
+    "reviewer_worker",
+    "reviewer_run_id",
+    "source_route_sha256",
+    "route_card_sha256",
+    "target_claim_id",
+    "route_local_statement",
+    "evidence_level",
+    "certificate_kind",
+    "certificate_artifacts",
+    "master_claim_affected",
+    "rationale"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "kind": {"const": "rpcd-route-prune-verdict"},
+    "verdict_id": {"type": "string", "minLength": 1},
+    "route_id": {"type": "string", "pattern": "^R[0-9]{3,}(-[a-z0-9-]+)?$"},
+    "reviewer_task_id": {"type": "string", "minLength": 1},
+    "reviewer_worker": {"type": "string", "minLength": 1},
+    "reviewer_run_id": {"type": "string", "minLength": 1},
+    "source_route_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "route_card_sha256": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      ]
+    },
+    "target_claim_id": {"type": "string", "minLength": 1},
+    "route_local_statement": {"type": "string", "minLength": 1},
+    "evidence_level": {"enum": ["E2", "E3", "E4", "E5", "E6"]},
+    "certificate_kind": {
+      "enum": ["exact_counterexample", "certified_counterexample"]
+    },
+    "certificate_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "master_claim_affected": {"const": false},
+    "rationale": {"type": "string", "minLength": 1}
+  }
+}

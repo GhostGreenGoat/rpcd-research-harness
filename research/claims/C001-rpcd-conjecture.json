@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "claim_id": "C001",
   "title": "General unit-diagonal SPD RPCD rate bound",
-  "statement_ref": "research/problem.md#exact-target",
+  "statement_ref": "research/problem.md#exact-target-of-the-original-asymptotic-conjecture",
   "status": "open_conjecture",
   "evidence_level": "E1",
   "origin": {

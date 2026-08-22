@@ -44,6 +44,7 @@
         "properties": {
           "claim_id": {"type": "string"},
           "statement": {"type": "string"},
+          "statement_ref": {"type": "string"},
           "status": {
             "enum": [
               "open_conjecture",
@@ -105,7 +106,32 @@
               "name": {"type": "string", "minLength": 1},
               "objective": {"type": "string", "minLength": 1},
               "outcome": {"type": "string", "minLength": 1},
-              "status": {"enum": ["open", "advanced", "blocked", "refuted", "completed"]}
+              "status": {"enum": ["open", "advanced", "blocked", "refuted", "completed"]},
+              "route_id": {"type": "string"},
+              "parent_route_ids": {
+                "type": "array",
+                "items": {"type": "string"},
+                "uniqueItems": true
+              },
+              "method_family": {"type": "string"},
+              "representation": {"type": "string"},
+              "state_or_invariant": {"type": "string"},
+              "core_candidate_lemma": {"type": "string"},
+              "information_retained": {"type": "array", "items": {"type": "string"}},
+              "information_discarded": {"type": "array", "items": {"type": "string"}},
+              "target_implication": {"type": "string"},
+              "predicted_failure": {"type": "string"},
+              "first_bad_edge": {"type": "string"},
+              "source_layer": {"enum": ["L0", "L1", "L2", "L3"]},
+              "next_layer": {"enum": ["L1", "L2", "L3", "L4"]},
+              "branch_kind": {"enum": ["repair", "attack", "depth", "audit"]},
+              "falsifier": {"type": "string"},
+              "context_mode": {
+                "enum": ["statement_only", "declared_inputs", "full_history"]
+              },
+              "decision": {
+                "enum": ["advance", "branch", "deepen", "prune", "suspend", "merge", "complete"]
+              }
             }
           }
         },

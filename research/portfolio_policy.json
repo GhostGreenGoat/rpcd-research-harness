@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "recommendation": {
+    "deepen_min_total": 8,
+    "scout_min_total": 5,
+    "mandatory_positive": [
+      "target_transfer",
+      "counterexample_resistance"
+    ]
+  },
+  "portfolio": {
+    "active_statuses": [
+      "active"
+    ],
+    "layers": [
+      "L1",
+      "L2",
+      "L3"
+    ],
+    "require_sealed_breadth": true,
+    "max_method_family_fraction": 0.6,
+    "max_limited_target_claim_fraction": 0.6,
+    "concentration_limited_target_claim_ids": [
+      "C051"
+    ],
+    "concentration_min_routes": 3,
+    "min_effective_breadth": 3.0
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T147-formal-exact-human-handoff",
+  "title": "Formal, exact, and human-review handoff for the audited RPCD route",
+  "role": "formalizer",
+  "objective": "Build a statement-faithful verification and handoff package from real harness-validated T144, T145, and T146 results. Keep the correctness gates, priority gate, proof-assistant attempt, exact finite certificates, and human expert review visibly separate; this Agent task prepares but cannot self-award the external E6 kernel/human gate.",
+  "claim_ids": [
+    "C050"
+  ],
+  "dependencies": [
+    "T144-audit-sealed-finite-time-route",
+    "T145-fresh-reconstruct-audited-route",
+    "T146-novelty-audit-audited-route"
+  ],
+  "dependency_mode": "latest_validated_run",
+  "inputs": [
+    "research/problem.md",
+    "research/claims/C050-finite-time-expected-distance.json",
+    "research/tasks/T144-audit-sealed-finite-time-route.json",
+    "research/tasks/T145-fresh-reconstruct-audited-route.json",
+    "research/tasks/T146-novelty-audit-audited-route.json",
+    "docs/METHOD.md",
+    "scripts/verify_rpcd_identities.py"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": [
+    "dependency_provenance.json",
+    "gate_intake.json",
+    "statement_alignment.json",
+    "trusted_base.json",
+    "formalization/README.md",
+    "formalization_report.md",
+    "exact_certificate.py",
+    "human_review_packet.md",
+    "handoff_verdict.json"
+  ],
+  "acceptance_checks": [
+    "Consumes all harness-injected dependency results and records repository-relative result paths, run_ids, workers, validation status, hashes, and verdicts; T144 hostile audit and T145 reconstruction must come from distinct workers.",
+    "gate_intake.json keeps correctness and priority separate: zero-blocker T144 plus successful T145 reconstruction are correctness prerequisites, while T146 supplies only the independent novelty/priority verdict.",
+    "An inconclusive T146 audit blocks a priority or novelty claim but does not masquerade as a mathematical objection; a failed T144 or T145 correctness gate blocks theorem promotion even if T146 reports apparent novelty.",
+    "statement_alignment.json matches the canonical C050 title, statement_ref, quantifiers, norm, sampling model, and complexity units exactly. Any route-local sufficient lemma has a separate local identity and is never reported as C050 itself.",
+    "The proof-assistant report pins toolchain and library versions, lists the trusted base, axioms, oracles, sorry/admit declarations, and every unclosed goal; a generated Lean file or successful type check with gaps is not E6.",
+    "exact_certificate.py uses exact rational, symbolic, interval, or formally certified arithmetic for its declared finite statements and is executed by the harness. Its PASS is E2 evidence for those finite statements only, not a general proof of C050.",
+    "human_review_packet.md contains the frozen theorem statement, dependency provenance, proof map, known route barriers, executable checks, formal gaps, novelty verdict, and explicit questions for a named qualified RPCD or optimization expert.",
+    "This task remains at E5 or below. E6 is a later ledger transition requiring the exact canonical theorem to be accepted without gaps by a documented proof-assistant kernel or a named qualified human reviewer; preparing a handoff, passing finite checks, or receiving model self-review cannot trigger it.",
+    "A formal or exact counterexample to a route lemma is recorded only against that local lemma. This task is not authorized to mark C050 refuted unless the full canonical G-FT negation is separately certified under all quantifiers."
+  ],
+  "context_policy": {
+    "mode": "declared_inputs",
+    "allowlist": [
+      "research/problem.md",
+      "research/claims/C050-finite-time-expected-distance.json",
+      "research/tasks/T144-audit-sealed-finite-time-route.json",
+      "research/tasks/T145-fresh-reconstruct-audited-route.json",
+      "research/tasks/T146-novelty-audit-audited-route.json",
+      "docs/METHOD.md",
+      "scripts/verify_rpcd_identities.py"
+    ],
+    "denylist": [
+      "model self-attestation presented as human review",
+      "unhashed dependency outputs or hand-selected failed runs",
+      "undeclared network proof oracles"
+    ],
+    "reveal_after_route_card": false
+  },
+  "method_constraints": {
+    "method_family": "formal-exact-human-triangulation",
+    "required_differences": [
+      "Maintain separate verdict fields for hostile audit, fresh reconstruction, novelty, formal proof, exact finite checks, and human review.",
+      "Translate the frozen theorem statement before encoding proof tactics.",
+      "Give every finite certificate a precise finite scope and every formal gap an explicit handoff owner."
+    ],
+    "forbidden_methods": [
+      "equating exact finite tests with a proof for all dimensions",
+      "equating a novelty verdict with proof correctness",
+      "counting sorry, admit, axioms, or model review as kernel or human validation",
+      "reporting a failed sufficient route lemma as refutation of C050",
+      "assuming C051 is equivalent to C050"
+    ],
+    "required_controls": [
+      "canonical C050 statement and statement_ref hash",
+      "permutation orientation and fresh-epoch independence",
+      "expectation of A-distance for every initial point",
+      "dimension-uniform transient and coordinate-update accounting",
+      "trusted-base and human-review identity audit"
+    ]
+  },
+  "strict_claim_scope": true,
+  "strict_claim_binding": true,
+  "may_refute_master_claim": false,
+  "require_distinct_dependency_workers": true,
+  "dynamic_verifier_artifacts": [
+    "exact_certificate.py"
+  ],
+  "verifiers": [
+    {
+      "name": "RPCD product orientation identities",
+      "command": ["{python}", "scripts/verify_rpcd_identities.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    }
+  ],
+  "budget_hint": {
+    "mode": "deep",
+    "checkpoint_minutes": 30
+  },
+  "status": "blocked"
+}

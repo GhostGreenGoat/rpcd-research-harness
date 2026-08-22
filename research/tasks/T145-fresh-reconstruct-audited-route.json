@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T145-fresh-reconstruct-audited-route",
+  "title": "Fresh independent reconstruction of the audited RPCD route",
+  "role": "reproducer",
+  "objective": "Using the exact candidate statement and unresolved objections from one real harness-validated T144 result, lock a fresh derivation before comparing proofs, then independently reprove the selected route and its transfer to C050 or localize its first false edge. T144 hostile audit is evidence about objections, not an independent reconstruction and not a substitute for this task.",
+  "claim_ids": [
+    "C050"
+  ],
+  "dependencies": [
+    "T144-audit-sealed-finite-time-route"
+  ],
+  "dependency_mode": "latest_validated_run",
+  "inputs": [
+    "research/problem.md",
+    "research/claims/C050-finite-time-expected-distance.json",
+    "research/tasks/T144-audit-sealed-finite-time-route.json",
+    "docs/METHOD.md",
+    "docs/BREADTH_DEPTH_PROTOCOL.md",
+    "scripts/verify_rpcd_identities.py"
+  ],
+  "allowed_max_evidence": "E5",
+  "required_artifacts": [
+    "dependency_provenance.json",
+    "canonical_statement.md",
+    "fresh_reconstruction.md",
+    "fresh_reconstruction.sha256",
+    "post_lock_comparison.md",
+    "independent_controls.py",
+    "reconstruction_verdict.json"
+  ],
+  "acceptance_checks": [
+    "Consumes the harness-injected result from a real validated T144 run, verifies its proof-free reconstruction_seed.json, and records the repository-relative result and seed paths, run_id, worker, validation status, hashes, and artifact access order in dependency_provenance.json; it never invents a runs/... placeholder as a static task input.",
+    "The reproducer worker is different from the T144 hostile-audit worker and from the selected T143 proof worker; hostile audit and independent reconstruction are recorded as separate gates.",
+    "Before locking fresh_reconstruction.md, reads only reconstruction_seed.json and the stable canonical inputs; it copies the exact candidate lemma, assumptions, and claimed C050 implication into canonical_statement.md, then writes the proof and records fresh_reconstruction.sha256 before consulting or quoting any candidate or audit derivation.",
+    "If dependency packaging, prior context, or the access log cannot establish statement-only exposure before the proof hash, reconstruction_verdict.json marks independence compromised and withholds E5 even if the resulting proof appears correct.",
+    "Re-derives permutation order, transpose convention, unit-diagonal normalization, fresh independent epoch sampling, every-initial-point quantifiers, finite-time transient constants, and expectation of A-distance rather than distance of the expected iterate.",
+    "Uses at least two genuinely different proof organizations or representations and an independently written exact control; copying T144 tests or prose does not count as reconstruction.",
+    "post_lock_comparison.md aligns every fresh step with the audited candidate only after the fresh hash is recorded and classifies mismatches as fatal, repairable, expositional, or closed.",
+    "A failed route lemma is recorded only under its route-local statement in reconstruction_verdict.json. C050 remains open unless an exact witness satisfies the negation of the full canonical G-FT quantifiers; this task is not authorized to mark C050 refuted.",
+    "E5 is used only if the full audited statement and C050 transfer are independently reconstructed with all objections closed and the final dynamic verifier passes; otherwise the result remains at E4 or below with explicit blockers."
+  ],
+  "context_policy": {
+    "mode": "declared_inputs",
+    "allowlist": [
+      "research/problem.md",
+      "research/claims/C050-finite-time-expected-distance.json",
+      "research/tasks/T144-audit-sealed-finite-time-route.json",
+      "docs/METHOD.md",
+      "docs/BREADTH_DEPTH_PROTOCOL.md",
+      "scripts/verify_rpcd_identities.py"
+    ],
+    "denylist": [
+      "T143 private conversations and hidden reasoning",
+      "the selected proof derivation before fresh_reconstruction.sha256 is recorded",
+      "unvalidated or hand-selected run outputs"
+    ],
+    "reveal_after_route_card": false
+  },
+  "method_constraints": {
+    "method_family": "fresh-statement-first-reconstruction",
+    "required_differences": [
+      "Use notation or a state representation independently chosen from the candidate proof.",
+      "Derive the first implication edge from the locked statement instead of replaying the hostile audit.",
+      "Implement independent controls without importing the candidate worker's verifier."
+    ],
+    "forbidden_methods": [
+      "treating T144 hostile audit as independent reconstruction",
+      "copying the selected T143 derivation before locking the fresh proof",
+      "reporting a failed sufficient route lemma as refutation of C050",
+      "assuming C051 is necessary for C050"
+    ],
+    "required_controls": [
+      "one exactly tractable commuting family",
+      "one near-singular noncommuting unit-diagonal SPD family",
+      "full-space versus reachable-state semantics",
+      "dimension-uniform control of every transient and norm conversion"
+    ]
+  },
+  "strict_claim_scope": true,
+  "strict_claim_binding": true,
+  "may_refute_master_claim": false,
+  "require_distinct_dependency_workers": true,
+  "dynamic_verifier_artifacts": [
+    "independent_controls.py"
+  ],
+  "verifiers": [
+    {
+      "name": "RPCD product orientation identities",
+      "command": ["{python}", "scripts/verify_rpcd_identities.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    }
+  ],
+  "budget_hint": {
+    "mode": "deep",
+    "checkpoint_minutes": 30
+  },
+  "status": "blocked"
+}

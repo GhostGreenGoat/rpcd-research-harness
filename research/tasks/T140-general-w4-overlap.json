@@ -4,7 +4,7 @@
   "title": "General W4 recovery beyond path and equal-star slices",
   "role": "researcher",
   "objective": "Prove the general W4 shifted-inverse Schur-recovery inequality, or isolate its exact aggregate replacement, starting with a four-vertex path, a sign-frustrated cycle, and an unequal-weight degree-three star.",
-  "claim_ids": ["C043", "C049"],
+  "claim_ids": ["C043", "C049", "C052"],
   "dependencies": [],
   "inputs": [
     "research/problem.md",
@@ -15,7 +15,7 @@
     "research/iteration6/route_l3/w4_three_path_all_d_slice.md",
     "research/iteration6/route_l3/w4_equal_star_all_d_slice.md"
   ],
-  "allowed_max_evidence": "E5",
+  "allowed_max_evidence": "E3",
   "required_artifacts": [
     "w4_overlap_analysis.md",
     "exact_reduction.py",
@@ -26,7 +26,64 @@
     "Reconstructs the audited matching, weighted-three-path, and equal-star slices before generalizing them.",
     "Treats at least the four-path, a frustrated cycle, and an unequal-weight star analytically rather than by a parameter grid alone.",
     "Retains the anisotropic child surplus and does not replace it by the known-false spectral-only bound.",
-    "Any positive result is transferred explicitly to K(A) and the strong expected-distance finite-time target."
+    "Any positive result states exactly whether it proves C052's single W4 edge or only a structured subfamily, and explicitly records that stable propagation through all later depths remains before C051 and hence C050.",
+    "No W4-only result may report C051 or C050 as proved, refuted, or otherwise resolved."
+  ],
+  "route_ids": [
+    "R111-general-w4"
+  ],
+  "research_mode": "continuation_depth",
+  "context_policy": {
+    "mode": "full_history",
+    "allowlist": [],
+    "denylist": [],
+    "reveal_after_route_card": false
+  },
+  "method_constraints": {
+    "method_family": "anisotropic-bellman-schur",
+    "required_differences": [
+      "Advance beyond the already audited matching, weighted-three-path, and equal-star blocks.",
+      "Locate the first failed Schur edge before changing the Bellman state.",
+      "Distinguish a proof of C051 from the weaker target C050."
+    ],
+    "forbidden_methods": [
+      "spectral-only replacement of the anisotropic child surplus",
+      "parameter-grid evidence presented as a general matrix inequality",
+      "treating C051 as necessary for C050"
+    ],
+    "required_controls": [
+      "four-vertex path",
+      "sign-frustrated cycle",
+      "unequal-weight degree-three star",
+      "known matching and weighted-three-path positive slices"
+    ]
+  },
+  "strict_claim_scope": true,
+  "verifiers": [
+    {
+      "name": "matching-block W4 regression",
+      "command": ["{python}", "scripts/iter6_w4_matching_block_exact.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    },
+    {
+      "name": "weighted-three-path W4 regression",
+      "command": ["{python}", "scripts/iter6_w4_three_path_all_d_exact.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    },
+    {
+      "name": "equal-star W4 regression",
+      "command": ["{python}", "scripts/iter6_w4_equal_star_symbolic.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    }
   ],
   "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
   "status": "ready"

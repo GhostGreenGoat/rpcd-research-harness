@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R140-direct-covariance-multiepoch",
+  "layer": "L1",
+  "title": "Coordinator-precommitted direct covariance and multi-epoch escape route",
+  "statement": "This coordinator-proposed route suggests seeking a finite-time expected-distance proof directly from the full RPCD second-moment operator, a justified reachable cone, or multi-epoch powers, without assuming the stronger inverse-moment claim C051. It is not evidence of an independent sealed rollout.",
+  "parent_ids": [
+    "R100-l0-finite-time"
+  ],
+  "method_family": "direct-covariance-multiepoch",
+  "target_claim_id": "C050",
+  "signature": {
+    "representation": "The full covariance map M_A(X)=E[T_pi X T_pi^T], its powers, or an explicitly characterized reachable invariant cone",
+    "state_or_invariant": "A second-moment norm, cone gauge, or block-power contraction that controls every rank-one initial covariance",
+    "core_candidate_lemma": "The structured RPCD covariance dynamics have a universal mu-scale finite-time gap after a constant-size or explicitly controlled multi-epoch block.",
+    "information_retained": [
+      "non-normal multi-epoch transients",
+      "full second-moment operator or a proved reachable cone",
+      "fresh-epoch independence",
+      "rank-one initial covariance semantics"
+    ],
+    "information_discarded": [
+      "fixed-A one-epoch energy as the terminal certificate",
+      "prefix inverse moments as an assumed sufficient route",
+      "Bellman, cycle-cut, and boundary-shorting derivation history before the route card"
+    ],
+    "target_implication": "A uniform block-power or cone contraction gives C050 directly and need not establish C051.",
+    "known_failure_mode": "A full-space spectral-radius claim may ignore non-normal prefactors or fail to imply a uniform finite-time bound on every reachable rank-one covariance.",
+    "verifier_class": "independent covariance construction, exact small-n powers, and adversarial non-normal transfer checks"
+  },
+  "status": "proposed",
+  "decision": "scout",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 1,
+    "falsifiability": 2,
+    "recent_information_gain": 0
+  },
+  "provenance": {
+    "search_mode": "sealed_breadth",
+    "initial_context": "statement_only",
+    "route_card_hash": "d8087af7369cba34f4d067927eaea09eeaa2fdf21c86ac5483389ee0b37d662b",
+    "route_card_origin": "coordinator_precommit",
+    "agent_rollout_id": null
+  }
+}

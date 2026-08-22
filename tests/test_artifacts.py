@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 
 from rpcd_harness.artifacts import (
@@ -11,7 +12,7 @@ from rpcd_harness.artifacts import (
     unpack_bundle,
     verify_bundle,
 )
-from rpcd_harness.protocol import find_root
+from rpcd_harness.protocol import ProtocolError, find_root
 
 
 class PortableBundleTests(unittest.TestCase):
@@ -22,6 +23,8 @@ class PortableBundleTests(unittest.TestCase):
             Path("nested/.npmrc"),
             Path("nested/id_ed25519"),
             Path("nested/client.pem"),
+            Path("nested/.ssh/config"),
+            Path("nested/.git-credentials"),
         ):
             self.assertTrue(_is_excluded(relative, include_runs=False), relative)
 
@@ -30,6 +33,13 @@ class PortableBundleTests(unittest.TestCase):
             candidate = Path(temporary) / "notes.txt"
             candidate.write_text("ghp_" + "A" * 36, encoding="utf-8")
             self.assertEqual(_sensitive_content_kind(candidate), "github-token")
+
+    def test_streaming_scan_catches_a_secret_crossing_a_large_chunk_boundary(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            candidate = Path(temporary) / "large.log"
+            prefix = b"x" * (1024 * 1024 - 8)
+            candidate.write_bytes(prefix + b"sk-ant-" + b"A" * 32 + b"tail")
+            self.assertEqual(_sensitive_content_kind(candidate), "anthropic-key")
 
     def test_bundle_round_trip_and_credential_exclusion(self) -> None:
         root = find_root()
@@ -45,6 +55,27 @@ class PortableBundleTests(unittest.TestCase):
             written = unpack_bundle(bundle, destination)
             self.assertGreater(len(written), 20)
             self.assertTrue((destination / "README.md").is_file())
+
+    def test_windows_archive_aliases_and_ntfs_ads_are_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            for index, hostile in enumerate(
+                ("C:/evil.txt", "C:evil.txt", "safe/file.txt:ads", "NUL.txt", "trail. ")
+            ):
+                archive_path = directory / f"hostile-{index}.zip"
+                with zipfile.ZipFile(archive_path, "w") as archive:
+                    archive.writestr(hostile, b"payload")
+                with self.subTest(hostile=hostile), self.assertRaisesRegex(
+                    ProtocolError, "unsafe archive paths"
+                ):
+                    verify_bundle(archive_path)
+
+            alias_path = directory / "case-alias.zip"
+            with zipfile.ZipFile(alias_path, "w") as archive:
+                archive.writestr("Proof.txt", b"one")
+                archive.writestr("proof.txt", b"two")
+            with self.assertRaisesRegex(ProtocolError, "case-insensitive"):
+                verify_bundle(alias_path)
 
     def test_include_runs_is_scoped_to_the_selected_task(self) -> None:
         root = find_root()

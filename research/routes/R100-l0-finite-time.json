@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R100-l0-finite-time",
+  "layer": "L0",
+  "title": "Strong finite-time RPCD distance target",
+  "statement": "For every real unit-diagonal SPD A, mu=lambda_min(A), fresh independent uniform permutations each epoch, every x0, and every k>=0, prove E||x_k||_A <= C exp(-c mu k)||x0||_A for universal numerical c,C>0, hence O((n/mu) log(1/epsilon)) coordinate updates.",
+  "parent_ids": [],
+  "method_family": "target-definition",
+  "target_claim_id": "C050",
+  "signature": {
+    "representation": "Fresh-permutation RPCD epochs on a normalized positive-definite quadratic",
+    "state_or_invariant": "Expected A-distance for every deterministic initial point",
+    "core_candidate_lemma": "Any accepted child route must provide dimension-uniform positive epoch contraction and transient constants together with a valid strong-expectation transfer.",
+    "information_retained": [
+      "unit-diagonal normalization and normalized spectral floor mu",
+      "fresh independent permutation per epoch",
+      "all initial points and all epoch counts",
+      "expectation of A-distance rather than distance of the expected iterate"
+    ],
+    "information_discarded": [
+      "No proof representation or surrogate is selected at L0."
+    ],
+    "target_implication": "An epoch count O(mu^-1 log(1/epsilon)) multiplies by n coordinate updates per epoch.",
+    "known_failure_mode": "A route may prove only fixed-initial, asymptotic, squared-distance, or norm-of-expectation contraction and silently overstate it as the L0 target.",
+    "verifier_class": "target-semantics and finite-time-transfer audit"
+  },
+  "status": "active",
+  "decision": "deepen",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 2,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 2
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "full_repository",
+    "route_card_hash": null
+  }
+}

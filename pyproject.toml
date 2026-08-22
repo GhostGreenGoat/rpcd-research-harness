@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rpcd-research-harness"
-version = "0.2.0"
+version = "0.3.0"
 description = "Portable, evidence-gated research harness for Random-Permutation Coordinate Descent"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = ["numpy>=1.26", "sympy>=1.14"]
 
 [project.scripts]

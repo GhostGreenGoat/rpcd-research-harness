@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R131-boundary-shorting",
+  "layer": "L2",
+  "title": "Full low-layer boundary shorting",
+  "statement": "Prove or sharply refute the full Loewner low-spectral-layer shorting inequality for singular correlation matrices, retaining low-high cross blocks rather than only compressed Rayleigh bounds.",
+  "parent_ids": [
+    "R130-spectral-stitching"
+  ],
+  "method_family": "spectral-boundary-stitching",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "Shorted inverse moment of a singular boundary matrix across a tunable low/high spectral split",
+    "state_or_invariant": "Low-block floor minus the exact Schur cross budget through the high block",
+    "core_candidate_lemma": "The full shorted low-layer operator has a universal positive boundary floor on the regime where the complementary high block is stitched separately.",
+    "information_retained": [
+      "Schur cross term",
+      "multiplicity and width of the low spectral layer",
+      "tunable threshold tau",
+      "non-normal chronological factors"
+    ],
+    "information_discarded": [
+      "bare low-space compression",
+      "eigenvalues without coordinate geometry"
+    ],
+    "target_implication": "This supplies the substantive missing assumption in the audited boundary-ray stitch toward C051.",
+    "known_failure_mode": "Higher-rank elliptope points have nonzero cross budgets; a kernel compression cannot be promoted to full Loewner order.",
+    "verifier_class": "exact elliptope boundary examples and symbolic shorted-operator inequalities"
+  },
+  "status": "active",
+  "decision": "deepen",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 2,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 2
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "statement_plus_failure_map",
+    "route_card_hash": null
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "snapshot_id": "B001-pre-t143",
+  "kind": "planning_estimate",
+  "reviewer": "RPCD portfolio coordinator",
+  "created_at": "2026-08-22T00:00:00+08:00",
+  "entries": [
+    {"route_id": "R111-general-w4", "weight": 1},
+    {"route_id": "R121-cycle-cut-covariance", "weight": 1},
+    {"route_id": "R131-boundary-shorting", "weight": 1}
+  ],
+  "similarities": [
+    {
+      "route_a": "R111-general-w4",
+      "route_b": "R111-general-w4",
+      "value": 1,
+      "rationale": "A route is identical to itself."
+    },
+    {
+      "route_a": "R111-general-w4",
+      "route_b": "R121-cycle-cut-covariance",
+      "value": 0.75,
+      "rationale": "The representations differ, but both currently terminate in the same stronger C051 inverse-moment certificate and share its global failure risk."
+    },
+    {
+      "route_a": "R111-general-w4",
+      "route_b": "R131-boundary-shorting",
+      "value": 0.75,
+      "rationale": "Schur and spectral geometry differ locally, but both currently seek C051 rather than a direct C050 bridge."
+    },
+    {
+      "route_a": "R121-cycle-cut-covariance",
+      "route_b": "R121-cycle-cut-covariance",
+      "value": 1,
+      "rationale": "A route is identical to itself."
+    },
+    {
+      "route_a": "R121-cycle-cut-covariance",
+      "route_b": "R131-boundary-shorting",
+      "value": 0.75,
+      "rationale": "Conditional frames and spectral shorting retain different information, but both currently depend on the stronger C051 endpoint."
+    },
+    {
+      "route_a": "R131-boundary-shorting",
+      "route_b": "R131-boundary-shorting",
+      "value": 1,
+      "rationale": "A route is identical to itself."
+    }
+  ],
+  "limitations": [
+    "R140 is a proposed coordinator precommit and is excluded from the active frontier until an Agent-generated route is imported.",
+    "The off-diagonal similarities are an explicit planning judgment, not proof confidence or a statistical independence estimate.",
+    "Recompute this snapshot after T143 cards are imported; do not reuse these values for Agent-generated routes."
+  ]
+}

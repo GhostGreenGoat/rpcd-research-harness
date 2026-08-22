@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T144-audit-sealed-finite-time-route",
+  "title": "Hostile audit of a sealed finite-time RPCD route",
+  "role": "skeptic",
+  "objective": "Compare every completed T143 sealed rollout using its immutable card and validated result, select one candidate by an explicit target-fidelity/falsifiability rule, then restate enough of it to attack its first implication edge and transfer to C050. This audit-local reconstruction is E4 hostile-audit work, not the fresh E5 independent reconstruction assigned to T145.",
+  "claim_ids": [
+    "C050"
+  ],
+  "dependencies": [
+    "T143-sealed-finite-time-breadth"
+  ],
+  "dependency_mode": "complete_validated_fanout",
+  "inputs": [
+    "research/problem.md",
+    "research/routes/R100-l0-finite-time.json",
+    "research/tasks/T143-sealed-finite-time-breadth.json",
+    "research/claims/C050-finite-time-expected-distance.json",
+    "docs/BREADTH_DEPTH_PROTOCOL.md",
+    "docs/ITER5_FAILURE_MAP_AND_ROUTES.md",
+    "research/iteration6/root/projection_lift.md",
+    "research/claims/C046-remaining-frame-inverse-barrier.json"
+  ],
+  "allowed_max_evidence": "E4",
+  "required_artifacts": [
+    "candidate_selection.json",
+    "reconstruction_seed.json",
+    "statement_reconstruction.md",
+    "first_bad_edge_audit.md",
+    "target_semantics_audit.md",
+    "independent_controls.py",
+    "audit_verdict.json"
+  ],
+  "acceptance_checks": [
+    "Reads every result from one complete validated T143 fanout and records the selected rollout_id, run_id, route-card hash, selection scores, rejected alternatives, and tie rule in candidate_selection.json.",
+    "Writes reconstruction_seed.json as a proof-free frozen package containing only the selected local lemma, assumptions, definitions, exact claimed C050 implication, source hashes, and unresolved-objection identifiers; it must contain no derivation, repair hint, or audit verdict.",
+    "Rebuilds enough of the candidate representation and core lemma from its statement to mount an independent attack without copying the explorer's derivation or implementation.",
+    "Labels statement_reconstruction.md as an audit-local attack artifact: it must not close or claim the independent_reconstruction gate, which requires the separate T145 run and a worker distinct from this auditor.",
+    "Identifies and attacks the first unproved implication edge rather than only checking downstream algebra.",
+    "Checks unit-diagonal normalization, fresh-epoch independence, every-initial-point quantifiers, finite-time prefactors, and expectation of distance rather than distance of expectation.",
+    "Selects at least two representation-appropriate analytic barriers from the RPCD failure map, including a near-singular noncommuting family.",
+    "Rejects any proof that silently assumes C051 or a stronger fixed-metric one-step certificate unless that claim is separately proved.",
+    "Uses an independent exact, formal, or certified control for any refutation; a numerical null search is not a PASS.",
+    "Records all surviving objections and does not promote beyond E4."
+  ],
+  "route_ids": [
+    "R100-l0-finite-time"
+  ],
+  "research_mode": "critic_validation",
+  "context_policy": {
+    "mode": "declared_inputs",
+    "allowlist": [
+      "research/problem.md",
+      "research/routes/R100-l0-finite-time.json",
+      "research/tasks/T143-sealed-finite-time-breadth.json",
+      "research/claims/C050-finite-time-expected-distance.json",
+      "docs/BREADTH_DEPTH_PROTOCOL.md",
+      "docs/ITER5_FAILURE_MAP_AND_ROUTES.md",
+      "research/iteration6/root/projection_lift.md",
+      "research/claims/C046-remaining-frame-inverse-barrier.json"
+    ],
+    "denylist": [
+      "the T143 worker's private conversation or hidden reasoning",
+      "the T143 candidate's implementation except as an object under attack",
+      "undeclared mutable external services"
+    ],
+    "reveal_after_route_card": false
+  },
+  "method_constraints": {
+    "method_family": "adversarial-first-edge-reconstruction",
+    "required_differences": [
+      "Restate the selected route in a fresh notation or equivalent representation solely to expose an attack surface.",
+      "Use controls not copied from the candidate verifier.",
+      "Audit the C050 transfer without assuming C051."
+    ],
+    "forbidden_methods": [
+      "accepting the candidate's own tests as independent evidence",
+      "promoting a numerical null search to a theorem",
+      "changing the candidate statement after finding a counterexample"
+    ],
+    "required_controls": [
+      "permutation direction and transpose convention when applicable",
+      "full-state versus reachable-state distinction when applicable",
+      "dimension growth of every transient or norm-comparison constant",
+      "the exact C046 inverse-potential barrier",
+      "n<=6 and equicorrelation positive controls"
+    ]
+  },
+  "strict_claim_scope": true,
+  "strict_claim_binding": true,
+  "may_refute_master_claim": false,
+  "dynamic_verifier_artifacts": [
+    "independent_controls.py"
+  ],
+  "verifiers": [
+    {
+      "name": "RPCD product orientation identities",
+      "command": ["{python}", "scripts/verify_rpcd_identities.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    },
+    {
+      "name": "projection-lift regression",
+      "command": ["{python}", "scripts/iter6_projection_lift.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    }
+  ],
+  "budget_hint": {
+    "mode": "deep",
+    "checkpoint_minutes": 30
+  },
+  "status": "blocked"
+}

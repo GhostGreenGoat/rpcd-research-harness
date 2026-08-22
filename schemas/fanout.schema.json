@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/rpcd/fanout.schema.json",
+  "title": "RPCD independent rollout ensemble",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "task_id", "rollouts"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "task_id": {"type": "string", "pattern": "^T[0-9]{3}-[a-z0-9-]+$"},
+    "rollouts": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rollout_id",
+          "worker",
+          "method_family",
+          "context_mode",
+          "objective",
+          "required_controls"
+        ],
+        "properties": {
+          "rollout_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+          "worker": {"type": "string", "minLength": 1},
+          "method_family": {"type": "string", "minLength": 1},
+          "context_mode": {
+            "enum": ["statement_only", "declared_inputs", "full_history"]
+          },
+          "route_ids": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          },
+          "objective": {"type": "string", "minLength": 1},
+          "forbidden_methods": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          },
+          "required_controls": {
+            "type": "array",
+            "items": {"type": "string"},
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}

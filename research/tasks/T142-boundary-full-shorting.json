@@ -4,7 +4,7 @@
   "title": "Full low-spectral-layer shorting on boundary rays",
   "role": "researcher",
   "objective": "Establish or sharply refute the full Loewner low-layer shorting inequality needed by the boundary-ray interpolation, retaining low/high cross blocks rather than proving only compression bounds.",
-  "claim_ids": ["C029", "C045", "C047"],
+  "claim_ids": ["C029", "C045", "C047", "C050", "C051"],
   "dependencies": [],
   "inputs": [
     "research/problem.md",
@@ -15,7 +15,7 @@
     "research/iteration6/route_stitch/failed_lemmas.md",
     "docs/ITER4_T080_BOUNDARY_KERNEL_INEQUALITY.md"
   ],
-  "allowed_max_evidence": "E5",
+  "allowed_max_evidence": "E3",
   "required_artifacts": [
     "shorted_operator_analysis.md",
     "low_high_cross_budget.md",
@@ -27,6 +27,54 @@
     "Reproduces the rank-two elliptope and rank-four exterior barriers before proposing a general claim.",
     "Covers multiscale low spectral layers rather than only a fixed boundary kernel.",
     "Provides an explicit boundary-ray-to-positive-mu and strong expected-distance transfer for every positive conclusion."
+  ],
+  "route_ids": [
+    "R131-boundary-shorting"
+  ],
+  "research_mode": "continuation_depth",
+  "context_policy": {
+    "mode": "full_history",
+    "allowlist": [],
+    "denylist": [],
+    "reveal_after_route_card": false
+  },
+  "method_constraints": {
+    "method_family": "spectral-boundary-stitching",
+    "required_differences": [
+      "Control the full low-layer shorted operator, including low-high cross blocks.",
+      "Treat multiple small eigenvalue scales rather than a fixed kernel alone.",
+      "State separately what transfers to C051 and what may target C050 directly."
+    ],
+    "forbidden_methods": [
+      "compression-only Rayleigh bounds presented as full Loewner shorting",
+      "dimension-dependent boundary remainder hidden in big-O notation",
+      "using the refuted universal boundary constant two"
+    ],
+    "required_controls": [
+      "rank-two constant-diagonal projector region",
+      "rank-three projector region",
+      "rank-four exterior-certificate obstruction",
+      "n=8 exact boundary counterexample family"
+    ]
+  },
+  "strict_claim_scope": true,
+  "verifiers": [
+    {
+      "name": "spectral-geometry hostile regression",
+      "command": ["{python}", "scripts/iter6_spectral_geometry_hostile_audit.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    },
+    {
+      "name": "boundary covariance counterexample regression",
+      "command": ["{python}", "scripts/iter4_t080_counterexample_covariance_check.py"],
+      "mode": "deterministic",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    }
   ],
   "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
   "status": "ready"

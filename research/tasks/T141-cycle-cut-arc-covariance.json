@@ -4,7 +4,7 @@
   "title": "Cycle-conditioned arc covariance for half-memory RPCD",
   "role": "researcher",
   "objective": "Prove or refute a dimension-free cycle-averaged bound for the adapted signed off-diagonal arc covariance in the half-memory conditional dual hierarchy.",
-  "claim_ids": ["C040", "C046", "C048"],
+  "claim_ids": ["C040", "C046", "C048", "C050", "C051"],
   "dependencies": [],
   "inputs": [
     "research/problem.md",
@@ -16,7 +16,7 @@
     "research/iteration6/route_frame/pathwise_triangular_projection_barrier.md",
     "research/iteration6/route_frame/reverse_pair_triangular_barrier.md"
   ],
-  "allowed_max_evidence": "E5",
+  "allowed_max_evidence": "E3",
   "required_artifacts": [
     "cycle_mode_decomposition.md",
     "conditional_gain_bound.md",
@@ -28,6 +28,62 @@
     "Uses the full random-cycle average; it does not claim a pathwise or reversal-only constant.",
     "Separates diagonal and adapted signed off-diagonal arc covariance and preserves local Schur constraints.",
     "Explains whether conditional Pythagorean information gains pay for the target and how the result transfers to expected distance."
+  ],
+  "route_ids": [
+    "R121-cycle-cut-covariance"
+  ],
+  "research_mode": "continuation_depth",
+  "context_policy": {
+    "mode": "full_history",
+    "allowlist": [],
+    "denylist": [],
+    "reveal_after_route_card": false
+  },
+  "method_constraints": {
+    "method_family": "conditional-frame-information",
+    "required_differences": [
+      "Average over the full internal random cycle instead of repairing a single bad order.",
+      "Preserve the adapted signed off-diagonal covariance after the diagonal term is controlled.",
+      "Quantify the information gain between global, cycle-conditioned, and full-order regressions."
+    ],
+    "forbidden_methods": [
+      "pathwise triangular-projection domination",
+      "full-reversal pairing as the only averaging mechanism",
+      "a bare Hardy inequality that discards local Schur constraints"
+    ],
+    "required_controls": [
+      "skew-Hilbert pathwise divergence",
+      "reverse-pair divergence",
+      "cyclic-cut freezing identity",
+      "small-complement and equicorrelation positive controls"
+    ]
+  },
+  "strict_claim_scope": true,
+  "verifiers": [
+    {
+      "name": "pathwise triangular barrier",
+      "command": ["{python}", "research/iteration6/route_frame/scripts/verify_pathwise_triangular_barrier.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    },
+    {
+      "name": "reverse-pair barrier",
+      "command": ["{python}", "research/iteration6/route_frame/scripts/verify_reverse_pair_barrier.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    },
+    {
+      "name": "cyclic-cut freezing regression",
+      "command": ["{python}", "research/iteration6/route_frame/scripts/verify_cyclic_cut_freezing.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    }
   ],
   "budget_hint": {"mode": "deep", "checkpoint_minutes": 30},
   "status": "ready"

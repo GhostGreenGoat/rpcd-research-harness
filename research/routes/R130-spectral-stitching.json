@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R130-spectral-stitching",
+  "layer": "L1",
+  "title": "Boundary-ray spectral stitching",
+  "statement": "Combine exact boundary-ray interpolation with low/high spectral splitting to cover the multi-low-mode region not reached by the exterior certificate.",
+  "parent_ids": [
+    "R100-l0-finite-time"
+  ],
+  "method_family": "spectral-boundary-stitching",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "Singular correlation boundary ray A_mu=mu I+(1-mu)C with a low/high spectral decomposition",
+    "state_or_invariant": "Full low-layer shorted operator, chronological-factor comparison, and an exact high-space two-prefix floor",
+    "core_candidate_lemma": "A dimension-free full Loewner shorting certificate on the boundary can be harmonically stitched to the high spectral block.",
+    "information_retained": [
+      "low-high cross blocks",
+      "boundary kernel and near-kernel layers",
+      "chronological triangular-factor geometry",
+      "explicit positive-mu interpolation constant"
+    ],
+    "information_discarded": [
+      "individual coordinate-support graph",
+      "full permutation-order conditional covariance",
+      "Bellman prefix surplus"
+    ],
+    "target_implication": "A full boundary shorting floor plus the audited ray comparison and high-space bound yields C051 on the remaining regime, then C050 by the separate transfer.",
+    "known_failure_mode": "Compression-only, endpoint chords, and scalar spectral mixtures lose the cross budget or the mesoscale region.",
+    "verifier_class": "exact boundary families, Schur-short checks, and low-high transfer audit"
+  },
+  "status": "active",
+  "decision": "deepen",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 2,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 2
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "full_repository",
+    "route_card_hash": null
+  }
+}

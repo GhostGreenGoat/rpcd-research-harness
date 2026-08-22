@@ -1,0 +1,475 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/rpcd/route.schema.json",
+  "title": "RPCD mathematical search-route node",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route_id",
+    "layer",
+    "title",
+    "statement",
+    "parent_ids",
+    "method_family",
+    "target_claim_id",
+    "signature",
+    "status",
+    "decision",
+    "merge_target_id",
+    "reopen_if",
+    "score",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "route_id": {"type": "string", "pattern": "^R[0-9]{3,}(-[a-z0-9-]+)?$"},
+    "layer": {"enum": ["L0", "L1", "L2", "L3", "L4"]},
+    "title": {"type": "string", "minLength": 1},
+    "statement": {"type": "string", "minLength": 1},
+    "parent_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^R[0-9]{3,}(-[a-z0-9-]+)?$"},
+      "uniqueItems": true
+    },
+    "method_family": {"type": "string", "minLength": 1},
+    "target_claim_id": {"type": "string", "minLength": 1},
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "representation",
+        "state_or_invariant",
+        "core_candidate_lemma",
+        "information_retained",
+        "information_discarded",
+        "target_implication",
+        "known_failure_mode",
+        "verifier_class"
+      ],
+      "properties": {
+        "representation": {"type": "string", "minLength": 1},
+        "state_or_invariant": {"type": "string", "minLength": 1},
+        "core_candidate_lemma": {"type": "string", "minLength": 1},
+        "information_retained": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "information_discarded": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "target_implication": {"type": "string", "minLength": 1},
+        "known_failure_mode": {"type": "string", "minLength": 1},
+        "verifier_class": {"type": "string", "minLength": 1}
+      }
+    },
+    "status": {
+      "enum": ["proposed", "active", "suspended", "refuted", "merged", "completed"]
+    },
+    "decision": {
+      "enum": [
+        "unreviewed",
+        "advance",
+        "branch",
+        "deepen",
+        "scout",
+        "suspend",
+        "hard_prune",
+        "merge",
+        "complete"
+      ]
+    },
+    "merge_target_id": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^R[0-9]{3,}(-[a-z0-9-]+)?$"}
+      ]
+    },
+    "reopen_if": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_transfer",
+        "counterexample_resistance",
+        "blocker_specificity",
+        "falsifiability",
+        "recent_information_gain"
+      ],
+      "properties": {
+        "target_transfer": {"type": "integer", "minimum": 0, "maximum": 2},
+        "counterexample_resistance": {"type": "integer", "minimum": 0, "maximum": 2},
+        "blocker_specificity": {"type": "integer", "minimum": 0, "maximum": 2},
+        "falsifiability": {"type": "integer", "minimum": 0, "maximum": 2},
+        "recent_information_gain": {"type": "integer", "minimum": 0, "maximum": 2}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["search_mode", "initial_context", "route_card_hash"],
+      "properties": {
+        "search_mode": {
+          "enum": ["sealed_breadth", "inherited_depth", "adversarial", "verification"]
+        },
+        "initial_context": {
+          "enum": [
+            "statement_only",
+            "statement_plus_failure_map",
+            "full_repository",
+            "continuation"
+          ]
+        },
+        "route_card_hash": {
+          "anyOf": [
+            {"type": "null"},
+            {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          ]
+        },
+        "route_card_origin": {
+          "enum": ["coordinator_precommit", "agent_generated"]
+        },
+        "agent_rollout_id": {
+          "anyOf": [
+            {"type": "null"},
+            {"type": "string", "minLength": 1}
+          ]
+        },
+        "agent_worker": {
+          "anyOf": [
+            {"type": "null"},
+            {"type": "string", "minLength": 1}
+          ]
+        },
+        "agent_run_id": {
+          "anyOf": [
+            {"type": "null"},
+            {"type": "string", "minLength": 1}
+          ]
+        },
+        "independent_breadth_eligible": {"type": "boolean"},
+        "resumed_from_checkpoint": {"type": "boolean"},
+        "source_card_path": {
+          "type": "string",
+          "pattern": "^research/routes/cards/R[0-9]{3,}(-[a-z0-9-]+)?\\.json$"
+        },
+        "source_result_path": {
+          "type": "string",
+          "pattern": "^research/routes/results/R[0-9]{3,}(-[a-z0-9-]+)?\\.json$"
+        },
+        "source_result_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_review_path": {
+          "type": "string",
+          "pattern": "^research/routes/reviews/R[0-9]{3,}(-[a-z0-9-]+)?\\.json$"
+        },
+        "route_review_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "reviewer_task_id": {"type": "string", "minLength": 1},
+        "reviewer_worker": {"type": "string", "minLength": 1},
+        "reviewer_run_id": {"type": "string", "minLength": 1},
+        "reviewer_run_attestation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "invocation_sha256",
+            "task_sha256",
+            "validation_sha256",
+            "result_sha256",
+            "artifact_manifest_sha256",
+            "trusted_preflight_sha256",
+            "trusted_final_sha256",
+            "artifact_tree_sha256",
+            "verifier_log_tree_sha256"
+          ],
+          "properties": {
+            "invocation_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "task_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "validation_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "artifact_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "trusted_preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "trusted_final_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "artifact_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "verifier_log_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "source_prune_path": {
+          "type": "string",
+          "pattern": "^research/routes/verdicts/R[0-9]{3,}(-[a-z0-9-]+)?\\.json$"
+        },
+        "route_prune_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "prune_reviewer_task_id": {"type": "string", "minLength": 1},
+        "prune_reviewer_worker": {"type": "string", "minLength": 1},
+        "prune_reviewer_run_id": {"type": "string", "minLength": 1},
+        "prune_reviewer_run_attestation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "invocation_sha256",
+            "task_sha256",
+            "validation_sha256",
+            "result_sha256",
+            "artifact_manifest_sha256",
+            "trusted_preflight_sha256",
+            "trusted_final_sha256",
+            "artifact_tree_sha256",
+            "verifier_log_tree_sha256"
+          ],
+          "properties": {
+            "invocation_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "task_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "validation_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "artifact_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "trusted_preflight_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "trusted_final_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "artifact_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            "verifier_log_tree_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+          }
+        },
+        "prune_evidence_level": {"enum": ["E2", "E3", "E4", "E5", "E6"]},
+        "prune_certificate_kind": {
+          "enum": ["exact_counterexample", "certified_counterexample"]
+        },
+        "prune_certificate_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^research/routes/certificates/R[0-9]{3,}(-[a-z0-9-]+)?/[^/]+$"
+              },
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"layer": {"const": "L0"}}},
+      "then": {"properties": {"parent_ids": {"maxItems": 0}}},
+      "else": {"properties": {"parent_ids": {"minItems": 1}}}
+    },
+    {
+      "if": {"properties": {"status": {"const": "proposed"}}},
+      "then": {
+        "properties": {
+          "decision": {"enum": ["unreviewed", "scout"]},
+          "merge_target_id": {"type": "null"},
+          "reopen_if": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "active"}}},
+      "then": {
+        "properties": {
+          "decision": {"enum": ["advance", "branch", "deepen", "scout"]},
+          "merge_target_id": {"type": "null"},
+          "reopen_if": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "suspended"}}},
+      "then": {
+        "properties": {
+          "decision": {"const": "suspend"},
+          "merge_target_id": {"type": "null"},
+          "reopen_if": {"minItems": 1}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "refuted"}}},
+      "then": {
+        "properties": {
+          "decision": {"const": "hard_prune"},
+          "merge_target_id": {"type": "null"},
+          "reopen_if": {"maxItems": 0},
+          "provenance": {
+            "required": [
+              "source_prune_path",
+              "route_prune_hash",
+              "prune_reviewer_task_id",
+              "prune_reviewer_worker",
+              "prune_reviewer_run_id",
+              "prune_reviewer_run_attestation",
+              "prune_evidence_level",
+              "prune_certificate_kind",
+              "prune_certificate_artifacts"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "merged"}}},
+      "then": {
+        "properties": {
+          "decision": {"const": "merge"},
+          "merge_target_id": {"type": "string"},
+          "reopen_if": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"status": {"const": "completed"}}},
+      "then": {
+        "properties": {
+          "decision": {"const": "complete"},
+          "merge_target_id": {"type": "null"},
+          "reopen_if": {"maxItems": 0}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provenance": {
+            "properties": {"search_mode": {"const": "sealed_breadth"}}
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "provenance": {
+            "required": ["route_card_origin", "agent_rollout_id"],
+            "properties": {
+              "initial_context": {"const": "statement_only"},
+              "route_card_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provenance": {
+            "required": ["route_card_origin"],
+            "properties": {"route_card_origin": {"const": "agent_generated"}}
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "provenance": {
+            "required": [
+              "agent_rollout_id",
+              "agent_worker",
+              "agent_run_id",
+              "source_card_path",
+              "independent_breadth_eligible",
+              "resumed_from_checkpoint"
+            ],
+            "properties": {
+              "agent_rollout_id": {"type": "string", "minLength": 1},
+              "agent_worker": {"type": "string", "minLength": 1},
+              "agent_run_id": {"type": "string", "minLength": 1},
+              "independent_breadth_eligible": {"const": true},
+              "resumed_from_checkpoint": {"const": false},
+              "source_card_path": {
+                "type": "string",
+                "pattern": "^research/routes/cards/R[0-9]{3,}(-[a-z0-9-]+)?\\.json$"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provenance": {"required": ["source_result_path"]}
+        }
+      },
+      "then": {
+        "properties": {
+          "provenance": {
+            "required": ["independent_breadth_eligible", "resumed_from_checkpoint"],
+            "properties": {
+              "independent_breadth_eligible": {"const": false},
+              "resumed_from_checkpoint": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "provenance": {
+            "required": ["route_card_origin"],
+            "properties": {"route_card_origin": {"const": "coordinator_precommit"}}
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "provenance": {
+            "required": ["agent_rollout_id"],
+            "properties": {
+              "agent_rollout_id": {"type": "null"},
+              "agent_worker": false,
+              "agent_run_id": false,
+              "source_card_path": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "allOf": [
+          {"properties": {"status": {"enum": ["active", "completed"]}}},
+          {
+            "properties": {
+              "provenance": {
+                "anyOf": [
+                  {
+                    "required": ["route_card_origin"],
+                    "properties": {"route_card_origin": {"const": "agent_generated"}}
+                  },
+                  {"required": ["source_result_path"]}
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "provenance": {
+            "required": [
+              "source_review_path",
+              "route_review_hash",
+              "reviewer_task_id",
+              "reviewer_worker",
+              "reviewer_run_id",
+              "reviewer_run_attestation"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

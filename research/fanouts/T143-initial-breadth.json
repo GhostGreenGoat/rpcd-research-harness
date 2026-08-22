@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "rollouts": [
+    {
+      "rollout_id": "t143-covariance-block-powers",
+      "worker": "sealed-covariance-block-powers",
+      "method_family": "covariance-superoperator-block-powers",
+      "context_mode": "statement_only",
+      "route_ids": ["R100-l0-finite-time"],
+      "objective": "Choose a full second-moment superoperator, reachable cone, or controlled block-power representation and formulate a finite-time mu-scale contraction that handles non-normal prefactors.",
+      "forbidden_methods": [
+        "fixed-A one-epoch energy as the terminal certificate",
+        "assuming the inverse-moment certificate C051",
+        "replacing finite-time control by a bare asymptotic spectral-radius statement"
+      ],
+      "required_controls": [
+        "full Sym_n versus reachable rank-one covariance semantics",
+        "a noncommuting near-singular unit-diagonal SPD family",
+        "incomplete final blocks and expected-distance conversion"
+      ]
+    },
+    {
+      "rollout_id": "t143-exchangeable-permutation-coupling",
+      "worker": "sealed-exchangeable-coupling",
+      "method_family": "exchangeable-pair-permutation-coupling",
+      "context_mode": "statement_only",
+      "route_ids": ["R100-l0-finite-time"],
+      "objective": "Construct an exchangeable-pair, adjacent-transposition coupling, or permutation martingale whose conditional variance gives a mu-scale RPCD contraction without reducing to the covariance-spectrum route.",
+      "forbidden_methods": [
+        "black-box diagonalization of the full covariance superoperator",
+        "assuming independent coordinate samples within an epoch",
+        "using a scalar bounded-differences estimate with dimensional loss as if sharp"
+      ],
+      "required_controls": [
+        "fresh uniform permutation and without-replacement dependence",
+        "one exact adjacent-transposition identity",
+        "a family testing whether the variance proxy loses a factor n"
+      ]
+    },
+    {
+      "rollout_id": "t143-noncommutative-polynomial-moments",
+      "worker": "sealed-polynomial-moments",
+      "method_family": "noncommutative-polynomial-moment-method",
+      "context_mode": "statement_only",
+      "route_ids": ["R100-l0-finite-time"],
+      "objective": "Represent random Gauss-Seidel products by noncommutative polynomials, trace moments, or a resolvent hierarchy and seek a dimension-uniform moment certificate for finite-time expected distance.",
+      "forbidden_methods": [
+        "treating trace control as operator-norm control without a dimension-free bridge",
+        "relabeling Bellman prefix inversion as a new moment method",
+        "assuming commuting coordinate-update factors"
+      ],
+      "required_controls": [
+        "explicit noncommutative product orientation",
+        "a moment-to-worst-initial-state transfer",
+        "an equicorrelation control and an anisotropic noncommuting stress family"
+      ]
+    },
+    {
+      "rollout_id": "t143-adaptive-lyapunov-duality",
+      "worker": "sealed-adaptive-lyapunov",
+      "method_family": "adaptive-lyapunov-cone-duality",
+      "context_mode": "statement_only",
+      "route_ids": ["R100-l0-finite-time"],
+      "objective": "Search for a phase-, history-, or cone-dependent Lyapunov functional and its exact SDP/duality obstruction, rather than a single fixed-A one-step metric.",
+      "forbidden_methods": [
+        "a single fixed-A one-epoch Lyapunov inequality",
+        "promoting a floating-point SDP optimum to a general certificate",
+        "assuming a common quadratic Lyapunov function must exist"
+      ],
+      "required_controls": [
+        "an exact finite-dimensional dual certificate or symbolic necessary condition",
+        "metric-comparison constants needed for expected A-distance",
+        "a stress test for dimension growth of the adaptive state"
+      ]
+    }
+  ]
+}

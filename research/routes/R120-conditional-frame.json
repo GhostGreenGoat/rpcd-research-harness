@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R120-conditional-frame",
+  "layer": "L1",
+  "title": "Conditional dual-frame information hierarchy",
+  "statement": "Use the exact monotone conditional-regression hierarchy and its Pythagorean information gains to obtain a dimension-uniform half-window RPCD certificate.",
+  "parent_ids": [
+    "R100-l0-finite-time"
+  ],
+  "method_family": "conditional-frame-information",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "Conditional inverse regression over sigma-fields of partial random-order information",
+    "state_or_invariant": "C_G=E[P_G Q_G^-1 P_G] and exact Pythagorean gains under information refinement",
+    "core_candidate_lemma": "A carefully chosen intermediate sigma-field captures a universal fraction of the exact inverse moment while retaining full random-rank averaging.",
+    "information_retained": [
+      "adaptation to revealed order information",
+      "matrix-valued conditional covariance",
+      "monotone Pythagorean information gains",
+      "full internal-rank averaging"
+    ],
+    "information_discarded": [
+      "individual pathwise triangular norm bounds",
+      "boundary-ray spectral interpolation",
+      "Bellman child-surplus recursion"
+    ],
+    "target_implication": "A conditional certificate C_G>=c mu A^-1 lower-bounds K and establishes C051, whose separate transfer yields C050.",
+    "known_failure_mode": "Pathwise, fixed-window, or reversal-only estimates have divergent constants and cannot replace random internal-rank averaging.",
+    "verifier_class": "finite conditional-expectation identities plus exact Gram and Pythagorean checks"
+  },
+  "status": "active",
+  "decision": "deepen",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 2,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 2
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "full_repository",
+    "route_card_hash": null
+  }
+}

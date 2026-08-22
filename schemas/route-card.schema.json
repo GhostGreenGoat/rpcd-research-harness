@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/rpcd/route-card.schema.json",
+  "title": "Immutable sealed RPCD route card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route_card_id",
+    "task_id",
+    "rollout_id",
+    "method_family",
+    "representation",
+    "state_or_invariant",
+    "core_candidate_lemma",
+    "predicted_failure",
+    "falsifier",
+    "target_implication",
+    "information_retained",
+    "information_discarded",
+    "context_mode",
+    "parent_route_ids"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "route_card_id": {"type": "string", "minLength": 1},
+    "task_id": {"type": "string"},
+    "rollout_id": {"type": "string"},
+    "method_family": {"type": "string", "minLength": 1},
+    "representation": {"type": "string", "minLength": 1},
+    "state_or_invariant": {"type": "string", "minLength": 1},
+    "core_candidate_lemma": {"type": "string", "minLength": 1},
+    "predicted_failure": {"type": "string", "minLength": 1},
+    "falsifier": {"type": "string", "minLength": 1},
+    "target_implication": {"type": "string", "minLength": 1},
+    "information_retained": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "information_discarded": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "context_mode": {"enum": ["statement_only", "declared_inputs"]},
+    "parent_route_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^R[0-9]{3}-[a-z0-9-]+$"},
+      "uniqueItems": true
+    }
+  }
+}

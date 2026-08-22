@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T146-novelty-audit-audited-route",
+  "title": "Primary-source novelty audit of the audited RPCD route",
+  "role": "librarian",
+  "objective": "Audit whether the exact candidate statement selected by one real harness-validated T144 run, its constants, and its C050 transfer are already known, direct corollaries, or plausibly new. This task audits novelty and priority only: proof correctness is a separate T144/T145 evidence chain, and a novelty finding cannot repair or validate a proof.",
+  "claim_ids": [
+    "C050"
+  ],
+  "dependencies": [
+    "T144-audit-sealed-finite-time-route"
+  ],
+  "dependency_mode": "latest_validated_run",
+  "inputs": [
+    "research/problem.md",
+    "research/claims/C050-finite-time-expected-distance.json",
+    "research/tasks/T144-audit-sealed-finite-time-route.json",
+    "docs/METHOD.md",
+    "docs/SOURCES.md"
+  ],
+  "allowed_max_evidence": "E2",
+  "required_artifacts": [
+    "dependency_provenance.json",
+    "candidate_statement.json",
+    "search_protocol.md",
+    "search_log.json",
+    "primary_source_matrix.json",
+    "citation_trace.md",
+    "novelty_verdict.json"
+  ],
+  "acceptance_checks": [
+    "Consumes the harness-injected result from a real validated T144 run and records its repository-relative path, run_id, worker, candidate statement, assumptions, constants, and statement hash; no dynamic runs/... path appears in inputs.",
+    "Fixes the exact candidate lemma and the claimed C050 corollary before searching, so similarity cannot cause the statement to drift.",
+    "Records an as-of date, databases, exact queries, spelling variants, backward references, forward citations, and negative searches in search_log.json.",
+    "Opens and checks primary papers rather than relying on snippets, secondary summaries, or memory; each source entry gives URL, version or date, theorem number, exact assumptions, constants, and the claim it supports.",
+    "Separately classifies the candidate lemma, proof technique, constant, finite-time bridge, and full C050 conclusion as known, direct corollary, apparently new within the audited search, or inconclusive.",
+    "Explicitly states that proof correctness does not establish novelty and novelty does not establish correctness; T144 hostile audit and T145 fresh reconstruction remain independent gates.",
+    "Failure of a route lemma or discovery of a prior stronger theorem is recorded as a route or priority verdict, never as a refutation of C050.",
+    "The result does not exceed E2, does not claim first discovery from absence of a hit, and preserves unresolved terminology, language, date-range, and citation-coverage gaps."
+  ],
+  "context_policy": {
+    "mode": "declared_inputs",
+    "allowlist": [
+      "research/problem.md",
+      "research/claims/C050-finite-time-expected-distance.json",
+      "research/tasks/T144-audit-sealed-finite-time-route.json",
+      "docs/METHOD.md",
+      "docs/SOURCES.md"
+    ],
+    "denylist": [
+      "priority claims copied from model memory",
+      "search-result snippets without the underlying primary source",
+      "unvalidated or hand-selected run outputs"
+    ],
+    "reveal_after_route_card": false
+  },
+  "method_constraints": {
+    "method_family": "primary-source-priority-audit",
+    "required_differences": [
+      "Search separately for the exact statement, method family, and finite-time consequence.",
+      "Trace citations both backward from the candidate's ingredients and forward from the closest RPCD sources.",
+      "Audit constants and quantifiers rather than matching only keywords."
+    ],
+    "forbidden_methods": [
+      "treating mathematical correctness as evidence of novelty",
+      "treating novelty as evidence of mathematical correctness",
+      "claiming priority from memory or search snippets",
+      "reporting a failed sufficient route lemma as refutation of C050"
+    ],
+    "required_controls": [
+      "forward citations of arXiv:2505.23152 and its published version",
+      "random-permutation coordinate descent and Gauss-Seidel terminology variants",
+      "finite-time expected-distance versus asymptotic covariance-rate distinctions",
+      "adjacent matrix-product, non-normal transient, and without-replacement literatures"
+    ]
+  },
+  "strict_claim_scope": true,
+  "strict_claim_binding": true,
+  "may_refute_master_claim": false,
+  "require_distinct_dependency_workers": true,
+  "budget_hint": {
+    "mode": "deep",
+    "checkpoint_minutes": 30
+  },
+  "status": "blocked"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R110-bellman-schur",
+  "layer": "L1",
+  "title": "Anisotropic Bellman and Schur hierarchy",
+  "statement": "Extend the audited weighted third-prefix Schur compensation to a dimension-uniform growing-depth certificate that lower-bounds the half-prefix inverse moment by c mu A^-1.",
+  "parent_ids": [
+    "R100-l0-finite-time"
+  ],
+  "method_family": "anisotropic-bellman-schur",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "Remaining-set Bellman recursion over ordered prefixes without replacement",
+    "state_or_invariant": "Child inverse coefficient plus the full anisotropic Schur surplus and outer rank-one defect",
+    "core_candidate_lemma": "A directional Schur surplus can be propagated through a linear-depth prefix with a universal positive coefficient.",
+    "information_retained": [
+      "outer Schur directions",
+      "child anisotropic surplus",
+      "without-replacement order",
+      "exact allowance for unrecovered rank-one defects"
+    ],
+    "information_discarded": [
+      "full covariance-superoperator eigenvectors",
+      "cycle-cut Fourier modes",
+      "boundary low-high spectral cross blocks"
+    ],
+    "target_implication": "A half-prefix bound K(A)>=c mu A^-1 establishes C051; its documented energy and Jensen transfer then yields C050.",
+    "known_failure_mode": "Spectral-only or rowwise scalar Schur recovery loses the directional surplus and is already too weak.",
+    "verifier_class": "exact symbolic Schur identities plus independent hostile reconstruction"
+  },
+  "status": "active",
+  "decision": "deepen",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 2,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 2
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "full_repository",
+    "route_card_hash": null
+  }
+}

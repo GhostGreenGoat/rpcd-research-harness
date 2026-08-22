@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R111-general-w4",
+  "layer": "L2",
+  "title": "General directional W4 Schur recovery",
+  "statement": "Prove the general W4 shifted-inverse recovery inequality, or an exact aggregate replacement, beyond matching, weighted three-path, and equal-star child supports.",
+  "parent_ids": [
+    "R110-bellman-schur"
+  ],
+  "method_family": "anisotropic-bellman-schur",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "One Bellman lift from the audited L3 child state",
+    "state_or_invariant": "L3(C) minus its inverse floor, evaluated in each admissible outer Schur direction",
+    "core_candidate_lemma": "For every admissible child and extension, the retained L3 surplus pays the W4 rank-one defect termwise or its averaged unrecovered defect fits the documented A^-1 allowance.",
+    "information_retained": [
+      "overlapping child support geometry",
+      "signs and unequal edge weights",
+      "directionwise pseudoinverse range conditions",
+      "anisotropic rather than spectral surplus"
+    ],
+    "information_discarded": [
+      "later-depth Bellman history after the fourth prefix",
+      "full covariance operator outside the prefix hierarchy"
+    ],
+    "target_implication": "W4 is the first open induction edge after C043. Proving it would leave a separate dimension-uniform stable-depth propagation theorem before C051; only C051 is presently recorded as sufficient for C050.",
+    "known_failure_mode": "The spectral component alone has an exact negative gap; local structured slices do not imply the general overlapping-support statement.",
+    "verifier_class": "exact rational and symbolic minimal-support certificates with hostile audit"
+  },
+  "status": "active",
+  "decision": "deepen",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 1,
+    "counterexample_resistance": 2,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 2
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "statement_plus_failure_map",
+    "route_card_hash": null
+  }
+}

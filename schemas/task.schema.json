@@ -28,10 +28,103 @@
     "objective": {"type": "string", "minLength": 1},
     "claim_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
     "dependencies": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "dependency_mode": {
+      "enum": ["latest_validated_run", "complete_validated_fanout"]
+    },
     "inputs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "fanout_manifest": {
+      "type": "string",
+      "pattern": "^research/fanouts/[^/\\\\]+\\.json$"
+    },
+    "may_refute_master_claim": {"type": "boolean"},
+    "require_distinct_dependency_workers": {"type": "boolean"},
+    "dynamic_verifier_artifacts": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
     "allowed_max_evidence": {"enum": ["E0", "E1", "E2", "E3", "E4", "E5", "E6"]},
     "required_artifacts": {"type": "array", "items": {"type": "string"}},
     "acceptance_checks": {"type": "array", "items": {"type": "string"}},
+    "route_ids": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^R[0-9]{3}-[a-z0-9-]+$"},
+      "uniqueItems": true
+    },
+    "research_mode": {
+      "enum": ["sealed_breadth", "continuation_depth", "critic_validation"]
+    },
+    "context_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {"enum": ["statement_only", "declared_inputs", "full_history"]},
+        "allowlist": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "denylist": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "reveal_after_route_card": {"type": "boolean"}
+      }
+    },
+    "method_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "method_family": {"type": "string", "minLength": 1},
+        "required_differences": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "forbidden_methods": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "required_controls": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        }
+      }
+    },
+    "rollout_strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "route_card_minutes": {"type": "integer", "minimum": 5},
+        "immutable_route_card": {"type": "boolean"}
+      }
+    },
+    "strict_claim_scope": {"type": "boolean"},
+    "strict_claim_binding": {"type": "boolean"},
+    "verifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "command", "mode", "timeout_seconds", "expected_exit_code"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "command": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1},
+            "minItems": 1
+          },
+          "mode": {"enum": ["exact", "formal", "deterministic", "numerical"]},
+          "when": {"enum": ["preflight", "final", "both"]},
+          "timeout_seconds": {"type": "integer", "minimum": 1},
+          "expected_exit_code": {"type": "integer"}
+        }
+      }
+    },
     "budget_hint": {
       "type": "object",
       "additionalProperties": false,

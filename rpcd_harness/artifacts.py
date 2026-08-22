@@ -6,7 +6,7 @@ import json
 import re
 import zipfile
 from datetime import datetime, timezone
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 from .protocol import ProtocolError, load_task, sha256_file
@@ -32,6 +32,11 @@ EXCLUDED_NAMES = {
     "credentials.json",
     "cookies.json",
     "session.json",
+    "token.json",
+    "secrets.json",
+    "client_secret.json",
+    "service-account.json",
+    ".git-credentials",
     "id_rsa",
     "id_ed25519",
     "__pycache__",
@@ -46,11 +51,19 @@ EXCLUDED_THIRD_PARTY_DOWNLOADS = {
 SENSITIVE_CONTENT_PATTERNS = {
     "private-key": re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     "github-token": re.compile(rb"(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,})"),
-    "openai-key": re.compile(rb"sk-(?:proj-)?[A-Za-z0-9_-]{20,}"),
+    "openai-key": re.compile(rb"sk-(?!ant-)(?:proj-)?[A-Za-z0-9_-]{20,}"),
     "aws-access-key": re.compile(rb"AKIA[0-9A-Z]{16}"),
     "slack-token": re.compile(rb"xox[baprs]-[A-Za-z0-9-]{20,}"),
+    "anthropic-key": re.compile(rb"sk-ant-[A-Za-z0-9_-]{20,}"),
+    "google-api-key": re.compile(rb"AIza[0-9A-Za-z_-]{30,}"),
+    "stripe-live-key": re.compile(rb"(?:sk|rk)_live_[0-9A-Za-z]{16,}"),
+    "huggingface-token": re.compile(rb"hf_[A-Za-z0-9]{20,}"),
+    "gitlab-token": re.compile(rb"glpat-[A-Za-z0-9_-]{20,}"),
+    "jwt": re.compile(rb"eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]{8,}"),
+    "credentialed-url": re.compile(rb"https?://[^\s/:@]+:[^\s/@]+@"),
 }
-CONTENT_SCAN_MAX_BYTES = 8 * 1024 * 1024
+CONTENT_SCAN_CHUNK_BYTES = 1024 * 1024
+CONTENT_SCAN_OVERLAP_BYTES = 512
 
 
 def _is_excluded(relative: Path, include_runs: bool) -> bool:
@@ -61,6 +74,8 @@ def _is_excluded(relative: Path, include_runs: bool) -> bool:
     if relative.parts[0] == "runs" and not include_runs:
         return True
     if any(part in EXCLUDED_NAMES or part in EXCLUDED_TOP_LEVEL for part in relative.parts):
+        return True
+    if ".ssh" in relative.parts:
         return True
     if any(part.startswith(".env.") for part in relative.parts):
         return True
@@ -74,15 +89,20 @@ def _is_excluded(relative: Path, include_runs: bool) -> bool:
 
 
 def _sensitive_content_kind(path: Path) -> str | None:
-    if path.stat().st_size > CONTENT_SCAN_MAX_BYTES:
-        return None
     try:
-        data = path.read_bytes()
+        with path.open("rb") as handle:
+            overlap = b""
+            while True:
+                chunk = handle.read(CONTENT_SCAN_CHUNK_BYTES)
+                if not chunk:
+                    break
+                data = overlap + chunk
+                for kind, pattern in SENSITIVE_CONTENT_PATTERNS.items():
+                    if pattern.search(data):
+                        return kind
+                overlap = data[-CONTENT_SCAN_OVERLAP_BYTES:]
     except OSError:
         return "unreadable"
-    for kind, pattern in SENSITIVE_CONTENT_PATTERNS.items():
-        if pattern.search(data):
-            return kind
     return None
 
 
@@ -144,8 +164,31 @@ def create_bundle(root: Path, task_id: str, output: Path, include_runs: bool = F
 
 
 def _safe_archive_name(name: str) -> bool:
+    if not isinstance(name, str) or not name or "\\" in name:
+        return False
     path = PurePosixPath(name)
-    return not path.is_absolute() and ".." not in path.parts and not name.startswith(("/", "\\"))
+    windows_path = PureWindowsPath(name)
+    reserved = {
+        "con", "prn", "aux", "nul",
+        *(f"com{index}" for index in range(1, 10)),
+        *(f"lpt{index}" for index in range(1, 10)),
+    }
+    unsafe_part = any(
+        not part
+        or part in {".", ".."}
+        or ":" in part
+        or part[-1:] in {" ", "."}
+        or any(ord(character) < 32 for character in part)
+        or part.split(".", 1)[0].casefold() in reserved
+        for part in path.parts
+    )
+    return (
+        not path.is_absolute()
+        and not windows_path.is_absolute()
+        and not windows_path.drive
+        and not windows_path.anchor
+        and not unsafe_part
+    )
 
 
 def verify_bundle(bundle: Path) -> dict[str, Any]:
@@ -156,6 +199,9 @@ def verify_bundle(bundle: Path) -> dict[str, Any]:
         unsafe = [name for name in names if not _safe_archive_name(name)]
         if unsafe:
             raise ProtocolError(f"unsafe archive paths: {unsafe}")
+        folded = [name.casefold() for name in names]
+        if len(folded) != len(set(folded)):
+            raise ProtocolError("archive contains case-insensitive path aliases")
         try:
             manifest = json.loads(archive.read("_bundle/manifest.json"))
         except (KeyError, json.JSONDecodeError) as error:

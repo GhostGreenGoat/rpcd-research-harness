@@ -11,6 +11,8 @@ themselves.
 - `anthropic_zeta_2026/`: Anthropic's annotated transcripts for the two Claude
   sub-agent runs that moved from a failed negative-index route to the one-half
   candidate and then to the two-thirds rank-trace candidate.
-- `parisi_zamponi_jamming_2026/`: Zenodo's complete public exports of the Parisi
-  and Zamponi Claude conversations, the arXiv/JSTAT papers, prompt-level analysis,
-  and evidence-bounded lessons for the RPCD workflow.
+
+The local `parisi_zamponi_jamming_2026/` retrieval workspace is intentionally
+excluded from this repository because it contains third-party full text and
+conversation exports. RPCD process rules derived from it are restated in the
+tracked harness documentation rather than depending on those local files.

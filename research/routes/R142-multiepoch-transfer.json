@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R142-multiepoch-transfer",
+  "layer": "L3",
+  "title": "Multi-epoch non-normal transfer",
+  "statement": "Convert a structured covariance gap into a uniform all-k expected-distance estimate, explicitly controlling block length, prefactors, reachable states, and incomplete final blocks.",
+  "parent_ids": [
+    "R141-structured-covariance-gap"
+  ],
+  "method_family": "direct-covariance-multiepoch",
+  "target_claim_id": "C050",
+  "signature": {
+    "representation": "Powers or blocks of the RPCD covariance operator on PSD and reachable rank-one states",
+    "state_or_invariant": "A power-bounded cone norm with explicit block contraction and transient prefactor",
+    "core_candidate_lemma": "A block contraction proportional to block_length times mu, with a universal prefactor, extends to every epoch count and expectation of A-distance.",
+    "information_retained": [
+      "incomplete final blocks",
+      "non-normal transient constants",
+      "PSD-cone and reachable-state restrictions",
+      "squared-distance to distance conversion"
+    ],
+    "information_discarded": [
+      "asymptotic spectral radius without a finite-time prefactor",
+      "distance of the expected iterate"
+    ],
+    "target_implication": "This is the final direct edge from an operator gap to C050 and the O((n/mu) log(1/epsilon)) update count.",
+    "known_failure_mode": "An asymptotic rate with a dimension-dependent condition number or transient prefactor does not prove C050.",
+    "verifier_class": "operator-power identity, cone-invariance, prefactor, and finite-time complexity audit"
+  },
+  "status": "proposed",
+  "decision": "unreviewed",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 1
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "statement_plus_failure_map",
+    "route_card_hash": null
+  }
+}

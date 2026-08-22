@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R132-multiscale-low-high",
+  "layer": "L3",
+  "title": "Multiscale low-high cross-budget repair",
+  "statement": "If a one-threshold boundary shorting constant is false or insufficient, construct a multiscale shorting state whose cross budgets telescope and remain compatible with positive-mu interpolation.",
+  "parent_ids": [
+    "R131-boundary-shorting"
+  ],
+  "method_family": "spectral-boundary-stitching",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "Nested spectral thresholds with shorted operators and harmonic low-high stitching",
+    "state_or_invariant": "A telescoping budget for cross blocks between adjacent spectral layers",
+    "core_candidate_lemma": "The sum of layerwise shorting losses is bounded by a universal fraction of the retained boundary inverse moment.",
+    "information_retained": [
+      "mesoscale low modes",
+      "cross-block geometry at every threshold",
+      "boundary-to-interior comparison"
+    ],
+    "information_discarded": [
+      "single-threshold endpoint interpolation",
+      "scalar eigenvalue-only exterior coefficients"
+    ],
+    "target_implication": "A telescoping multiscale floor repairs the R131 cross-budget edge and supplies a uniform stitch to C051, then C050.",
+    "known_failure_mode": "Layer count or harmonic stitching may accumulate logarithmic or dimensional loss, leaving no universal c.",
+    "verifier_class": "finite spectral-layer Schur identities plus rank-three positive and rank-four barrier controls"
+  },
+  "status": "proposed",
+  "decision": "unreviewed",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 1
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "full_repository",
+    "route_card_hash": null
+  }
+}

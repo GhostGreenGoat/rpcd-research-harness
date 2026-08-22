@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R122-cycle-mode-pythagorean",
+  "layer": "L3",
+  "title": "Modewise cycle and Pythagorean repair",
+  "statement": "Decompose the first unresolved arc-covariance edge into cycle modes or information increments and prove a summable modewise estimate, or certify a smallest adapted signed obstruction.",
+  "parent_ids": [
+    "R121-cycle-cut-covariance"
+  ],
+  "method_family": "conditional-frame-information",
+  "target_claim_id": "C051",
+  "signature": {
+    "representation": "Fourier modes of cyclic arc incidence cross-checked against conditional Pythagorean increments",
+    "state_or_invariant": "Mode energy coupled to local Schur residual decay rather than raw arc length",
+    "core_candidate_lemma": "The signed off-diagonal mode sum is absorbed by the total conditional information gain with a universal coefficient.",
+    "information_retained": [
+      "mode phase and sign",
+      "source-row cross covariance",
+      "local Schur constraints",
+      "total information gain"
+    ],
+    "information_discarded": [
+      "termwise absolute arc bounds",
+      "cut-by-cut coercivity"
+    ],
+    "target_implication": "Absorption repairs the first bad edge in R121 and completes the conditional half-window route to C051, then C050.",
+    "known_failure_mode": "A mode bound that ignores adaptation or local Schur constraints may merely repackage the same O(n) scalar Hardy loss.",
+    "verifier_class": "symbolic cyclic-mode identity plus exact small-complement and equicorrelation controls"
+  },
+  "status": "proposed",
+  "decision": "unreviewed",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 1
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "full_repository",
+    "route_card_hash": null
+  }
+}

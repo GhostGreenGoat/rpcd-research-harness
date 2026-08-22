@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R141-structured-covariance-gap",
+  "layer": "L2",
+  "title": "Structured covariance or projection-product gap",
+  "statement": "After the sealed route card is frozen, formulate the weakest structured covariance-map or symmetrized projection-product gap that directly implies C050, while allowing a multi-epoch block and without invoking C051.",
+  "parent_ids": [
+    "R140-direct-covariance-multiepoch"
+  ],
+  "method_family": "direct-covariance-multiepoch",
+  "target_claim_id": "C050",
+  "signature": {
+    "representation": "Energy-coordinate covariance lift as a structured symmetrized product, or an equivalent full second-moment block power",
+    "state_or_invariant": "A cone-compatible operator gap with controlled non-normal prefactor",
+    "core_candidate_lemma": "The RPCD-specific projection family has a weak symmetrized-product or block-power gap proportional to mu on the required invariant state space.",
+    "information_retained": [
+      "RPCD projection/frame structure",
+      "operator ordering and noncommutativity",
+      "multi-epoch power information",
+      "reachable-state geometry"
+    ],
+    "information_discarded": [
+      "generic noncommutative projection families",
+      "a universal fixed-A energy metric",
+      "a scalar frame floor without coordinate structure"
+    ],
+    "target_implication": "A block-power gap with a uniform prefactor yields the C050 expected-distance estimate directly, even if C051 is false or unavailable.",
+    "known_failure_mode": "The generic noncommutative AGM and a natural remaining-frame inverse potential are too strong; a candidate that implies either has probably discarded essential RPCD structure.",
+    "verifier_class": "exact structured projection products and independent covariance-power regression controls"
+  },
+  "status": "proposed",
+  "decision": "unreviewed",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 2,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 1
+  },
+  "provenance": {
+    "search_mode": "inherited_depth",
+    "initial_context": "statement_plus_failure_map",
+    "route_card_hash": null
+  }
+}

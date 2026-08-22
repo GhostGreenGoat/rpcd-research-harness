@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "title": "Sealed-breadth RPCD finite-time exploration",
+  "role": "explorer",
+  "objective": "From the minimal normalized RPCD statement, generate and lock an Agent-authored route card before seeing research history; then attack its first falsifiable edge and determine whether the route can advance C050 without assuming the stronger certificate C051.",
+  "claim_ids": [
+    "C050"
+  ],
+  "dependencies": [],
+  "inputs": [
+    "research/routes/cards/R100-finite-time-statement-only.md",
+    "research/problem.md",
+    "docs/BREADTH_DEPTH_PROTOCOL.md",
+    "docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md",
+    "research/iteration6/root/projection_lift.md",
+    "research/claims/C046-remaining-frame-inverse-barrier.json",
+    "research/claims/C050-finite-time-expected-distance.json",
+    "research/claims/C051-strong-k-sufficient-certificate.json"
+  ],
+  "fanout_manifest": "research/fanouts/T143-initial-breadth.json",
+  "allowed_max_evidence": "E3",
+  "required_artifacts": [
+    "route_card.json",
+    "route_development.md",
+    "falsifier_results.json",
+    "target_transfer.md",
+    "failure_or_candidate.json"
+  ],
+  "acceptance_checks": [
+    "The Agent-generated route_card.json is written first, hashed, and remains unchanged after context reveal; no coordinator precommit is submitted as the Agent card.",
+    "The primary state and core lemma match the rollout's assigned method_family and are mathematically distinct from the other fanout families.",
+    "The argument targets C050 directly and never assumes C051 or treats it as equivalent.",
+    "At least two analytic falsifiers are applied, including a noncommuting and a near-singular unit-diagonal SPD family.",
+    "Any rate controls non-normal prefactors and proves expectation of distance for every initial point, not distance of the expected iterate.",
+    "Numerical null results remain E1 and every general statement stops at E3 pending a different-run audit."
+  ],
+  "route_ids": [
+    "R100-l0-finite-time"
+  ],
+  "research_mode": "sealed_breadth",
+  "context_policy": {
+    "mode": "statement_only",
+    "allowlist": [
+      "research/routes/cards/R100-finite-time-statement-only.md"
+    ],
+    "denylist": [
+      "research/routes/** except the single allowlisted minimal specification",
+      "docs/ITER*-*.md",
+      "research/iteration*/**",
+      "research/claims/C020-C051",
+      "prior conversation derivations"
+    ],
+    "reveal_after_route_card": true
+  },
+  "method_constraints": {
+    "method_family": "self-chosen-sealed-family",
+    "required_differences": [
+      "Commit to the representation named by the rollout before inherited context is revealed.",
+      "State a falsifiable core lemma and identify the first bad edge rather than offering an untestable analogy.",
+      "Transfer directly to C050 without assuming C051 or silently changing expected distance into distance of expectation."
+    ],
+    "forbidden_methods": [
+      "copying any coordinator-precommitted route before the statement-only card is locked",
+      "distance of the expected iterate in place of expected distance"
+    ],
+    "required_controls": [
+      "unit-diagonal SPD normalization and fresh independent epoch permutations",
+      "one exactly tractable commuting family",
+      "one near-singular noncommuting family",
+      "full-space versus reachable-state and finite-time versus asymptotic semantics"
+    ]
+  },
+  "rollout_strategy": {
+    "route_card_minutes": 20,
+    "immutable_route_card": true
+  },
+  "strict_claim_scope": true,
+  "strict_claim_binding": true,
+  "verifiers": [
+    {
+      "name": "RPCD product orientation identities",
+      "command": ["{python}", "scripts/verify_rpcd_identities.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    },
+    {
+      "name": "projection-lift regression",
+      "command": ["{python}", "scripts/iter6_projection_lift.py"],
+      "mode": "exact",
+      "timeout_seconds": 600,
+      "expected_exit_code": 0,
+      "when": "both"
+    }
+  ],
+  "budget_hint": {
+    "mode": "deep",
+    "checkpoint_minutes": 30
+  },
+  "status": "ready"
+}

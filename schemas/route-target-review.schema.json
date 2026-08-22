@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/rpcd/route-target-review.schema.json",
+  "title": "Independent RPCD route target-fidelity review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "kind",
+    "review_id",
+    "route_id",
+    "reviewer_task_id",
+    "reviewer_worker",
+    "reviewer_run_id",
+    "source_route_sha256",
+    "route_card_sha256",
+    "target_claim_id",
+    "decision",
+    "checks",
+    "rationale",
+    "evidence_artifacts",
+    "reopen_if"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "kind": {"const": "rpcd-route-target-review"},
+    "review_id": {"type": "string", "minLength": 1},
+    "route_id": {"type": "string", "pattern": "^R[0-9]{3,}(-[a-z0-9-]+)?$"},
+    "reviewer_task_id": {"type": "string", "minLength": 1},
+    "reviewer_worker": {"type": "string", "minLength": 1},
+    "reviewer_run_id": {"type": "string", "minLength": 1},
+    "source_route_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "route_card_sha256": {
+      "anyOf": [
+        {"type": "null"},
+        {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      ]
+    },
+    "target_claim_id": {"type": "string", "minLength": 1},
+    "decision": {"enum": ["activate_scout", "suspend"]},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normalized_positive_definite_quadratic",
+        "fresh_independent_permutations_each_epoch",
+        "all_initial_points",
+        "expectation_of_a_distance",
+        "dimension_uniform_target_transfer",
+        "stronger_proxy_not_treated_as_equivalent",
+        "method_family_is_mathematically_distinct"
+      ],
+      "properties": {
+        "normalized_positive_definite_quadratic": {"type": "boolean"},
+        "fresh_independent_permutations_each_epoch": {"type": "boolean"},
+        "all_initial_points": {"type": "boolean"},
+        "expectation_of_a_distance": {"type": "boolean"},
+        "dimension_uniform_target_transfer": {"type": "boolean"},
+        "stronger_proxy_not_treated_as_equivalent": {"type": "boolean"},
+        "method_family_is_mathematically_distinct": {"type": "boolean"}
+      }
+    },
+    "rationale": {"type": "string", "minLength": 1},
+    "evidence_artifacts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "reopen_if": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"decision": {"const": "activate_scout"}}},
+      "then": {
+        "properties": {
+          "checks": {
+            "properties": {
+              "normalized_positive_definite_quadratic": {"const": true},
+              "fresh_independent_permutations_each_epoch": {"const": true},
+              "all_initial_points": {"const": true},
+              "expectation_of_a_distance": {"const": true},
+              "dimension_uniform_target_transfer": {"const": true},
+              "stronger_proxy_not_treated_as_equivalent": {"const": true},
+              "method_family_is_mathematically_distinct": {"const": true}
+            }
+          },
+          "reopen_if": {"maxItems": 0}
+        }
+      },
+      "else": {"properties": {"reopen_if": {"minItems": 1}}}
+    }
+  ]
+}

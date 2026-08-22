@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C052",
+  "title": "General W4 shifted-inverse Schur recovery",
+  "statement": "For every admissible real unit-diagonal SPD child C and every admissible fourth-coordinate Schur extension, the anisotropic L3 child surplus proves the documented W4 shifted-inverse recovery inequality, or an explicitly stated aggregate replacement strong enough for that single W4 induction edge.",
+  "status": "open_conjecture",
+  "evidence_level": "E1",
+  "origin": {
+    "kind": "harness_route_lemma",
+    "date": "2026-08-22",
+    "artifact": "research/routes/R111-general-w4.json"
+  },
+  "assumptions": [
+    "Real unit-diagonal SPD child matrix",
+    "The normalized spectral floor and Schur-extension admissibility are those fixed in the iteration-6 Bellman state",
+    "An aggregate replacement must prove the same one-step W4 induction edge, not merely structured slices"
+  ],
+  "supporting_artifacts": [
+    "research/claims/C043-weighted-third-prefix.json",
+    "research/claims/C049-structured-w4-schur-recovery.json",
+    "research/iteration6/route_l3/general_t_schur_recursion.md"
+  ],
+  "implies": [
+    "the W4 induction edge only"
+  ],
+  "does_not_by_itself_imply": [
+    "C051",
+    "C050"
+  ],
+  "open_objections": [
+    "Only matching, weighted-three-path, and equal-star slices are currently established.",
+    "Even a proof of this W4 edge leaves stable propagation through all later depths open.",
+    "No hostile audit, independent reconstruction, priority audit, or formal validation exists for the general statement."
+  ],
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": false,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  }
+}

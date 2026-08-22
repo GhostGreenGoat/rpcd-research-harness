@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C050",
+  "title": "General finite-time expected-distance RPCD complexity",
+  "statement_ref": "research/problem.md#current-finite-time-target",
+  "status": "open_conjecture",
+  "evidence_level": "E1",
+  "origin": {
+    "kind": "user_target",
+    "date": "2026-08-22",
+    "label": "G-FT"
+  },
+  "assumptions": [
+    "A=D^{-1/2}QD^{-1/2} is real unit-diagonal SPD",
+    "mu=lambda_min(A)",
+    "Every epoch draws a fresh independent uniform permutation",
+    "Accuracy is relative expected A-distance and cost counts coordinate updates"
+  ],
+  "supporting_artifacts": [
+    "research/problem.md",
+    "research/iteration6/route_l3/n_le_6_finite_time.md"
+  ],
+  "implication_sources": [
+    "C051",
+    "C001 plus a dimension-uniform finite-time bridge"
+  ],
+  "open_objections": [
+    "The unrestricted n>=7 statement remains open.",
+    "A fixed one-epoch A-energy certificate is sufficient but has not been shown necessary.",
+    "The original asymptotic covariance conjecture alone currently carries a dimension-dependent finite-time prefactor."
+  ],
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "domain_expert_spec_review": false,
+    "proof_draft": false,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  }
+}

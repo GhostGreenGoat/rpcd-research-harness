@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "claim_id": "C051",
+  "title": "Universal strong K-matrix sufficient certificate",
+  "statement_ref": "research/problem.md#strong-one-epoch-sufficient-certificate",
+  "status": "open_conjecture",
+  "evidence_level": "E2",
+  "origin": {
+    "kind": "harness_reduction",
+    "date": "2026-08-22",
+    "label": "S-K"
+  },
+  "assumptions": [
+    "A is real unit-diagonal SPD",
+    "mu=lambda_min(A)",
+    "K(A)=E[(M_pi M_pi^T)^{-1}] over uniform permutations"
+  ],
+  "supporting_artifacts": [
+    "research/iteration6/route_l3/n_le_6_finite_time.md",
+    "docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md"
+  ],
+  "implies": ["C050"],
+  "not_known_to_be_implied_by": ["C050", "C001"],
+  "open_objections": [
+    "The certificate is proved only for n<=6 and structured all-dimensional families.",
+    "It is stronger than the actual finite-time target and may fail even if C050 is true.",
+    "General W4/half-depth recovery is open."
+  ],
+  "gates": {
+    "finite_statement": true,
+    "quantifiers_explicit": true,
+    "proof_draft": false,
+    "hostile_audit": false,
+    "independent_reconstruction": false,
+    "priority_audit": false,
+    "formal_or_human_validation": false
+  }
+}

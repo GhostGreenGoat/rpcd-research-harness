@@ -4,17 +4,30 @@
 工程。它不宣称已经解决 RPCD 猜想；它把“提出思路、数值筛选、有限维证书、证明草稿、
 敌对审计、独立重证和形式化”拆成可复现、可交接的任务。
 
-主目标是 Kim–Lee–Yun (ICML 2025) 的 Conjecture 4.1。对单位对角的正定矩阵
-`A`，令 `sigma = lambda_min(A)`；一次 epoch 使用独立均匀随机排列更新所有坐标。
-猜想声称其平方范数的渐近 epoch 收缩率不超过
+当前主目标是机器可读声明 [`C050`](research/claims/C050-finite-time-expected-distance.json)：
+对单位对角 SPD 矩阵 `A`，令 `mu=lambda_min(A)`，每个 epoch 独立重抽均匀随机排列，
+希望存在与维数无关的数值常数 `c,C>0`，使所有初值和所有 epoch 数 `k>=0` 满足
 
 ```text
-max((1 - 1/n)^n, (1 - sigma/n)^(2n)).
+E ||x_k||_A <= C exp(-c mu k) ||x_0||_A.
 ```
 
-截至本仓库初始化日（2026-08-19）的公开检索只找到结构化 Hessian 类上的证明和一般
-情形的数值证据，没有找到 Conjecture 4.1 的一般证明或反例。因此这里将它保持为
-`OPEN_CONJECTURE`，并要求后续 literature audit 定期复查。
+一个 epoch 有 `n` 次坐标更新，所以这正是期望距离意义下的
+`O((n/mu) log(1/epsilon))` 目标；它不是较弱的 `||E x_k||_A`。`C050` 的一般
+`n>=7` 情形仍开放。[`C051`](research/claims/C051-strong-k-sufficient-certificate.json)
+记录更强的 `K(A)>=c mu A^-1` 一步矩阵充分条件；`C051 => C050`，反向并不知道。
+
+Kim–Lee–Yun (ICML 2025) Conjecture 4.1 仍以 [`C001`](research/claims/C001-rpcd-conjecture.json)
+保留为相关的原始渐近协方差率猜想：
+
+```text
+rho(mathcal M_A) <= max((1 - 1/n)^n, (1 - mu/n)^(2n)).
+```
+
+它本身不是当前有限时间强期望距离陈述；现有桥接会带入维数相关的 transient/prefactor。
+因此文档和任务不得把 `C001`、`C050`、`C051` 当成等价命题。截至
+[`docs/SOURCES.md`](docs/SOURCES.md) 记录的公开检索，`C001` 也没有一般证明或认证反例，
+仍保持 `OPEN_CONJECTURE` 并等待后续 literature audit 复查。当前 harness 版本为 `0.3.0`。
 
 ## 快速开始
 
@@ -24,7 +37,18 @@ python -m venv .venv
 python -m pip install -c constraints.txt -e .
 python -m unittest discover -s tests -v
 python scripts/verify_rpcd_identities.py
-python -m rpcd_harness list
+python -m rpcd_harness list --frontier
+python -m rpcd_harness route-list
+python -m rpcd_harness route-plan
+python -m rpcd_harness route-plan --breadth-snapshot research/breadth_reviews/B001-pre-t143.json
+python -m rpcd_harness route-audit
+# after a reviewer fills every pair in a breadth snapshot:
+python -m rpcd_harness route-breadth path/to/breadth-snapshot.json
+# controlled registry transitions after a run:
+python -m rpcd_harness route-import-card runs/<task>/<run>/artifacts/route_card.json --route-id R150-example
+python -m rpcd_harness route-review-target R150-example runs/<review-task>/<review-run>/artifacts/review.json
+python -m rpcd_harness route-import-continuation runs/<task>/<run>/result.json --avenue-index 0
+python -m rpcd_harness route-prune R150-example runs/<review-task>/<review-run>/artifacts/prune-verdict.json
 ```
 
 在 Linux/macOS 上用 `source .venv/bin/activate` 激活环境。只做本地数学验证需要
@@ -41,11 +65,35 @@ Python；要让 harness 调度 agent，还需安装并在当前账号登录
 2. [`research/iteration6/PORTABLE_HANDOFF.md`](research/iteration6/PORTABLE_HANDOFF.md)：当前最短交接入口；
 3. [`docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md`](docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md)：最新解析结论与严格范围；
 4. [`docs/ITER5_FAILURE_MAP_AND_ROUTES.md`](docs/ITER5_FAILURE_MAP_AND_ROUTES.md)：不要重复的失败路线；
-5. [`research/claims/`](research/claims/)：机器可读声明、证据等级与未决 objection。
+5. [`research/claims/`](research/claims/)：机器可读声明、证据等级与未决 objection；
+6. [`research/routes/`](research/routes/) 与
+   [`docs/BREADTH_DEPTH_PROTOCOL.md`](docs/BREADTH_DEPTH_PROTOCOL.md)：当前路线 DAG、组合决策和
+   `B_eff` 口径。
 
-当前三个最小解析目标是：一般 `W4` 的四点路径/不等权星形/带符号环，cycle-cut
+当前三个继承型最小解析目标是：一般 `W4` 的四点路径/不等权星形/带符号环，cycle-cut
 框架中的 adapted off-diagonal arc covariance，以及边界低谱层的完整 Loewner
-shorting。任何新结论都应先写入独立任务目录，再通过 hostile audit 和独立重证。
+shorting；另有尚未执行的 T143 sealed-breadth 逃逸路线。任何新结论都应先写入独立任务
+目录，再通过 hostile audit 和独立重证。
+
+`route-list` 显示 `L0--L3` 节点、状态和局部 `deepen/scout/suspend` 建议；`route-plan`
+先执行全局宽度与强证书集中门，再列出并列的最深候选，不会假造唯一赢家；`route-audit`
+检查父层 DAG、重复签名、sealed-breadth 存在性以及方法族/目标证书集中度。路线分数只是资源分配
+指标，不会提高数学证据等级。由于 T143 尚未真实运行，当前 `route-audit` 会以非零状态
+诚实报告“尚无 agent-generated statement-only sealed-breadth route”和 C051 证书集中；这是
+待处理的组合 blocker，不是声称 DAG 已损坏。显式 reviewer 估计
+[`B001-pre-t143`](research/breadth_reviews/B001-pre-t143.json) 给出当前有效宽度 `B_eff=1.2`：
+R140 仅是 proposed coordinator precommit，不计入 active frontier；三条已实现路线都共享
+C051 风险。该数值是资源
+配置诊断，T143 的 Agent card 进入 `proposed/unreviewed` 后须先由不同 worker 做 RPCD
+target-fidelity review；激活后必须用 `kind=post_rollout_review` 的新 snapshot 重评。
+把最新、覆盖全部 active-frontier 节点的 reviewer snapshot 传给
+`route-plan --breadth-snapshot ...` 后，低于 policy 阈值的 `B_eff` 也会成为显式扩宽门；
+旧 snapshot 若漏掉新激活路线或仍是 `planning_estimate` 会被拒绝，而不会静默沿用。
+通过宽度门后，planner 会同时保护 reviewed direct-C050 scout，避免它被静态高分的
+C051 充分条件路线饿死。
+
+`list --frontier` 只显示挂在当前 route DAG 上的 T140--T144；不带选项的 `list` 仍保留
+早期任务，供复现历史分支和失败证书使用，不能据其 `ready` 字样判断当前研究优先级。
 
 运行一个自包含任务（会使用当前机器、当前账号自己的 Codex 登录）：
 
@@ -58,10 +106,84 @@ python -m rpcd_harness run-codex T020-exact-small-n --worker account-a
 `--dry-run` 会先生成完整 prompt 和命令，不消耗模型额度。真实运行产生的事件流、最终
 结构化结果和文件哈希放在 `runs/<task>/<run-id>/`。
 
+## 路线组合、fanout 与可信验证
+
+任务可以选择三种研究模式：
+
+- `continuation_depth`：读取声明中列出的继承材料，沿一个已定位的 blocker 深挖；
+- `sealed_breadth`：第一阶段只把 allowlist 文件复制到单独工作目录，先生成并锁定
+  `route_card.json` 的 SHA-256，随后才揭示声明过的历史；
+- `critic_validation`：由不同 worker 对候选声明、有限检查和目标迁移做敌对复算。
+
+[`T143`](research/tasks/T143-sealed-finite-time-breadth.json) 是尚未运行的
+statement-only sealed-breadth 任务；检查入库的 fanout 会分别尝试 covariance block powers、
+exchangeable-pair coupling、noncommutative moments 和 adaptive Lyapunov duality。四者都直接
+攻击 `C050`，不假设 `C051`。[`T144`](research/tasks/T144-audit-sealed-finite-time-route.json) 是其不同-run
+审计任务，目前因尚无 T143 结果而保持 `blocked`。仓库里存在 R140 路线节点和 sealed
+brief 只表示该探索已排入组合，并不表示 rollout 已执行或得到正结果。
+
+T144 真正产生 harness-validated run 后，后续门分成两条互不替代的支线：
+[`T145`](research/tasks/T145-fresh-reconstruct-audited-route.json) 从冻结声明重新证明，回答
+“数学是否成立”；[`T146`](research/tasks/T146-novelty-audit-audited-route.json) 核验主来源和
+优先权，回答“是否已知”。二者都通过后，[`T147`](research/tasks/T147-formal-exact-human-handoff.json)
+才整理形式化、精确有限证书和人类专家核验包。hostile audit 不等于独立重证，正确证明也不
+自动等于新结果；这些任务通过 dependency result 自动读取已验证 run，不把易失的
+`runs/...` 路径写进静态 `inputs`。
+
+可以用 `schemas/fanout.schema.json` 编写至少两个、worker 和 `method_family` 均不同的
+rollout，然后先 dry-run：
+
+```powershell
+python -m rpcd_harness fanout T143-sealed-finite-time-breadth `
+  --manifest research/fanouts/T143-initial-breadth.json --max-parallel 4 --dry-run
+python -m rpcd_harness fanout T143-sealed-finite-time-breadth `
+  --manifest research/fanouts/T143-initial-breadth.json --max-parallel 4
+```
+
+不带 `--rollout-id` 时，fanout 运行 manifest 全集并写 `complete=true`。跨账号分摊时，每个
+账号从同一 commit 和同一个仓库内 manifest 只运行分配给自己的 rollout；`--rollout-id`
+可重复，但任何显式选择产生的都是 `complete=false` shard：
+
+```powershell
+python -m rpcd_harness fanout T143-sealed-finite-time-breadth `
+  --manifest research/fanouts/T143-initial-breadth.json `
+  --rollout-id t143-covariance-block-powers
+```
+
+各账号用 `pack --include-runs` 传递 task-scoped bundle。协调账号验证并导入这些 bundle 后，
+显式列出每个 shard 的 `ensemble.json`：
+
+```powershell
+python -m rpcd_harness fanout-merge T143-sealed-finite-time-breadth `
+  --manifest research/fanouts/T143-initial-breadth.json `
+  --shard runs/T143-sealed-finite-time-breadth/ensembles/<account-a>/ensemble.json `
+  --shard runs/T143-sealed-finite-time-breadth/ensembles/<account-b>/ensemble.json
+```
+
+merge 会重验相同 task 和 manifest SHA-256、每个非 dry completed run 的 task snapshot、
+invocation、validation、result、artifact manifest、trusted verifier reports 及 artifact/log
+tree 的九项 attestation，并拒绝重复、缺失、失败或事后篡改；只有覆盖 manifest 全部
+rollout 的输出才写 `complete=true`。`fanout` 不会自动切换 GitHub/Codex 账号，也不能仅凭
+worker 名称保证思想独立。
+
+任务 JSON 还可以声明仓库所有者信任的 `verifiers`。`when` 可取 `preflight`、`final`
+或 `both`（默认 `final`）：普通任务在研究前先做便宜剪枝；sealed 任务先锁 route card，
+再运行 preflight，避免验证器名称锚定独立构思；`both` 会在交付前复跑。harness 使用 argv、
+`shell=False`、路径检查和 timeout，并分别写出结构化记录与哈希日志。这里的“trusted”很
+重要：它限制 shell 注入面，但不是运行敌意代码的沙箱；PASS 也只支持其实际检查的有限
+声明，不会自动晋级数学结论。
+
+sealed 阶段使用仓库外的临时 working directory，避免 Codex 自动继承仓库祖先
+`AGENTS.md`；其中只复制 allowlist，并不写入 denylist 名称。它仍只是降低误读既有历史的
+概率，**不是操作系统安全边界**：同一用户权限下的进程仍可主动访问其他目录、网络或本机
+资源，所以只应运行可信 agent/代码，且凭据必须留在仓库和 bundle 之外。
+
 默认每个 worker 的完整研究迭代有 **120 分钟 Codex 子进程 wall-clock 下限**。提前结束的 pass 会由
 harness 自动续跑；pass 之间的空闲不计时，但当前实现无法从运行中的子进程时间里识别 sleep/等待。
-因此每轮还要求定期 checkpoint、至少三条不同
-路线，以及失败或敌对压力测试的可复核记录。策略文件
+因此每轮还要求定期 checkpoint 和失败或敌对压力测试的可复核记录。传统任务仍要求一轮内
+至少三条 avenue；`continuation_depth` 允许把整轮深挖集中到一个真实 route，
+`critic_validation` 要求至少两个独立攻击，而 sealed 搜索宽度由多个独立 rollout 形成，
+不靠同一 Agent 虚构三条相似路线。策略文件
 [`research/iteration_policy.json`](research/iteration_policy.json) 会随 portable bundle
 一起迁移，真实子进程时长由 `invocation.json` 记录，而不是依赖模型自报。
 
@@ -75,6 +197,16 @@ python -m rpcd_harness pack T030-counterexample-search --out bundles/T030.zip --
 python -m rpcd_harness verify-bundle bundles/T030.zip
 python -m rpcd_harness unpack bundles/T030.zip --dest path/to/clean/clone
 ```
+
+对一个已 checkpoint 的未完成 run，可在新账号中开启带可审计 lineage 的深度续跑：
+
+```powershell
+python -m rpcd_harness run-codex T030-counterexample-search --worker account-b `
+  --resume-from-checkpoint research/checkpoints/T030-counterexample-search--<source-run>.json
+```
+
+这会校验源 run 与源码快照并复制已哈希 artifacts，但不会恢复 session、继承旧 active time，
+也不会把续跑计作新的 sealed breadth/fanout 样本；新 run 仍须完成完整 120 分钟。
 
 `--include-runs` 只加入所选 task 的 run，但其中可能包含 prompt、事件流、stderr 和工具
 输出；把这种 bundle 发给第三方前仍须人工审计，公共仓库默认不提交 `runs/` 或 `bundles/`。
@@ -105,9 +237,18 @@ python -m rpcd_harness unpack bundles/T030.zip --dest path/to/clean/clone
 - `T110`：不看原推导，从声明和引理独立重证。
 - `T120`：在前述门全部通过后才尝试形式化。
 - `T130`：把 Gram-defect 与 `n=2` 部分定理作为更小的 Lean 形式化目标。
-- `T140`：从四点路径、frustrated cycle 和不等权星形继续一般 `W4` Schur 恢复。
+- `T140`：从四点路径、frustrated cycle 和不等权星形继续一般 `W4` Schur 恢复；它只可
+  报告路线命题 `C052`，即使 W4 成功，仍需全深度稳定传播才能到 `C051`，再由 `C051`
+  推出 `C050`。
 - `T141`：证明 cycle-cut half-memory 框架中的 adapted arc covariance 界。
 - `T142`：证明边界低谱层的完整 Loewner shorting，而不是仅做 compression。
+- `T143`：statement-only sealed breadth；四个不同方法族从同一最小 RPCD 规格直接攻击
+  `C050`，不预设 `C051`。
+- `T144`：对 T143 候选做独立敌对审计；在 T143 产出可迁移结果前保持 blocked。
+- `T145`：基于真实 validated T144 result 锁定一份 fresh proof，再与原路线逐步对账。
+- `T146`：独立做 primary-source novelty/priority audit，不把正确性与新颖性混为一谈。
+- `T147`：汇总正确性和优先权门，生成 formal/exact/human-review handoff；Agent 运行
+  本身封顶 E5，只有随后实际 kernel proof 或合格专家确认才允许 ledger 晋级 E6。
 
 研究方法、证据等级与晋级门见 [`docs/METHOD.md`](docs/METHOD.md)，数学定义见
 [`research/problem.md`](research/problem.md)，操作手册见 [`docs/RUNBOOK.md`](docs/RUNBOOK.md)。
@@ -121,6 +262,9 @@ python -m rpcd_harness unpack bundles/T030.zip --dest path/to/clean/clone
 - 已找到一个 `n=4` 有限见证，表明 C010 的原始标量常数可能比 C001 目标更松；这不是
   RPCD 反例，而是要求下一阶段保留更多排列结构的路线障碍。
 - 本工程不会自动轮换账号或搬运认证状态；它提供的是合规的、凭据无关的工作交接层。
+- route score、fanout 数量和 sealed card 哈希都是研究过程证据，不是命题正确性的证据。
+- staged context、argv 验证器和 bundle 过滤都不是敌意代码的 OS sandbox；公开或执行前仍需
+  人工检查仓库所有代码与产物。
 
 第二轮解析迭代已经得到一个一般上界
 `rho <= 1 - sigma^(n-1) (n-(n-1)sigma)`，从而覆盖 `n=2` 的全部参数和一般维数的显式
