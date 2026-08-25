@@ -8,6 +8,7 @@ from pathlib import Path
 
 from rpcd_harness.cli import build_parser
 from rpcd_harness.fanout import (
+    _portable_command_matches,
     merge_fanout_shards,
     run_fanout,
     validate_fanout_manifest,
@@ -401,6 +402,33 @@ class FanoutTests(unittest.TestCase):
             value = read_json(ensemble)
             self.assertTrue(all(record["status"] == "completed" for record in value["rollouts"]))
             self.assertIsNotNone(latest_completed_fanout(root, self.task_id))
+
+    def test_portable_verifier_accepts_versioned_python_but_not_a_wrapper(self) -> None:
+        expected = ["{python}", "{artifact_dir}/controls/dynamic.py"]
+        parameters = {
+            "source_root": "/home/runner/work/rpcd",
+            "artifact_relative": "runs/T900/run-a/artifacts",
+        }
+        self.assertTrue(
+            _portable_command_matches(
+                expected,
+                [
+                    "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python3.12",
+                    "/home/runner/work/rpcd/runs/T900/run-a/artifacts/controls/dynamic.py",
+                ],
+                **parameters,
+            )
+        )
+        self.assertFalse(
+            _portable_command_matches(
+                expected,
+                [
+                    "/tmp/python3.12-wrapper",
+                    "/home/runner/work/rpcd/runs/T900/run-a/artifacts/controls/dynamic.py",
+                ],
+                **parameters,
+            )
+        )
 
     def test_cli_exposes_repeatable_rollout_and_merge_shards(self) -> None:
         parser = build_parser()

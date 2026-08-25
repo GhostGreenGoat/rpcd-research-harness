@@ -347,6 +347,23 @@ def _dynamic_final_verifier_specs(task: dict[str, Any]) -> list[dict[str, Any]]:
     return specs
 
 
+def _is_portable_python_executable(value: str) -> bool:
+    """Recognize an attested Python interpreter name across host platforms."""
+
+    name = PurePosixPath(value.replace("\\", "/")).name.casefold()
+    if name.endswith(".exe"):
+        name = name[:-4]
+    for prefix in ("python", "pypy"):
+        if not name.startswith(prefix):
+            continue
+        version = name[len(prefix) :]
+        return not version or all(
+            component.isdecimal() and component
+            for component in version.split(".")
+        )
+    return False
+
+
 def _portable_command_matches(
     expected: list[str],
     recorded: Any,
@@ -371,16 +388,7 @@ def _portable_command_matches(
         if not isinstance(value, str) or not value:
             return False
         if template == "{python}":
-            if index != 0 or PurePosixPath(value.replace("\\", "/")).name.casefold() not in {
-                "python",
-                "python.exe",
-                "python3",
-                "python3.exe",
-                "pypy",
-                "pypy.exe",
-                "pypy3",
-                "pypy3.exe",
-            }:
+            if index != 0 or not _is_portable_python_executable(value):
                 return False
             continue
         if python_source and index == 2:
