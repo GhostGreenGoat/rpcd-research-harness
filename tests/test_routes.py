@@ -383,7 +383,7 @@ def sealed_import_fixture(root: Path, *, standalone: bool = False) -> dict[str, 
     final_validation_path = run_dir / "validation.json"
     write_json(final_validation_path, {"valid": True, "errors": []})
     phase_result = run_dir / "phase-001-result.json"
-    write_json(phase_result, {"schema_version": "1.0", "task_id": task_id})
+    write_json(phase_result, card)
     validation_path = run_dir / "phase-001-validation.json"
     write_json(validation_path, {"valid": True, "errors": []})
     invocation = {
@@ -1521,6 +1521,17 @@ class RouteCardImportTests(unittest.TestCase):
             with self.assertRaisesRegex(RouteError, "SHA-256"):
                 import_route_card(root, fixture["card"], "R150-tampered")
             self.assertFalse((root / "research" / "routes" / "R150-tampered.json").exists())
+
+    def test_import_rejects_phase_card_that_differs_from_durable_lock(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            fixture = sealed_import_fixture(root)
+            phase_result = fixture["card"].parent.parent / "phase-001-result.json"
+            card = json.loads(phase_result.read_text(encoding="utf-8"))
+            card["core_candidate_lemma"] = "a different pre-reveal card"
+            write_json(phase_result, card)
+            with self.assertRaisesRegex(RouteError, "does not match the durable route card"):
+                import_route_card(root, fixture["card"], "R150-phase-card-tampered")
 
     def test_import_rejects_final_avenue_that_changes_any_locked_mathematical_field(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

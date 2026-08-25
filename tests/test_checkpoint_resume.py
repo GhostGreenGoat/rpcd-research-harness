@@ -151,7 +151,7 @@ def build_incomplete_checkpoint(root: Path, *, locked_card: bool = True) -> tupl
     (run_dir / "phase-001-prompt.md").write_text("sealed phase", encoding="utf-8")
     (events / "phase-001.jsonl").write_text("{}\n", encoding="utf-8")
     (events / "phase-001.stderr.log").write_text("", encoding="utf-8")
-    write_json(run_dir / "phase-001-result.json", phase_result(run_id, worker))
+    write_json(run_dir / "phase-001-result.json", route_card())
     write_json(
         run_dir / "phase-001-validation.json",
         {"valid": True, "minimum_active_time_reached": False, "errors": []},
@@ -256,6 +256,16 @@ class CheckpointResumeTests(unittest.TestCase):
             value["source_invocation_sha256"] = "0" * 64
             write_json(checkpoint, value)
             with self.assertRaisesRegex(ProtocolError, "source_invocation_sha256"):
+                load_resume_checkpoint(root, "T900-resume-test", checkpoint)
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            run_dir, _ = build_incomplete_checkpoint(root)
+            phase_card = read_json(run_dir / "phase-001-result.json")
+            phase_card["core_candidate_lemma"] = "a card changed after the durable lock"
+            write_json(run_dir / "phase-001-result.json", phase_card)
+            checkpoint = checkpoint_run(root, "T900-resume-test", run_dir)
+            with self.assertRaisesRegex(ProtocolError, "route-card hash is inconsistent"):
                 load_resume_checkpoint(root, "T900-resume-test", checkpoint)
 
     def test_dry_resume_copies_state_but_resets_credit_and_breadth_identity(self) -> None:

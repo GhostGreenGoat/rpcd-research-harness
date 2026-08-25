@@ -782,6 +782,8 @@ def import_route_card(root: Path, card_path: Path, route_id: str) -> Path:
         raise RouteError("sealed phase result is outside its run directory")
     if not phase_result.is_file():
         raise RouteError("sealed phase result recorded by the invocation is missing")
+    if _sha256_path(phase_result) != current_hash:
+        raise RouteError("sealed phase structured card does not match the durable route card")
     match = re.fullmatch(r"(phase-[0-9]{3})-result\.json", phase_result.name)
     if match is None:
         raise RouteError("sealed phase result has an unrecognized name")

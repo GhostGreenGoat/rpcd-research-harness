@@ -753,9 +753,11 @@ class ProtocolTests(unittest.TestCase):
             "scripts/verify_rpcd_identities.py",
             "scripts/iter6_projection_lift.py",
             "research/fanouts/T143-initial-breadth.json",
+            "research/routes/cards/R100-finite-time-statement-only.md",
             "rpcd_harness/protocol.py",
             "schemas/result.schema.json",
             "schemas/result.structured.schema.json",
+            "schemas/route-card.structured.schema.json",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, paths)

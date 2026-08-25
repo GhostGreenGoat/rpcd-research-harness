@@ -227,9 +227,9 @@ class CodexBreadthProtocolTests(unittest.TestCase):
         self.assertNotIn("HISTORY-STRATEGY-BARRIER", prompt)
         self.assertNotIn("HISTORY-STRATEGY-CONTROL", prompt)
         self.assertNotIn("proof.md", prompt)
-        self.assertIn("route_card.json", prompt)
-        self.assertIn("The only file you may create in this phase is", prompt)
-        self.assertIn("return the structured final JSON immediately", prompt)
+        self.assertNotIn("route_card.json", prompt)
+        self.assertIn("Do not create any file in this phase", prompt)
+        self.assertIn("return the route card", prompt)
         self.assertNotIn("Run the required checks.", prompt)
         self.assertNotIn("writing portable artifacts", prompt)
 
@@ -294,7 +294,7 @@ class CodexBreadthProtocolTests(unittest.TestCase):
             self.assertNotIn(inherited_depth_instruction, sealed)
         self.assertIn("sealed_route_card", sealed)
         self.assertIn("route_card_minutes", sealed)
-        self.assertIn("The only file you may create in this phase is", sealed)
+        self.assertIn("Do not create any file in this phase", sealed)
 
         revealed = render_prompt(
             root,
@@ -615,15 +615,10 @@ class SealedRunIntegrationTests(unittest.TestCase):
 
             def mutate_sealed_tree(command: list[str], **kwargs: object) -> SimpleNamespace:
                 phase_result = Path(command[-2])
-                run_dir = phase_result.parent
                 staged = Path(kwargs["cwd"])
-                write_json(staged / "route_card.json", valid_route_card())
                 (staged / "statement.md").write_text("MUTATED", encoding="utf-8")
                 (staged / "unexpected-proof.md").write_text("not allowed", encoding="utf-8")
-                result = base_result()
-                result["run_id"] = run_dir.name
-                result["worker"] = "worker"
-                write_json(phase_result, result)
+                write_json(phase_result, valid_route_card())
                 return SimpleNamespace(returncode=0)
 
             with patch(
@@ -722,27 +717,21 @@ class SealedRunIntegrationTests(unittest.TestCase):
                 calls += 1
                 self.assertEqual(kwargs.get("encoding"), "utf-8")
                 sandbox_index = command.index("--sandbox") + 1
-                self.assertEqual(command[sandbox_index], "workspace-write")
                 schema_index = command.index("--output-schema") + 1
-                self.assertEqual(
-                    Path(command[schema_index]).name,
-                    "result.structured.schema.json",
-                )
                 phase_result = Path(command[-2])
                 run_dir = phase_result.parent
                 if calls == 1:
+                    self.assertEqual(command[sandbox_index], "read-only")
+                    self.assertEqual(
+                        Path(command[schema_index]).name,
+                        "route-card.structured.schema.json",
+                    )
                     self.assertIn("--skip-git-repo-check", command)
                     phase_prompt = str(kwargs["input"])
                     self.assertNotIn("history/old-proof.md", phase_prompt)
                     self.assertNotIn("Trusted preflight", phase_prompt)
-                    self.assertIn(
-                        "The only file you may create in this phase is",
-                        phase_prompt,
-                    )
-                    self.assertIn(
-                        "return the structured final JSON immediately",
-                        phase_prompt,
-                    )
+                    self.assertIn("Do not create any file in this phase", phase_prompt)
+                    self.assertIn("return the route card", phase_prompt)
                     self.assertNotIn("Run the required checks.", phase_prompt)
                     self.assertNotIn("writing portable artifacts", phase_prompt)
                     staged_cwd = Path(kwargs["cwd"]).resolve()
@@ -756,8 +745,14 @@ class SealedRunIntegrationTests(unittest.TestCase):
                     staged_metadata = read_json(staged_cwd / "sealed-context.json")
                     self.assertNotIn("denylist", staged_metadata)
                     self.assertNotIn("old-proof", str(staged_metadata))
-                    write_json(Path(kwargs["cwd"]) / "route_card.json", valid_route_card())
+                    write_json(phase_result, valid_route_card())
+                    return SimpleNamespace(returncode=0)
                 else:
+                    self.assertEqual(command[sandbox_index], "workspace-write")
+                    self.assertEqual(
+                        Path(command[schema_index]).name,
+                        "result.structured.schema.json",
+                    )
                     self.assertNotIn("--skip-git-repo-check", command)
                     phase_prompt = str(kwargs["input"])
                     self.assertIn("Trusted preflight", phase_prompt)
@@ -776,15 +771,14 @@ class SealedRunIntegrationTests(unittest.TestCase):
                     }
                     for index in range(1, 5)
                 ]
-                if calls > 1:
-                    proof = run_dir / "artifacts" / "proof.md"
-                    result["artifacts"] = [
-                        {
-                            "path": proof.relative_to(root).as_posix(),
-                            "kind": "proof",
-                            "description": "candidate proof",
-                        }
-                    ]
+                proof = run_dir / "artifacts" / "proof.md"
+                result["artifacts"] = [
+                    {
+                        "path": proof.relative_to(root).as_posix(),
+                        "kind": "proof",
+                        "description": "candidate proof",
+                    }
+                ]
                 write_json(phase_result, result)
                 return SimpleNamespace(returncode=0)
 

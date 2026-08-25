@@ -6,6 +6,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULT_SCHEMA = ROOT / "schemas" / "result.structured.schema.json"
+ROUTE_CARD_SCHEMA = ROOT / "schemas" / "route-card.structured.schema.json"
+CANONICAL_ROUTE_CARD_SCHEMA = ROOT / "schemas" / "route-card.schema.json"
 LEGACY_RESULT_SCHEMA = ROOT / "schemas" / "result.schema.json"
 
 
@@ -21,10 +23,6 @@ class ResultStructuredOutputSchemaTests(unittest.TestCase):
         )
 
     def test_schema_uses_the_openai_structured_outputs_subset(self) -> None:
-        schema = json.loads(RESULT_SCHEMA.read_text(encoding="utf-8"))
-        self.assertEqual(schema.get("type"), "object")
-        self.assertNotIn("anyOf", schema)
-
         unsupported = {
             "allOf",
             "not",
@@ -61,7 +59,18 @@ class ResultStructuredOutputSchemaTests(unittest.TestCase):
             for key, child in node.items():
                 walk(child, f"{path}/{key}")
 
-        walk(schema, "$")
+        for schema_path in (RESULT_SCHEMA, ROUTE_CARD_SCHEMA):
+            with self.subTest(schema=schema_path.name):
+                schema = json.loads(schema_path.read_text(encoding="utf-8"))
+                self.assertEqual(schema.get("type"), "object")
+                self.assertNotIn("anyOf", schema)
+                walk(schema, "$")
+
+    def test_route_card_transport_and_canonical_schemas_have_field_parity(self) -> None:
+        transport = json.loads(ROUTE_CARD_SCHEMA.read_text(encoding="utf-8"))
+        canonical = json.loads(CANONICAL_ROUTE_CARD_SCHEMA.read_text(encoding="utf-8"))
+        self.assertEqual(set(transport["properties"]), set(canonical["properties"]))
+        self.assertEqual(set(transport["required"]), set(canonical["required"]))
 
 
 if __name__ == "__main__":

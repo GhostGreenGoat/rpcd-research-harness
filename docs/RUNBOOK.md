@@ -70,15 +70,17 @@ python -m rpcd_harness run-codex T010-matrix-jensen --worker alice
 每次调用创建唯一 run 目录。先检查 `prompt.md`；真实调用使用 `codex exec --json`，并用
 JSON Schema 约束最终消息。可通过 `--codex PATH` 指定 CLI，通过 `--model` 显式选择当前
 账号可用模型；不指定时沿用该账号的 Codex 默认配置。harness 显式使用
-`--sandbox workspace-write`，使 Agent 能写 route card 与证明工件，同时不授予
-`danger-full-access`。
+密封 card 阶段的 `--sandbox read-only` 和专用 Structured Output schema，由 CLI 的 `-o`
+把 card 交给 harness；因此 card 不依赖 sandbox 文件 ACL。锁卡后的研究阶段改用
+`--sandbox workspace-write` 写证明工件，两个阶段都不授予 `danger-full-access`。
 
 ### Sealed breadth、continuation 与 critic
 
 - `continuation_depth` 读取任务 `inputs` 中声明的继承材料，沿已有 blocker 深挖；
 - `sealed_breadth` 的第一阶段只在独立 staged directory 中看到
-  `context_policy.allowlist`，必须先生成可证伪的 `route_card.json`；harness 校验并记录
-  SHA-256 后，下一阶段才回到仓库根目录读取声明过的历史；
+  `context_policy.allowlist`，必须先把可证伪的 route card 作为专用 Structured Output
+  返回；harness 校验、保存为 `route_card.json` 并记录 SHA-256 后，下一阶段才回到仓库
+  根目录读取声明过的历史；
 - `critic_validation` 用不同 worker 独立复算候选的声明、有限验证与目标迁移。
 
 `T143-sealed-finite-time-breadth` 是当前 ready 的 sealed-breadth 任务。该任务已绑定

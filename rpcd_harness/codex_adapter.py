@@ -132,9 +132,10 @@ is locked, without attempting the proof or experiment now."""
             "reveal_after_route_card": True,
         }
         visible_task["acceptance_checks"] = [
-            "Submit one immutable, falsifiable route card before inherited RPCD history is revealed."
+            "Return one immutable, falsifiable route card as the final structured JSON before "
+            "inherited RPCD history is revealed."
         ]
-        visible_task["required_artifacts"] = ["route_card.json"]
+        visible_task["required_artifacts"] = []
         assigned_family = strategy.get("method_family") or visible_task.get(
             "method_constraints", {}
         ).get("method_family", "self-chosen-new-family")
@@ -275,8 +276,8 @@ iteration, not only this pass.
 This phase measures search breadth, not proof depth. Work only from the declared files staged in
 the current directory. Do not search for or read inherited RPCD proofs, iteration reports, failure
 maps, claims, route files, or external literature. Literature and novelty search begin only after
-the mathematical card is locked. Within about {route_card_minutes} minutes, write `route_card.json` in
-the current directory with exactly these fields:
+the mathematical card is locked. Within about {route_card_minutes} minutes, return the route card
+itself as the final structured JSON, with exactly these fields:
 
 `schema_version`, `route_card_id`, `task_id`, `rollout_id`, `method_family`, `representation`,
 `state_or_invariant`,
@@ -360,11 +361,11 @@ identities and known barriers: it does not verify a new lemma or promote its evi
     execution_mode = "checkpoint_continuation" if resume_context is not None else "fresh_run"
     if route_card_only:
         execution_contract = f"""
-Read only the staged allowlisted statement. The only file you may create in this phase is
-`route_card.json`. Do not start a proof attempt, numerical scan, literature search, inherited
-artifact tree, or post-reveal route development yet. After writing and checking the exact card,
-return the structured final JSON immediately; use empty arrays for inapplicable result sections.
-Your final JSON must use task_id `{task['task_id']}`, run_id `{run_id}`, and worker `{worker}`.
+Read only the staged allowlisted statement. Do not create any file in this phase: the harness
+captures your final structured JSON directly as the immutable route card. Do not start a proof
+attempt, numerical scan, literature search, inherited artifact tree, or
+post-reveal route development yet. After formulating the exact card, return it immediately.
+Do not add run_id or worker fields; the harness records them outside the immutable mathematical card.
 """
         run_metadata = f"""Run metadata:
 - run_id: `{run_id}`
@@ -586,6 +587,18 @@ def run_codex_task(
     ]
     if model:
         command_prefix.extend(["--model", model])
+    route_card_command_prefix = [
+        codex,
+        "exec",
+        "--json",
+        "--sandbox",
+        "read-only",
+        "--output-schema",
+        str((root / "schemas" / "route-card.structured.schema.json").resolve()),
+    ]
+    if model:
+        route_card_command_prefix.extend(["--model", model])
+    route_card_command_prefix.append("--skip-git-repo-check")
     invocation = {
         "schema_version": "1.0",
         "task_id": task_id,
@@ -593,6 +606,11 @@ def run_codex_task(
         "worker": worker,
         "cwd": str(root),
         "command_template": [*command_prefix, "-o", "<phase-result.json>", "-"],
+        "sealed_route_card_command_template": (
+            [*route_card_command_prefix, "-o", "<phase-route-card.json>", "-"]
+            if sealed_breadth and resume_state is None
+            else None
+        ),
         "dry_run": dry_run,
         "minimum_active_minutes_per_worker": iteration_policy[
             "minimum_active_minutes_per_worker"
@@ -799,9 +817,10 @@ def run_codex_task(
         prompt_path.write_text(phase_prompt, encoding="utf-8")
         events_path = events_dir / f"phase-{phase:03d}.jsonl"
         stderr_path = events_dir / f"phase-{phase:03d}.stderr.log"
-        command = [*command_prefix]
         if route_card_phase:
-            command.append("--skip-git-repo-check")
+            command = [*route_card_command_prefix]
+        else:
+            command = [*command_prefix]
         command.extend(["-o", str(phase_result.resolve()), "-"])
         phase_started_at = datetime.now(timezone.utc)
         monotonic_start = time.monotonic()
@@ -878,14 +897,9 @@ def run_codex_task(
         if route_card_phase:
             assert sealed_workspace is not None
             assert sealed_workspace_baseline is not None
-            staged_card = sealed_workspace / "route_card.json"
+            staged_card = phase_result
             route_card_errors: list[str] = []
             sealed_after = _sealed_workspace_manifest(sealed_workspace)
-            card_entry = sealed_after.pop("route_card.json", None)
-            if card_entry is None:
-                route_card_errors.append("sealed route-card phase did not create route_card.json")
-            elif card_entry[0] != "file":
-                route_card_errors.append("sealed route_card.json must be a regular file")
             if sealed_after != sealed_workspace_baseline:
                 before_paths = set(sealed_workspace_baseline)
                 after_paths = set(sealed_after)
@@ -908,10 +922,9 @@ def run_codex_task(
                     + (": " + "; ".join(details) if details else "")
                 )
             if not staged_card.is_file():
-                if card_entry is not None:
-                    route_card_errors.append(
-                        "sealed route-card phase did not create a readable route_card.json"
-                    )
+                route_card_errors.append(
+                    "sealed route-card phase did not return a readable structured route card"
+                )
             else:
                 try:
                     card = read_json(staged_card)

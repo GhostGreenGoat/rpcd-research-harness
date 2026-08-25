@@ -1526,6 +1526,7 @@ def load_resume_checkpoint(
     previous_result: Path | None = None
     previous_validation: Path | None = None
     previous_phase: dict[str, Any] | None = None
+    sealed_phase_card_sha256: str | None = None
     for index, phase in enumerate(phases, start=1):
         if not isinstance(phase, dict) or phase.get("phase") != index:
             raise ProtocolError("resume source phase records are not contiguous")
@@ -1578,7 +1579,34 @@ def load_resume_checkpoint(
             raise ProtocolError(
                 f"resume source phase {index} has a malformed validation record"
             )
+        if validation.get("valid") is not True:
+            continue
+        if validation.get("errors"):
+            raise ProtocolError(
+                f"resume source phase {index} is marked valid but records errors"
+            )
         result = read_json(expected_result)
+        if phase.get("phase_kind") == "sealed_route_card":
+            source_strategy = invocation.get("rollout_strategy")
+            if source_strategy is not None and not isinstance(source_strategy, dict):
+                raise ProtocolError(
+                    "resume source sealed route-card phase has a malformed rollout strategy"
+                )
+            card_errors = validate_route_card(
+                result,
+                task=task,
+                rollout_strategy=source_strategy,
+            )
+            if card_errors:
+                raise ProtocolError(
+                    f"resume source phase {index} route card is invalid: "
+                    + "; ".join(card_errors)
+                )
+            sealed_phase_card_sha256 = sha256_file(expected_result)
+            previous_result = expected_result
+            previous_validation = validation_path
+            previous_phase = phase
+            continue
         if (
             result.get("task_id") != task_id
             or result.get("run_id") != run_id
@@ -1680,6 +1708,10 @@ def load_resume_checkpoint(
         if (
             route_card_record.get("sha256") != route_card_sha256
             or invocation.get("route_card_sha256") != route_card_sha256
+            or (
+                sealed_phase_card_sha256 is not None
+                and sealed_phase_card_sha256 != route_card_sha256
+            )
         ):
             raise ProtocolError("resume source locked route-card hash is inconsistent")
         card_errors = validate_route_card(

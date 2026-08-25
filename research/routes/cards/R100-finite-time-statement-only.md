@@ -20,7 +20,7 @@ coordinate updates, so this is the desired
 distance, not distance of the expected iterate.
 
 Before any derivation history is revealed, choose a mathematical
-representation and write `route_card.json` containing:
+representation and return a structured route card containing:
 
 1. the representation and retained state or invariant;
 2. one falsifiable core lemma and its exact implication to the target;

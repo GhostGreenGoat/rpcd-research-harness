@@ -1,0 +1,50 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "route_card_id",
+    "task_id",
+    "rollout_id",
+    "method_family",
+    "representation",
+    "state_or_invariant",
+    "core_candidate_lemma",
+    "predicted_failure",
+    "falsifier",
+    "target_implication",
+    "information_retained",
+    "information_discarded",
+    "context_mode",
+    "parent_route_ids"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "enum": ["1.0"]},
+    "route_card_id": {"type": "string"},
+    "task_id": {"type": "string"},
+    "rollout_id": {"type": "string"},
+    "method_family": {"type": "string"},
+    "representation": {"type": "string"},
+    "state_or_invariant": {"type": "string"},
+    "core_candidate_lemma": {"type": "string"},
+    "predicted_failure": {"type": "string"},
+    "falsifier": {"type": "string"},
+    "target_implication": {"type": "string"},
+    "information_retained": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "information_discarded": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "context_mode": {
+      "type": "string",
+      "enum": ["statement_only", "declared_inputs"]
+    },
+    "parent_route_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}
