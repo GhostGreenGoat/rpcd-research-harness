@@ -289,7 +289,49 @@ records and hashed logs are at `{relative_preflight}`. Treat this only as valida
 identities and known barriers: it does not verify a new lemma or promote its evidence level.
 """
     execution_mode = "checkpoint_continuation" if resume_context is not None else "fresh_run"
-    return f"""{common}\n\n{role}\n\n# Assigned task\n\n```json\n{task_json}\n```\n\n# Iteration policy\n\n```json\n{policy_json}\n```\n\nRun metadata:\n- run_id: `{run_id}`\n- worker: `{worker}`\n- execution mode: `{execution_mode}`\n- research pass: `{phase}`\n- repository root: current working directory\n- durable output directory: `{relative_output}`\n{continuation}{strategy_text}{route_card_contract}{route_result_contract}{dependency_context}{preflight_context}\n\nRead the task inputs now. Work autonomously within this task's scope. Run the required checks.\nDo not idle merely to consume the time floor; spend it deriving, falsifying, checking edge cases, and\nwriting portable artifacts. Add a substantive checkpoint about every\n`{iteration_policy['checkpoint_interval_minutes']}` active minutes.\nYour final JSON must use the exact task_id, run_id, and worker above. Artifact paths must be\nrelative to the repository root and must point inside `{relative_output}`.\n"""
+    if route_card_only:
+        execution_contract = f"""
+Read only the staged allowlisted statement. The only file you may create in this phase is
+`route_card.json`. Do not start a proof attempt, numerical scan, literature search, inherited
+artifact tree, or the two-hour research iteration yet. After writing and checking the exact card,
+return the structured final JSON immediately; use empty arrays for inapplicable result sections.
+Your final JSON must use task_id `{task['task_id']}`, run_id `{run_id}`, and worker `{worker}`.
+"""
+    else:
+        execution_contract = f"""
+Read the task inputs now. Work autonomously within this task's scope. Run the required checks.
+Do not idle merely to consume the time floor; spend it deriving, falsifying, checking edge cases,
+and writing portable artifacts. Add a substantive checkpoint about every
+`{iteration_policy['checkpoint_interval_minutes']}` active minutes.
+Your final JSON must use the exact task_id, run_id, and worker above. Artifact paths must be
+relative to the repository root and must point inside `{relative_output}`.
+"""
+    return f"""{common}
+
+{role}
+
+# Assigned task
+
+```json
+{task_json}
+```
+
+# Iteration policy
+
+```json
+{policy_json}
+```
+
+Run metadata:
+- run_id: `{run_id}`
+- worker: `{worker}`
+- execution mode: `{execution_mode}`
+- research pass: `{phase}`
+- repository root: current working directory
+- durable output directory: `{relative_output}`
+{continuation}{strategy_text}{route_card_contract}{route_result_contract}{dependency_context}{preflight_context}
+{execution_contract}
+"""
 
 
 def run_codex_task(

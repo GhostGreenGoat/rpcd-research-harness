@@ -228,6 +228,10 @@ class CodexBreadthProtocolTests(unittest.TestCase):
         self.assertNotIn("HISTORY-STRATEGY-CONTROL", prompt)
         self.assertNotIn("proof.md", prompt)
         self.assertIn("route_card.json", prompt)
+        self.assertIn("The only file you may create in this phase is", prompt)
+        self.assertIn("return the structured final JSON immediately", prompt)
+        self.assertNotIn("Run the required checks.", prompt)
+        self.assertNotIn("writing portable artifacts", prompt)
 
     def test_rollout_strategy_cannot_inject_unvalidated_history_metadata(self) -> None:
         task = minimal_task()
@@ -624,8 +628,19 @@ class SealedRunIntegrationTests(unittest.TestCase):
                 run_dir = phase_result.parent
                 if calls == 1:
                     self.assertIn("--skip-git-repo-check", command)
-                    self.assertNotIn("history/old-proof.md", str(kwargs["input"]))
-                    self.assertNotIn("Trusted preflight", str(kwargs["input"]))
+                    phase_prompt = str(kwargs["input"])
+                    self.assertNotIn("history/old-proof.md", phase_prompt)
+                    self.assertNotIn("Trusted preflight", phase_prompt)
+                    self.assertIn(
+                        "The only file you may create in this phase is",
+                        phase_prompt,
+                    )
+                    self.assertIn(
+                        "return the structured final JSON immediately",
+                        phase_prompt,
+                    )
+                    self.assertNotIn("Run the required checks.", phase_prompt)
+                    self.assertNotIn("writing portable artifacts", phase_prompt)
                     staged_cwd = Path(kwargs["cwd"]).resolve()
                     self.assertTrue(staged_cwd.name.startswith("rpcd-sealed-"))
                     with self.assertRaises(ValueError):
@@ -640,7 +655,10 @@ class SealedRunIntegrationTests(unittest.TestCase):
                     write_json(Path(kwargs["cwd"]) / "route_card.json", valid_route_card())
                 else:
                     self.assertNotIn("--skip-git-repo-check", command)
-                    self.assertIn("Trusted preflight", str(kwargs["input"]))
+                    phase_prompt = str(kwargs["input"])
+                    self.assertIn("Trusted preflight", phase_prompt)
+                    self.assertIn("Run the required checks.", phase_prompt)
+                    self.assertIn("writing portable artifacts", phase_prompt)
                     proof = run_dir / "artifacts" / "proof.md"
                     proof.write_text("candidate proof", encoding="utf-8")
                 result = base_result()
