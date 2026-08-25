@@ -616,6 +616,7 @@ class SealedRunIntegrationTests(unittest.TestCase):
                 phase_result = Path(command[-2])
                 run_dir = phase_result.parent
                 if calls == 1:
+                    self.assertIn("--skip-git-repo-check", command)
                     self.assertNotIn("history/old-proof.md", str(kwargs["input"]))
                     self.assertNotIn("Trusted preflight", str(kwargs["input"]))
                     staged_cwd = Path(kwargs["cwd"]).resolve()
@@ -631,6 +632,7 @@ class SealedRunIntegrationTests(unittest.TestCase):
                     self.assertNotIn("old-proof", str(staged_metadata))
                     write_json(Path(kwargs["cwd"]) / "route_card.json", valid_route_card())
                 else:
+                    self.assertNotIn("--skip-git-repo-check", command)
                     self.assertIn("Trusted preflight", str(kwargs["input"]))
                     proof = run_dir / "artifacts" / "proof.md"
                     proof.write_text("candidate proof", encoding="utf-8")

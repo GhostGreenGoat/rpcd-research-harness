@@ -670,7 +670,10 @@ def run_codex_task(
         prompt_path.write_text(phase_prompt, encoding="utf-8")
         events_path = events_dir / f"phase-{phase:03d}.jsonl"
         stderr_path = events_dir / f"phase-{phase:03d}.stderr.log"
-        command = [*command_prefix, "-o", str(phase_result.resolve()), "-"]
+        command = [*command_prefix]
+        if route_card_phase:
+            command.append("--skip-git-repo-check")
+        command.extend(["-o", str(phase_result.resolve()), "-"])
         phase_started_at = datetime.now(timezone.utc)
         monotonic_start = time.monotonic()
         try:
