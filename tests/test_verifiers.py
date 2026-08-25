@@ -6,8 +6,11 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from rpcd_harness.verifiers import (
+    _expand_command,
+    _expanded_command_errors,
     run_verifier,
     run_verifiers,
     validate_verifier_spec,
@@ -88,6 +91,29 @@ class VerifierTests(unittest.TestCase):
             (self.root / record["stdout_path"]).read_text(encoding="utf-8").strip(),
             "ok",
         )
+
+    def test_versioned_current_python_is_trusted_outside_repository(self) -> None:
+        with tempfile.TemporaryDirectory(
+            prefix="rpcd-python-runtime-", dir=self.root.parent
+        ) as runtime:
+            fake_python = Path(runtime) / "python3.12"
+            fake_python.write_bytes(b"versioned current interpreter placeholder")
+            with patch(
+                "rpcd_harness.verifiers.sys.executable", str(fake_python)
+            ):
+                command = _expand_command(
+                    ["{python}", "-c", "print('ok')"],
+                    root=self.root,
+                    artifact_dir=self.artifact_dir,
+                )
+                errors = _expanded_command_errors(
+                    command,
+                    root=self.root,
+                    artifact_dir=self.artifact_dir,
+                )
+
+        self.assertEqual(command[0], str(fake_python.resolve()))
+        self.assertEqual(errors, [])
 
     def test_python_placeholder_is_only_valid_as_executable(self) -> None:
         errors = validate_verifier_spec(

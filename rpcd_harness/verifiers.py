@@ -292,12 +292,15 @@ def _expanded_command_errors(
         )
         if not _inside(resolved_executable, root):
             discovered = shutil.which(executable_name)
-            trusted_external = resolved_executable == Path(sys.executable).resolve()
-            if discovered:
-                trusted_external = trusted_external or (
-                    Path(discovered).resolve() == resolved_executable
-                )
-            if executable_name not in _APPROVED_EXTERNAL_EXECUTABLES or not trusted_external:
+            current_interpreter = (
+                resolved_executable == Path(sys.executable).resolve()
+            )
+            approved_path_tool = (
+                executable_name in _APPROVED_EXTERNAL_EXECUTABLES
+                and discovered is not None
+                and Path(discovered).resolve() == resolved_executable
+            )
+            if not (current_interpreter or approved_path_tool):
                 errors.append(
                     "external executable must be the current Python interpreter or the "
                     "resolved PATH entry for an approved Python/Sage/Lean tool"

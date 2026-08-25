@@ -2,6 +2,7 @@ name: verify-rpcd-harness
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 permissions:
