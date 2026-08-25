@@ -1035,6 +1035,29 @@ def validate_result(
                 f"{len(avenues)} < {required_avenues}"
             )
         if isinstance(avenues, list):
+            for index, avenue in enumerate(avenues):
+                if not isinstance(avenue, dict):
+                    errors.append(f"avenues[{index}] must be an object")
+                    continue
+                for field in ("name", "objective", "outcome"):
+                    value = avenue.get(field)
+                    if not isinstance(value, str) or not value.strip():
+                        errors.append(
+                            f"avenues[{index}] {field} must be a non-empty string"
+                        )
+                if "parent_route_ids" in avenue:
+                    parents_value = avenue.get("parent_route_ids")
+                    if not isinstance(parents_value, list) or not all(
+                        isinstance(parent, str) and parent.strip()
+                        for parent in parents_value
+                    ):
+                        errors.append(
+                            f"avenues[{index}] parent_route_ids must be an array of non-empty strings"
+                        )
+                    elif len(parents_value) != len(set(parents_value)):
+                        errors.append(
+                            f"avenues[{index}] parent_route_ids must not contain duplicates"
+                        )
             signatures = [
                 avenue_signature(avenue)
                 for avenue in avenues
@@ -1102,7 +1125,10 @@ def validate_result(
                         errors.append(
                             f"avenues[{index}] depth-route fields missing: {sorted(missing_fields)}"
                         )
-                    parents = set(avenue.get("parent_route_ids", []))
+                    parents_value = avenue.get("parent_route_ids")
+                    parents = (
+                        set(parents_value) if isinstance(parents_value, list) else set()
+                    )
                     source_layer = avenue.get("source_layer")
                     next_layer = avenue.get("next_layer")
                     adjacent_layers = {
@@ -1161,6 +1187,26 @@ def validate_result(
                         )
         if not isinstance(checkpoints, list):
             errors.append("iteration.checkpoints must be an array")
+        else:
+            for index, checkpoint in enumerate(checkpoints):
+                if not isinstance(checkpoint, dict):
+                    errors.append(f"checkpoints[{index}] must be an object")
+                    continue
+                elapsed = checkpoint.get("elapsed_active_minutes")
+                if (
+                    not isinstance(elapsed, (int, float))
+                    or isinstance(elapsed, bool)
+                    or elapsed < 0
+                ):
+                    errors.append(
+                        f"checkpoints[{index}] elapsed_active_minutes must be a non-negative number"
+                    )
+                for field in ("summary", "next_action"):
+                    value = checkpoint.get(field)
+                    if not isinstance(value, str) or not value.strip():
+                        errors.append(
+                            f"checkpoints[{index}] {field} must be a non-empty string"
+                        )
         if not isinstance(stress_tests, list):
             errors.append("iteration.stress_tests must be an array")
         elif len(result.get("failed_attempts", [])) + len(stress_tests) < policy[

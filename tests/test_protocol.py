@@ -519,6 +519,46 @@ class ProtocolTests(unittest.TestCase):
         )
         self.assertTrue(any("below the iteration floor" in error for error in errors))
 
+    def test_result_semantic_checks_preserve_transport_schema_constraints(self) -> None:
+        result = base_result()
+        result["iteration"]["avenues"][0]["name"] = "   "
+        result["iteration"]["avenues"][0]["parent_route_ids"] = ["R100", "R100"]
+        result["iteration"]["checkpoints"] = [
+            {
+                "elapsed_active_minutes": -1,
+                "summary": "",
+                "next_action": "   ",
+            }
+        ]
+        errors = validate_result(result)
+        self.assertTrue(any("name must be a non-empty string" in error for error in errors))
+        self.assertTrue(any("must not contain duplicates" in error for error in errors))
+        self.assertTrue(any("non-negative number" in error for error in errors))
+        self.assertTrue(any("summary must be a non-empty string" in error for error in errors))
+        self.assertTrue(any("next_action must be a non-empty string" in error for error in errors))
+
+    def test_null_continuation_parent_ids_returns_errors(self) -> None:
+        task = dependency_task("T901-null-parent")
+        task["research_mode"] = "continuation_depth"
+        task["route_ids"] = ["R111-general-w4"]
+        result = base_result()
+        result["task_id"] = task["task_id"]
+        result["iteration"]["avenues"] = [
+            {
+                "name": "null parent control",
+                "objective": "exercise type handling",
+                "outcome": "invalid parent list",
+                "status": "blocked",
+                "parent_route_ids": None,
+                "source_layer": "L2",
+                "next_layer": "L3",
+                "branch_kind": "depth",
+            }
+        ]
+        errors = validate_result(result, task=task)
+        self.assertTrue(any("parent_route_ids must be an array" in error for error in errors))
+        self.assertTrue(any("not linked to an assigned route" in error for error in errors))
+
     def test_all_tasks_are_well_formed(self) -> None:
         root = find_root()
         tasks = list_tasks(root)
@@ -715,6 +755,7 @@ class ProtocolTests(unittest.TestCase):
             "research/fanouts/T143-initial-breadth.json",
             "rpcd_harness/protocol.py",
             "schemas/result.schema.json",
+            "schemas/result.structured.schema.json",
         ):
             with self.subTest(required=required):
                 self.assertIn(required, paths)

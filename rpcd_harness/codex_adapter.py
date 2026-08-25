@@ -462,7 +462,7 @@ def run_codex_task(
         "exec",
         "--json",
         "--output-schema",
-        str((root / "schemas" / "result.schema.json").resolve()),
+        str((root / "schemas" / "result.structured.schema.json").resolve()),
     ]
     if model:
         command_prefix.extend(["--model", model])

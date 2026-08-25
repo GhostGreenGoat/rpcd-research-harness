@@ -1,0 +1,228 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "run_id",
+    "worker",
+    "status",
+    "summary",
+    "claims",
+    "artifacts",
+    "checks",
+    "failed_attempts",
+    "iteration",
+    "literature",
+    "next_tasks",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string", "const": "1.0"},
+    "task_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "worker": {"type": "string"},
+    "status": {"type": "string", "enum": ["succeeded", "partial", "failed"]},
+    "summary": {"type": "string"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim_id",
+          "statement",
+          "statement_ref",
+          "status",
+          "evidence_level",
+          "assumptions",
+          "supporting_artifacts",
+          "open_objections"
+        ],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "statement": {"type": "string"},
+          "statement_ref": {"type": ["string", "null"]},
+          "status": {
+            "type": "string",
+            "enum": [
+              "open_conjecture",
+              "idea",
+              "numerical_observation",
+              "finite_verified",
+              "proof_candidate",
+              "theorem_candidate",
+              "refuted",
+              "external_theorem"
+            ]
+          },
+          "evidence_level": {
+            "type": "string",
+            "enum": ["E0", "E1", "E2", "E3", "E4", "E5", "E6"]
+          },
+          "assumptions": {"type": "array", "items": {"type": "string"}},
+          "supporting_artifacts": {"type": "array", "items": {"type": "string"}},
+          "open_objections": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "kind", "description"],
+        "properties": {
+          "path": {"type": "string"},
+          "kind": {
+            "type": "string",
+            "enum": ["proof", "audit", "code", "data", "certificate", "handoff", "bibliography"]
+          },
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["command", "exit_code", "summary"],
+        "properties": {
+          "command": {"type": "string"},
+          "exit_code": {"type": "integer"},
+          "summary": {"type": "string"}
+        }
+      }
+    },
+    "failed_attempts": {"type": "array", "items": {"type": "string"}},
+    "iteration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["avenues", "checkpoints", "stress_tests", "deepest_obstruction"],
+      "properties": {
+        "avenues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "objective",
+              "outcome",
+              "status",
+              "route_id",
+              "parent_route_ids",
+              "method_family",
+              "representation",
+              "state_or_invariant",
+              "core_candidate_lemma",
+              "information_retained",
+              "information_discarded",
+              "target_implication",
+              "predicted_failure",
+              "first_bad_edge",
+              "source_layer",
+              "next_layer",
+              "branch_kind",
+              "falsifier",
+              "context_mode",
+              "decision"
+            ],
+            "properties": {
+              "name": {"type": "string"},
+              "objective": {"type": "string"},
+              "outcome": {"type": "string"},
+              "status": {
+                "type": "string",
+                "enum": ["open", "advanced", "blocked", "refuted", "completed"]
+              },
+              "route_id": {"type": ["string", "null"]},
+              "parent_route_ids": {
+                "type": "array",
+                "items": {"type": "string"}
+              },
+              "method_family": {"type": ["string", "null"]},
+              "representation": {"type": ["string", "null"]},
+              "state_or_invariant": {"type": ["string", "null"]},
+              "core_candidate_lemma": {"type": ["string", "null"]},
+              "information_retained": {"type": "array", "items": {"type": "string"}},
+              "information_discarded": {"type": "array", "items": {"type": "string"}},
+              "target_implication": {"type": ["string", "null"]},
+              "predicted_failure": {"type": ["string", "null"]},
+              "first_bad_edge": {"type": ["string", "null"]},
+              "source_layer": {
+                "anyOf": [
+                  {"type": "string", "enum": ["L0", "L1", "L2", "L3"]},
+                  {"type": "null"}
+                ]
+              },
+              "next_layer": {
+                "anyOf": [
+                  {"type": "string", "enum": ["L1", "L2", "L3", "L4"]},
+                  {"type": "null"}
+                ]
+              },
+              "branch_kind": {
+                "anyOf": [
+                  {"type": "string", "enum": ["repair", "attack", "depth", "audit"]},
+                  {"type": "null"}
+                ]
+              },
+              "falsifier": {"type": ["string", "null"]},
+              "context_mode": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": ["statement_only", "declared_inputs", "full_history"]
+                  },
+                  {"type": "null"}
+                ]
+              },
+              "decision": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "enum": ["advance", "branch", "deepen", "prune", "suspend", "merge", "complete"]
+                  },
+                  {"type": "null"}
+                ]
+              }
+            }
+          }
+        },
+        "checkpoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["elapsed_active_minutes", "summary", "next_action"],
+            "properties": {
+              "elapsed_active_minutes": {"type": "number", "minimum": 0},
+              "summary": {"type": "string"},
+              "next_action": {"type": "string"}
+            }
+          }
+        },
+        "stress_tests": {"type": "array", "items": {"type": "string"}},
+        "deepest_obstruction": {"type": "string"}
+      }
+    },
+    "literature": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "url", "date_or_version", "claim_supported"],
+        "properties": {
+          "title": {"type": "string"},
+          "url": {"type": "string"},
+          "date_or_version": {"type": "string"},
+          "claim_supported": {"type": "string"}
+        }
+      }
+    },
+    "next_tasks": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -613,6 +613,11 @@ class SealedRunIntegrationTests(unittest.TestCase):
                     return real_subprocess_run(command, **kwargs)
                 calls += 1
                 self.assertEqual(kwargs.get("encoding"), "utf-8")
+                schema_index = command.index("--output-schema") + 1
+                self.assertEqual(
+                    Path(command[schema_index]).name,
+                    "result.structured.schema.json",
+                )
                 phase_result = Path(command[-2])
                 run_dir = phase_result.parent
                 if calls == 1:
