@@ -681,6 +681,7 @@ def run_codex_task(
                     command,
                     input=phase_prompt,
                     text=True,
+                    encoding="utf-8",
                     cwd=sealed_workspace if route_card_phase else root,
                     stdout=events,
                     stderr=errors,
