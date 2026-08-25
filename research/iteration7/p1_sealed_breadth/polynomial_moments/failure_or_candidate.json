@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "run_id": "20260825T123453Z-077c1385",
+  "worker": "sealed-polynomial-moments",
+  "locked_route": {
+    "route_card_id": "RC-T143-NCPM-001",
+    "route_card_sha256": "d61b9e0c14382ec49d8fc5db5dc7d677e57ea70a06b3cb18fe71f0321524db69",
+    "parent_route_ids": ["R100-l0-finite-time"],
+    "source_layer": "L1",
+    "next_layer": "L2",
+    "method_family": "noncommutative-polynomial-moment-method",
+    "decision": "branch",
+    "status": "suspended",
+    "first_bad_edge": "The frozen D>=(mu/16)I edge is exactly equivalent, via whitening, to K(A)>=(mu/16)A^(-1). It is therefore the unresolved C051-strength one-epoch certificate, not a weaker direct-C050 moment bridge.",
+    "mathematical_failure_type": "strength/route-overlap obstruction, not a counterexample",
+    "master_claim_affected": false,
+    "exact_falsifier_outcome": "The edge survived the commuting, all-n equicorrelation, rational anisotropic noncommuting, and signed/block controls.",
+    "reopen_if": "A different run supplies either a general proof of D>=(mu/16)I or an exact/certified unit-diagonal SPD counterexample to that exact inequality."
+  },
+  "repair_child": {
+    "route_id": "RC-T143-NCPM-001-block-schatten-repair",
+    "parent_route_ids": ["RC-T143-NCPM-001"],
+    "source_layer": "L2",
+    "next_layer": "L3",
+    "branch_kind": "repair",
+    "method_family": "noncommutative-polynomial-moment-method",
+    "representation": "The self-adjoint positive epoch covariance map Phi(X)=E[Q_pi X Q_pi^T], its multi-epoch orbit H_m=Phi^m(I), and the independent-replica noncommutative trace polynomial tr(H_m^p).",
+    "state_or_invariant": "H_k=Phi^k(I), the cumulative loss I-H_m=sum_{j=0}^{m-1}Phi^j(I-Phi(I)), and the logarithmic-order normalized Schatten moment tau(H_m^p) with p=ceil(log n).",
+    "information_retained": [
+      "Exact update and transpose orientation inside every epoch",
+      "Fresh-epoch independence",
+      "The full PSD matrix orbit of I rather than scalar traces alone",
+      "Independent replica order in tr(S_1...S_p)",
+      "The n^(1/p) factor in moment-to-worst-state transfer"
+    ],
+    "information_discarded": [
+      "Full covariance-superoperator modes not reached from I",
+      "Pathwise distributions beyond the multi-epoch second-moment orbit",
+      "A fixed one-epoch A-energy contraction requirement",
+      "Any assumption that epoch factors commute"
+    ],
+    "core_candidate_lemma": "For every n>=2 and every real unit-diagonal SPD A with mu=lambda_min(A), if m=ceil(1/mu), p=ceil(log n), H_m=Phi^m(I), and tau=tr/n, then tau(H_m^p)<=exp(-p/2).",
+    "candidate_status": "idea",
+    "candidate_evidence_level": "E0",
+    "finite_and_structured_support": "E2 exact finite checks, including two points on a fully coupled signed n=8,p=3 ray, plus E3 proofs for all 2x2 instances, all 7x7 instances at p=2, the full positive/negative equicorrelation ranges, and the full rational anisotropic noncommuting ray; these do not raise the unrestricted statement above E0.",
+    "target_implication": "Apply the candidate to arbitrarily many block-diagonal copies of a fixed A. The normalized p-th trace root is unchanged except that p=ceil(log N) tends to infinity, so it converges to lambda_max(H_m) and gives H_m<=exp(-1/2)I. Since m<=2/mu, positivity and block iteration give E||x_k||_A<=exp(1/4)exp(-mu*k/8)||x_0||_A for every initial point, hence C050 with C=exp(1/4), c=1/8.",
+    "target_semantics": "expected A-distance via Jensen from worst-initial-state second moment; never distance of the expected iterate",
+    "non_normal_prefactor_control": "The finite block Loewner bound on H_m is iterated by positivity, giving prefactor exp(1/4) independently of dimension and eigenvector conditioning.",
+    "first_bad_edge": "Prove the replica trace inequality uniformly without replacing H_m by H_1^m and without promoting a raw trace estimate to operator control.",
+    "next_candidate_sublemma": "For X=H_k, Y=H_(k+1), E=X-Y, retain the exact nonlinear interpolation tr(X^p)-tr(Y^p)=p*integral_0^1 tr((Y+tE)^(p-1)E)dt and bound the full integral from RPCD frame/word structure. The t=0 endpoint bound is false with every universal positive coefficient on negative equicorrelation.",
+    "analytic_falsifier": "The anisotropic eps=1/1000 instance has H_2-H_1^2 indefinite; any proposed proof using a commuting-power comparison is rejected. Direct-sum replication shows the uniform moment lemma is equivalent to the block operator bound H_m<=exp(-1/2)I, so trace averaging cannot hide one slow block. The positive equicorrelation delta=n^-2 family also shows raw fixed-dimension trace/Loewner conversion loses order n.",
+    "open_objections": [
+      "No general mechanism currently yields the p-fold exponent in the replica trace polynomial.",
+      "Individual p=3 RPCD replica words can have negative trace even for positive equicorrelation, so termwise positivity is unavailable from the first genuinely unresolved moment order onward.",
+      "The exact p=2 identity tr(H_m^2)=tr(H_(2m)) does not extend to the useful upper bound tr(H_m^p)<=tr(H_(mp)): an exact 2x2 p=3 instance has strict reverse difference 99/40000000000.",
+      "Direct-sum amplification proves that the uniform trace-moment statement is equivalent to a finite block operator contraction; trace averaging does not make the endpoint logically weaker.",
+      "The candidate is stronger than the minimum block condition needed for C050 and may fail even if C050 is true.",
+      "The use of second moments remains stronger than expected-distance control and could miss a first-moment-only route.",
+      "Only a different-run hostile audit may raise the transfer proof above E3, and the candidate lemma itself is unproved."
+    ],
+    "decision": "deepen",
+    "reopen_or_next_condition": "Derive a dimension-free p-replica loss inequality for p=ceil(log n), or produce an exact/certified counterexample to the displayed trace-moment bound."
+  },
+  "phase3_depth_child": {
+    "route_id": "RC-T143-NCPM-001-block-schatten-repair/relative-survival",
+    "parent_route_ids": ["RC-T143-NCPM-001-block-schatten-repair"],
+    "source_layer": "L3",
+    "next_layer": "L4",
+    "branch_kind": "repair",
+    "context_mode": "statement_only",
+    "method_family": "noncommutative-polynomial-moment-method",
+    "representation": "For the unchanged covariance orbit H_j=Phi^j(I), set X=H_j, Y=H_(j+1), and C_j=X^(-1/2)YX^(-1/2) on supp(X). Retain the positive relative-survival trace tr(X^p C_j^p).",
+    "state_or_invariant": "The orbit H_j, the relative-loss spectral measure nu_j(S)=tr[H_j^p E_(I-C_j)(S)]/tr(H_j^p), and the multiplicative ratios r_j=tr(H_j^p C_j^p)/tr(H_j^p).",
+    "information_retained": [
+      "All noncommutative orientation through the exact pair H_j,H_(j+1)",
+      "The full nonlinear saturation 1-(1-t)^p of relative loss",
+      "Orbit-dependent spectral small-loss mass",
+      "The existing direct-sum moment-to-worst-state transfer"
+    ],
+    "information_discarded": [
+      "Individual signed p-replica words after their assembled trace is bounded by ALT",
+      "The false endpoint-only derivative",
+      "Any unproved trace-to-Loewner promotion"
+    ],
+    "proved_reduction": "Araki-Lieb-Thirring gives tr(H_(j+1)^p)<=r_j tr(H_j^p), so sum_(j<m)-log(r_j)>=p/2 implies the selected moment lemma. Also tr(X^p)-tr(Y^p)>=(1-exp(-1))tr[X^p min{p(I-C_j),I}].",
+    "proved_reduction_evidence_level": "E3",
+    "core_candidate_lemma": "For m=ceil(1/mu), p=ceil(log n), and the reachable RPCD covariance orbit, sum_(j=0)^(m-1)-log(r_j)>=p/2.",
+    "candidate_status": "idea",
+    "candidate_evidence_level": "E0",
+    "stronger_falsifiable_sublemma": "r_j<=(1-mu/2)^p for every 0<=j<m.",
+    "finite_and_structured_support": "The stronger local sublemma is proved at j=0 when mu<=2/(np), survived two exact Rational noncommuting/signed stresses, and had no hit in a seeded 3,403-step float64 scout. These facts do not raise the unrestricted cumulative lemma above E0.",
+    "target_implication": "The cumulative lemma gives tau(H_m^p)<=exp(-p/2); the already proved direct-sum amplification gives H_m<=exp(-1/2)I; block iteration and Jensen give C050 with C=exp(1/4), c=1/8 for every initial point.",
+    "target_semantics": "expected A-distance via worst-state second moment and Jensen, with fresh independent epoch permutations",
+    "non_normal_prefactor_control": "unchanged finite block Loewner control after direct-sum amplification",
+    "first_bad_edge": "Prove a dimension-uniform small-relative-loss bound for the orbit-weighted measures nu_j, cumulatively through ceil(1/mu) steps.",
+    "analytic_falsifiers": [
+      "An exact 2x2 matrix shows the ALT trace inequality cannot be promoted to Loewner order: trace residual 27/160, determinant -15129/2560000.",
+      "An abstract n=8 spectrum compatible with the inherited one-epoch floor and two-prefix trace bound violates the local half-mu cubic estimate by 571/1024, so those scalar summaries are insufficient.",
+      "Seek an exact/certified reachable orbit step with r_j>(1-mu/2)^p to refute only the stronger local sublemma."
+    ],
+    "open_objections": [
+      "The cumulative relative-survival inequality is unproved and may be almost as strong as the selected endpoint moment certificate.",
+      "A first moment of the relative-loss measure does not control its small-loss mass and cannot yield p-fold decay.",
+      "The per-step local sublemma is stronger than necessary and could fail despite a valid cumulative estimate.",
+      "No different-run audit or independent reconstruction has checked the new reduction."
+    ],
+    "decision": "deepen",
+    "reopen_or_next_condition": "Prove a reachable-orbit small-ball estimate strong enough for the cumulative logarithmic loss, or give an exact/certified reachable counterexample to the local or cumulative statement with its scope explicitly separated from C050."
+  },
+  "claim_scope": {
+    "C050": "open and not promoted",
+    "C051": "not assumed and not claimed; the frozen edge was recognized as an equivalent constant-specific formulation",
+    "route_local_only": true
+  }
+}

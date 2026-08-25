@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R160-exchangeable-coupling",
+  "layer": "L1",
+  "title": "Agent-generated sealed route: R143-exchangeable-transposition-dissipation",
+  "statement": "Universal dissipation comparison: for every dimension n, every real unit-diagonal SPD A, and every x, E_pi[D_pi(x)] >= (1/16)||Ax||_2^2. The proposed first bridge is to derive this comparison from the random-transposition exchangeable pair and the paired residual discrepancies.",
+  "parent_ids": [
+    "R100-l0-finite-time"
+  ],
+  "method_family": "exchangeable-pair-permutation-coupling",
+  "target_claim_id": "C050",
+  "signature": {
+    "representation": "For a uniform permutation pi, set X_0=x, X_t=U_{pi_t}X_{t-1}, and r_t=A X_t. Couple pi to pi' by choosing two distinct update positions I,J uniformly and swapping pi_I,pi_J; (pi,pi') is exchangeable. Represent the coupling by the two residual trajectories and their discrepancy over the interval between I and J.",
+    "state_or_invariant": "Retain the exact dissipation D_pi(x)=sum_{t=1}^n (e_{pi_t}^T r_{t-1})^2 and the paired residual discrepancy r_t-r'_t. The governing identity is ||T_pi x||_A^2=||x||_A^2-D_pi(x), while exchangeability makes every antisymmetric function of the paired trajectories have zero expectation.",
+    "core_candidate_lemma": "Universal dissipation comparison: for every dimension n, every real unit-diagonal SPD A, and every x, E_pi[D_pi(x)] >= (1/16)||Ax||_2^2. The proposed first bridge is to derive this comparison from the random-transposition exchangeable pair and the paired residual discrepancies.",
+    "information_retained": [
+      "The complete within-epoch residual trajectory r_t=A X_t",
+      "The exchangeable transposition pair (pi,pi') and paired trajectory discrepancy",
+      "The exact scalar energy dissipation D_pi(x)",
+      "The initial quantities ||Ax||_2^2, ||x||_A^2, and mu"
+    ],
+    "information_discarded": [
+      "The expected iterate E[T_pi x]",
+      "Coordinate labels beyond their role in the paired residual trajectories",
+      "Cross-epoch permutation history beyond conditional independence",
+      "Higher moments and the full distribution of T_pi x once the conditional second-moment contraction is obtained"
+    ],
+    "target_implication": "The candidate lemma and ||Ax||_2^2 >= mu||x||_A^2 imply E_pi||T_pi x||_A^2 <= (1-mu/16)||x||_A^2. Conditional Jensen and independence of fresh epoch permutations then give E||x_k||_A <= (1-mu/16)^(k/2)||x_0||_A <= exp(-mu k/32)||x_0||_A, yielding the target with C=1 and c=1/32.",
+    "known_failure_mode": "Order-induced cancellation may make most coordinates nearly zero when visited even though the initial residual Ax is large. Equivalently, the transposition coupling may control only a permutation Dirichlet form whose spectral gap introduces an unavoidable dimension factor, so it may not yield the claimed dimension-free 1/16 comparison.",
+    "verifier_class": "Agent-declared first falsifier: A later exact checker can reject the lemma by producing a rational unit-diagonal matrix A with an exact positive LDL^T factorization and a rational nonzero x for which the exactly enumerated average (1/n!) sum_pi D_pi(x) is less than (1/16)||Ax||_2^2. Alternatively, a symbolic SPD family (A_n,x_n) with this ratio tending to zero is an analytic falsifier. These checks are named but not run here."
+  },
+  "status": "suspended",
+  "decision": "suspend",
+  "merge_target_id": null,
+  "reopen_if": [
+    "An independent critic resolves the self-reported obstruction at E2+: an exact or certified counterexample sends the locked route to controlled hard-prune, while an exact rejection of that counterexample permits active reconsideration."
+  ],
+  "score": {
+    "target_transfer": 1,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 0
+  },
+  "provenance": {
+    "search_mode": "sealed_breadth",
+    "initial_context": "statement_only",
+    "route_card_hash": "a3b904849b72c6467cda29b520d59f789b55d9a948c1290d9f1a8450c6b11bec",
+    "route_card_origin": "agent_generated",
+    "agent_rollout_id": "t143-exchangeable-permutation-coupling",
+    "agent_worker": "sealed-exchangeable-coupling",
+    "agent_run_id": "20260825T123453Z-c7e1b13a",
+    "source_card_path": "research/routes/cards/R160-exchangeable-coupling.json",
+    "independent_breadth_eligible": true,
+    "resumed_from_checkpoint": false
+  }
+}

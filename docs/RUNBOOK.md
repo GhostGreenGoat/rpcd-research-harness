@@ -83,9 +83,11 @@ JSON Schema 约束最终消息。可通过 `--codex PATH` 指定 CLI，通过 `-
   根目录读取声明过的历史；
 - `critic_validation` 用不同 worker 独立复算候选的声明、有限验证与目标迁移。
 
-`T143-sealed-finite-time-breadth` 是当前 ready 的 sealed-breadth 任务。该任务已绑定
-仓库内官方四方法族 fanout；不得用 standalone `run-codex` 绕过 manifest。它直接攻击
-`C050`，不得假设 `C051`：
+`T143-sealed-finite-time-breadth` 绑定仓库内官方四方法族 fanout；不得用 standalone
+`run-codex` 绕过 manifest。正式 reference run 已完成，curated 数学材料位于
+`research/iteration7/p1_sealed_breadth/`。只有 covariance 卡保持为存活的 direct-C050
+候选；exchangeable 卡的锁定引理已被精确反驳，另外两张锁定卡退化为 C051-strength。
+需要重放或在另一账号建立完整依赖时仍使用：
 
 ```text
 python -m rpcd_harness show T143-sealed-finite-time-breadth
@@ -95,8 +97,10 @@ python -m rpcd_harness fanout T143-sealed-finite-time-breadth --manifest researc
 
 `--dry-run` 只生成 prompt、task snapshot 和 invocation；它不会实际启动 Codex、创建运行时
 sealed workspace、锁定 agent 生成的 route card 或运行验证器。`T144` 是不同-run hostile
-audit，目前仍 blocked；只有 T143 产生可迁移候选且依赖状态关闭后才应运行，不能用
-`--allow-unmet-dependencies` 把正常审计顺序绕掉。
+audit，应优先选择 covariance rollout 并攻击 `C(I-C(I)) >= mu C(I)` / reachable-polar
+edge。完整 `runs/` 不进 Git，因此 fresh clone 仍显示 dependency blocked；先导入经审计的
+`pack --include-runs` bundle 或重跑 T143。curated handoff 不足以重建九件套 run
+attestation，也不能用 `--allow-unmet-dependencies` 绕过正常审计顺序。
 
 T144 有真实 `invocation.iteration_complete=true`、`validation.valid=true` 和 `result.json`
 后，使用不同 worker 并行运行 T145 fresh reconstruction 与 T146 novelty audit；不要把

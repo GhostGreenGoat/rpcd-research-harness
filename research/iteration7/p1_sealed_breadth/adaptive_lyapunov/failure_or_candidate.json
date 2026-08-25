@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "run_id": "20260825T123453Z-27db9449",
+  "worker": "sealed-adaptive-lyapunov",
+  "route_id": "R100-l0-adaptive-bellman-capture",
+  "route_card_sha256": "6f6c32dc47396bd06e660d29895af2df800f8e2ae9103809b8a8fe1918e5c2e0",
+  "route_card_unchanged": true,
+  "classification": "route_branch_with_conditional_candidate_and_exact_finite_support",
+  "master_claim": {
+    "claim_id": "C050",
+    "canonical_title": "General finite-time expected-distance RPCD complexity",
+    "statement_ref": "research/problem.md#current-finite-time-target",
+    "status": "open_conjecture",
+    "evidence_level": "E1",
+    "affected_by_route_failure": false
+  },
+  "frozen_route_assessment": {
+    "first_bad_edge": "The universal Loewner lower bound for the Bellman capture matrix is unproved, and exact unrolling identifies that matrix with K(A), making the frozen lemma precisely C051 rather than a direct-C050 alternative.",
+    "status": "blocked_at_core_lemma",
+    "decision": "branch",
+    "hard_prune": false,
+    "reason_not_pruned": "No exact counterexample to the frozen lemma was found, and a route-local failure would not refute C050.",
+    "smallest_reproducible_obstruction": "For each permutation, selected residuals satisfy z=L_pi^{-1}P_pi r, hence H_[n]=avg P_pi^T L_pi^{-T}L_pi^{-1}P_pi=K(A)."
+  },
+  "repair_candidate": {
+    "name": "Two-facet tail-majorant cone Lyapunov certificate",
+    "status": "idea",
+    "evidence_level": "E0",
+    "general_statement": "There exist universal c0>0 and kappa<infinity such that, with q=1-c0 lambda_min(A), one can find 0<=R<=kappa A satisfying Mstar(A)<=qR and Mstar(R)<=qR. Then V(X)=max{tr(AX),tr(RX)} is a direct-C050 cone Lyapunov functional.",
+    "conditional_transfer_status": "proof_candidate",
+    "conditional_transfer_evidence_level": "E3",
+    "transfer": "Either history LMIs or cone-facet LMIs imply E||x_k||_A<=sqrt(kappa)exp(-(c0/2)mu k)||x_0||_A for every initial point and fresh independent epoch permutations.",
+    "does_not_assume": [
+      "C051",
+      "a common quadratic Lyapunov function",
+      "a bare covariance spectral-radius bound without a transient prefactor"
+    ]
+  },
+  "phase_candidate": {
+    "name": "Finite-facet phase-dependent max Lyapunov certificate",
+    "status": "idea",
+    "evidence_level": "E0",
+    "general_statement": "There are universal c0>0, kappa<infinity and a dimension-uniform positive-cone routing architecture with P0=A, Pj<=kappa A, and Mstar(Pj)<=q sum_l W_jl P_l at q=1-c0 lambda_min(A).",
+    "conditional_transfer_status": "proof_candidate",
+    "conditional_transfer_evidence_level": "E3",
+    "finite_separator": "At one exact n=3 rational instance, five deterministic phases attain q=3/20,kappa=6/5 while a rank-one dual witness proves that no two-facet tail metric attains those constants.",
+    "open_quantifiers": "No universal kappa or O(1/mu) phase-reset construction is known over n,A; a constant facet count is not required by the corrected transfer. The finite separator is not C050."
+  },
+  "phase_reset_candidate": {
+    "name": "Bounded-horizon deterministic phase-reset certificate",
+    "status": "proof_candidate",
+    "evidence_level": "E3",
+    "general_statement": "C050 is quantitatively equivalent to the existence of universal theta in (0,1), B>0 such that every admissible A has some m<=B/mu with (Mstar)^m(A)<=theta A.",
+    "forward_transfer": "With q=theta^(1/m), facets P_j=q^{-j}(Mstar)^j(A) route as 0->1->...->m-1->0, stay below theta^{-1}A, and give expected-distance constants C=theta^{-1/2}, c=-log(theta)/(2B).",
+    "reverse_transfer": "C050 and pathwise A-energy monotonicity give (Mstar)^k(A)<=C exp(-c mu k)A; m=ceil(log(2C)/(c mu)) gives theta=1/2 and B=log(2C)/c+1.",
+    "exact_dual_obstruction": "For fixed horizon m, a PSD X with <X,theta A-(Mstar)^m(A)><0 refutes that horizon; a rank-one X=zz^T suffices.",
+    "repair_of_prior_edge": "A dimension-uniform facet count is not required. O(1/mu) phases with a universal metric comparison are sufficient and quantitatively forced by C050.",
+    "open_quantifiers": "No universal theta,B block contraction is proved. A general refutation would require a quantified dense family defeating every proposed B,theta."
+  },
+  "exact_finite_support": [
+    {
+      "statement": "On the rational noncommuting n=3 matrix with eigenvalues 1/2,1,3/2, q=7/40 and kappa=2, all six history-metric LMIs pass exactly while qA-Mstar(A) has rational negative ray (-2,4,-3).",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "The same rational n=3 instance has an exact two-facet cone certificate P0=A, P1=q^{-1}Mstar(A), routing 0->1 and 1->1, with kappa=509/500.",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "A connected unequal-weight rational n=6 ladder has an exact two-facet tail certificate at q=1/4,kappa=11/10 while the fixed A facet fails on the rational ray (-1,2,-2,1,-2,2).",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "On the rational n=3 chain at q=3/20, exact negative principal minors reject every canonical self-loop P0 through P3, but an exact five-facet phase chain closes with kappa=6/5.",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "On that same rational n=3 chain at q=3/20, an exact rank-one semidefinite dual witness proves that the complete two-facet tail SDP is infeasible at kappa=6/5 and certifies kappa_tail at least 211356802264686441/174023970826141000, strictly larger than 6/5. Exact history-to-tail compression therefore rules out every permutation-history metric certificate at those constants as well.",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "On the same rational n=3 chain at q=147/1000,kappa=5/4, exact negative principal minors reject canonical self-loops at facets P0 through P7, while every terminal principal minor at P8 is positive; hence the nine-facet canonical chain closes but all eight shorter canonical truncations fail.",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "For A_rho=[[1,rho],[rho,1]], 0<rho<1, exact history metrics satisfy A_rho<=P_pi<=2A_rho; their sharp boundary q_star=1-(11/4)mu+O(mu^2) is strictly below the optimal fixed-A threshold 1-(5/2)mu+O(mu^2).",
+      "status": "proof_candidate",
+      "evidence_level": "E3"
+    },
+    {
+      "statement": "For the symbolic noncommuting chain A_r=[[1,3r/5,0],[3r/5,1,4r/5],[0,4r/5,1]], 0<r<1, exact Bernstein coefficients prove Mstar(A_r)<=(1-mu)A_r and hence the direct expected-distance rate exp(-mu*k/2).",
+      "status": "proof_candidate",
+      "evidence_level": "E3"
+    },
+    {
+      "statement": "The direct sum of the rational n=3 chain and its signed conjugate has an exact two-facet compressed tail certificate at q=7/40,kappa=509/500 (and a redundant four-facet product certificate); all 720 global permutations were enumerated.",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "Arbitrary finite direct sums of signed symbolic chain blocks A_r, plus identity blocks, obey Mstar(A)<=(1-mu)A and hence C050 with C=1,c=1/2 on that structured all-dimensional class.",
+      "status": "proof_candidate",
+      "evidence_level": "E3"
+    },
+    {
+      "statement": "On the rational noncommuting n=3 chain at q=3/20, det(q^m A-(Mstar)^m(A))<0 for m=1,...,8, while every principal minor is positive at m=9; the resulting nine-facet reset cycle stays below (6/5)A.",
+      "status": "finite_verified",
+      "evidence_level": "E2"
+    },
+    {
+      "statement": "For A_rho=[[1,rho],[rho,1]], 99/100<=rho<1, q=1-(21/8)(1-rho), the one-epoch fixed-A LMI fails on (1,-1), but an exact two-epoch reset closes and yields C=sqrt(800/779), c=21/16 on this structured family.",
+      "status": "proof_candidate",
+      "evidence_level": "E3"
+    }
+  ],
+  "exact_obstruction_interfaces": [
+    "A rational semidefinite Farkas witness satisfying the displayed stationarity and negative-constant equations refutes fixed A,q,kappa history feasibility.",
+    "For the compressed tail SDP, PSD L,U,X,Y with L-U+qX+qY-M(Y)=0 and <X,Mstar(A)> > kappa<U,A> are an exact infeasibility witness.",
+    "A rational ray violating kappa q^m A-(Mstar)^m(A)>=0 refutes the proposed history or cone constants and exposes a non-normal prefactor loss.",
+    "A rational ray violating the terminal cone-facet closure refutes that fixed routing/facet set.",
+    "Factorial permutation-state growth or unbounded facet growth blocks a bounded-complexity proof but is not by itself a counterexample to C050."
+  ],
+  "failed_repairs": [
+    "Unrolling the frozen subset Bellman capture produces H_[n]=K(A), so that repair returns to C051.",
+    "Synthesizing the tail matrix by R=sum_{k>=1}q^{-k}(Mstar)^k(A) gives only R<=C q0/(q-q0) A from a C q0^k block-power bound. When q0 and q differ at the mu scale, kappa loses Theta(1/mu). On the exact n=3 q=3/20 instance, the rational resolvent requires kappa>50 while a five-phase max certificate uses kappa=6/5.",
+    "A bare spectral-radius argument does not control the finite-time prefactor required by either C050 or the adaptive SDP.",
+    "A 500,000-trial float64 search found no q=3/20,kappa=6/5 tail matrix. It remained E1 until the separately generated and independently reconstructed exact rank-one dual witness certified infeasibility; the numerical null result itself is not used as proof."
+  ],
+  "deepest_obstruction": "The phase-reset equivalence removes uniform facet count as a false requirement. The remaining direct-C050 blocker is to prove universal theta in (0,1), B>0 such that some horizon m<=B/mu has (Mstar)^m(A)<=theta A for every unit-diagonal SPD A, or to construct a quantified exact PSD-dual family defeating all proposed constants. The exact n=3 separator still shows that two-facet compression can lose constants.",
+  "decision": "deepen_repair_and_attack_in_parallel",
+  "next_edge": "Attack the quantitatively equivalent bounded-horizon block contraction directly. A repair should derive a fixed-factor energy drop over O(1/mu) epochs without C051; an attack should give exact rank-one separators for every allowed horizon on a dense parametrized SPD family.",
+  "reopen_or_promotion_conditions": [
+    "A quantified all-dimensional construction with universal c0,kappa and exact metric comparison.",
+    "A proof of the bounded-horizon block condition with universal theta,B, which by the phase-reset equivalence directly proves C050.",
+    "A quantified exact family of PSD-dual separators that defeats every proposed theta,B and therefore would refute C050 itself, subject to independent audit.",
+    "An exact dual theorem showing a bounded facet/history state follows from the uniform block-power bound without a 1/mu or n loss.",
+    "A different-run hostile audit of every algebraic identity and target-transfer quantifier before any evidence promotion."
+  ],
+  "supporting_artifacts": [
+    "./route_development.md",
+    "./target_transfer.md",
+    "./falsifier_results.json",
+    "./exact_falsifier_output.json",
+    "./exact_tail_dual_output.json",
+    "./phase_reset_equivalence.md",
+    "./exact_phase_reset_output.json"
+  ]
+}

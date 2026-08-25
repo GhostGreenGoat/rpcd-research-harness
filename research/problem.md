@@ -56,6 +56,15 @@ Current audited progress on this sufficient route is summarized in
 several all-dimensional spectral families; every dimension has the weaker
 `K(A)>=(3mu/n)A^-1`.  General `n>=7` remains open.
 
+A four-way statement-only breadth run is summarized in
+`research/iteration7/p1_sealed_breadth/README.md`.  Its only surviving locked
+direct-`C050` candidate is a covariance block-power contraction over
+`L=O(1/mu)` epochs.  The exchangeable one-epoch comparison was exactly
+refuted locally, while the noncommutative-moment and adaptive-Bellman locked
+edges were found to be `C051`-strength restatements.  None of these outcomes
+settles `C050`; the covariance candidate remains proposed pending a different-
+run hostile and target-fidelity audit.
+
 The original covariance-rate conjecture below (`C001`) is another route.  Its
 self-adjoint finite-time bridge currently carries a dimension-dependent
 prefactor, so an additional uniform bridge is needed before it yields `(G-FT)`

@@ -62,25 +62,31 @@ Python；要让 harness 调度 agent，还需安装并在当前账号登录
 新 agent 不需要重放聊天记录。完成安装和测试后，按顺序读取：
 
 1. [`research/problem.md`](research/problem.md)：规范化、目标量和记号；
-2. [`research/iteration6/PORTABLE_HANDOFF.md`](research/iteration6/PORTABLE_HANDOFF.md)：当前最短交接入口；
-3. [`docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md`](docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md)：最新解析结论与严格范围；
-4. [`docs/ITER5_FAILURE_MAP_AND_ROUTES.md`](docs/ITER5_FAILURE_MAP_AND_ROUTES.md)：不要重复的失败路线；
-5. [`research/claims/`](research/claims/)：机器可读声明、证据等级与未决 objection；
-6. [`research/routes/`](research/routes/) 与
+2. [`research/iteration7/p1_sealed_breadth/README.md`](research/iteration7/p1_sealed_breadth/README.md)：
+   最新四路密封宽搜、导入判定和下一审计目标；
+3. [`research/iteration6/PORTABLE_HANDOFF.md`](research/iteration6/PORTABLE_HANDOFF.md)：继承型解析路线的最短交接入口；
+4. [`docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md`](docs/ITER6_MATRIX_INEQUALITY_SYNTHESIS.md)：最新解析结论与严格范围；
+5. [`docs/ITER5_FAILURE_MAP_AND_ROUTES.md`](docs/ITER5_FAILURE_MAP_AND_ROUTES.md)：不要重复的失败路线；
+6. [`research/claims/`](research/claims/)：机器可读声明、证据等级与未决 objection；
+7. [`research/routes/`](research/routes/) 与
    [`docs/BREADTH_DEPTH_PROTOCOL.md`](docs/BREADTH_DEPTH_PROTOCOL.md)：当前路线 DAG、组合决策和
    `B_eff` 口径。
 
-当前三个继承型最小解析目标是：一般 `W4` 的四点路径/不等权星形/带符号环，cycle-cut
+当前三个继承型最小解析目标仍是：一般 `W4` 的四点路径/不等权星形/带符号环，cycle-cut
 框架中的 adapted off-diagonal arc covariance，以及边界低谱层的完整 Loewner
-shorting；另有尚未执行的 T143 sealed-breadth 逃逸路线。任何新结论都应先写入独立任务
-目录，再通过 hostile audit 和独立重证。
+shorting。T143 的四路 sealed-breadth reference run 已完成：一条 direct-C050 covariance
+路线待审，一条 exchangeable 锁定引理被精确反驳，两条锁定边退化为 C051-strength；其中
+polynomial-moment 结果还因改写 immutable `falsifier` 被 importer 拒绝。任何新结论都应先写入
+独立任务目录，再通过 hostile audit 和独立重证。
 
 `route-list` 显示 `L0--L3` 节点、状态和局部 `deepen/scout/suspend` 建议；`route-plan`
 先执行全局宽度与强证书集中门，再列出并列的最深候选，不会假造唯一赢家；`route-audit`
 检查父层 DAG、重复签名、sealed-breadth 存在性以及方法族/目标证书集中度。路线分数只是资源分配
-指标，不会提高数学证据等级。由于 T143 尚未真实运行，当前 `route-audit` 会以非零状态
-诚实报告“尚无 agent-generated statement-only sealed-breadth route”和 C051 证书集中；这是
-待处理的组合 blocker，不是声称 DAG 已损坏。显式 reviewer 估计
+指标，不会提高数学证据等级。T143 已产生三个受控 DAG 导入：R150 与 R180 为
+`proposed/unreviewed`，R160 因自报精确反例而 `suspended`；R170 导入被一致性门拒绝。
+因此当前 `route-audit` 仍会以非零状态诚实报告“尚无 active agent-generated
+statement-only sealed-breadth route”和 C051 证书集中；这是等待独立 target review 的组合
+blocker，不是声称 DAG 已损坏。显式 reviewer 估计
 [`B001-pre-t143`](research/breadth_reviews/B001-pre-t143.json) 给出当前有效宽度 `B_eff=1.2`：
 R140 仅是 proposed coordinator precommit，不计入 active frontier；三条已实现路线都共享
 C051 风险。该数值是资源
@@ -115,12 +121,14 @@ python -m rpcd_harness run-codex T020-exact-small-n --worker account-a
   `route_card.json` 的 SHA-256，随后才揭示声明过的历史；
 - `critic_validation`：由不同 worker 对候选声明、有限检查和目标迁移做敌对复算。
 
-[`T143`](research/tasks/T143-sealed-finite-time-breadth.json) 是尚未运行的
-statement-only sealed-breadth 任务；检查入库的 fanout 会分别尝试 covariance block powers、
-exchangeable-pair coupling、noncommutative moments 和 adaptive Lyapunov duality。四者都直接
-攻击 `C050`，不假设 `C051`。[`T144`](research/tasks/T144-audit-sealed-finite-time-route.json) 是其不同-run
-审计任务，目前因尚无 T143 结果而保持 `blocked`。仓库里存在 R140 路线节点和 sealed
-brief 只表示该探索已排入组合，并不表示 rollout 已执行或得到正结果。
+[`T143`](research/tasks/T143-sealed-finite-time-breadth.json) 的正式 reference fanout 已分别尝试
+covariance block powers、exchangeable-pair coupling、noncommutative moments 和 adaptive
+Lyapunov duality；结果与证据上限见
+[`iteration7 handoff`](research/iteration7/p1_sealed_breadth/README.md)。只有 covariance 锁定卡
+仍是存活的 direct-C050 候选。T144 应优先敌对审计该路线的 reachable two-epoch warm edge。
+因为完整 `runs/` 不进 Git，fresh clone 上 [`T144`](research/tasks/T144-audit-sealed-finite-time-route.json)
+仍会保持 dependency blocked；需要导入经审计的 `--include-runs` bundle 或重新运行 T143，不能
+用 curated handoff 冒充九件套 attestation。
 
 T144 真正产生 harness-validated run 后，后续门分成两条互不替代的支线：
 [`T145`](research/tasks/T145-fresh-reconstruct-audited-route.json) 从冻结声明重新证明，回答
@@ -242,9 +250,10 @@ python -m rpcd_harness run-codex T030-counterexample-search --worker account-b `
   推出 `C050`。
 - `T141`：证明 cycle-cut half-memory 框架中的 adapted arc covariance 界。
 - `T142`：证明边界低谱层的完整 Loewner shorting，而不是仅做 compression。
-- `T143`：statement-only sealed breadth；四个不同方法族从同一最小 RPCD 规格直接攻击
-  `C050`，不预设 `C051`。
-- `T144`：对 T143 候选做独立敌对审计；在 T143 产出可迁移结果前保持 blocked。
+- `T143`：statement-only sealed breadth；正式四路 reference run 已完成，curated 结果见
+  `research/iteration7/p1_sealed_breadth/`；fresh clone 需完整 bundle 或重跑才能满足下游机器依赖。
+- `T144`：对 covariance sealed 候选做独立敌对审计；优先攻击 reachable warm/polar edge，
+  不把 R160 的局部反例误报为 C050 反例。
 - `T145`：基于真实 validated T144 result 锁定一份 fresh proof，再与原路线逐步对账。
 - `T146`：独立做 primary-source novelty/priority audit，不把正确性与新颖性混为一谈。
 - `T147`：汇总正确性和优先权门，生成 formal/exact/human-review handoff；Agent 运行

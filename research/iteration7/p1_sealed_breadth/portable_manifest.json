@@ -1,0 +1,578 @@
+{
+  "schema_version": "1.0",
+  "kind": "rpcd-curated-portable-handoff",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "canonical_ensemble_id": "ensemble-20260825T123453Z-161b71f1",
+  "full_run_revalidation_available": false,
+  "note": "This curated Git subset preserves mathematical handoff files but not the complete nine-part run attestations. Use an audited --include-runs bundle or rerun T143 for a canonical T144 dependency.",
+  "portfolio_imports": [
+    "R150-covariance-block-powers",
+    "R160-exchangeable-coupling",
+    "R180-adaptive-lyapunov"
+  ],
+  "rejected_imports": [
+    "R170-polynomial-moments"
+  ],
+  "files": [
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/audit_tail_dual_certificate.py",
+      "source_sha256": "c1a07bb091d83212619a550a18e66eea0fe75ae78672bbb5304e133302c20e7a",
+      "source_bytes": 4482,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/audit_tail_dual_certificate.py",
+      "portable_sha256": "c1a07bb091d83212619a550a18e66eea0fe75ae78672bbb5304e133302c20e7a",
+      "portable_bytes": 4482,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/exact_adaptive_falsifiers.py",
+      "source_sha256": "98c158ede68928c8aa02f705125ffebde9a42ac485f4c9c24bf117ca8ec3d9fd",
+      "source_bytes": 42396,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/exact_adaptive_falsifiers.py",
+      "portable_sha256": "98c158ede68928c8aa02f705125ffebde9a42ac485f4c9c24bf117ca8ec3d9fd",
+      "portable_bytes": 42396,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/exact_falsifier_output.json",
+      "source_sha256": "d19ac20bb61b12cfa6cd7b63a1dbb2f105fddb205c5f9cfe8845095a45c6de70",
+      "source_bytes": 71725,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/exact_falsifier_output.json",
+      "portable_sha256": "d19ac20bb61b12cfa6cd7b63a1dbb2f105fddb205c5f9cfe8845095a45c6de70",
+      "portable_bytes": 71725,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/exact_phase_reset_output.json",
+      "source_sha256": "e447b2b945c3160190d1d1c23e59b13fb18b60797f9446ab8e82d13004c8f4db",
+      "source_bytes": 9808,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/exact_phase_reset_output.json",
+      "portable_sha256": "e447b2b945c3160190d1d1c23e59b13fb18b60797f9446ab8e82d13004c8f4db",
+      "portable_bytes": 9808,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/exact_phase_reset.py",
+      "source_sha256": "94ce52d34d8ea41809ef2e087667c3a9e114b82e183972a411d04328eefe220a",
+      "source_bytes": 12578,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/exact_phase_reset.py",
+      "portable_sha256": "94ce52d34d8ea41809ef2e087667c3a9e114b82e183972a411d04328eefe220a",
+      "portable_bytes": 12578,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/exact_tail_dual_output.json",
+      "source_sha256": "2e31c9749c82c03ed19f7c2a4e92719a165d078b09899e23a3ced492376c470c",
+      "source_bytes": 3029,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/exact_tail_dual_output.json",
+      "portable_sha256": "2e31c9749c82c03ed19f7c2a4e92719a165d078b09899e23a3ced492376c470c",
+      "portable_bytes": 3029,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/exact_tail_dual_search.py",
+      "source_sha256": "f4bc3320f6256fceb31b8e2a6fbb230dbc904e114f1f365621752cd181db4651",
+      "source_bytes": 7537,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/exact_tail_dual_search.py",
+      "portable_sha256": "f4bc3320f6256fceb31b8e2a6fbb230dbc904e114f1f365621752cd181db4651",
+      "portable_bytes": 7537,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/failure_or_candidate.json",
+      "source_sha256": "6f6aebab5c1fa2e3c95555893d83edcc91a49dcfa4ad29c5cbb3f79978d8f1fd",
+      "source_bytes": 11927,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/failure_or_candidate.json",
+      "portable_sha256": "68dcb4316f290574c9d63a870bba5823706c5dd450255e77f4e14129eca255ce",
+      "portable_bytes": 11430,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/falsifier_results.json",
+      "source_sha256": "d59f906525dd67e222129e94889083c55c9255845e5250acac4f74eb1ea4a1c4",
+      "source_bytes": 23331,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/falsifier_results.json",
+      "portable_sha256": "0c3b87ad4ab22c5137e44618a3f01003ee2282c1a59487b0182a3619607c6e4c",
+      "portable_bytes": 22266,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/phase_reset_equivalence.md",
+      "source_sha256": "d7b5fee05ad7135547efa5c5231a9dd2c1ed89c1b5aa4836a2a88fd484f84409",
+      "source_bytes": 8218,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/phase_reset_equivalence.md",
+      "portable_sha256": "9a88cd36ffc64969fec4df711e71ad4cd4404b64eb9ddf92b14a9b067ef54cfa",
+      "portable_bytes": 8076,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/route_development.md",
+      "source_sha256": "202c699d43a4ad0c320805e3dc614f1f7d781cf488b8e95f32c4b9fe1ff91f32",
+      "source_bytes": 38275,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/route_development.md",
+      "portable_sha256": "e6e067675dd644cc604c12f2898402ad2e1c99b3a8c2175ae9452106493c873e",
+      "portable_bytes": 37565,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/scout_adaptive_phase.py",
+      "source_sha256": "bc1bf394a01389a7dd32ac75b3c1a27b436d5c59e7a386911034a27aa68b0543",
+      "source_bytes": 11819,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/scout_adaptive_phase.py",
+      "portable_sha256": "bc1bf394a01389a7dd32ac75b3c1a27b436d5c59e7a386911034a27aa68b0543",
+      "portable_bytes": 11819,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449/artifacts/target_transfer.md",
+      "source_sha256": "984467d67ebf4065a1314b78da4ad9c5caac2dd80cdfeeb06ebd271fbbaab01f",
+      "source_bytes": 6288,
+      "portable_path": "research/iteration7/p1_sealed_breadth/adaptive_lyapunov/target_transfer.md",
+      "portable_sha256": "984467d67ebf4065a1314b78da4ad9c5caac2dd80cdfeeb06ebd271fbbaab01f",
+      "portable_bytes": 6288,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/attack_reachable_cone.py",
+      "source_sha256": "25f717f5ea3c46eeb546cbeb9b5958fd66119d6020bb1673bfd355d0472c9270",
+      "source_bytes": 2784,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/attack_reachable_cone.py",
+      "portable_sha256": "25f717f5ea3c46eeb546cbeb9b5958fd66119d6020bb1673bfd355d0472c9270",
+      "portable_bytes": 2784,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/attack_subset_warm.py",
+      "source_sha256": "b68231efdd81909a9b6db9a4c821bf0a97186eb3a02c5c396e668f2217a5653b",
+      "source_bytes": 4373,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/attack_subset_warm.py",
+      "portable_sha256": "b68231efdd81909a9b6db9a4c821bf0a97186eb3a02c5c396e668f2217a5653b",
+      "portable_bytes": 4373,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/attack_warm_start.py",
+      "source_sha256": "6dd1eaef3ca4f68d69203291028fc5268223be84df2e041bf3c4c25702da81e8",
+      "source_bytes": 8254,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/attack_warm_start.py",
+      "portable_sha256": "6dd1eaef3ca4f68d69203291028fc5268223be84df2e041bf3c4c25702da81e8",
+      "portable_bytes": 8254,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/failure_or_candidate.json",
+      "source_sha256": "2c0f3f92e32edf37a4e6d3a0ec7f27c49a93d999441b1eed06059c549e8b7127",
+      "source_bytes": 8433,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/failure_or_candidate.json",
+      "portable_sha256": "2c0f3f92e32edf37a4e6d3a0ec7f27c49a93d999441b1eed06059c549e8b7127",
+      "portable_bytes": 8433,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/falsifier_results.json",
+      "source_sha256": "670cd4a797d4e70bdbe33a2f37f695724723a3b5ba7a548b0e49d0873ed3377e",
+      "source_bytes": 32039,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/falsifier_results.json",
+      "portable_sha256": "623ee550705639bdfa4d63a680f9c32f5821af402ed6cdd21b557b5a86c2cb1f",
+      "portable_bytes": 31178,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/generic_rank_two_warm_exact.json",
+      "source_sha256": "b592a56963ad96cebb7e60e636687964eaf9b7eb54951e943a312c66ed6f370f",
+      "source_bytes": 25841,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/generic_rank_two_warm_exact.json",
+      "portable_sha256": "38f15ad048e9962df982b2ecfd7f2052edd9d008cb6e15fe33b8058bd0c5cd7a",
+      "portable_bytes": 25539,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/rank_four_cycle_warm_exact.json",
+      "source_sha256": "eb50cc6f26cf92179b257daa1a72a96d8d287ac4e914e6b884ea0c354f8cb566",
+      "source_bytes": 44786,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/rank_four_cycle_warm_exact.json",
+      "portable_sha256": "ca0232793796ea680ce86df5554d7f28ef40bfa1ed94960dec378e033eef0de0",
+      "portable_bytes": 44319,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/rank_three_star_exact.json",
+      "source_sha256": "ae2a339df5c31f3a69410c5420806cf945e2451fbf3991ea7c2076aafab314e4",
+      "source_bytes": 4270,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/rank_three_star_exact.json",
+      "portable_sha256": "345087f699a14e2ee21cd6b2e7464663ef3a9016cf6dbf1eb9b4f1a3d0f2c1fd",
+      "portable_bytes": 4177,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/rank_two_warm_exact.json",
+      "source_sha256": "b0297fdb130a7515bc6a2da57c718bbd9d1042c57c9c598bf5f0ec9c752bd29b",
+      "source_bytes": 4459,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/rank_two_warm_exact.json",
+      "portable_sha256": "1cbdd4c9fb7b421d2e938b4a25ae1ffa2dc679cfd09c5b5cb675c73d6baf485d",
+      "portable_bytes": 4393,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/reachable_cone_attack.json",
+      "source_sha256": "ba1b898f2eb2a4dc8afc356b201e660dfcaa7414e4de329304a033299af0e2c1",
+      "source_bytes": 26293,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/reachable_cone_attack.json",
+      "portable_sha256": "48f46fde4fc6ce8617d5047555339b4a51612f9391091c020a15376b97f3cc4d",
+      "portable_bytes": 25309,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/reevaluate_subset_candidate.py",
+      "source_sha256": "8cf16b864bbf56cf2a444d7d74c489bf5e57d7406023e96cd595f1d24cee30fe",
+      "source_bytes": 4985,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/reevaluate_subset_candidate.py",
+      "portable_sha256": "8cf16b864bbf56cf2a444d7d74c489bf5e57d7406023e96cd595f1d24cee30fe",
+      "portable_bytes": 4985,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/route_development.md",
+      "source_sha256": "e950d48602f6e11a851e219dcfd25a5633dfdc4d2615c1335da204ed9812c8fe",
+      "source_bytes": 22621,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/route_development.md",
+      "portable_sha256": "5e125dbba0814e7577981a5ae0b7ce65da023d7bf6605efca2bfd7977eee637a",
+      "portable_bytes": 21065,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/scout_subset_warm.py",
+      "source_sha256": "cd90df04b626544422fa1009ed1c819d3259afc28b5d9d4889227a5b9aafb7ac",
+      "source_bytes": 9263,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/scout_subset_warm.py",
+      "portable_sha256": "cd90df04b626544422fa1009ed1c819d3259afc28b5d9d4889227a5b9aafb7ac",
+      "portable_bytes": 9263,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/subset_candidate_reevaluation.json",
+      "source_sha256": "bf1776bea050d09b0f668f65fcc4ce16b633e9d20a63b06d60f77ea1b8323055",
+      "source_bytes": 1950,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/subset_candidate_reevaluation.json",
+      "portable_sha256": "ae938925873efc2373c70ad504104db83823eb625f30576f9068e8dca6c6603c",
+      "portable_bytes": 1907,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/subset_warm_attack.json",
+      "source_sha256": "efab84ad94d0ffa999cea5d572bbc8fe25b47cbd0da8ce9238e8e69e36886f12",
+      "source_bytes": 44956,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/subset_warm_attack.json",
+      "portable_sha256": "31f4e726859b4ec9c94528f27b2f17eba6d3124206718e5e0cefd2dc1152ef3b",
+      "portable_bytes": 43482,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/subset_warm_scout.json",
+      "source_sha256": "03a82ac648a4feca8818cb090cd79306c6eb150def4cde20c6350ffadc6ffadd",
+      "source_bytes": 217716,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/subset_warm_scout.json",
+      "portable_sha256": "e04351f45432bdee973d6b27eefb25dc8efe23477aebb52daa9a4598dfbbf400",
+      "portable_bytes": 210503,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/target_transfer.md",
+      "source_sha256": "ec07bc17c4a407efeacc49a7deec7c6c7f907725da09d1e33c715c5e1ac63adf",
+      "source_bytes": 3097,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/target_transfer.md",
+      "portable_sha256": "ec07bc17c4a407efeacc49a7deec7c6c7f907725da09d1e33c715c5e1ac63adf",
+      "portable_bytes": 3097,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/verify_generic_rank_two_poly.py",
+      "source_sha256": "e4c70dfb4e0c0ec11e540e9d4a46e290fefc5ae00ca1416a1a415a23e855ea82",
+      "source_bytes": 15485,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/verify_generic_rank_two_poly.py",
+      "portable_sha256": "e4c70dfb4e0c0ec11e540e9d4a46e290fefc5ae00ca1416a1a415a23e855ea82",
+      "portable_bytes": 15485,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/verify_rank_four_cycle_poly.py",
+      "source_sha256": "b5d6c16276e36da7dda170361a37dd799b417e18f1d5dc9c250ac87517475e22",
+      "source_bytes": 9788,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/verify_rank_four_cycle_poly.py",
+      "portable_sha256": "b5d6c16276e36da7dda170361a37dd799b417e18f1d5dc9c250ac87517475e22",
+      "portable_bytes": 9788,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/verify_rank_three_star.py",
+      "source_sha256": "80135e2ac2c32d9353a83355d13ba2f5f2269ba894d2a4c8279925e37bd0c940",
+      "source_bytes": 5887,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/verify_rank_three_star.py",
+      "portable_sha256": "80135e2ac2c32d9353a83355d13ba2f5f2269ba894d2a4c8279925e37bd0c940",
+      "portable_bytes": 5887,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/verify_rank_two_warm_family.py",
+      "source_sha256": "4714ecb6ddfc1154ced1cc7003b5b7fe78aa4b9d0ede0b3860b266e1bf986d23",
+      "source_bytes": 5543,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/verify_rank_two_warm_family.py",
+      "portable_sha256": "4714ecb6ddfc1154ced1cc7003b5b7fe78aa4b9d0ede0b3860b266e1bf986d23",
+      "portable_bytes": 5543,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4/artifacts/warm_start_attack.json",
+      "source_sha256": "63d216ed4686f69de2593a37edebf68a32662371ff306e16040bdf695e106af6",
+      "source_bytes": 42003,
+      "portable_path": "research/iteration7/p1_sealed_breadth/covariance/warm_start_attack.json",
+      "portable_sha256": "54fe2cda5816a4b7f11aac9a151d1e4ab84eb206a03dcc8b64522060e2a8ef3c",
+      "portable_bytes": 40401,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/ensembles/ensemble-20260825T123453Z-161b71f1/ensemble.json",
+      "source_sha256": "be5944c4c0811621b591f058a0b20a11984bb21a4e030885213ff41198020345",
+      "source_bytes": 5822,
+      "portable_path": "research/iteration7/p1_sealed_breadth/ensemble.json",
+      "portable_sha256": "55c3f853213e6cfe17f23118a9cc1102ad150b3bd03dc38e7102e9410c915cdb",
+      "portable_bytes": 5725,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-c7e1b13a/artifacts/failure_or_candidate.json",
+      "source_sha256": "cbd74d8003a6b3f3c49053cb8120ae0576fb79c339268995d47a7717815e74d5",
+      "source_bytes": 7820,
+      "portable_path": "research/iteration7/p1_sealed_breadth/exchangeable/failure_or_candidate.json",
+      "portable_sha256": "cbd74d8003a6b3f3c49053cb8120ae0576fb79c339268995d47a7717815e74d5",
+      "portable_bytes": 7820,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-c7e1b13a/artifacts/falsifier_results.json",
+      "source_sha256": "c2c68269a4484ffcba43a4749bba2bda54ca13525f1747e550c95ae28e50c731",
+      "source_bytes": 15147,
+      "portable_path": "research/iteration7/p1_sealed_breadth/exchangeable/falsifier_results.json",
+      "portable_sha256": "e760be8e457ead930f359851e211cc056890b0759f9c58b5fc9264db41f1fc78",
+      "portable_bytes": 14934,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-c7e1b13a/artifacts/route_development.md",
+      "source_sha256": "5ef1c1e8c8ec8664c65504ddeb8b61e014493e3bce5627c0636dc92eda7fd6a6",
+      "source_bytes": 30243,
+      "portable_path": "research/iteration7/p1_sealed_breadth/exchangeable/route_development.md",
+      "portable_sha256": "6580de0c569819c30a7feaee9b7e3bafc4b4de243cae93dfdcd1fcfe44b1e545",
+      "portable_bytes": 30024,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-c7e1b13a/artifacts/target_transfer.md",
+      "source_sha256": "d7f17ef40669dee3a7aff90949af4e6e72ed53a853656f2d6815756023ddb292",
+      "source_bytes": 5987,
+      "portable_path": "research/iteration7/p1_sealed_breadth/exchangeable/target_transfer.md",
+      "portable_sha256": "d7f17ef40669dee3a7aff90949af4e6e72ed53a853656f2d6815756023ddb292",
+      "portable_bytes": 5987,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-c7e1b13a/artifacts/verify_exchangeable_route.py",
+      "source_sha256": "38cd4a5987f9572237afe37de83ec35db686e7802fa9de00924c1dfcc4e3b9da",
+      "source_bytes": 48508,
+      "portable_path": "research/iteration7/p1_sealed_breadth/exchangeable/verify_exchangeable_route.py",
+      "portable_sha256": "38cd4a5987f9572237afe37de83ec35db686e7802fa9de00924c1dfcc4e3b9da",
+      "portable_bytes": 48508,
+      "transformations": []
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "source_bytes": null,
+      "portable_path": "research/iteration7/p1_sealed_breadth/import_rejection.json",
+      "portable_sha256": "461dcae1ce73d3eee7af6c4c96c4ee886f7d689f0f4682156fe9df76c08e8ee1",
+      "portable_bytes": 1654,
+      "transformations": [
+        "synthesized portable index/provenance record"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/bibliography.md",
+      "source_sha256": "c8a52181de3386522cc9b67452c96c5f561151168191d5bea37b6f02cb4a7b7b",
+      "source_bytes": 934,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/bibliography.md",
+      "portable_sha256": "c8a52181de3386522cc9b67452c96c5f561151168191d5bea37b6f02cb4a7b7b",
+      "portable_bytes": 934,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/failure_or_candidate.json",
+      "source_sha256": "1537838fc26f94d669c6b384ea9c435dd8bd739efc68a2dc530cf92149525866",
+      "source_bytes": 10215,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/failure_or_candidate.json",
+      "portable_sha256": "1537838fc26f94d669c6b384ea9c435dd8bd739efc68a2dc530cf92149525866",
+      "portable_bytes": 10215,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/falsifier_results.json",
+      "source_sha256": "69985e62ed041651445f948c6e230901c89a089fb7617c1e418dc39b6a91b18c",
+      "source_bytes": 22145,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/falsifier_results.json",
+      "portable_sha256": "51b4167baace813cda78692e3a1cf056c861d7d6d3a6b83cb7d7c168501ce23f",
+      "portable_bytes": 20777,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/moment_falsifiers.py",
+      "source_sha256": "b4e3d85d7fc3e1853d82c31de2050944bb9de5e53f953b90cffc7ce83f7a54de",
+      "source_bytes": 40289,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/moment_falsifiers.py",
+      "portable_sha256": "b4e3d85d7fc3e1853d82c31de2050944bb9de5e53f953b90cffc7ce83f7a54de",
+      "portable_bytes": 40289,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/phase3_relative_survival.py",
+      "source_sha256": "5950a4f262f4ee010070e1a1eef3288b13d94cb409fcb61ab2652ad7eb88b4f8",
+      "source_bytes": 13112,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/phase3_relative_survival.py",
+      "portable_sha256": "5950a4f262f4ee010070e1a1eef3288b13d94cb409fcb61ab2652ad7eb88b4f8",
+      "portable_bytes": 13112,
+      "transformations": []
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/relative_survival_repair.md",
+      "source_sha256": "21c97969f27900c816b17b7073d046807bf23d5d34ac92a786100619ca8e1b47",
+      "source_bytes": 8812,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/relative_survival_repair.md",
+      "portable_sha256": "43fce8c132449be93e93224869465f978b73bd097700ad18165e4462e6b365be",
+      "portable_bytes": 8660,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/route_card.json",
+      "source_sha256": "d61b9e0c14382ec49d8fc5db5dc7d677e57ea70a06b3cb18fe71f0321524db69",
+      "source_bytes": 3232,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/route_card.json",
+      "portable_sha256": "23152d0f64fab3b05f52dddbb305cca6e2963455b7f7ec62baed34f75a4e3393",
+      "portable_bytes": 3233,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/route_development.md",
+      "source_sha256": "166b074733f2e1416715f1578a55616b821a198ea98c7b7c2d2397835560893f",
+      "source_bytes": 31371,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/route_development.md",
+      "portable_sha256": "3984aa48609a27e8414651e363472290e50e5db73d3fb7b38adb5e003caac102",
+      "portable_bytes": 31365,
+      "transformations": [
+        "normalize end-of-file whitespace",
+        "replace local interpreter path with {python} where present",
+        "rewrite run-local artifact paths to handoff-relative paths where present"
+      ]
+    },
+    {
+      "source_path": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385/artifacts/target_transfer.md",
+      "source_sha256": "ef46db9d9f6047bf36630a20aa7a4eb9b6a1028db0e12521ec2ae129300c20f2",
+      "source_bytes": 8141,
+      "portable_path": "research/iteration7/p1_sealed_breadth/polynomial_moments/target_transfer.md",
+      "portable_sha256": "ef46db9d9f6047bf36630a20aa7a4eb9b6a1028db0e12521ec2ae129300c20f2",
+      "portable_bytes": 8141,
+      "transformations": []
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "source_bytes": null,
+      "portable_path": "research/iteration7/p1_sealed_breadth/README.md",
+      "portable_sha256": "77c82bb0c775cf25ed1dc4bbd79a160eef39efbf0c27f3cface492fa9a419b3f",
+      "portable_bytes": 5748,
+      "transformations": [
+        "synthesized portable index/provenance record"
+      ]
+    }
+  ]
+}

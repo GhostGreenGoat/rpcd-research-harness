@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "route_id": "R150-covariance-block-powers",
+  "layer": "L1",
+  "title": "Agent-generated sealed route: RC-T143-CBP-01",
+  "statement": "Candidate lemma: for every real unit-diagonal SPD A with mu=lambda_min(A), setting L=ceil(16/mu) gives the uniform block-power inequality (L_A^*)^L(A) <= (1/2)A in Loewner order; equivalently, tr(A L_A^L(X)) <= (1/2)tr(A X) for every X positive semidefinite.",
+  "parent_ids": [
+    "R100-l0-finite-time"
+  ],
+  "method_family": "covariance-superoperator-block-powers",
+  "target_claim_id": "C050",
+  "signature": {
+    "representation": "Use the epoch-boundary covariance superoperator L_A(X)=(1/n!) sum_pi T_pi X T_pi^T, equivalently K_A=(1/n!) sum_pi(T_pi tensor T_pi) on vec(X), together with its adjoint L_A^*(H)=(1/n!) sum_pi T_pi^T H T_pi. Fresh independent epochs give X_k=L_A^k(x_0 x_0^T), and E||x_k||_A^2=tr(A X_k)=x_0^T (L_A^*)^k(A) x_0.",
+    "state_or_invariant": "Retain the full positive-semidefinite epoch-boundary covariance X_k and the dual block observable H_j=(L_A^*)^j(A). Positivity is preserved, and H_{j+1} is Loewner-bounded by H_j because every coordinate update is an A-orthogonal projection and hence every epoch map is A-nonexpansive.",
+    "core_candidate_lemma": "Candidate lemma: for every real unit-diagonal SPD A with mu=lambda_min(A), setting L=ceil(16/mu) gives the uniform block-power inequality (L_A^*)^L(A) <= (1/2)A in Loewner order; equivalently, tr(A L_A^L(X)) <= (1/2)tr(A X) for every X positive semidefinite.",
+    "information_retained": [
+      "A and its minimum eigenvalue mu",
+      "the exact uniform distribution over epoch permutations",
+      "the full epoch-boundary second-moment covariance",
+      "the dual A-energy observable under block powers",
+      "PSD and Loewner-order structure"
+    ],
+    "information_discarded": [
+      "the mean iterate E[x_k]",
+      "higher moments beyond covariance",
+      "individual permutation histories after averaging",
+      "within-epoch coordinate trajectories",
+      "external literature and inherited RPCD derivations"
+    ],
+    "target_implication": "Assuming the candidate lemma, write k=qL+r with 0<=r<L. Positivity and within-block A-nonexpansiveness give E||x_k||_A^2 <= 2^{-q}||x_0||_A^2. Jensen then gives E||x_k||_A <= 2^{-q/2}||x_0||_A. Since mu<=1 and L=ceil(16/mu)<=17/mu, this implies E||x_k||_A <= sqrt(2) exp(-(log 2)mu k/34)||x_0||_A, so the target holds with C=sqrt(2) and c=(log 2)/34.",
+    "known_failure_mode": "The most likely failure is that this second-moment assertion is strictly stronger than the desired first-moment bound: a dimension-dependent covariance direction, sustained by rare poorly contracting permutation products, may make the worst-case block energy remain above one half for 16/mu epochs even when E||x_k||_A still contracts at the target scale.",
+    "verifier_class": "Agent-declared first falsifier: Later, without approximation, test the candidate lemma on A_n=(1/n)I+(1-1/n)11^T, for which mu=1/n and L=16n. Permutation symmetry forces H_j=(L_{A_n}^*)^j(A_n) to have the form alpha_j I+beta_j 11^T, so L_{A_n}^* restricted to this two-dimensional space can be derived as an exact rational 2-by-2 recurrence and raised to the 16n-th power by exact arithmetic. The first implication edge is rejected if either alpha_{16n}>(1/2n) or alpha_{16n}+n beta_{16n}>(1/2)(n-1+1/n) for any n."
+  },
+  "status": "proposed",
+  "decision": "unreviewed",
+  "merge_target_id": null,
+  "reopen_if": [],
+  "score": {
+    "target_transfer": 1,
+    "counterexample_resistance": 1,
+    "blocker_specificity": 2,
+    "falsifiability": 2,
+    "recent_information_gain": 0
+  },
+  "provenance": {
+    "search_mode": "sealed_breadth",
+    "initial_context": "statement_only",
+    "route_card_hash": "8b812b514379cc34b952dce069b91d184e0947e45ecb417a69e8c8fda400784f",
+    "route_card_origin": "agent_generated",
+    "agent_rollout_id": "t143-covariance-block-powers",
+    "agent_worker": "sealed-covariance-block-powers",
+    "agent_run_id": "20260825T123453Z-6a1254f4",
+    "source_card_path": "research/routes/cards/R150-covariance-block-powers.json",
+    "independent_breadth_eligible": true,
+    "resumed_from_checkpoint": false
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "run_id": "20260825T123453Z-c7e1b13a",
+  "worker": "sealed-exchangeable-coupling",
+  "route_card_id": "R143-exchangeable-transposition-dissipation",
+  "route_card_sha256": "a3b904849b72c6467cda29b520d59f789b55d9a948c1290d9f1a8450c6b11bec",
+  "classification": "locked-edge-refutation-with-route-faithful-repair-candidate",
+  "master_claim": {
+    "claim_id": "C050",
+    "title": "General finite-time expected-distance RPCD complexity",
+    "statement_ref": "research/problem.md#current-finite-time-target",
+    "status": "open_conjecture",
+    "evidence_level": "E1",
+    "affected_by_counterexample": false
+  },
+  "locked_core": {
+    "statement": "For every dimension n, every real unit-diagonal SPD A, and every x, E_pi[D_pi(x)] >= (1/16)||Ax||_2^2.",
+    "status": "refuted",
+    "evidence_level": "E2",
+    "first_bad_edge": "The proposed dimension-free comparison from expected epoch dissipation to the squared initial Euclidean residual.",
+    "certificate": "falsifier_results.json#F1-signed-equicorrelation-core-counterexample",
+    "smallest_possible_counterexample_dimension": 17,
+    "dimension_minimality_reason": "The universal first-position bound E D>=||Ax||^2/n proves the locked 1/16 lemma for all n<=16.",
+    "exact_margin": "623999899989998999899989998999899989998999899989998999899989999/170000000000000000000000000000000000000000000000000000000000000000",
+    "master_claim_affected": false,
+    "reason_master_claim_survives": "The witness residual is in a high-eigenvalue direction. The failed residual comparison is much stronger than the mu-weighted A-energy dissipation needed for a one-epoch target transfer."
+  },
+  "sharp_route_local_replacement": {
+    "statement": "For every unit-diagonal SPD A and x, E_pi D_pi(x) >= ||Ax||_2^2/n, and the coefficient 1/n is asymptotically sharp over signed equicorrelation families.",
+    "status": "proof_candidate",
+    "evidence_level": "E3",
+    "target_effect": "Only O(n^2/mu log(1/epsilon)) coordinate updates; insufficient for C050.",
+    "open_objection": "No independent hostile audit has reconstructed the sharpness statement."
+  },
+  "repair_candidate": {
+    "name": "mean-plus-random-transposition-Dirichlet proxy",
+    "statement": "There exists a universal c_*>0 such that ||E_pi T_pi x||_A^2+(n-1)E_{pi,pair}||T_pi x-T_pi' x||_A^2/4 <= (1-c_*mu)||x||_A^2 for every unit-diagonal SPD A and x.",
+    "status": "idea",
+    "evidence_level": "E0",
+    "constant_sharpness_control": "Any universal c_* must satisfy c_*<=1 because A=I has mu=1 and B_I=0. Thus the structured c_*=1 value is maximal if the general proxy is true.",
+    "method_family": "exchangeable-pair-permutation-coupling",
+    "why_route_faithful": "It uses the same uniform permutation, random position transposition, and paired endpoint trajectories frozen in the card. It does not diagonalize the covariance superoperator.",
+    "target_transfer": "The sharp Hilbert-valued permutation Poincare inequality upper-bounds E||T_pi x||_A^2 by the proxy. Conditional iteration and Jensen would give C050 with C=1 and exponent c_*mu/2.",
+    "relation_to_C051": "A proof would imply C051; C051 is neither assumed nor treated as equivalent to C050.",
+    "support": [
+      "Exact rational c_*=1 controls on signed equicorrelation n=5, hub-leaf star n=5, unequal signed blocks n=4 and n=6, and an interacting signed Hadamard n=4 family.",
+      "An E3 draft proves c_*=1 for all-dimensional direct sums of signed 2x2 correlation blocks and isolated coordinates.",
+      "The alternating endpoint has an exact subset-cancellation expansion: it begins at off-diagonal order n-2 for odd n and n-1 for even n; the full symbolic n=3 formula is recorded.",
+      "The rational n=3 matrix that refutes the stronger high-mode residual comparison nevertheless passes the actual c_*=1 proxy exactly, separating the false repair from EP.",
+      "For each fixed dimension, fixed nonzero zero-diagonal perturbation H, and fixed block length m, an E3 local expansion proves c=1 for A=I+epsilon H at all sufficiently small positive epsilon; the neighborhood is not uniform.",
+      "A seed-14320260825 float64 null scan over n=3,...,7 is E1 only."
+    ],
+    "open_objections": [
+      "The Poincare constant is calibrated to the slowest permutation representation; higher permutation modes may make the proxy slack cancel all mu-scale dissipation.",
+      "Equivalently, the exact Fourier surplus E D-sum_lambda[(n-1)(1-lambda)/2-1]||F_lambda||_A^2 may fail to dominate c mu||x||_A^2; the sign component has weight n-1.",
+      "The tempting stronger sign-mode comparison E D-||Alt_A x||_A^2>=||Ax||_2^2 is exactly false on the recorded rational n=3 SPD matrix, although this does not refute the mu-scale proxy.",
+      "A direct bound of a nonadjacent swap by adjacent identities can accumulate an interval-length factor and has not been closed.",
+      "All-dimensional interacting, signed, anisotropic families remain unchecked analytically.",
+      "Because the conclusion is a one-epoch energy contraction for every x, success would be a proof of the stronger sufficient C051 route, not evidence that C050 implies C051."
+    ],
+    "analytic_falsifier": "Construct a rational unit-diagonal SPD family A_n and rational vectors x_n for which [||x_n||_A^2-B_A(x_n)]/[mu_n||x_n||_A^2] tends to zero or is negative. The primary target is a large alternating component Alt_A=(1/n!)sum sign(pi)T_pi or another high random-transposition mode.",
+    "next_exact_edge": "Exploit the exact high-order alternant expansion, or another explicit nonstandard representation, to bound or refute the Fourier surplus at the mu scale without paying a second scalar factor n."
+  },
+  "direct_C050_multiepoch_fallback": {
+    "statement": "For some universal fixed m_0 and 0<c_0<=1, the product-space mean-plus-sum-of-epoch-Dirichlet proxy B_A^(m_0) is at most (1-c_0 mu)||x||_A^2 for every A,x.",
+    "status": "idea",
+    "evidence_level": "E0",
+    "target_transfer": "Tensorized Poincare plus fixed-block iteration gives C=exp(c_0/2) and c=c_0/(2m_0), including incomplete blocks.",
+    "relation_to_C051": "Unlike the one-epoch proxy, a fixed m_0>1 statement need not imply C051 and targets C050 directly.",
+    "finite_control": "At m_0=2, both n=3 rho=9/10 equicorrelation (36 sequences, 108 cases per slot) and an interacting signed n=4 Hadamard family (576 sequences, 3456 cases per slot, mu=3/20) pass exact principal-minor checks at c_0=1. The exact metric-map recursion extends the interacting-family control through m=4 without enumerating 24^m sequences.",
+    "exact_recursion": "For H(Q)=E T^TQT, G(Q)=(n-1)E(T-T')^TQ(T-T')/4, and M=E T, B_A^(m)=(M^m)^T A M^m+sum_{ell=1}^m H^(ell-1)G(H^(m-ell)(A)).",
+    "open_objection": "No general fixed m_0, c_0 inequality has been proved or numerically optimized beyond small controls."
+  },
+  "decision": {
+    "locked_core": "suspend_after_self_refutation",
+    "repair": "retain_as_unreviewed_candidate",
+    "hard_prune_authorized": false,
+    "reason": "The generating worker cannot independently hard-prune its own sealed route under the breadth/depth protocol. A different-run exact critic must reconstruct the witness.",
+    "reopen_if": "A different worker either (i) independently certifies the F1 witness and then develops the stated compensated repair, (ii) rejects F1 by exact arithmetic, (iii) proves/refutes the one-epoch proxy on a genuinely interacting all-dimensional family, or (iv) proves/refutes the fixed-multi-epoch direct-C050 proxy for a universal block length."
+  },
+  "supporting_artifacts": [
+    "route_card.json",
+    "route_development.md",
+    "falsifier_results.json",
+    "target_transfer.md",
+    "verify_exchangeable_route.py"
+  ]
+}

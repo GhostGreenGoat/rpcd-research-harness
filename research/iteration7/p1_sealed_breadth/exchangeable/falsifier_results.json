@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "run_id": "20260825T123453Z-c7e1b13a",
+  "worker": "sealed-exchangeable-coupling",
+  "locked_route_card_sha256": "a3b904849b72c6467cda29b520d59f789b55d9a948c1290d9f1a8450c6b11bec",
+  "arithmetic_policy": "All decisive statements below are exact rational or analytic. Float64 searches are scouts only.",
+  "analytic_falsifiers": [
+    {
+      "id": "F1-signed-equicorrelation-core-counterexample",
+      "target": "For every unit-diagonal SPD A and x, E_pi D_pi(x) >= ||Ax||_2^2/16.",
+      "outcome": "refuted",
+      "evidence_level": "E2",
+      "family": "A=(1-rho)I+rho ss^T with n=17, rho=99/100, and s=(-1,1,1,-1,1,1,-1,1,1,-1,1,1,-1,1,1,-1,1)^T",
+      "initial_point": "x=(25/421)s, so Ax=s exactly",
+      "spd_certificate": "The eigenvalues are 1/100 with multiplicity 16 and 421/25 on span{s}; hence A is unit-diagonal SPD with mu=1/100.",
+      "exact_ldlt_certificate": "After diagonal sign conjugation, det(A[1:k,1:k])=delta^(k-1)(delta+k rho). The LDL pivots are 1 and delta(delta+k rho)/(delta+(k-1)rho) for k=2,...,17, all positive rational numbers.",
+      "without_replacement_calculation": "For every permutation, the residual visited at position t is s_{pi_t}(1/100)^(t-1), so D_pi=sum_{t=0}^{16} 100^(-2t), independent of pi.",
+      "exact_ratio": "10001000100010001000100010001000100010001000100010001000100010001/170000000000000000000000000000000000000000000000000000000000000000",
+      "exact_margin_one_sixteenth_minus_ratio": "623999899989998999899989998999899989998999899989998999899989999/170000000000000000000000000000000000000000000000000000000000000000",
+      "margin_decimal_for_readability_only": 0.0036705876469999943,
+      "initial_A_energy": "425/421",
+      "dissipation_over_mu_initial_A_energy": "4210421042104210421042104210421042104210421042104210421042104210421/42500000000000000000000000000000000000000000000000000000000000000",
+      "short_integer_certificate": "D<10000/9999 and 16*10000 < 17*9999 because the integer gap is 9983.",
+      "dimension_minimality": "For every A, E D>=||Ax||^2/n. Therefore the locked 1/16 inequality is automatically true for n<=16, so n=17 is the smallest possible counterexample dimension.",
+      "noncommuting_certificate": "For coordinates 0 and 1, ||(U_1 U_0-U_0 U_1)x||_2^2=9801/5000>0.",
+      "master_claim_affected": false,
+      "reason": "This refutes only the locked stronger residual comparison, not C050. On this witness D/(mu*x^T A x) is large, so there is no RPCD counterexample."
+    },
+    {
+      "id": "F2-sharp-family-no-dimension-free-residual-repair",
+      "target": "Any universal repair E D >= c ||Ax||_2^2 based on the same scalar comparison with c independent of n.",
+      "outcome": "refuted analytically",
+      "evidence_level": "E3",
+      "family": "The signed equicorrelation family above with arbitrary n and rho tending to 1 from below.",
+      "calculation": "E D/||Ax||_2^2=[sum_{t=0}^{n-1}(1-rho)^(2t)]/n tends to 1/n.",
+      "matching_lower_bound": "For every A and residual r=Ax, D_pi is at least the first visited residual squared. A uniform first coordinate therefore gives E D_pi >= ||r||_2^2/n.",
+      "conclusion": "The optimal universal coefficient for a pure initial-Euclidean-residual comparison has infimum exactly 1/n."
+    },
+    {
+      "id": "F3-random-transposition-dirichlet-loss",
+      "target": "A scalar random-transposition variance proxy can recover initial residual energy with no dimension factor.",
+      "outcome": "refuted analytically",
+      "evidence_level": "E3",
+      "statistic": "h(pi)=r_{pi_1}",
+      "identity": "For pi' obtained by swapping a uniformly random unordered pair of positions, (1/2)E(h(pi)-h(pi'))^2=[2/(n(n-1))]||r-r_bar*1||_2^2, while Var(h)=||r-r_bar*1||_2^2/n.",
+      "consequence": "Dirichlet/Var=2/(n-1), so inversion costs the sharp factor (n-1)/2.",
+      "exact_enumeration_control": "At n=5 and r=(-3,-1,0,1,3), Var(h)=4 and E(h-h')^2=4, hence Dirichlet/Var=1/2=2/(n-1)."
+    },
+    {
+      "id": "F4-terminal-pair-proxy-near-singular-scale",
+      "target": "The unamplified endpoint discrepancy of a random transposition is itself a mu-scale contraction certificate.",
+      "outcome": "refuted analytically",
+      "evidence_level": "E3",
+      "family": "Positive equicorrelation A=delta I+(1-delta)11^T with residual r=1.",
+      "identity": "Swapping positions i<j changes the terminal iterate by (delta^(j-1)-delta^(i-1))(e_a-e_b), whose squared A-norm is 2 delta (delta^(i-1)-delta^(j-1))^2.",
+      "asymptotic": "Averaging all unordered pairs gives 4 delta/n+o(delta), whereas delta times the initial A-energy is delta+o(delta). The raw proxy therefore loses a factor n.",
+      "exact_n17_control": "For delta=1/100 its ratio to mu times initial energy is exactly 8410209707839470815768445531421829158979029216052918423155446857817/36125000000000000000000000000000000000000000000000000000000000000000, approximately 0.23280857322739021.",
+      "qualification": "The sharp permutation Poincare multiplier is order n and could compensate this loss exactly once; this falsifier does not refute the compensated proxy."
+    },
+    {
+      "id": "F5-commuting-degeneracy",
+      "target": "Scalar exchangeable-pair variance of D alone lower-bounds dissipation.",
+      "outcome": "refuted analytically",
+      "evidence_level": "E3",
+      "family": "A=I",
+      "calculation": "All coordinate projections commute, every epoch ends at zero, and D_pi=||x||_2^2 for every pi, but D_pi-D_pi'=0 for every transposition.",
+      "conclusion": "A baseline dissipation term and vector trajectory information are indispensable."
+    },
+    {
+      "id": "F6-symmetry-breaking-arrow",
+      "target": "Test whether the F1 obstruction persists merely because of full permutation symmetry.",
+      "outcome": "no obstruction on this exact slice",
+      "evidence_level": "E2",
+      "family": "A has one hub, 16 independent leaves, and hub-leaf entries 99/400. Its eigenvalues are 1/100, 1 with multiplicity 15, and 199/100.",
+      "initial_residual": "(4,1,...,1), the high-eigenvalue direction",
+      "exact_average_dissipation": "1184088001/80000000",
+      "exact_ratio_to_residual_norm_squared": "1184088001/2560000000",
+      "exact_ratio_to_mu_energy": "235633512199/2560000000",
+      "low_eigen_direction": "For residual (-4,1,...,1), exact average dissipation is 7029127201/80000000 and D/(mu energy)=7029127201/2560000000, so the near-singular target direction also gives no hit.",
+      "analytic_limit": "For m square leaves, q tending to 1, and then m tending to infinity, D/||r||^2 tends to 11/24, not 0.",
+      "interpretation": "Null result only; it shows the 1/n failure is not reproduced by this hub-leaf asymmetry."
+    },
+    {
+      "id": "F7-unequal-signed-blocks",
+      "target": "Stress block, signed, and partial-commutation behavior.",
+      "outcome": "no obstruction on this exact finite slice",
+      "evidence_level": "E2",
+      "family": "Direct sum of 2x2 correlation blocks with q=9/10,-4/5,2/3 and residual (1,1,1,-1,2,-1).",
+      "spd_margin": "1/10",
+      "permutations_enumerated": 720,
+      "exact_average_dissipation": "1949/180",
+      "exact_ratio_to_residual_norm_squared": "1949/1620",
+      "interpretation": "Null result only. Inter-block updates commute and within-block updates do not."
+    }
+  ],
+  "adjacent_transposition_identity": {
+    "statement": "For a common prefix state z with r=Az, adjacent coordinates a,b, alpha=r_a, beta=r_b, and q=A_ab, let z_ab=U_b U_a z and z_ba=U_a U_b z. Then z_ab-z_ba=q(alpha e_b-beta e_a), and the two-step dissipation difference is q^2(alpha^2-beta^2).",
+    "exact_test_matrix": [["1", "1/3", "-1/5"], ["1/3", "1", "1/4"], ["-1/5", "1/4", "1"]],
+    "spd_leading_principal_minors": ["1", "8/9", "2711/3600"],
+    "test_alpha": "7/6",
+    "test_beta": "-2/5",
+    "test_q": "1/3",
+    "endpoint_difference_squared_euclidean_norm": "1369/8100",
+    "two_step_dissipation_difference": "1081/8100",
+    "status": "exact finite verification"
+  },
+  "compensated_proxy_finite_controls": {
+    "candidate": "B_A(x)=||E_pi T_pi x||_A^2+(n-1)E_{pi,pair}||T_pi x-T_pi' x||_A^2/4 <= (1-c mu)||x||_A^2.",
+    "poincare_transfer": "The random-transposition Poincare inequality gives E||T_pi x||_A^2 <= B_A(x).",
+    "slices_checked_at_c": "c=1",
+    "exact_slices": [
+      "signed equicorrelation n=5, rho=9/10",
+      "symmetry-breaking star n=5, q=9/10",
+      "unequal signed 2x2 blocks n=4"
+      ,"unequal signed 2x2 blocks n=6 (720 permutations, 10800 pair cases)"
+      ,"interacting signed Hadamard n=4 with parameters 1/2,1/4,-1/10 and mu=3/20"
+    ],
+    "check": "For each slice, every principal minor of B-E[T^TAT] and every principal minor of (1-mu)A-B is nonnegative in exact rational arithmetic.",
+    "status": "finite_verified only; not a general statement",
+    "high_mode_control": "The alternating endpoint matrix is nonzero on the rational noncommuting n=3 adjacent-swap test, with exact Frobenius norm squared 1236793/116640000, but is exactly zero on the unequal signed two-block n=4 control. This selects the sign mode as a future falsifier and proves no general bound."
+  },
+  "permutation_martingale_obstruction_control": {
+    "family": "The n=17, delta=1/100 signed-equicorrelation high-eigen residual used in F1.",
+    "state": "M_t=E[T_pi x | pi_1,...,pi_t]; in sign coordinates, exposed labels receive powers delta^(t-1) and unexposed labels receive their remaining average.",
+    "innovation_energy": "At step t with m=n-t+1 remaining labels, delta*m*(delta^(t-1)-a_(t-1))^2/(m-1).",
+    "exact_check": "The sum of all innovations equals the centered endpoint variance, and the sharp global transposition Dirichlet term equals the same variance.",
+    "interpretation": "Both without-replacement decompositions are lossless on the locked obstruction because it lies in the standard permutation representation. The general conditional-future difference still contains the nonadjacent interval product, so this is an exact structured control rather than a universal proof."
+  },
+  "alternating_mode_structure_and_failed_strong_repair": {
+    "exact_cancellation": "In the alternant expansion, terms omitting at least two update factors cancel by swapping omitted labels. Terms omitting exactly one factor also cancel for even n; for odd n their insertion-sign sum has magnitude one.",
+    "weak_coupling_order": "For A=I+epsilon H with diag(H)=0, Alt_A is O(epsilon^(n-2)) for odd n and O(epsilon^(n-1)) for even n.",
+    "symbolic_n3_formula": "With u=A12,v=A13,w=A23, 6 Alt_A has rows [v^2-u^2,u(w^2-1),v(1-w^2)]; [u(1-v^2),u^2-w^2,w(v^2-1)]; [v(u^2-1),w(1-u^2),w^2-v^2], and determinant zero.",
+    "stronger_inequality_tested": "E D_pi(x)-||Alt_A x||_A^2 >= ||Ax||_2^2 at n=3",
+    "exact_rational_spd_matrix": [["1", "-99808621/100000000", "99557499/100000000"], ["-99808621/100000000", "1", "-49715851/50000000"], ["99557499/100000000", "-49715851/50000000", "1"]],
+    "leading_principal_minors": ["1", "38239174078359/10000000000000000", "8336951648393931029/250000000000000000000000"],
+    "witness": [1, -1, 1],
+    "exact_negative_witness_value": "-16113381323284065408122430580636150673265345989286367874143/900000000000000000000000000000000000000000000000000000000",
+    "actual_proxy_separation": "For the same rational matrix, det(A-I/550)<0 and trace(A)=3 imply mu<1/550; every principal minor of (1-1/550)A-B is nonnegative. Thus B<=(1-1/550)A<=(1-mu)A exactly.",
+    "interpretation": "Exact refutation of this stronger route-local repair only. The same matrix exactly passes the actual compensated EP inequality at c=1, and it does not refute C050."
+  },
+  "multiepoch_finite_control": {
+    "candidate": "The tensorized two-epoch mean-plus-Dirichlet proxy has a c_0=1 mu-gap.",
+    "family": "n=3 positive equicorrelation with rho=9/10 and mu=1/10",
+    "permutation_sequences": 36,
+    "transposition_cases_per_epoch_slot": 108,
+    "exact_check": "Every principal minor of the product-space Poincare slack and of (1-mu)A-B_A^(2) is nonnegative.",
+    "second_family": "Interacting signed Hadamard n=4 with offdiagonal parameters 1/2,1/4,-1/10, eigenvalues 3/20,17/20,27/20,33/20, 576 permutation sequences, and 3456 transposition cases per slot also passes at c_0=1.",
+    "metric_map_recursion": "With H(Q)=E T^TQT, G(Q)=(n-1)E(T-T')^TQ(T-T')/4, and M=E T, the exact identity B_A^(m)=(M^m)^T A M^m+sum_{ell=1}^m H^(ell-1)G(H^(m-ell)(A)) avoids (n!)^m enumeration.",
+    "recursive_exact_controls": "The interacting signed Hadamard n=4 family passes all-principal-minor checks at c_0=1 for m=1,2,3,4. Its exact minimum generalized gaps divided by mu are approximately 2.4050277832, 4.0774377001, 5.1031265040, and 5.7231693545. This is E2 finite evidence only.",
+    "status": "E2 finite verification only; no general or all-dimensional conclusion"
+  },
+  "numerical_scout": {
+    "command": "{python} ./verify_exchangeable_route.py --scan --seed 14320260825 --samples 20",
+    "seed": 14320260825,
+    "samples_per_dimension": 20,
+    "dimensions": [3, 4, 5, 6, 7],
+    "dtype": "float64",
+    "tolerance": "No pass/fail tolerance was used; values were scouts and no null result was promoted.",
+    "outcome": "No random sample beat the analytic signed-equicorrelation obstruction. This is E1 only."
+  },
+  "extended_numerical_scout": {
+    "command": "{python} ./verify_exchangeable_route.py --extended-scan --seed 14320260825",
+    "seed_base": 14320269825,
+    "dtype": "float64",
+    "tolerance": "No theorem/pass tolerance; the deterministic Hadamard grid used only an SPD eigenvalue filter of 1e-12.",
+    "monte_carlo_samples_per_family": 2000,
+    "dimension": 12,
+    "proxy_gap_over_mu": {
+      "path_offdiag_0.49_seed_14320269826": 2.583357095856758,
+      "cycle_offdiag_0.49_seed_14320269827": 2.665609457085091,
+      "frustrated_signed_cycle_seed_14320269828": 2.558179396960403,
+      "ar1_rho_0.99_seed_14320269829": 2.035774800536718,
+      "weak_signed_matching_chain_seed_14320269830": 2.1262153997013558,
+      "near_singular_arrow_n17_seed_14320269835": 2.6281490043995204
+    },
+    "two_epoch_proxy_gap_over_mu": {
+      "path_seed_14320269926": 5.153454931936951,
+      "cycle_seed_14320269927": 5.5656344223209455,
+      "frustrated_signed_cycle_seed_14320269928": 5.07252258739261,
+      "ar1_seed_14320269929": 4.161779937226138,
+      "weak_signed_matching_chain_seed_14320269930": 3.7255770072742775,
+      "near_singular_arrow_n17_seed_14320269935": 5.640844299917204
+    },
+    "hadamard_grid": "85 SPD cases on {-0.6,-0.3,0,0.3,0.6}^3; minimum one-epoch and two-epoch proxy gaps divided by mu were both 1 at A=I.",
+    "outcome": "No hit. This is an E1 null search and is not a proof of the proxy."
+  },
+  "exact_command": "{python} ./verify_exchangeable_route.py",
+  "exact_command_exit_code": 0
+}

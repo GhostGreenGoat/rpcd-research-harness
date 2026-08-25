@@ -1,0 +1,199 @@
+{
+  "arithmetic": "exact SymPy Rational and symbolic factorization",
+  "dual_obstruction": {
+    "bounded_horizon_attack": "To refute a proposed bound m<=M, provide one exact separator X_m for every m=1,...,M. A universal refutation still requires a quantified family for arbitrarily large proposed B.",
+    "exact_separator": "If G_m is not PSD, self-duality of the PSD cone gives X>=0 with <X,G_m><0; a rank-one X=zz^T may be chosen.",
+    "fixed_horizon": "G_m=theta A-(Mstar)^m(A) must be PSD"
+  },
+  "near_singular_two_epoch_reset": {
+    "Mstar_A": "rho^2(1-rho^2) I/2",
+    "Mstar_squared_A": "rho^4(1-rho^4) I/4",
+    "all_bernstein_coefficients_strictly_positive": true,
+    "bernstein_coefficients_on_t_in_0_1": [
+      "16",
+      "9209/600",
+      "551401/37500",
+      "8791897/625000",
+      "104979019/7812500",
+      "6006946949/468750000",
+      "762469279201/62500000000"
+    ],
+    "domain": "99/100 <= rho < 1",
+    "expected_distance_bound": "E||x_k||_A <= sqrt(800/779) exp(-(21/16)mu k)||x_0||_A on the stated family",
+    "family": "near-singular unit-diagonal A_rho=[[1,rho],[rho,1]]",
+    "metric_comparison": "Pj<=q^{-1}A<=(800/779)A by pathwise A-energy monotonicity",
+    "mu": "1-rho in (0,1/100]",
+    "one_epoch_A_metric_bad_eigenvalue": "(rho - 1)**2*(4*rho**2 + 8*rho - 13)/8",
+    "one_epoch_failure_ray": [
+      1,
+      -1
+    ],
+    "one_epoch_failure_reason": "4rho^2+8rho-13<0 throughout the stated interval",
+    "outcome": "A symbolic two-epoch phase reset succeeds uniformly in the near-singular interval while the one-epoch fixed-A LMI fails exactly.",
+    "phase_facets": [
+      "P0=A",
+      "P1=q^{-1}Mstar(A)"
+    ],
+    "positivity_polynomial_after_t_equals_100mu": "(t**6 - 800*t**5 + 280000*t**4 - 56000000*t**3 + 6900000000*t**2 - 244375000000*t + 1000000000000)/62500000000",
+    "q": "1-(21/8)mu=(21rho-13)/8",
+    "q_lower_bound": "779/800",
+    "routing": "0->1->0",
+    "scope": "All-parameter n=2 proof draft on rho in [99/100,1); no extension to arbitrary SPD matrices.",
+    "two_epoch_positivity_polynomial": "16*rho**6 + 32*rho**5 + 48*rho**4 + 64*rho**3 + 64*rho**2 - 377*rho + 169",
+    "two_epoch_reset_small_eigenvalue": "(rho - 1)**2*(16*rho**6 + 32*rho**5 + 48*rho**4 + 64*rho**3 + 64*rho**2 - 377*rho + 169)/64"
+  },
+  "noncommuting_reset": {
+    "A": [
+      [
+        "1",
+        "3/10",
+        "0"
+      ],
+      [
+        "3/10",
+        "1",
+        "2/5"
+      ],
+      [
+        "0",
+        "2/5",
+        "1"
+      ]
+    ],
+    "coordinate_update_commutator_norm_squares": [
+      "1053/5000",
+      "241/625"
+    ],
+    "eigenvalues": [
+      "1/2",
+      "1",
+      "3/2"
+    ],
+    "failed_reset_horizons": [
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-2025621/8000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 1
+      },
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-3027051729752301/3200000000000000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 2
+      },
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-72172309046006605524377211/25600000000000000000000000000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 3
+      },
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-1608148140808901762668377179026736991/204800000000000000000000000000000000000000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 4
+      },
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-34552410737684709335874798575832148297758307779/1638400000000000000000000000000000000000000000000000000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 5
+      },
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-687798934507068818190388244527723615886118881285272418199/13107200000000000000000000000000000000000000000000000000000000000000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 6
+      },
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-12034594842631804944512097074067096054700977641278813584226551506331/104857600000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 7
+      },
+      {
+        "determinant_of_q_power_A_minus_Mstar_power_A": "-147865697514420373763231950167486062317415106021910045481149889484258490173711/838860800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "dual_interpretation": "The negative determinant proves the reset gap is indefinite; an exact negative eigen-direction exists. This rejects only this prescribed horizon.",
+        "horizon": 8
+      }
+    ],
+    "family": "rational noncommuting n=3 chain",
+    "first_strict_reset_horizon": 9,
+    "kappa": "6/5",
+    "mu": "1/2",
+    "outcome": "Nine exact canonical facets form a deterministic reset cycle. Horizons 1 through 8 fail this reset architecture by exact negative determinants.",
+    "phase_metric_comparisons": [
+      {
+        "determinant_of_kappa_A_minus_P_phase": "3/500",
+        "phase": 0
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "20201/2500000",
+        "phase": 1
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "21884632336927/1350000000000000",
+        "phase": 2
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "1325239135328214225493807/36450000000000000000000000",
+        "phase": 3
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "56814864093563412731829146434935667/984150000000000000000000000000000000",
+        "phase": 4
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "2099436196866459644282407077790142655268210823/26572050000000000000000000000000000000000000000",
+        "phase": 5
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "71804049513773698184555038009732687279668268470915836363/717445350000000000000000000000000000000000000000000000000",
+        "phase": 6
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "2345294791325175949139033493294011790911085182241018385769386981247/19371024450000000000000000000000000000000000000000000000000000000000",
+        "phase": 7
+      },
+      {
+        "determinant_of_kappa_A_minus_P_phase": "74186443971839153249769235801770707768878739720225632150919263352434870734307/523017660150000000000000000000000000000000000000000000000000000000000000000000",
+        "phase": 8
+      }
+    ],
+    "q": "3/20",
+    "reset_gap_all_principal_minors": {
+      "0": "16191744480767430540277775210637/512000000000000000000000000000000000000",
+      "0,1": "3207498074967351910965211527405192102600757417301237925855467901/6553600000000000000000000000000000000000000000000000000000000000000000000000000",
+      "0,1,2": "764231965898674587736580542418126123963625307261967521392472946740232059344582463790541/6710886400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "0,2": "6398620329615473049175375804205621983093919786578538880871167/8192000000000000000000000000000000000000000000000000000000000000000000000000",
+      "1": "2134817301904790485368624721797/102400000000000000000000000000000000000",
+      "1,2": "53436626146211098879973264849326197964905999276113243380063107/204800000000000000000000000000000000000000000000000000000000000000000000000000",
+      "2": "416470299512380796700801589941/16000000000000000000000000000000000000"
+    },
+    "routing": "0->1->...->8->0",
+    "scope": "Finite n=3 phase-reset certificate and minimality only within the prescribed canonical reset family; not a lower bound for arbitrary facets and not C050.",
+    "unit_diagonal": true
+  },
+  "schema_version": "1.0",
+  "scope": "Exact finite/symbolic route checks only; the unrestricted bounded-horizon lemma and C050 remain open.",
+  "seed": null,
+  "state_growth_stress": {
+    "examples": [
+      {
+        "illustrative_facets_for_B_equals_1": 10,
+        "illustrative_mu": "1/10",
+        "n": 10,
+        "stored_symmetric_scalars": 550
+      },
+      {
+        "illustrative_facets_for_B_equals_1": 100,
+        "illustrative_mu": "1/100",
+        "n": 100,
+        "stored_symmetric_scalars": 505000
+      },
+      {
+        "illustrative_facets_for_B_equals_1": 1000,
+        "illustrative_mu": "1/1000",
+        "n": 1000,
+        "stored_symmetric_scalars": 500500000
+      }
+    ],
+    "general_count": "At horizon m the literal canonical phase list stores m*n(n+1)/2 scalars; under m<=B/mu this is O(B*n^2/mu).",
+    "interpretation": "The reset state is linear in 1/mu and quadratic in n, rather than factorial in n. This is representation cost, not a lower bound and not part of the RPCD update complexity."
+  },
+  "tolerance": 0
+}

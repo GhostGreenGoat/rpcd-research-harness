@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "rollout_id": "t143-noncommutative-polynomial-moments",
+  "run_id": "20260825T123453Z-077c1385",
+  "worker": "sealed-polynomial-moments",
+  "method_family": "noncommutative-polynomial-moment-method",
+  "route_card_sha256": "d61b9e0c14382ec49d8fc5db5dc7d677e57ea70a06b3cb18fe71f0321524db69",
+  "result_sha256": "64c2ed050b6efb893f7925b443e20114b791216c2097c7a31481e474109bb602",
+  "import_command_route_id": "R170-polynomial-moments",
+  "accepted": false,
+  "portfolio_eligible": false,
+  "reason": "completed sealed result must contain exactly one avenue matching the locked card; found 0; locked fields changed: ['falsifier']",
+  "locked_falsifier": "In a later phase, analyze symbolically the equicorrelation family A_{n,delta}=delta I+(1-delta)11^T with delta=n^{-2}, form B_i=(A_{n,delta}^{1/2}e_i)(A_{n,delta}^{1/2}e_i)^T, and exploit permutation symmetry to evaluate the contrast eigenvalue using v=e_1-e_2. The exact candidate edge is rejected if v^T(I-H_n)v/(delta v^T v)<1/16 for any n, and its proposed mu scaling is rejected analytically if this ratio tends to zero as n tends to infinity. This check is named but not executed here.",
+  "result_falsifier": "Analyze the equicorrelation family A_{n,delta}=delta I+(1-delta)11^T with delta=n^-2 and reject the edge if the contrast loss divided by delta drops below 1/16 or tends to zero.",
+  "handling": "Do not relax the matcher, edit the attested result, or create a route node manually. Preserve the card and result as evidence; express any useful logarithmic-moment repair through a fresh continuation child."
+}

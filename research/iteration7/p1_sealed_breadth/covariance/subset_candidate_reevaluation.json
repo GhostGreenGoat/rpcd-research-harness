@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "run_id": "20260825T123453Z-6a1254f4",
+  "kind": "independent original-coordinate re-evaluation of subset-DP separator",
+  "evidence_level": "E1",
+  "source_artifact": "subset_warm_attack.json",
+  "source_record": {
+    "n": 14,
+    "boundary_rank": 2,
+    "target_mu": 0.95
+  },
+  "formulation": "G_S(H)=|S|^{-1} sum_{i in S} U_i^T G_(S minus {i})(H) U_i, conditioned on the first update",
+  "reference_energy_coordinate_diagnostic": {
+    "mu": 0.9499999999999994,
+    "warm_ratio": 0.03294590276384993,
+    "effective_c": 1.0179516813012113,
+    "normalized_margin": 0.01705409723615067,
+    "absolute_margin": 8.65019566970039e-05,
+    "one_epoch_c": 0.9966983407678359
+  },
+  "original_coordinate_diagnostic": {
+    "mu": 0.9499999999999994,
+    "warm_ratio": 0.032945902763849455,
+    "effective_c": 1.0179516813012117,
+    "normalized_margin": 0.017054097236151117,
+    "absolute_margin": 8.229987631903453e-05,
+    "one_epoch_c": 0.9966983407678373
+  },
+  "absolute_discrepancies": {
+    "mu": 0.0,
+    "warm_ratio": 4.718447854656915e-16,
+    "effective_c": 4.440892098500626e-16,
+    "normalized_margin": 4.475586568020162e-16,
+    "one_epoch_c": 1.3322676295501878e-15
+  },
+  "coordinate_dependent_absolute_margin_note": "Raw minimum eigenvalues of congruent warm-difference matrices are not invariant; both displayed absolute margins are positive but are deliberately excluded from the match test.",
+  "match_tolerance": 2e-10,
+  "formulations_match_within_tolerance": true,
+  "full_psd_shortcut_failure_candidate": true,
+  "reachable_warm_candidate_survives": true,
+  "scope": "This independent formulation checks orientation and the numerical separation only. It is not exact or interval-certified, remains E1, and does not refute the warm inequality, locked block lemma, C051 with a smaller constant, or C050."
+}

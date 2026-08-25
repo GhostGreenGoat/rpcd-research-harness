@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "kind": "rpcd-independent-rollout-ensemble",
+  "ensemble_id": "ensemble-20260825T123453Z-161b71f1",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "created_at": "2026-08-25T15:12:49.795440Z",
+  "dry_run": false,
+  "complete": true,
+  "source_manifest": "research/fanouts/T143-initial-breadth.json",
+  "source_manifest_sha256": "4ef90e27bfb4791851819e800ac06ed935c453fd55dd4b50d3297bcf74bc98c5",
+  "selected_rollout_ids": [
+    "t143-covariance-block-powers",
+    "t143-exchangeable-permutation-coupling",
+    "t143-noncommutative-polynomial-moments",
+    "t143-adaptive-lyapunov-duality"
+  ],
+  "distinct_method_families": [
+    "adaptive-lyapunov-cone-duality",
+    "covariance-superoperator-block-powers",
+    "exchangeable-pair-permutation-coupling",
+    "noncommutative-polynomial-moment-method"
+  ],
+  "rollouts": [
+    {
+      "rollout_id": "t143-covariance-block-powers",
+      "worker": "sealed-covariance-block-powers",
+      "method_family": "covariance-superoperator-block-powers",
+      "status": "completed",
+      "run_dir": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-6a1254f4",
+      "run_attestation": {
+        "invocation_sha256": "427019865047543925985715d04d178b244fe33e4b59735cc0799b90bc29b755",
+        "task_sha256": "74cd71463c5baaa8684bfc1ce5f2a5a6f44a69dd6a7a72928ef5f3ba1b33b6e4",
+        "validation_sha256": "6f8c1eb44a10d1f194f378015b5b2ffa92ea889581579aa882e94ac69da52270",
+        "result_sha256": "657270b9878a53c07804b1f786432a2a2b4d82364ac5fafcf8d4a3b25d97e4a7",
+        "artifact_manifest_sha256": "4894de546cb4e8e6d7f7b97f6474acfe5aa0d3e9cdc81f739fc989462bcdc4fd",
+        "trusted_preflight_sha256": "f08422bb45d365b65f4e538e5483081bc3f6008109f9e7364cffc1218345d8b2",
+        "trusted_final_sha256": "68162d45b74e496a4452541d6fa99b334d955e6e1f55ce4500b086a3f65114ff",
+        "artifact_tree_sha256": "ee2f074c7d04cdb2bb60d0a33b1cef26ed6796bde7b987280d5c34d319402866",
+        "verifier_log_tree_sha256": "601a5dba902ff8dca2ca477a3f434c40477cea413910e1d90d7aea51e6d82edf"
+      }
+    },
+    {
+      "rollout_id": "t143-exchangeable-permutation-coupling",
+      "worker": "sealed-exchangeable-coupling",
+      "method_family": "exchangeable-pair-permutation-coupling",
+      "status": "completed",
+      "run_dir": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-c7e1b13a",
+      "run_attestation": {
+        "invocation_sha256": "6e82a694652e1bd143c5fd869623429ac30f14462de4e997ed2564ade5f1edb2",
+        "task_sha256": "74cd71463c5baaa8684bfc1ce5f2a5a6f44a69dd6a7a72928ef5f3ba1b33b6e4",
+        "validation_sha256": "6f8c1eb44a10d1f194f378015b5b2ffa92ea889581579aa882e94ac69da52270",
+        "result_sha256": "266c62fe73b59060c9754992ab824dd9a399a218e1fc5e129820355fc167ecbb",
+        "artifact_manifest_sha256": "58a3995b464ed7a97b8b8738e12fc72f913177210e07bf9da47c4d1d0cdf00ac",
+        "trusted_preflight_sha256": "4cac5a4991e659e3e59560b89edad066baaf67db8e31ac695e20b93f8d32f479",
+        "trusted_final_sha256": "99e9c87e15a826aecbfce2743faa5588478ddd9df40c5d733836294d3755d79b",
+        "artifact_tree_sha256": "a1213441bb68ef4c6f33a02da25103fa07fb8690a3bf8d31714e4dc1ae716b50",
+        "verifier_log_tree_sha256": "0f3363964914370dd6568696a47962e0f5193941f9fa8f2933829e472ea44eef"
+      }
+    },
+    {
+      "rollout_id": "t143-noncommutative-polynomial-moments",
+      "worker": "sealed-polynomial-moments",
+      "method_family": "noncommutative-polynomial-moment-method",
+      "status": "completed",
+      "run_dir": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-077c1385",
+      "run_attestation": {
+        "invocation_sha256": "93e65e0bdddc8b147d6b716c23189a7aa83eec99a049561ed152de828a8d1cb6",
+        "task_sha256": "74cd71463c5baaa8684bfc1ce5f2a5a6f44a69dd6a7a72928ef5f3ba1b33b6e4",
+        "validation_sha256": "6f8c1eb44a10d1f194f378015b5b2ffa92ea889581579aa882e94ac69da52270",
+        "result_sha256": "64c2ed050b6efb893f7925b443e20114b791216c2097c7a31481e474109bb602",
+        "artifact_manifest_sha256": "6836ed5a20797f45ecbeffbdcbffecb703ddd767b11378a794233b18de3e558c",
+        "trusted_preflight_sha256": "5c80029adf9d4726554f3c62083f690f396004c1fa0703d96c2a1a924d0deebf",
+        "trusted_final_sha256": "2428665567cd068af8361bb35d98e0bb0b5abf5e70dc54862fa6df5612adb4fa",
+        "artifact_tree_sha256": "b029ac4bcea83c5f0ad90fd70b850dd4dee7d43ee2430584b0d3725d3812d633",
+        "verifier_log_tree_sha256": "e948ccf0915a5e625702a5bf113a4440dc7fa8dd7a06e8f3238b036674eea347"
+      }
+    },
+    {
+      "rollout_id": "t143-adaptive-lyapunov-duality",
+      "worker": "sealed-adaptive-lyapunov",
+      "method_family": "adaptive-lyapunov-cone-duality",
+      "status": "completed",
+      "run_dir": "runs/T143-sealed-finite-time-breadth/20260825T123453Z-27db9449",
+      "run_attestation": {
+        "invocation_sha256": "5af9a8f59f6972df9294137249e5be32b57f963d4d87ff9cccd45532464f6f46",
+        "task_sha256": "74cd71463c5baaa8684bfc1ce5f2a5a6f44a69dd6a7a72928ef5f3ba1b33b6e4",
+        "validation_sha256": "6f8c1eb44a10d1f194f378015b5b2ffa92ea889581579aa882e94ac69da52270",
+        "result_sha256": "509b168081d49ac3242a16245d24b2e1a0f52044e726f891328aae0ebcc0885b",
+        "artifact_manifest_sha256": "9eaf22115109828ed2c2bbb5585aabfad4d41c35e2994b6de193c9992952ca4c",
+        "trusted_preflight_sha256": "92937ff9c7d50f5b98858585068b12554f9838abd9ba80bf768996300d3820b1",
+        "trusted_final_sha256": "0799ab65312ee3dfc11823a7ff3de16fb7b299ac2a41b688c73f81d36e2e9fb9",
+        "artifact_tree_sha256": "cf87d6a0b21846f5fa7f9e2d98bb359830097a2b9777032636ba2163ceac54e7",
+        "verifier_log_tree_sha256": "81ef32f439caa6c6489c5a33b2232e51102b9127e4a981915963db919076c45f"
+      }
+    }
+  ]
+}

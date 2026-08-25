@@ -1,0 +1,861 @@
+{
+  "schema_version": "1.0",
+  "task_id": "T143-sealed-finite-time-breadth",
+  "kind": "exact finite falsifier suite",
+  "arithmetic": "SymPy exact rationals for every decisive comparison",
+  "seed": null,
+  "tolerance": "0 (strict rational sign tests); displayed generalized eigenvalues are diagnostic only",
+  "candidate": "(L_A^*)^ceil(16/mu)(A) <= A/2",
+  "equicorrelation_falsifier": [
+    {
+      "n": 2,
+      "mu": "1/2",
+      "epochs": 32,
+      "coordinate_projections_noncommute": true,
+      "dual_restriction": [
+        [
+          "5/32",
+          "1/32"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "energy_cone_restriction": [
+        [
+          "9/64",
+          "3/64"
+        ],
+        [
+          "3/64",
+          "1/64"
+        ]
+      ],
+      "one_epoch_order_unit_coefficients": {
+        "perpendicular": "3/16",
+        "parallel": "1/16",
+        "closed_forms_match_exact": true,
+        "both_at_most_1_minus_1_over_n_exact": true
+      },
+      "canonical_epoch_invariants": {
+        "frobenius_sq": "5/16",
+        "column_sum_sq": "1/16",
+        "row_sum_sq": "5/16",
+        "total_sum_sq": "1/16"
+      },
+      "perpendicular_ratio_decimal": "1.911710293358942732434656477321254166709e-26",
+      "parallel_ratio_decimal": "6.372367644529809108115521591070847222364e-27",
+      "worst_ratio_decimal": "1.911710293358942732434656477321254166709e-26",
+      "half_margin_decimal": "0.4999999999999999999999999808828970664106",
+      "half_margin_is_strictly_positive_exact": true,
+      "half_margin_exact_digest": {
+        "sha256": "42bd5207388738c2251b9bb1f4750d6d72f15a9f61d019a41821a16d35fb0b43",
+        "numerator_digits": 48,
+        "denominator_digits": 48
+      }
+    },
+    {
+      "n": 3,
+      "mu": "1/3",
+      "epochs": 48,
+      "coordinate_projections_noncommute": true,
+      "dual_restriction": [
+        [
+          "784/2187",
+          "52/2187"
+        ],
+        [
+          "316/2187",
+          "16/2187"
+        ]
+      ],
+      "energy_cone_restriction": [
+        [
+          "2300/6561",
+          "364/6561"
+        ],
+        [
+          "728/6561",
+          "100/6561"
+        ]
+      ],
+      "one_epoch_order_unit_coefficients": {
+        "perpendicular": "296/729",
+        "parallel": "92/729",
+        "closed_forms_match_exact": true,
+        "both_at_most_1_minus_1_over_n_exact": true
+      },
+      "canonical_epoch_invariants": {
+        "frobenius_sq": "1100/729",
+        "column_sum_sq": "68/729",
+        "row_sum_sq": "1732/729",
+        "total_sum_sq": "100/729"
+      },
+      "perpendicular_ratio_decimal": "1.597883052767056073302372087735924842983e-21",
+      "parallel_ratio_decimal": "5.025978131926770379019175035303356192026e-22",
+      "worst_ratio_decimal": "1.597883052767056073302372087735924842983e-21",
+      "half_margin_decimal": "0.4999999999999999999984021169472329439267",
+      "half_margin_is_strictly_positive_exact": true,
+      "half_margin_exact_digest": {
+        "sha256": "f615408a555d277be8ebf1b345d811b9dd51830a64c2a54d5bc321010eec69e2",
+        "numerator_digits": 160,
+        "denominator_digits": 161
+      }
+    },
+    {
+      "n": 4,
+      "mu": "1/4",
+      "epochs": 64,
+      "coordinate_projections_noncommute": true,
+      "dual_restriction": [
+        [
+          "131889/262144",
+          "3417/262144"
+        ],
+        [
+          "37857/131072",
+          "393/131072"
+        ]
+      ],
+      "energy_cone_restriction": [
+        [
+          "524139/1048576",
+          "44421/1048576"
+        ],
+        [
+          "133263/1048576",
+          "6561/1048576"
+        ]
+      ],
+      "one_epoch_order_unit_coefficients": {
+        "perpendicular": "35535/65536",
+        "parallel": "8739/65536",
+        "closed_forms_match_exact": true,
+        "both_at_most_1_minus_1_over_n_exact": true
+      },
+      "canonical_epoch_invariants": {
+        "frobenius_sq": "207603/65536",
+        "column_sum_sq": "4203/65536",
+        "row_sum_sq": "434745/65536",
+        "total_sum_sq": "6561/65536"
+      },
+      "perpendicular_ratio_decimal": "2.185415190587709367677880114537817067476e-19",
+      "parallel_ratio_decimal": "5.507749475004818998979454107846657867069e-20",
+      "worst_ratio_decimal": "2.185415190587709367677880114537817067476e-19",
+      "half_margin_decimal": "0.4999999999999999997814584809412290632322",
+      "half_margin_is_strictly_positive_exact": true,
+      "half_margin_exact_digest": {
+        "sha256": "4984ea6fec6ff6f2ff89b07e10761fd5be86832259030cc95d2f9ca617c8eb1c",
+        "numerator_digits": 346,
+        "denominator_digits": 347
+      }
+    },
+    {
+      "n": 5,
+      "mu": "1/5",
+      "epochs": 80,
+      "coordinate_projections_noncommute": true,
+      "dual_restriction": [
+        [
+          "29262576/48828125",
+          "356136/48828125"
+        ],
+        [
+          "19300528/48828125",
+          "49208/48828125"
+        ]
+      ],
+      "energy_cone_restriction": [
+        [
+          "145956744/244140625",
+          "7478856/244140625"
+        ],
+        [
+          "29915424/244140625",
+          "602176/244140625"
+        ]
+      ],
+      "one_epoch_order_unit_coefficients": {
+        "perpendicular": "6137424/9765625",
+        "parallel": "1220704/9765625",
+        "closed_forms_match_exact": true,
+        "both_at_most_1_minus_1_over_n_exact": true
+      },
+      "canonical_epoch_invariants": {
+        "frobenius_sq": "48563104/9765625",
+        "column_sum_sq": "405344/9765625",
+        "row_sum_sq": "125765216/9765625",
+        "total_sum_sq": "602176/9765625"
+      },
+      "perpendicular_ratio_decimal": "3.195475510451342681409514481872603987689e-18",
+      "parallel_ratio_decimal": "6.508402660610437013779807088996249339434e-19",
+      "worst_ratio_decimal": "3.195475510451342681409514481872603987689e-18",
+      "half_margin_decimal": "0.4999999999999999968045244895486573185905",
+      "half_margin_is_strictly_positive_exact": true,
+      "half_margin_exact_digest": {
+        "sha256": "22a0c6d1554a9c95c29419b29bbec07aaa530d1f9866e035ac034b3dcd3fa662",
+        "numerator_digits": 615,
+        "denominator_digits": 615
+      }
+    },
+    {
+      "n": 8,
+      "mu": "1/8",
+      "epochs": 128,
+      "coordinate_projections_noncommute": true,
+      "dual_restriction": [
+        [
+          "1686793227096257/2251799813685248",
+          "4285495370065/2251799813685248"
+        ],
+        [
+          "656065779163011/1125899906842624",
+          "91178304819/1125899906842624"
+        ]
+      ],
+      "energy_cone_restriction": [
+        [
+          "13490060321399991/18014398509481984",
+          "244273236093705/18014398509481984"
+        ],
+        [
+          "1709912652655935/18014398509481984",
+          "5744348247169/18014398509481984"
+        ]
+      ],
+      "one_epoch_order_unit_coefficients": {
+        "perpendicular": "214598961835839/281474976710656",
+        "parallel": "26807140639111/281474976710656",
+        "closed_forms_match_exact": true,
+        "both_at_most_1_minus_1_over_n_exact": true
+      },
+      "canonical_epoch_invariants": {
+        "frobenius_sq": "2998924785422279/281474976710656",
+        "column_sum_sq": "4467851979703/281474976710656",
+        "row_sum_sq": "12183845693704433/281474976710656",
+        "total_sum_sq": "5744348247169/281474976710656"
+      },
+      "perpendicular_ratio_decimal": "1.138786176758755767173127348190107009735e-16",
+      "parallel_ratio_decimal": "1.440764392624235016637885197299703115898e-17",
+      "worst_ratio_decimal": "1.138786176758755767173127348190107009735e-16",
+      "half_margin_decimal": "0.4999999999999998861213823241244232826873",
+      "half_margin_is_strictly_positive_exact": true,
+      "half_margin_exact_digest": {
+        "sha256": "0dd7ed6a72e0c9715e5f57c87d196580763cfe7e995753ba64dc55a42fdcf105",
+        "numerator_digits": 1964,
+        "denominator_digits": 1965
+      }
+    },
+    {
+      "n": 12,
+      "mu": "1/12",
+      "epochs": 192,
+      "coordinate_projections_noncommute": true,
+      "dual_restriction": [
+        [
+          "794606928350113714836965041/953962166440690129601298432",
+          "546733214887808025804265/953962166440690129601298432"
+        ],
+        [
+          "336278389160384138126356709/476981083220345064800649216",
+          "4594396762945726684541/476981083220345064800649216"
+        ]
+      ],
+      "energy_cone_restriction": [
+        [
+          "9534736406986476770017776227/11447545997288281555215581184",
+          "72715517580078467431967245/11447545997288281555215581184"
+        ],
+        [
+          "799870693380863141751639695/11447545997288281555215581184",
+          "656998737198505466233249/11447545997288281555215581184"
+        ]
+      ],
+      "one_epoch_order_unit_coefficients": {
+        "perpendicular": "66718416142823300260067663/79496847203390844133441536",
+        "parallel": "5559220084153205883457451/79496847203390844133441536",
+        "closed_forms_match_exact": true,
+        "both_at_most_1_minus_1_over_n_exact": true
+      },
+      "canonical_epoch_invariants": {
+        "frobenius_sq": "1467163706670881991089678459/79496847203390844133441536",
+        "column_sum_sq": "555922008413699479173347/79496847203390844133441536",
+        "row_sum_sq": "8865288268199333029869526057/79496847203390844133441536",
+        "total_sum_sq": "656998737198505466233249/79496847203390844133441536"
+      },
+      "perpendicular_ratio_decimal": "6.468577987714158223706099987488237536814e-16",
+      "parallel_ratio_decimal": "5.423407214370094445135636310413464369316e-17",
+      "worst_ratio_decimal": "6.468577987714158223706099987488237536814e-16",
+      "half_margin_decimal": "0.4999999999999993531422012285841776293900",
+      "half_margin_is_strictly_positive_exact": true,
+      "half_margin_exact_digest": {
+        "sha256": "ec5fc853a4a1da44b346a9d539eda596f74efffb7f630f9afb9644ef989ffbfa",
+        "numerator_digits": 5179,
+        "denominator_digits": 5179
+      }
+    },
+    {
+      "n": 16,
+      "mu": "1/16",
+      "epochs": 256,
+      "coordinate_projections_noncommute": true,
+      "dual_restriction": [
+        [
+          "4762964080878558598143449963193094701825/5444517870735015415413993718908291383296",
+          "1322578959884431849289058418401576225/5444517870735015415413993718908291383296"
+        ],
+        [
+          "2101649835171354609724572343087741664775/2722258935367507707706996859454145691648",
+          "5930847353741845622500808300473575/2722258935367507707706996859454145691648"
+        ]
+      ],
+      "energy_cone_restriction": [
+        [
+          "76206102715097053138445910352671113652975/87112285931760246646623899502532662132736",
+          "318741529332148075678663078834779870225/87112285931760246646623899502532662132736"
+        ],
+        [
+          "4781122939982221135179946182521698053375/87112285931760246646623899502532662132736",
+          "1512366075204170909209084284016730625/87112285931760246646623899502532662132736"
+        ]
+      ],
+      "one_epoch_order_unit_coefficients": {
+        "perpendicular": "298925172829801567242674114966819896575/340282366920938463463374607431768211456",
+        "parallel": "18682169164286817601910762760959823375/340282366920938463463374607431768211456",
+        "closed_forms_match_exact": true,
+        "both_at_most_1_minus_1_over_n_exact": true
+      },
+      "canonical_epoch_invariants": {
+        "frobenius_sq": "8966263751221267817592594649368578031375/340282366920938463463374607431768211456",
+        "column_sum_sq": "1334440654591915540534060035002523375/340282366920938463463374607431768211456",
+        "row_sum_sq": "72015758806361906109329764942000827974625/340282366920938463463374607431768211456",
+        "total_sum_sq": "1512366075204170909209084284016730625/340282366920938463463374607431768211456"
+      },
+      "perpendicular_ratio_decimal": "1.445140438003767725120689934077202085903e-15",
+      "parallel_ratio_decimal": "9.064521988415350866277156346363450923067e-17",
+      "worst_ratio_decimal": "1.445140438003767725120689934077202085903e-15",
+      "half_margin_decimal": "0.4999999999999985548595619962322748793101",
+      "half_margin_is_strictly_positive_exact": true,
+      "half_margin_exact_digest": {
+        "sha256": "1e88ee941d451bbc29142b174049c805b63f60c1b33b5bda0c1c6e958807052c",
+        "numerator_digits": 10171,
+        "denominator_digits": 10172
+      }
+    }
+  ],
+  "anisotropic_near_singular_falsifier": [
+    {
+      "family": "A_eps=eps I+(1-eps) Gram(e1,e2,(3e1+4e2)/5)",
+      "epsilon": "1/2",
+      "matrix": [
+        [
+          "1",
+          "0",
+          "3/10"
+        ],
+        [
+          "0",
+          "1",
+          "2/5"
+        ],
+        [
+          "3/10",
+          "2/5",
+          "1"
+        ]
+      ],
+      "exact_eigenvalues": [
+        "1/2",
+        "1",
+        "3/2"
+      ],
+      "epochs": 32,
+      "all_six_epoch_permutations_averaged": true,
+      "noncommuting_epoch_products_witness_entry": "3/25",
+      "noncommuting_coordinate_updates_witness_entry": "9/100",
+      "half_difference_leading_principal_minors_decimal": [
+        "0.4999999999999999999999999995608879600533",
+        "0.2499999999999999999999999993807537685751",
+        "0.09374999999999999999999999938555315870989"
+      ],
+      "half_difference_leading_principal_minors_positive_exact": [
+        true,
+        true,
+        true
+      ],
+      "half_difference_minor_digests": [
+        {
+          "sha256": "540538a1c02ed24e05f6258104fe2ef12b7a0504ebaa59aedf4ebf3efb479abf",
+          "numerator_digits": 138,
+          "denominator_digits": 138
+        },
+        {
+          "sha256": "0bb216a3bc1cab3a898c47e271fd6e8edeb9482bf19360f80a07fe891e6265a7",
+          "numerator_digits": 274,
+          "denominator_digits": 274
+        },
+        {
+          "sha256": "954d6435a1823936b7830812624aebe5fde4afe38160040d79d3405bb40a590f",
+          "numerator_digits": 408,
+          "denominator_digits": 409
+        }
+      ],
+      "worst_generalized_eigenvalue_decimal_diagnostic": "2.4634554951241737202751471315619625043897e-27",
+      "decision": "candidate survives this finite exact falsifier"
+    },
+    {
+      "family": "A_eps=eps I+(1-eps) Gram(e1,e2,(3e1+4e2)/5)",
+      "epsilon": "1/5",
+      "matrix": [
+        [
+          "1",
+          "0",
+          "12/25"
+        ],
+        [
+          "0",
+          "1",
+          "16/25"
+        ],
+        [
+          "12/25",
+          "16/25",
+          "1"
+        ]
+      ],
+      "exact_eigenvalues": [
+        "1/5",
+        "1",
+        "9/5"
+      ],
+      "epochs": 80,
+      "all_six_epoch_permutations_averaged": true,
+      "noncommuting_epoch_products_witness_entry": "192/625",
+      "noncommuting_coordinate_updates_witness_entry": "144/625",
+      "half_difference_leading_principal_minors_decimal": [
+        "0.4999999999999999999999993300571550677806",
+        "0.2499999999999999999999990422776563199988",
+        "0.04499999999999999999999898137217130837720"
+      ],
+      "half_difference_leading_principal_minors_positive_exact": [
+        true,
+        true,
+        true
+      ],
+      "half_difference_minor_digests": [
+        {
+          "sha256": "29d303b568a09711fc2bb33200ae0e1ac73b81fad8e7b802df7486e728f3c411",
+          "numerator_digits": 448,
+          "denominator_digits": 448
+        },
+        {
+          "sha256": "e8118d671367a2946736ea619d9a605c78be882e4b85362a61d1b0b03382fe63",
+          "numerator_digits": 895,
+          "denominator_digits": 896
+        },
+        {
+          "sha256": "32bb809dc68213836999ae1b0ecd31db10edc4f94b2f53c32fc0a048f9f0f807",
+          "numerator_digits": 1341,
+          "denominator_digits": 1342
+        }
+      ],
+      "worst_generalized_eigenvalue_decimal_diagnostic": "1.0246461664280967586080301204534152953434e-23",
+      "decision": "candidate survives this finite exact falsifier"
+    },
+    {
+      "family": "A_eps=eps I+(1-eps) Gram(e1,e2,(3e1+4e2)/5)",
+      "epsilon": "1/10",
+      "matrix": [
+        [
+          "1",
+          "0",
+          "27/50"
+        ],
+        [
+          "0",
+          "1",
+          "18/25"
+        ],
+        [
+          "27/50",
+          "18/25",
+          "1"
+        ]
+      ],
+      "exact_eigenvalues": [
+        "1/10",
+        "1",
+        "19/10"
+      ],
+      "epochs": 160,
+      "all_six_epoch_permutations_averaged": true,
+      "noncommuting_epoch_products_witness_entry": "243/625",
+      "noncommuting_coordinate_updates_witness_entry": "729/2500",
+      "half_difference_leading_principal_minors_decimal": [
+        "0.4999999999999999999999975524158607863155",
+        "0.2499999999999999999999964866339735575227",
+        "0.02374999999999999999999616676904281784708"
+      ],
+      "half_difference_leading_principal_minors_positive_exact": [
+        true,
+        true,
+        true
+      ],
+      "half_difference_minor_digests": [
+        {
+          "sha256": "d4dfa704516b7cff81f8af351641fe6a3acbf571c0851b1e5f82e53bd67ba2d8",
+          "numerator_digits": 1136,
+          "denominator_digits": 1136
+        },
+        {
+          "sha256": "99e36500b7ffd2ed4e9c71e976f37a290fd39e77a2515ae64805b50d02b00949",
+          "numerator_digits": 2269,
+          "denominator_digits": 2270
+        },
+        {
+          "sha256": "3b95ee3d4f880eededd443881dcf62fff94d6c7ac464c63c39de7c10dabcf25b",
+          "numerator_digits": 3402,
+          "denominator_digits": 3404
+        }
+      ],
+      "worst_generalized_eigenvalue_decimal_diagnostic": "7.6932223224615267171092472507260278546621e-23",
+      "decision": "candidate survives this finite exact falsifier"
+    },
+    {
+      "family": "A_eps=eps I+(1-eps) Gram(e1,e2,(3e1+4e2)/5)",
+      "epsilon": "1/25",
+      "matrix": [
+        [
+          "1",
+          "0",
+          "72/125"
+        ],
+        [
+          "0",
+          "1",
+          "96/125"
+        ],
+        [
+          "72/125",
+          "96/125",
+          "1"
+        ]
+      ],
+      "exact_eigenvalues": [
+        "1/25",
+        "1",
+        "49/25"
+      ],
+      "epochs": 400,
+      "all_six_epoch_permutations_averaged": true,
+      "noncommuting_epoch_products_witness_entry": "6912/15625",
+      "noncommuting_coordinate_updates_witness_entry": "5184/15625",
+      "half_difference_leading_principal_minors_decimal": [
+        "0.4999999999999999999999971187221198317032",
+        "0.2499999999999999999999958544930415701113",
+        "0.009799999999999999999995405104093842075539"
+      ],
+      "half_difference_leading_principal_minors_positive_exact": [
+        true,
+        true,
+        true
+      ],
+      "half_difference_minor_digests": [
+        {
+          "sha256": "16e579fce5e8c142eb455e9b9792ad056476365f9e0ebb7fa2eb421c84a1aa11",
+          "numerator_digits": 3356,
+          "denominator_digits": 3356
+        },
+        {
+          "sha256": "e7cce7c6f9f5188fefe6cab2badca02a197a0bba20315287a669b24d66a25074",
+          "numerator_digits": 6711,
+          "denominator_digits": 6711
+        },
+        {
+          "sha256": "205bc46065da8235557f09f00f97546d888c9be4d731d5dc75f6e7796b6486a8",
+          "numerator_digits": 10065,
+          "denominator_digits": 10067
+        }
+      ],
+      "worst_generalized_eigenvalue_decimal_diagnostic": "2.3009091241875485449100822848870265254598e-22",
+      "decision": "candidate survives this finite exact falsifier"
+    },
+    {
+      "family": "A_eps=eps I+(1-eps) Gram(e1,e2,(3e1+4e2)/5)",
+      "epsilon": "1/50",
+      "matrix": [
+        [
+          "1",
+          "0",
+          "147/250"
+        ],
+        [
+          "0",
+          "1",
+          "98/125"
+        ],
+        [
+          "147/250",
+          "98/125",
+          "1"
+        ]
+      ],
+      "exact_eigenvalues": [
+        "1/50",
+        "1",
+        "99/50"
+      ],
+      "epochs": 800,
+      "all_six_epoch_permutations_averaged": true,
+      "noncommuting_epoch_products_witness_entry": "7203/15625",
+      "noncommuting_coordinate_updates_witness_entry": "21609/62500",
+      "half_difference_leading_principal_minors_decimal": [
+        "0.4999999999999999999999979690737368376441",
+        "0.2499999999999999999999970757721262990365",
+        "0.004949999999999999999996741402929637163020"
+      ],
+      "half_difference_leading_principal_minors_positive_exact": [
+        true,
+        true,
+        true
+      ],
+      "half_difference_minor_digests": [
+        {
+          "sha256": "64926d6691c8362f78de70fff9c830602b34c96699cd2e0ac407cfb9c9d76e7c",
+          "numerator_digits": 7914,
+          "denominator_digits": 7915
+        },
+        {
+          "sha256": "25bb79013b6de95380efdf31d8e45e7599958eef4eb5aaf89cef0b446a357758",
+          "numerator_digits": 15827,
+          "denominator_digits": 15827
+        },
+        {
+          "sha256": "8572ffd557f0d6a045f953e2d1b52408c9a4c55954fc39c389ccdf402813a71f",
+          "numerator_digits": 23739,
+          "denominator_digits": 23742
+        }
+      ],
+      "worst_generalized_eigenvalue_decimal_diagnostic": "3.2611073494117181742049306564185457569901e-22",
+      "decision": "candidate survives this finite exact falsifier"
+    }
+  ],
+  "anisotropic_all_epsilon_certificate": {
+    "family": "A_eps=eps I+(1-eps) Gram(e1,e2,(3e1+4e2)/5)",
+    "quantifier": "every real 0<eps<1; eps=1 is the separate zero-epoch-map endpoint",
+    "proved_one_epoch_inequality": "E_pi[T_pi^T A_eps T_pi] <= (1-eps) A_eps",
+    "leading_principal_minors": [
+      "(eps - 1)*(177*eps**3 - 531*eps**2 + 306*eps - 1202)/1250",
+      "(eps - 1)**2*(11152*eps**6 - 66912*eps**5 + 132280*eps**4 - 413665*eps**3 + 974155*eps**2 - 578162*eps + 722402)/781250",
+      "eps**2*(eps - 2)*(eps - 1)**3*(768*eps**8 - 6912*eps**7 + 35344*eps**6 - 146080*eps**5 + 393400*eps**4 - 916393*eps**3 + 1883692*eps**2 - 2031229*eps + 2349910)/1562500"
+    ],
+    "factorizations_match_exact": [
+      true,
+      true,
+      true
+    ],
+    "positive_polynomial_bernstein_coefficients_on_0_1": [
+      [
+        "1202",
+        "1100",
+        "1175",
+        "1250"
+      ],
+      [
+        "722402",
+        "1878125/3",
+        "594625",
+        "2429875/4",
+        "1958125/3",
+        "4296875/6",
+        "781250"
+      ],
+      [
+        "2349910",
+        "16768051/8",
+        "53462569/28",
+        "49662455/28",
+        "11746750/7",
+        "90439375/56",
+        "44190625/28",
+        "1562500",
+        "1562500"
+      ]
+    ],
+    "all_bernstein_coefficients_strictly_positive_exact": true,
+    "proof_scope": "Sylvester's criterion proves strict positivity of (1-eps)A_eps-H_1 for 0<eps<1. Positivity of the dual map then gives H_L<=(1-eps)^L A_eps<=exp(-eps L)A_eps."
+  },
+  "warm_start_rank_two_falsifier": {
+    "family": "rank-two rational Gram boundary with four unequal signed directions",
+    "matrix": [
+      [
+        "1",
+        "-36/125",
+        "-21/74",
+        "-189/650"
+      ],
+      [
+        "-36/125",
+        "1",
+        "1386/4625",
+        "2436/8125"
+      ],
+      [
+        "-21/74",
+        "1386/4625",
+        "1",
+        "7191/24050"
+      ],
+      [
+        "-189/650",
+        "2436/8125",
+        "7191/24050",
+        "1"
+      ]
+    ],
+    "boundary_rank_exact": 2,
+    "mu_exact": "7/10",
+    "all_24_permutations_averaged": true,
+    "candidate": "H_2 <= (1-mu) H_1, where H_j=(L_A^*)^j(A)",
+    "candidate_leading_principal_minors_decimal": [
+      "0.01968917115054303837040710863623687398831",
+      "0.0003372426970722825747205787894723054701534",
+      "0.000005228400896899102292568907339727019376341",
+      "0.00000007834514269482640705371481435265677909316"
+    ],
+    "candidate_leading_principal_minors_positive_exact": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "candidate_minor_digests": [
+      {
+        "sha256": "f7f5b0811c242108122ce3d247a6e12261fad3a4b8662f4873670e9dadf0658d",
+        "numerator_digits": 51,
+        "denominator_digits": 53
+      },
+      {
+        "sha256": "f614e67e1c3deeb0008a0777018ac5f683a45e452c7e0b36f29950c677ebbc18",
+        "numerator_digits": 104,
+        "denominator_digits": 107
+      },
+      {
+        "sha256": "e2fc94ebaa1e182916a8519074d221672b04f9afbdcdc76424670328f02b4dfd",
+        "numerator_digits": 156,
+        "denominator_digits": 161
+      },
+      {
+        "sha256": "8b5a9d4c04988180dfb35ac522416aeba7bc16e0258ee6ec9fdd93b05b90cc67",
+        "numerator_digits": 209,
+        "denominator_digits": 217
+      }
+    ],
+    "warm_relative_ratio_decimal_diagnostic": "9.5514634616579163761684867495205253362656e-02",
+    "effective_c_decimal_diagnostic": "1.2921219505477441469309951571631245315075e+00",
+    "overstrong_4_over_3_constant_refuted_exact": true,
+    "overstrong_4_over_3_witness": "For x=e_1, x^T[(1-(4/3)mu)H_1-H_2]x=-45610718735215238832306577947321107729046089164131/17078145727185390037542581558227539062500000000000000",
+    "scope": "This exactly rejects only the proposed 4/3 coefficient and exactly verifies the unit coefficient for this one finite matrix.  It neither proves the unit coefficient generally nor refutes the locked 16/mu block lemma."
+  },
+  "dimension_two_warm_certificate": {
+    "family": "every 2x2 unit-diagonal SPD matrix, after diagonal-sign conjugacy",
+    "quantifier": "0<mu<=1 and |A_12|=1-mu",
+    "H1": [
+      [
+        "-mu*(mu - 2)*(mu - 1)**2/2",
+        "0"
+      ],
+      [
+        "0",
+        "-mu*(mu - 2)*(mu - 1)**2/2"
+      ]
+    ],
+    "warm_difference_is_scalar_identity": true,
+    "warm_difference_diagonal_factor": "mu**2*(mu - 2)*(mu - 1)**3*(mu**2 - 3*mu + 4)/4",
+    "factor_matches_positive_form_exact": true,
+    "proved": "H2<=(1-mu)H1 because every factor in the displayed scalar is nonnegative on 0<mu<=1 and mu^2-3mu+4>0."
+  },
+  "continuation_exact_slices": {
+    "rank_three_star": {
+      "artifact": "rank_three_star_exact.json",
+      "family": "A_eps=eps I+(1-eps)Gram(e1,e2,e3,(36e1+24e2+23e3)/49)",
+      "quantifier": "every real 0<eps<1; eps=1 is a separate zero-map endpoint",
+      "candidate": "H1 <= (1-eps)A_eps",
+      "all_exact_sign_checks_passed": true,
+      "scope": "If positive, this is an E3 proof draft only for the displayed rank-three family and its signed conjugates/direct sums. It does not prove the general warm inequality, locked block lemma, C051, or C050."
+    },
+    "signed_rank_two_warm": {
+      "artifact": "rank_two_warm_exact.json",
+      "family": "A_eps=eps I+(1-eps)Gram((1,0),(0,1),(3,4)/5,(4,-3)/5)",
+      "quantifier": "every real 0<eps<1",
+      "candidate": "H2 <= (1-eps)H1",
+      "all_exact_sign_checks_passed": true,
+      "scope": "This is at most an E3 proof draft for the displayed family and signed conjugates/direct sums. It does not prove the general warm inequality, the locked block lemma, C051, or C050."
+    },
+    "generic_unequal_signed_rank_two_warm": {
+      "artifact": "generic_rank_two_warm_exact.json",
+      "family": "A_eps=eps I+(1-eps)Gram((1,0),(-24,7)/25,(-35,12)/37,(-63,16)/65)",
+      "quantifier": "every real 0<eps<1",
+      "candidate": "H2 <= (1-eps)H1",
+      "all_exact_sign_checks_passed": true,
+      "scope": "This is at most an E3 route-local analytic slice. It resolves the earlier symbolic timeout for the displayed family but does not prove the general warm inequality, the locked block lemma, C051, or C050."
+    },
+    "rank_four_sign_frustrated_cycle_warm": {
+      "artifact": "rank_four_cycle_warm_exact.json",
+      "family": "A_eps=eps I+(1-eps)Gram(e1,(3e1+4e2)/5,(5e2+12e3)/13,(7e3+24e4)/25,(8e1-15e4)/17)",
+      "quantifier": "every real 0<eps<1",
+      "candidate": "H2 <= (1-eps)H1",
+      "all_exact_sign_checks_passed": true,
+      "scope": "A positive result is at most an E3 route-local analytic slice; an unresolved Bernstein leaf is a failed certificate, not a counterexample. This artifact does not prove the general warm inequality, locked block lemma, C051, or C050."
+    }
+  },
+  "continuation_numerical_attacks": {
+    "warm_start": {
+      "artifact": "warm_start_attack.json",
+      "evidence_level": "E1",
+      "seed": 2026082503,
+      "case_count": 14,
+      "potential_violation_count": 0,
+      "best_effective_c": 1.044454830556325
+    },
+    "reachable_cone_separation": {
+      "artifact": "reachable_cone_attack.json",
+      "evidence_level": "E1",
+      "seed": 2026082604,
+      "case_count": 7,
+      "separation_candidate_count": 0,
+      "best_one_epoch_c": 1.2016552865813006
+    },
+    "higher_dimensional_subset_dp": {
+      "artifact": "subset_warm_scout.json",
+      "evidence_level": "E1",
+      "seed": 2026082504,
+      "case_count": 36,
+      "matrix_count": 252,
+      "potential_violation_count": 0,
+      "best_effective_c": 1.0256742913029933,
+      "factorial_orientation_regression_passed": true
+    },
+    "optimized_subset_dp_separator": {
+      "artifact": "subset_warm_attack.json",
+      "reevaluation_artifact": "subset_candidate_reevaluation.json",
+      "evidence_level": "E1",
+      "seed": 2026082505,
+      "n": 14,
+      "boundary_rank": 2,
+      "warm_effective_c": 1.0179516813012113,
+      "full_psd_one_epoch_c": 0.9966983407678359,
+      "warm_violation_count": 0,
+      "independent_original_coordinate_match": true,
+      "scope": "This independent formulation checks orientation and the numerical separation only. It is not exact or interval-certified, remains E1, and does not refute the warm inequality, locked block lemma, C051 with a smaller constant, or C050."
+    }
+  },
+  "analytic_invariance_controls": {
+    "equicorrelation_all_n": "For every integer n>=2, the two order-unit eigen-coefficients after one epoch are r_perp=[n^4-2n^3-n^2+2n+2-(n^2+1)n^(-2n)]/(n^2-1)^2 and r_parallel=[n-2+(n^2-n+1)n^(-2n)]/(n^2-1).  Direct subtraction gives 1-1/n-r_perp=(n^2+1)(n^2-n-1+n^(1-2n))/[n(n-1)^2(n+1)^2]>0 and 1-1/n-r_parallel=[n(n-1)^2+1-(n^3-n^2+n)n^(-2n)]/[n(n^2-1)]>0.  Thus the route-card A_n family satisfies C(I)<=(1-1/n)I and survives all n, not merely the finite dimensions listed above.",
+    "signed": "For every diagonal sign matrix S, U_i(SAS)=S U_i(A) S, hence T_pi(SAS)=S T_pi(A) S and the locked Loewner inequality is exactly invariant under A -> SAS.  Every listed positive family therefore also tests its full signed-conjugacy orbit.",
+    "block": "For A=A_1 direct_sum ... direct_sum A_m, a uniform global permutation induces independent uniform relative orders inside the blocks.  Starting from H_0=A, the dual orbit stays block diagonal and its block marginals are exactly the separate dual orbits.  Thus irrelevant block augmentation cannot create a slower order-unit orbit; off-diagonal full-Sym directions are not reachable from this H_0 and are deliberately not used as counterexamples."
+  },
+  "all_exact_tests_passed": true,
+  "scope": "The listed rational powers are E2 finite verifications; the explicit all-parameter equicorrelation, anisotropic, rank-three-star, two rank-two, rank-four-cycle, and n=2 arguments are route-local E3 proof drafts only. Numerical null results are E1. None proves the quantified block-power lemma or C050, and no indefinite full-Sym direction is treated as a physical covariance counterexample."
+}
