@@ -461,6 +461,8 @@ def run_codex_task(
         codex,
         "exec",
         "--json",
+        "--sandbox",
+        "workspace-write",
         "--output-schema",
         str((root / "schemas" / "result.structured.schema.json").resolve()),
     ]

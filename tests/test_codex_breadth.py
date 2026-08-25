@@ -613,6 +613,8 @@ class SealedRunIntegrationTests(unittest.TestCase):
                     return real_subprocess_run(command, **kwargs)
                 calls += 1
                 self.assertEqual(kwargs.get("encoding"), "utf-8")
+                sandbox_index = command.index("--sandbox") + 1
+                self.assertEqual(command[sandbox_index], "workspace-write")
                 schema_index = command.index("--output-schema") + 1
                 self.assertEqual(
                     Path(command[schema_index]).name,

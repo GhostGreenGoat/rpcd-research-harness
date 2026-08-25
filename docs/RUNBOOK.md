@@ -69,7 +69,9 @@ python -m rpcd_harness run-codex T010-matrix-jensen --worker alice
 
 每次调用创建唯一 run 目录。先检查 `prompt.md`；真实调用使用 `codex exec --json`，并用
 JSON Schema 约束最终消息。可通过 `--codex PATH` 指定 CLI，通过 `--model` 显式选择当前
-账号可用模型；不指定时沿用该账号的 Codex 默认配置。
+账号可用模型；不指定时沿用该账号的 Codex 默认配置。harness 显式使用
+`--sandbox workspace-write`，使 Agent 能写 route card 与证明工件，同时不授予
+`danger-full-access`。
 
 ### Sealed breadth、continuation 与 critic
 
