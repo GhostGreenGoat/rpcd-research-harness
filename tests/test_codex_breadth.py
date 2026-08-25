@@ -260,6 +260,62 @@ class CodexBreadthProtocolTests(unittest.TestCase):
             )
         self.assertNotIn(sentinel, prompt)
 
+    def test_real_t143_prompt_separates_card_selection_from_route_development(self) -> None:
+        root = find_root()
+        task = load_task(root, "T143-sealed-finite-time-breadth")
+        manifest = read_json(root / task["fanout_manifest"])
+        strategy = manifest["rollouts"][0]
+        output = root / "runs" / task["task_id"] / "prompt-test" / "artifacts"
+        previous = root / "runs" / task["task_id"] / "prompt-test" / "phase-001-result.json"
+        preflight = root / "runs" / task["task_id"] / "prompt-test" / "trusted_verifiers.preflight.json"
+
+        sealed = render_prompt(
+            root,
+            task,
+            "prompt-test",
+            strategy["worker"],
+            output,
+            DEFAULT_ITERATION_POLICY,
+            rollout_strategy=strategy,
+            route_card_only=True,
+        )
+        for inherited_depth_instruction in (
+            "at least 120 minutes",
+            "substantive checkpoints and artifacts",
+            "Maintain the structured",
+            "use random scans only",
+            "minimum_active_minutes_per_worker",
+            "minimum_distinct_avenues",
+            '"mode": "deep"',
+            "durable output directory",
+            "Run the required checks.",
+            "writing portable artifacts",
+        ):
+            self.assertNotIn(inherited_depth_instruction, sealed)
+        self.assertIn("sealed_route_card", sealed)
+        self.assertIn("route_card_minutes", sealed)
+        self.assertIn("The only file you may create in this phase is", sealed)
+
+        revealed = render_prompt(
+            root,
+            task,
+            "prompt-test",
+            strategy["worker"],
+            output,
+            DEFAULT_ITERATION_POLICY,
+            phase=2,
+            previous_result=previous,
+            rollout_strategy=strategy,
+            route_card_sha256="a" * 64,
+            preflight_report=preflight,
+        )
+        self.assertIn("Locked route card", revealed)
+        self.assertIn("a" * 64, revealed)
+        self.assertIn("Trusted preflight", revealed)
+        self.assertIn("Run the required checks.", revealed)
+        self.assertIn("writing portable artifacts", revealed)
+        self.assertNotIn("attack a genuinely new proof route", revealed)
+
     def test_t143_shared_contract_does_not_force_one_of_its_four_method_families(self) -> None:
         root = find_root()
         t143_tasks = list((root / "research" / "tasks").glob("T143-*.json"))
@@ -537,6 +593,54 @@ class CodexBreadthProtocolTests(unittest.TestCase):
 
 
 class SealedRunIntegrationTests(unittest.TestCase):
+    def test_sealed_card_phase_rejects_statement_mutation_and_extra_files(self) -> None:
+        task = minimal_task()
+        task["route_ids"] = []
+        strategy = {
+            "rollout_id": "rollout-operator",
+            "method_family": "direct-covariance-multiepoch",
+            "context_mode": "statement_only",
+            "route_ids": ["R140-direct-covariance-multiepoch"],
+        }
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            (root / "prompts").mkdir()
+            (root / "prompts" / "common.md").write_text("COMMON", encoding="utf-8")
+            (root / "prompts" / "explorer.md").write_text("ROLE", encoding="utf-8")
+            (root / "research" / "tasks").mkdir(parents=True)
+            (root / "statement.md").write_text("RPCD STATEMENT", encoding="utf-8")
+            (root / "history").mkdir()
+            (root / "history" / "old-proof.md").write_text("OLD", encoding="utf-8")
+            write_json(root / "research" / "tasks" / f"{task['task_id']}.json", task)
+
+            def mutate_sealed_tree(command: list[str], **kwargs: object) -> SimpleNamespace:
+                phase_result = Path(command[-2])
+                run_dir = phase_result.parent
+                staged = Path(kwargs["cwd"])
+                write_json(staged / "route_card.json", valid_route_card())
+                (staged / "statement.md").write_text("MUTATED", encoding="utf-8")
+                (staged / "unexpected-proof.md").write_text("not allowed", encoding="utf-8")
+                result = base_result()
+                result["run_id"] = run_dir.name
+                result["worker"] = "worker"
+                write_json(phase_result, result)
+                return SimpleNamespace(returncode=0)
+
+            with patch(
+                "rpcd_harness.codex_adapter.subprocess.run",
+                side_effect=mutate_sealed_tree,
+            ):
+                with self.assertRaisesRegex(
+                    ProtocolError,
+                    "changed the staged statement tree",
+                ):
+                    run_codex_task(
+                        root,
+                        task["task_id"],
+                        "worker",
+                        rollout_strategy=strategy,
+                    )
+
     def test_nonsealed_preflight_failure_stops_before_codex_research(self) -> None:
         task = minimal_task("T901-preflight-stop")
         task["research_mode"] = "critic_validation"

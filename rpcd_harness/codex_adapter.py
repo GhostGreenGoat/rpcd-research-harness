@@ -47,6 +47,22 @@ def new_run_id() -> str:
     return f"{timestamp}-{uuid.uuid4().hex[:8]}"
 
 
+def _sealed_workspace_manifest(workspace: Path) -> dict[str, tuple[str, str | None]]:
+    """Record the complete staged tree so the card phase cannot mutate its statement."""
+    manifest: dict[str, tuple[str, str | None]] = {}
+    for path in sorted(workspace.rglob("*"), key=lambda item: item.as_posix()):
+        relative = path.relative_to(workspace).as_posix()
+        if path.is_symlink():
+            manifest[relative] = ("symlink", str(path.readlink()))
+        elif path.is_dir():
+            manifest[relative] = ("directory", None)
+        elif path.is_file():
+            manifest[relative] = ("file", sha256_file(path))
+        else:
+            manifest[relative] = ("other", None)
+    return manifest
+
+
 def render_prompt(
     root: Path,
     task: dict[str, Any],
@@ -64,8 +80,20 @@ def render_prompt(
     preflight_report: Path | None = None,
     resume_context: dict[str, Any] | None = None,
 ) -> str:
-    common = (root / "prompts" / "common.md").read_text(encoding="utf-8")
-    role = (root / "prompts" / f"{task['role']}.md").read_text(encoding="utf-8")
+    if route_card_only:
+        common = """# Sealed breadth contract
+
+Select one falsifiable mathematical route using only the staged problem statement. Keep conjecture,
+candidate lemma, and predicted falsifier distinct. Do not access credentials or unstaged files.
+Name checks that a later phase can run, but do not execute them during this card phase."""
+        role = """# Independent route selector
+
+Commit to the assigned method family by choosing its representation, retained state, first bridge
+lemma, and most likely failure mechanism. The route should be specific enough to falsify after it
+is locked, without attempting the proof or experiment now."""
+    else:
+        common = (root / "prompts" / "common.md").read_text(encoding="utf-8")
+        role = (root / "prompts" / f"{task['role']}.md").read_text(encoding="utf-8")
     visible_task = deepcopy(task)
     strategy = {
         key: value
@@ -127,8 +155,37 @@ def render_prompt(
         # scripts. They belong to the post-card pruning phase, not sealed idea
         # generation.
         visible_task["verifiers"] = []
+        sealed_task_fields = (
+            "schema_version",
+            "task_id",
+            "title",
+            "role",
+            "objective",
+            "claim_ids",
+            "inputs",
+            "required_artifacts",
+            "acceptance_checks",
+            "route_ids",
+            "research_mode",
+            "context_policy",
+            "method_constraints",
+        )
+        visible_task = {
+            key: visible_task[key]
+            for key in sealed_task_fields
+            if key in visible_task
+        }
     task_json = json.dumps(visible_task, ensure_ascii=False, indent=2)
-    policy_json = json.dumps(iteration_policy, ensure_ascii=False, indent=2)
+    visible_policy = iteration_policy
+    if route_card_only:
+        visible_policy = {
+            "schema_version": iteration_policy.get("schema_version", "1.0"),
+            "phase": "sealed_route_card",
+            "route_card_minutes": task.get("rollout_strategy", {}).get(
+                "route_card_minutes", 20
+            ),
+        }
+    policy_json = json.dumps(visible_policy, ensure_ascii=False, indent=2)
     relative_output = output_dir.relative_to(root).as_posix()
     continuation = ""
     if previous_result is not None:
@@ -151,6 +208,18 @@ this run starts at `0.00` credited active minutes and must independently satisfy
 describe this handoff as a fresh statement-only discovery, an independent rollout, or additional
 search width. Summarize inherited claims and failures cumulatively, and make every artifact claimed
 by the new result point to its copy inside `{relative_output}`.
+"""
+        elif route_card_sha256 is not None:
+            continuation = f"""
+
+# Locked-route development pass
+
+The statement-first route is already frozen. Earlier phases accumulated
+`{accumulated_active_seconds / 60.0:.2f}` active minutes. Continue cumulatively on that route:
+deepen its next implication edge, repair its first bad edge, or attack it with a new objection.
+Do not select a replacement representation or relabel an inherited route as the locked route.
+Read `{relative_previous}`, its sibling phase validation report, and every artifact it references.
+The result of this pass must summarize the whole iteration, not only this pass.
 """
         else:
             continuation = f"""
@@ -293,10 +362,16 @@ identities and known barriers: it does not verify a new lemma or promote its evi
         execution_contract = f"""
 Read only the staged allowlisted statement. The only file you may create in this phase is
 `route_card.json`. Do not start a proof attempt, numerical scan, literature search, inherited
-artifact tree, or the two-hour research iteration yet. After writing and checking the exact card,
+artifact tree, or post-reveal route development yet. After writing and checking the exact card,
 return the structured final JSON immediately; use empty arrays for inapplicable result sections.
 Your final JSON must use task_id `{task['task_id']}`, run_id `{run_id}`, and worker `{worker}`.
 """
+        run_metadata = f"""Run metadata:
+- run_id: `{run_id}`
+- worker: `{worker}`
+- execution mode: `{execution_mode}`
+- phase: sealed route-card selection
+- working directory: the staged statement-only directory supplied by the harness"""
     else:
         execution_contract = f"""
 Read the task inputs now. Work autonomously within this task's scope. Run the required checks.
@@ -306,6 +381,13 @@ and writing portable artifacts. Add a substantive checkpoint about every
 Your final JSON must use the exact task_id, run_id, and worker above. Artifact paths must be
 relative to the repository root and must point inside `{relative_output}`.
 """
+        run_metadata = f"""Run metadata:
+- run_id: `{run_id}`
+- worker: `{worker}`
+- execution mode: `{execution_mode}`
+- research pass: `{phase}`
+- repository root: current working directory
+- durable output directory: `{relative_output}`"""
     return f"""{common}
 
 {role}
@@ -322,13 +404,7 @@ relative to the repository root and must point inside `{relative_output}`.
 {policy_json}
 ```
 
-Run metadata:
-- run_id: `{run_id}`
-- worker: `{worker}`
-- execution mode: `{execution_mode}`
-- research pass: `{phase}`
-- repository root: current working directory
-- durable output directory: `{relative_output}`
+{run_metadata}
 {continuation}{strategy_text}{route_card_contract}{route_result_contract}{dependency_context}{preflight_context}
 {execution_contract}
 """
@@ -596,6 +672,7 @@ def run_codex_task(
     phases: list[dict[str, Any]] = []
     phase = 0
     sealed_workspace: Path | None = None
+    sealed_workspace_baseline: dict[str, tuple[str, str | None]] | None = None
     sealed_temporary: tempfile.TemporaryDirectory[str] | None = None
     if sealed_breadth and resume_state is None:
         # Keep the stage outside the Git worktree so Codex does not
@@ -624,6 +701,14 @@ def run_codex_task(
         }
         write_json(run_dir / "sealed-context.json", sealed_metadata)
         write_json(sealed_workspace / "sealed-context.json", sealed_metadata)
+        sealed_workspace_baseline = _sealed_workspace_manifest(sealed_workspace)
+        if "route_card.json" in sealed_workspace_baseline:
+            cleanup_target = sealed_temporary
+            assert cleanup_target is not None
+            sealed_temporary = None
+            sealed_workspace = None
+            cleanup_target.cleanup()
+            raise ProtocolError("sealed input stage unexpectedly contains route_card.json")
     events_dir = run_dir / "events"
     events_dir.mkdir()
     preflight_report = run_dir / "trusted_verifiers.preflight.json"
@@ -792,10 +877,41 @@ def run_codex_task(
 
         if route_card_phase:
             assert sealed_workspace is not None
+            assert sealed_workspace_baseline is not None
             staged_card = sealed_workspace / "route_card.json"
             route_card_errors: list[str] = []
-            if not staged_card.is_file():
+            sealed_after = _sealed_workspace_manifest(sealed_workspace)
+            card_entry = sealed_after.pop("route_card.json", None)
+            if card_entry is None:
                 route_card_errors.append("sealed route-card phase did not create route_card.json")
+            elif card_entry[0] != "file":
+                route_card_errors.append("sealed route_card.json must be a regular file")
+            if sealed_after != sealed_workspace_baseline:
+                before_paths = set(sealed_workspace_baseline)
+                after_paths = set(sealed_after)
+                added = sorted(after_paths - before_paths)
+                removed = sorted(before_paths - after_paths)
+                changed = sorted(
+                    path
+                    for path in before_paths & after_paths
+                    if sealed_workspace_baseline[path] != sealed_after[path]
+                )
+                details = []
+                if added:
+                    details.append("added=" + ",".join(added))
+                if removed:
+                    details.append("removed=" + ",".join(removed))
+                if changed:
+                    details.append("changed=" + ",".join(changed))
+                route_card_errors.append(
+                    "sealed route-card phase changed the staged statement tree"
+                    + (": " + "; ".join(details) if details else "")
+                )
+            if not staged_card.is_file():
+                if card_entry is not None:
+                    route_card_errors.append(
+                        "sealed route-card phase did not create a readable route_card.json"
+                    )
             else:
                 try:
                     card = read_json(staged_card)
